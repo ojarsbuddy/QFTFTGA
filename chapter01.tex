@@ -1,0 +1,209 @@
+\documentclass{amsart}
+\usepackage{graphicx,float}
+\usepackage{amsmath,amssymb,physics,xfrac,nicefrac}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{decorations.markings}
+
+\tikzstyle arrowstyle=[scale=1]
+\tikzstyle directed=[postaction={decorate,decoration={markings,
+    mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+\tikzstyle reverse directed=[postaction={decorate,decoration={markings,
+    mark=at position .65 with {\arrowreversed[arrowstyle]{stealth};}}}]
+ 
+\title{Quantum Field Theory Problem Sets}
+\author{John Bortins}
+ 
+\begin{document}
+ 
+\maketitle{}
+ 
+\section*{Problem 1.1}
+\begin{figure}[H]
+\begin{tikzpicture}[>=stealth]
+
+    % define coordinates
+    \coordinate (O) at (0,0) ;
+    \coordinate (A) at (0,4) ;
+    \coordinate (B) at (0,-4) ;
+    
+    % media
+    \fill[blue!5!] (-4,0) rectangle (4,4);
+    \fill[blue!15!] (-4,0) rectangle (4,-4);
+    \node[right] at (2,2) {Air};
+    \node[left] at (-2,-2) {Water};
+
+    % vertical axis
+    \draw[dash pattern=on5pt off3pt] (A) -- (B) ;
+    \node[right] at (0,3.5) {Vertical};
+
+    % rays
+    \draw[red,ultra thick,reverse directed] (O) -- (130:4);
+    \draw[blue,directed,ultra thick] (O) -- (-60:3);
+    \node[below left] at (130:2)  {$L_1$};
+    \node[above right] at (-60:1.5)  {$L_2$};
+
+    % horizontals
+    \draw[red,thick,<->]  (130:4)--(130:4 -| 0,0) node [midway,draw,fill=blue!5!] {$x-a$};
+    \draw[blue,thick,<->] (-60:3)--(0,0 |- -60:3) node [midway,draw,fill=blue!15!] {$c-x$};
+
+    % points
+    \draw [red,fill] (130:4) circle [radius=0.075];
+    \draw [blue,fill] (-60:3) circle [radius=0.075];
+    \draw [fill] (0,0) circle [radius=0.075];
+    \node[left] at (130:4)  {$(a,b)$};
+    \node[right] at (-60:3)  {$(c,d)$};
+    \node[above right] at (0,0)  {$(x,y)$};
+
+
+    % angles
+    \draw (0,1) arc (90:130:1);
+    \draw (0,-1.4) arc (270:300:1.4) ;
+    \node[] at (285:1.8)  {$\theta_{2}$};
+    \node[] at (110:1.4)  {$\theta_{1}$};
+\end{tikzpicture}
+
+    \caption{Awesome Image}
+    \label{fig:awesome_image}
+\end{figure}
+
+For a ray of light from inside an area to inside another area. Let the origin be at the interface. Let $(a,b)$ be the source. Let $(c,d)$ be the destination. Let $(x,y)$ be at the interface. Distance traveled is then $L_1=\sqrt {(a-x)^2+(b-y)^2}$ plus $L_2=\sqrt {(x-c)^2+(y-d)^2}$. Inside the upper area let the speed of light be $u$ and inside the lower area $v$. The total time is then \[T=\frac{\sqrt {(a-x)^2+(b-y)^2} } {u}+\frac{\sqrt {(x-c)^2+(y-d)^2} } {v}\]
+The only variable that will affect the total time $T$ is $x$.
+\[\frac {dT} {dx} = \frac{x-a}{u\sqrt {(a-x)^2+(b-y)^2}} - \frac{c-x}{v\sqrt {(x-c)^2+(y-d)^2}}=0  \]
+\[\frac{x-a}{uL_1} = \frac{c-x}{vL_2}  \]
+\[\qq*{Recognize the fractions as sines of angles} \frac{\sin \theta_1}{u} = \frac{\sin \theta_2}{v} \qquad \blacksquare\]
+
+\section*{Problem 1.2}
+
+A functional is defined by a rule that associates a number with a set of functions.
+\[f_1, f_2, \cdots\qquad\underrightarrow{rule}\qquad F[f_1, f_2] \]
+
+A functional derivative is a functional of a functional, i.e.,
+\[\delta G[f][h]=\frac{d}{d\epsilon}G[f+\epsilon h]\Big\vert_{\epsilon=0}\]
+\[\frac{\delta G[f]}{\delta f[y]}=\delta G[f][\delta(x-y)]\]
+ 
+Given
+\[H[f]=\int G(x,y)f(y)dy\]find
+
+\[\frac{\delta H[f]}{\delta f(z)}\]
+\[\delta H[f][h]=\frac{d}{d\epsilon}H[f+\epsilon h]\Big\vert_{\epsilon=0}\]
+\[\delta H[f][h]=\frac{d}{d\epsilon}\int G(x,y)(f(y)+\epsilon h(y))dy\Big\vert_{\epsilon=0}\]
+\[\delta H[f][h]=\int G(x,y)h(y)dy\]
+\[\delta H[f][h]=\int G(x,y)\delta(y-z)dy\]
+\[\frac{\delta H[f]}{\delta f(z)}=G(x,z) \qquad \blacksquare\]
+
+Given
+\[I[f]=\int_{-1}^{1} f(x)dx\]
+
+find
+\[\frac{\delta^2 I[f^3]}{\delta f(x_0)\delta f(x_1)}\]
+\[\delta I[f^3][h]=\frac{d}{d\epsilon}\int_{-1}^{1} (f(x)+\epsilon h(x))^3 dx\Big\vert_{\epsilon=0}\]
+\[\delta I[f^3][h]=\frac{d}{d\epsilon}\int_{-1}^{1} [f(x)^3+3\epsilon f(x)^2 h(x)+3\epsilon^2 f(x)h(x)^2+\epsilon^3 h(x)^3] dx\Big\vert_{\epsilon=0}\]
+\[\delta I[f^3][h]=\int_{-1}^{1} [3f(x)^2 h(x)+6\epsilon f(x)h(x)^2+3\epsilon^2 h(x)^3] dx\Big\vert_{\epsilon=0}\]
+\[\delta I[f^3][h]=\int_{-1}^{1} 3f(x)^2 h(x) dx\]
+Now we do it again
+\[\delta \delta I[f^3][h][k]=\frac{d}{d\epsilon}\int_{-1}^{1} 3(f(x)+\epsilon k(x))^2 h(x) dx\Big\vert_{\epsilon=0}\]
+\[\delta \delta I[f^3][h][k]=\frac{d}{d\epsilon}\int_{-1}^{1} 3[f(x)^2+2\epsilon f(x)k(x)+\epsilon^2 k(x)^2] h(x) dx\Big\vert_{\epsilon=0}\]
+\[\delta \delta I[f^3][h][k]=\int_{-1}^{1} 6f(x)k(x)h(x) dx\]
+\[\frac{\delta \delta I[f^3]}{\delta f(x_0)\delta f(x_1)}=\int_{-1}^{1} 6f(x)\delta(x-x_1)\delta(x-x_0) dx\]
+\[\frac{\delta \delta I[f^3]}{\delta f(x_0)\delta f(x_1)}=6f(x_0)\delta(x_0-x_1)\] where \[-1\leq x_0, x_1\leq 1 \qquad \blacksquare\]
+
+
+
+Given
+\[J[f]=\int \left(\frac{\delta f}{\delta y}\right)^2 dy\]
+find
+\[\frac{\delta J[f]}{\delta f(x)}\]
+\[\delta J[f][h]=\frac{d}{d\epsilon}J[f+\epsilon h]\Big\vert_{\epsilon=0}\]
+\[\delta J[f][h]=\frac{d}{d\epsilon}\int \left(\frac{\delta (f+\epsilon h)}{\delta y}\right)^2 dy\]
+\[\delta J[f][h]=\frac{d}{d\epsilon}\int \left(\frac{\delta f}{\delta y}+\epsilon\frac{\delta h}{\delta y} \right)^2 dy\]
+\[\delta J[f][h]=2\int \frac{\delta f}{\delta y}\frac{\delta h}{\delta y}  dy\]
+Consider
+\[(u'v)'=u''v+u'v'\]
+\[\delta J[f][h]=2\int\frac{\delta}{\delta y}\left(\frac{\delta f}{\delta y}h\right)dy-2\int\frac{\delta^2 f}{\delta y^2}h dy\]
+\[\delta J[f][h]=2\frac{\delta f}{\delta y}h\Big\vert_a^b-2\int\frac{\delta^2 f}{\delta y^2}h dy\]
+\[\delta J[f][h]=2\frac{\delta f}{\delta y}\delta(x-y)\Big\vert_a^b-2\int\frac{\delta^2 f}{\delta y^2}\delta(x-y) dy\]
+\[\frac{\delta J[f]}{\delta f(x)}=-2\frac{\delta^2 f}{\delta x^2}\] where \[a<x<b \qquad \blacksquare\]
+
+\section*{Problem 1.3}
+Given \[G[f]=\int g(y,f)dy\]
+show that \[\frac{\delta G[f]}{\delta f(x)}=\frac{\partial g(x,f)}{\partial f} \]
+\[\delta G[f][h]=\frac{d}{d\epsilon}G[f+\epsilon h]\Big\vert_{\epsilon=0}\]
+\[\delta G[f][h]=\frac{d}{d\epsilon}\int g(y,f+\epsilon h)dy\]
+Say \[g(y,f+\epsilon h)=g(y,f)+\frac{1}{1!}\frac{\partial g(y,f)}{\partial f}(\epsilon h) + \cdots \]
+\[\delta G[f][h]=\int\frac{\partial g(y,f)}{\partial f}hdy\]
+\[\delta G[f][h]=\int\frac{\partial g(y,f)}{\partial f}\delta(x-y)dy\]
+\[\frac{\delta G[f]}{\delta f(x)}=\frac{\partial g(x,f)}{\partial f} \qquad \blacksquare\]
+
+Given \[H[f]=\int g(y,f,f')dy\]
+show that \[\frac{\delta H[f]}{\delta f(x)}=\frac{\partial g}{\partial f} -\frac{d}{dx}\frac{\partial g}{\partial f'} \quad\text{where}\quad f'=\frac{\partial f}{\partial y}\]
+\[\delta H[f][h]=\frac{d}{d\epsilon}H[f+\epsilon h]\Big\vert_{\epsilon=0}\]
+\[\delta H[f][h]=\frac{d}{d\epsilon}\int g(y,f+\epsilon h,(f+\epsilon h)')dy\]
+\[\delta H[f][h]=\frac{d}{d\epsilon}\int g\left(y,f+\epsilon h,f'+\epsilon h'\right)dy\]
+Same trick works \[g(y,f+\epsilon h,f'+\epsilon h')=g(y,f,f')+\frac{1}{1!}\frac{\partial g(y,f,f')}{\partial f}(\epsilon h) + \cdots +\frac{1}{1!}\frac{\partial g(y,f,f')}{\partial f'}(\epsilon h') + \cdots \]
+\[\delta H[f][h]=\int\frac{\partial g(y,f,f')}{\partial f}hdy+\int\frac{\partial g(y,f,f')}{\partial f' }h'dy\] Recall \[(uv)'=u'v+uv'\] and find
+\[\delta H[f][h]=\int\frac{\partial g(y,f,f')}{\partial f}hdy+\frac{\partial g(y,f,f')}{\partial f'}h\Big \vert_a^b-\int\frac{\partial}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}hdy\]
+\[\delta H[f][h]=\frac{\partial g(x,f,f')}{\partial f}+\frac{\partial g(y,f,f')}{\partial f'}\delta(x-y)\Big \vert_a^b-\int\frac{\partial}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}\delta(x-y)dy\]
+\[\delta H[f][h]=\frac{\partial g(x,f,f')}{\partial f}-\frac{d}{dx}\frac{\partial g(x,f,f')}{\partial f'} \qquad \blacksquare\]
+
+Given \[J[f]=\int g(y,f,f',f'')dy\]
+show that \[\frac{\delta J[f]}{\delta f(x)}=\frac{\partial g}{\partial f} -\frac{d}{dx}\frac{\partial g}{\partial f'}+\frac{d^2}{dx^2}\frac{\partial g}{\partial f''} \quad\text{where}\quad f''=\frac{\partial^2 f}{\partial y^2}\]
+As above \[\delta J[f][h]=\frac{d}{d\epsilon}\int g\left(y,f+\epsilon h,f'+\epsilon h',f'+\epsilon h'\right)dy\]
+Focus on \[g(y,f+\epsilon h,f'+\epsilon h',f''+\epsilon h'')= \cdots +\frac{1}{1!}\frac{\partial g(y,f,f',f'')}{\partial f''}(\epsilon h'') + \cdots \]
+\[\delta J[f][h]=\int\frac{\partial g(y,f,f',f'')}{\partial f}hdy+\int\frac{\partial g(y,f,f',f'')}{\partial f'}h'dy+\int\frac{\partial g(y,f,f',f'')}{\partial f''}h''dy\] Recall \[(uv')'=u'v'+uv''\] and find the third term becomes
+\[\frac{\partial g(y,f,f',f'')}{\partial f''}h'\Big \vert_a^b-\int\frac{\partial}{\partial y}\left[\frac{\partial g(y,f,f',f'')}{\partial f''}\right]h'dy\]
+from there find 
+\[\frac{\partial g(y,f,f',f'')}{\partial f''}h'\Big \vert_a^b-\frac{\partial}{\partial y}\left[\frac{\partial g(y,f,f',f'')}{\partial f''}\right]h\Big \vert_a^b+\int\frac{\partial^2}{\partial y^2}\left[\frac{\partial g(y,f,f',f'')}{\partial f''}\right]hdy\]
+hence
+\[\delta J[f][h]=\frac{\partial g(x,f,f',f'')}{\partial f}-\frac{d}{dx}\frac{\partial g(x,f,f',f'')}{\partial f'}+\frac{d^2}{dx^2}\frac{\partial g(x,f,f')}{\partial f''} \qquad \blacksquare\]
+
+
+\section*{Problem 1.4}
+Show that \[\frac{\delta\phi(x)}{\delta\phi(y)}=\delta(x-y)\]
+and \[\frac{\delta\dot{\phi}(t)}{\delta\phi(t_0)}=\frac{d}{dt}\delta(t-t_0)\]
+\[\delta[\phi][h]=\frac{d}{d\epsilon}\left[\phi+\epsilon h\right]=h\]
+\[\frac{\delta\phi(x)}{\delta\phi(y)}=\delta(x-y)\]
+\[\delta[\dot{\phi}][h]=\frac{d}{d\epsilon}\left[\dot{\phi}+\epsilon \dot{h}\right]=\dot{h}\]
+\[\frac{\delta\dot{\phi}(t)}{\delta\phi(t_0)}=\frac{d}{dt}\delta(t-t_0) \qquad \blacksquare\]
+
+
+\section*{Problem 1.5}
+Given \[V=\frac{\mathcal{T}}{2}\int d^3 x(\nabla\psi)^2\]
+and \[T=\frac{\rho}{2}\int d^3 x\left(\frac{\delta \psi}{\delta t}\right)^2\]
+The Lagrangian is \[L=T-V\] and the action is \[S=\int_0^\tau Ldt\]
+
+Apply all this to find
+\[S=\int_0^\tau dt \int d^3 x\left[\frac{\rho}{2}\left(\frac{\delta \psi}{\delta t}\right)^2 - \frac{\mathcal{T}}{2}(\nabla\psi)^2 \right]\]
+
+Invoke the machinery of functional derivatives
+\[\delta S[\psi][h]=\frac{d}{d\epsilon}S[\psi+\epsilon h]\]
+Look at the integrand alone
+\[\frac{\rho}{2}\left(\frac{\delta (\psi+\epsilon h)}{\delta t}\right)^2 - \frac{\mathcal{T}}{2}\left(\nabla(\psi+\epsilon h)\right)^2\]
+Expand
+\[\frac{\rho}{2}\left(\frac{\delta \psi}{\delta t}+\epsilon \frac{\delta h}{\delta t}\right)^2 - \frac{\mathcal{T}}{2}\left(\nabla \psi+\epsilon \nabla h\right)^2\]
+Compute the derivative with respect to $\epsilon$
+\[\rho\frac{\delta \psi}{\delta t}\frac{\delta h}{\delta t} - \mathcal{T}\nabla \psi \nabla h\]
+Use the last part of Problem 1.2 to find
+\[\delta S[\psi][h]=-\rho\frac{\delta^2 \psi}{\delta t^2} + \mathcal{T}\nabla^2 \psi =0\]
+Hence
+\[\nabla^2 \psi=\frac{\rho}{\mathcal{T}}\frac{\delta^2 \psi}{\delta t^2} \qquad \blacksquare\]
+
+\section*{Problem 1.6}
+Given \[Z_0[J]=\exp\left(-\frac{1}{2}\int d^4 x\, d^4 y\, J(x) \Delta(x-y) J(y)\right)\]
+where \[\Delta(x)=\Delta(-x)\]
+Figure the functional derivative
+\[\delta Z[J][h]=\frac{d}{d\epsilon}Z[J+\epsilon h]\]
+Look at the integrand alone
+\[(J(x)+\epsilon h) \Delta(x-y) (J(y)+\epsilon h)\]
+\[(J(x)J(y)+\epsilon h J(x)+\epsilon h J(y)+\epsilon^2 h) \Delta(x-y)\]
+Take the derivative with respect to $\epsilon$
+\[J(x) \Delta(x-y)h + J(y) \Delta(x-y)h\]
+\[\delta Z[J][h]=-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)h +\int d^4 y\,J(y) \Delta(x-y)h\right)\]
+\[\delta Z[J][h]=-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)\delta(x-y) +\int d^4 y\,J(y) \Delta(x-y)\delta(x-y)\right)\]
+Use \[\Delta(x)=\Delta(-x)\]
+\[\delta Z[J][h]=-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)\delta(y-x) +\int d^4 y\,J(y) \Delta(x-y)\delta(x-y)\right)\] change variables
+\[\delta Z[J][h]=-\left(\int d^4 y\,J(y) \Delta(y-x)\delta(x-y)\right)Z_0[J]\]
+\[\frac{\delta Z[J]}{\delta J[z_1]}=-\left[\int d^4 y\, \Delta(z_1-y)J(y)\right]Z_0[J] \qquad \blacksquare\]
+
+
+\end{document}
