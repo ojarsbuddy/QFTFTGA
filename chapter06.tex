@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{amsmath,xfrac}
+\usepackage[left=2cm,top=1cm,right=3cm,bottom=1cm]{geometry}
+
+ 
+\title{Quantum Field Theory Problem Sets}
+\author{John Bortins}
+ 
+\begin{document}
+ 
+\maketitle{}
+ 
+\section*{Problem 6.1}
+ 
+Given \[ \mathcal{L}=\frac{1}{2}(\partial_\mu \phi)^2 - \frac{1}{2} m^2 \phi^2 \] and Euler-LaGrange in 4-vector form 
+\[ \frac{\partial \mathcal{L}}{\partial \phi}-\partial_\mu  \left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)}\right) = 0 \] we get \[-m^2 \phi + \partial_\mu (\partial_\mu \phi)= 0\] hence \[(\partial^2_\mu-m^2) \phi=0\] as required.
+
+The conjugate momentum is \[\pi=\frac{\partial \mathcal{L}}{\partial (\partial_0 \phi)}\] which works out to
+\[\pi=\partial_0 \phi\]
+
+The Hamiltonian is \[\mathcal{H}=\pi \partial_0 \phi - \mathcal{L}\] which works out to
+\[\mathcal{H}=(\partial_0 \phi)^2-\frac{1}{2}(\partial_\mu \phi)^2 + \frac{1}{2} m^2 \phi^2\]
+
+So we might say \[\mathcal{H}=\frac{1}{2}(\dot{\phi}^2-(\nabla  \phi)^2 +  m^2 \phi^2)\]
+\end{document}

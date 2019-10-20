@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,physics,xfrac,nicefrac}
+\usepackage{standalone}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
+
+ 
+\title{Quantum Field Theory Problem Sets}
+\author{John Bortins}
+ 
+\begin{document}
+ 
+\maketitle{}
+ 
+\section*{Problem 8.1} 
+
+\[\qq*{Given the time evolution operator} \hat{U}(t_2,t_1)=\exp[-\text{i}\hat{H}(t_2-t_1)] \]
+ 
+\[\qq*{Property 1:} \hat{U}(t_1,t_1)=e^{-\text{i}\hat{H}(t_1-t_1)}=e^{0}=1\qquad\blacksquare \]
+
+\begin{align*}
+\qq*{Property 2:} \hat{U}(t_3,t_2)\hat{U}(t_2,t_1)&=e^{-\text{i}\hat{H}(t_3-t_2)}e^{-\text{i}\hat{H}(t_2-t_1)}\\
+&=e^{-\text{i}\hat{H}[(t_3-t_2)+(t_2-t_1)]}\\
+&=e^{-\text{i}\hat{H}(t_3-t_1)}=\hat{U}(t_3,t_1)\qquad\blacksquare 
+\end{align*}
+
+\begin{align*}
+\qq*{Property 3:} \text{i}\dv{t_2}\hat{U}(t_2,t_1)&=\text{i}\dv{t_2}e^{-\text{i}\hat{H}(t_2-t_1)}\\
+&=\text{i}e^{-\text{i}\hat{H}(t_2-t_1)}(-\text{i}\hat{H}) \\
+&=\hat{H}e^{-\text{i}\hat{H}(t_2-t_1)}=\hat{H}\hat{U}(t_2,t_1) \qquad\blacksquare 
+\end{align*}
+ 
+
+\[\qq*{Property 4:} \hat{U}(t_1,t_2)=e^{-\text{i}\hat{H}(t_1-t_2)}=e^{-\text{i}\hat{H}(t_2-t_1)(-1)}=\hat{U}^{-1}(t_2,t_1)\qquad\blacksquare \]
+
+\begin{align*}
+\qq*{Property 5:} \hat{U}^{\dagger}(t_2,t_1)\hat{U}(t_2,t_1)&=\qty[e^{-\text{i}\hat{H}(t_2-t_1)}]^{\dagger} e^{-\text{i}\hat{H}(t_2-t_1)}\\
+&=e^{+\text{i}\hat{H}(t_2-t_1)}e^{-\text{i}\hat{H}(t_2-t_1)}=1 \qquad\blacksquare 
+\end{align*}
+ 
+
+\section*{Problem 8.2}
+ 
+\[\qq*{Given} \hat{H}=\sum_k E_k \hat{a}_k^\dagger \hat{a}_k \] 
+\[\qq*{Recall} \qty[a,a^\dagger]=1\]
+\begin{align*}
+\text{i}\hbar\dv{\hat{a}_k^\dagger }{t}&= \qty[\hat{a}_k^\dagger ,\hat{H}]\\
+&=\hat{a}_k^\dagger E_{k}\hat{a}_k^\dagger\hat{a}_k-E_{k}\hat{a}_k^\dagger\hat{a}_k\hat{a}_k^\dagger \\
+&=\hat{a}_k^\dagger E_{k}\qty(\hat{a}_k\hat{a}_k^\dagger-1)-E_{k}\hat{a}_k^\dagger\hat{a}_k\hat{a}_k^\dagger =-E_{k}\hat{a}_k^\dagger 
+\end{align*}
+
+\begin{align*}
+\text{i}\hbar\int\frac{\dd{\hat{a}_k^\dagger }}{\hat{a}_k^\dagger}&=-E_{k}\int\dd{t} \\
+\ln{\hat{a}_k^\dagger(t)}-\ln{\hat{a}_k^\dagger(0)}&=-\frac{E_{k}}{\text{i}\hbar}t \\
+\hat{a}_k^\dagger(t)&=\hat{a}_k^\dagger(0)e^{\nicefrac{\text{i}tE_{k}}{\hbar}}\qquad\blacksquare 
+\end{align*}
+
+\begin{align*}
+\qq*{Similarly} \text{i}\hbar\dv{\hat{a}_k }{t}&= \qty[\hat{a}_k ,\hat{H}]\\
+&=\hat{a}_k E_{k}\hat{a}_k^\dagger\hat{a}_k-E_{k}\hat{a}_k^\dagger\hat{a}_k\hat{a}_k \\
+&=\hat{a}_k E_{k}\hat{a}_k^\dagger\hat{a}_k-E_{k}(\hat{a}_k\hat{a}_k^\dagger-1)\hat{a}_k =E_{k}\hat{a}_k
+\end{align*}
+
+\begin{align*}
+\text{i}\hbar\int\frac{\dd{\hat{a}_k }}{\hat{a}_k}&=E_{k}\int\dd{t} \\
+\ln{\hat{a}_k(t)}-\ln{\hat{a}_k(0)}&=\frac{E_{k}}{\text{i}\hbar}t \\
+\hat{a}_k(t)&=\hat{a}_k(0)e^{\nicefrac{-\text{i}tE_{k}}{\hbar}}\qquad\blacksquare 
+\end{align*}
+
+
+\section*{Problem 8.3}
+
+\[\qq*{Given} \hat{X}= X_{lm}\hat{a}_l^\dagger\hat{a}_m\qq{and}\hat{H}=\sum_k E_k \hat{a}_k^\dagger \hat{a}_k\] 
+\[\qq*{Recall} \qty[a_i,a_j^\dagger]=\delta_{ij}\qq{,}\qty[a_i^\dagger,a_j^\dagger]=0\qq{and}\qty[a_i,a_j]=0\]
+
+\begin{align*}
+\text{i}\hbar\dv{\hat{X} }{t}&= \qty[\hat{X} ,\hat{H}]\\
+&=X_{lm}\hat{a}_l^\dagger\hat{a}_m E_{l}\hat{a}_l^\dagger\hat{a}_l-E_{l}\hat{a}_l^\dagger\hat{a}_l X_{lm}\hat{a}_l^\dagger\hat{a}_m + X_{lm}\hat{a}_l^\dagger\hat{a}_m E_{m}\hat{a}_m^\dagger\hat{a}_m-E_{m}\hat{a}_m^\dagger\hat{a}_m X_{lm}\hat{a}_l^\dagger\hat{a}_m \\
+&=X_{lm}E_{l}\hat{a}_l^\dagger\hat{a}_m \hat{a}_l^\dagger\hat{a}_l-X_{lm}E_{l}\hat{a}_l^\dagger\hat{a}_l \hat{a}_l^\dagger\hat{a}_m + X_{lm}E_{m}\hat{a}_l^\dagger\hat{a}_m \hat{a}_m^\dagger\hat{a}_m-X_{lm}E_{m}\hat{a}_m^\dagger\hat{a}_m \hat{a}_l^\dagger\hat{a}_m \\
+&=X_{lm}E_{l}\hat{a}_l^\dagger\hat{a}_m \qty(\hat{a}_l\hat{a}_l^\dagger-1)-X_{lm}E_{l}\hat{a}_l^\dagger\hat{a}_l \hat{a}_l^\dagger\hat{a}_m + X_{lm}E_{m}\hat{a}_l^\dagger\hat{a}_m \hat{a}_m^\dagger\hat{a}_m-X_{lm}E_{m}\hat{a}_m^\dagger\hat{a}_m \hat{a}_l^\dagger\hat{a}_m \\
+&=-X_{lm}E_{l}\hat{a}_l^\dagger\hat{a}_m+X_{lm}E_{l}\hat{a}_l^\dagger\hat{a}_m \hat{a}_l\hat{a}_l^\dagger-X_{lm}E_{l}\hat{a}_l^\dagger\hat{a}_l \hat{a}_l^\dagger\hat{a}_m + X_{lm}E_{m}\hat{a}_l^\dagger\hat{a}_m \hat{a}_m^\dagger\hat{a}_m-X_{lm}E_{m}\hat{a}_m^\dagger\hat{a}_m \hat{a}_l^\dagger\hat{a}_m \\
+&=-X_{lm}E_{l}\hat{a}_l^\dagger\hat{a}_m + X_{lm}E_{m}\hat{a}_l^\dagger\hat{a}_m \hat{a}_m^\dagger\hat{a}_m-X_{lm}E_{m}\hat{a}_m^\dagger\hat{a}_m \hat{a}_l^\dagger\hat{a}_m \\
+&=-X_{lm}E_{l}\hat{a}_l^\dagger\hat{a}_m + X_{lm}E_{m}\hat{a}_l^\dagger\hat{a}_m \hat{a}_m^\dagger\hat{a}_m-X_{lm}E_{m}(\hat{a}_m\hat{a}_m^\dagger-1) \hat{a}_l^\dagger\hat{a}_m \\
+&=-X_{lm}E_{l}\hat{a}_l^\dagger\hat{a}_m + X_{lm}E_{m}\hat{a}_l^\dagger\hat{a}_m \hat{a}_m^\dagger\hat{a}_m-X_{lm}E_{m}\hat{a}_m \hat{a}_m^\dagger \hat{a}_l^\dagger \hat{a}_m+ X_{lm}E_{m}\hat{a}_l^\dagger\hat{a}_m \\
+&=-E_{l}\hat{X}+E_{m}\hat{X}
+\end{align*}
+
+\begin{align*}
+\text{i}\hbar\int\frac{\dd{\hat{X}}}{\hat{X}}&=\qty(-E_{l}+E_{m})\int\dd{t} \\
+\ln{\hat{X}(t)}-\ln{\hat{X}(0)}&=\frac{-\qty(E_{l}-E_{m})}{\text{i}\hbar}t \\
+\hat{X}(t)&=\hat{X}(0)e^{\nicefrac{\text{i}t\qty(E_{l}-E_{m})}{\hbar}}\qquad\blacksquare 
+\end{align*}
+
+
+\section*{Problem 8.4}
+
+\[\qq*{Given} \hat{H}=\omega \hat{S}_y \] 
+
+Recall XYZZY: $a_x=a_y a_z - a_z a_y$.
+
+\begin{align*}
+\text{i}\hbar\dv{\hat{S}_{z} }{t}&= \qty[\hat{S}_{z} ,\omega \hat{S}_y]\\
+&=\hat{S}_{z}\omega \hat{S}_y-\omega \hat{S}_y \hat{S}_{z}\\
+&=-\omega\qty(\hat{S}_y \hat{S}_{z}-\hat{S}_{z} \hat{S}_y)\\
+&=-\text{i}\hbar\omega\hat{S}_x\\
+\dv{\hat{S}_{z} }{t}&=-\omega\hat{S}_x\qquad\blacksquare 
+\end{align*}
+
+\begin{align*}
+\text{i}\hbar\dv{\hat{S}_{x} }{t}&= \qty[\hat{S}_{x} ,\omega \hat{S}_y]\\
+&=\hat{S}_{x}\omega \hat{S}_y-\omega \hat{S}_y \hat{S}_{x}\\
+&=\omega\qty(\hat{S}_{x} \hat{S}_y-\hat{S}_y \hat{S}_{x})\\
+&=\text{i}\hbar\omega\hat{S}_z\\
+\dv{\hat{S}_{x} }{t}&=\omega\hat{S}_z\qquad\blacksquare 
+\end{align*}
+
+
+\begin{align*}
+\qq*{Consider} \dv{\hat{S}_{x} }{t}&= \omega\hat{S}_z\\ 
+\dv[2]{\hat{S}_{x} }{t}&= \omega\dv{\hat{S}_z}{t}\\ 
+&= -\omega^2 \hat{S}_x\\
+\dv[2]{\hat{S}_{x} }{t}+\omega^2 \hat{S}_x&=0\\
+\qq*{Similarly}\dv[2]{\hat{S}_{z} }{t}+\omega^2 \hat{S}_z&=0
+\end{align*}
+That is to say, simple harmonic motion.$\qquad\blacksquare $ 
+
+
+
+\end{document}

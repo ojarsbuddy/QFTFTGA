@@ -3,7 +3,7 @@
 \usepackage{amsmath,amssymb,physics,xfrac,nicefrac}
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes,positioning}
-\usetikzlibrary{decorations.markings} what-happened
+\usetikzlibrary{decorations.markings}
 \tikzstyle arrowstyle=[scale=1]
 \tikzstyle directed=[postaction={decorate,decoration={markings,
     mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
@@ -79,7 +79,11 @@ A functional is defined by a rule that associates a number with a set of functio
 
 A functional derivative is a functional of a functional, i.e.,
 \[\delta G[f][h]=\frac{d}{d\epsilon}G[f+\epsilon h]\Big\vert_{\epsilon=0}\]
-\[\frac{\delta G[f]}{\delta f[y]}=\delta G[f][\delta(x-y)]\]
+\[\frac{\delta G[f]}{\delta f[y]}=\delta G[f][\delta(x-y)]=\frac{d}{d\epsilon}G[f+\epsilon\delta(x-y)]\Big\vert_{\epsilon=0}\]
+
+The calculation of a functional derivative may be found from
+\[\frac{\delta F[f(x)]}{\delta f(x_1)=}
+    \]
  
 Given
 \[H[f]=\int G(x,y)f(y)dy\]find

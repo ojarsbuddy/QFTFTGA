@@ -1,0 +1,93 @@
+\documentclass{amsart}
+\usepackage{pstricks}
+\usepackage{amsmath,xfrac,amssymb}
+\usepackage{physics}
+
+ 
+\title{Quantum Field Theory Problem Sets}
+\author{John Bortins}
+ 
+\begin{document}
+ 
+\maketitle{}
+ 
+\section*{Problem 2.1}
+
+\[\text{The lowering operator aka annihilation operator}\qquad\hat{a}  = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)  \]
+\[\text{The raising operator aka creation operator}\qquad\hat{a}^\dagger  = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)  \]
+\[\text{Recall the commutator}\qquad[\hat{x},\hat{p}]  = \hat{x}\hat{p}-\hat{p}\hat{x}=i\hbar \]
+\[\text{Clearly}\qquad [\hat{a},\hat{a}]  = \hat{a}\hat{a}-\hat{a}\hat{a}=0 \qquad \blacksquare \]
+\[\text{Clearly}\qquad [\hat{a}^\dagger,\hat{a}^\dagger]  = \hat{a}^\dagger\hat{a}^\dagger-\hat{a}^\dagger\hat{a}^\dagger=0 \qquad \blacksquare \]
+\[ [\hat{a},\hat{a}^\dagger]  = \hat{a}\hat{a}^\dagger-\hat{a}^\dagger\hat{a}\]
+\[ [\hat{a},\hat{a}^\dagger]  = \frac{m\omega}{2\hbar}\left[\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)-\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\right]\]
+\[ [\hat{a},\hat{a}^\dagger]  = \frac{m\omega}{2\hbar}\left[\left(\hat{x}^2 + \frac{i}{m\omega}(\hat{p}\hat{x}-\hat{x}\hat{p}) + \frac{1}{m^2\omega^2}\hat{p}^2\right)-\left(\hat{x}^2 + \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) + \frac{1}{m^2\omega^2}\hat{p}^2\right)\right]\]
+\[ [\hat{a},\hat{a}^\dagger]  = \frac{i}{2\hbar}\left[ (\hat{p}\hat{x}-\hat{x}\hat{p}) - (\hat{x}\hat{p}-\hat{p}\hat{x})\right]= \frac{i}{2\hbar}\left[-i\hbar-i\hbar\right]\]
+\[ [\hat{a},\hat{a}^\dagger]  = 1 \qquad\blacksquare\]
+\[\hat{H}=\frac{\hat{p}^2}{2m}+\frac{1}{2}m\omega^2\hat{x}^2=\frac{1}{2}m\omega^2\left(\hat{x}^2+\frac{\hat{p}^2}{m^2\omega^2}\right) \]
+\[\text{Consider}\qquad \hat{a}^\dagger \hat{a} =\frac{m\omega}{2\hbar}\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)  \]
+\[\hat{a}^\dagger \hat{a} =\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) + \frac{1}{m^2\omega^2}\hat{p}^2\right)  \]
+\[\hat{a}^\dagger \hat{a} =\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right) + \frac{i}{2\hbar}(\hat{x}\hat{p}-\hat{p}\hat{x}) \]
+\[\hat{a}^\dagger \hat{a} =\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right) - \frac{1}{2} \]
+\[\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)=\frac{m\omega^2}{2}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right)   \]
+\[\hat{H}=\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)\qquad\blacksquare \]
+
+\section*{Problem 2.2}
+\[\text{Given}\qquad\hat{H}=\frac{\hat{p}^2}{2m}+\frac{1}{2}m\omega^2\hat{x}^2+\lambda\hat{x}^4\qquad\text{where}\qquad \lambda\ll 1 \]
+\[\text{Clearly}\qquad\hat{H}=\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)+\lambda\hat{x}^4\]
+
+\[\text{Recall}\qquad\hat{x}=\sqrt{\frac{\hbar}{2m\omega}}(\hat{a}+\hat{a}^\dagger)   \]
+\[\hat{H}=\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)+\lambda\left(\frac{\hbar}{2m\omega}\right)^2(\hat{a}+\hat{a}^\dagger)^4\]
+
+\[\text{Recall}\qquad\hat{a}\ket{n} =\sqrt{n}\ket{n-1} \qq{and} \hat{a}^\dagger\ket{n} =\sqrt{n+1}\ket{n+1}  \]
+\[\text{Hence}\qquad\hat{a}^\dagger\hat{a}\ket{n} =\hat{a}^\dagger\sqrt{n}\ket{n-1}=\sqrt{n}\sqrt{n}\ket{n}=n\ket{n} \]
+
+Expanding $(\hat{a}+\hat{a}^\dagger)^4$ yields 6 terms of interest
+
+\[\hat{a}\hat{a}\hat{a}^\dagger\hat{a}^\dagger+\hat{a}\hat{a}^\dagger\hat{a}\hat{a}^\dagger+\hat{a}^\dagger\hat{a}\hat{a}\hat{a}^\dagger+\hat{a}\hat{a}^\dagger\hat{a}^\dagger\hat{a}+\hat{a}^\dagger\hat{a}\hat{a}^\dagger\hat{a}+\hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a}\]
+
+Apply to $\ket{n}$
+\begin{multline*}
+\hat{a}\hat{a}\hat{a}^\dagger\sqrt{n+1}\ket{n+1}+\hat{a}\hat{a}^\dagger\hat{a}\sqrt{n+1}\ket{n+1}+\hat{a}^\dagger\hat{a}\hat{a}\sqrt{n+1}\ket{n+1}\\+\hat{a}\hat{a}^\dagger\hat{a}^\dagger\sqrt{n}\ket{n-1}+\hat{a}^\dagger\hat{a}\hat{a}^\dagger\sqrt{n}\ket{n-1}+\hat{a}^\dagger\hat{a}^\dagger\hat{a}\sqrt{n}\ket{n-1}
+\end{multline*}
+\begin{multline*}
+\hat{a}\hat{a}\sqrt{n+2}\sqrt{n+1}\ket{n+2}+\hat{a}\hat{a}^\dagger\sqrt{n+1}\sqrt{n+1}\ket{n}+\hat{a}^\dagger\hat{a}\sqrt{n+1}\sqrt{n+1}\ket{n}\\+\hat{a}\hat{a}^\dagger\sqrt{n}\sqrt{n}\ket{n}+\hat{a}^\dagger\hat{a}\sqrt{n}\sqrt{n}\ket{n}+\hat{a}^\dagger\hat{a}^\dagger\sqrt{n-1}\sqrt{n}\ket{n-2}
+\end{multline*}
+\begin{multline*}
+\hat{a}\sqrt{n+2}\sqrt{n+2}\sqrt{n+1}\ket{n+1}+\hat{a}\sqrt{n+1}(n+1)\ket{n+1}+\hat{a}^\dagger\sqrt{n}(n+1)\ket{n-1}\\+\hat{a}(\sqrt{n+1})n\ket{n+1}+\hat{a}^\dagger\sqrt{n}\sqrt{n}\sqrt{n}\ket{n-1}+\hat{a}^\dagger\sqrt{n-1}\sqrt{n-1}\sqrt{n}\ket{n-1}
+\end{multline*}
+
+\begin{multline*}
+\sqrt{n+1}\sqrt{n+2}\sqrt{n+2}\sqrt{n+1}\ket{n}+\sqrt{n+1}\sqrt{n+1}(n+1)\ket{n}+\sqrt{n}\sqrt{n}(n+1)\ket{n}\\+\sqrt{n+1}\sqrt{n+1}\sqrt{n}\sqrt{n}\ket{n}+\sqrt{n}\sqrt{n}\sqrt{n}\sqrt{n}\ket{n}+\sqrt{n}\sqrt{n-1}\sqrt{n-1}\sqrt{n}\ket{n}
+\end{multline*}
+
+\[[(n+1)(n+2)+(n+1)^2+n(n+1)+n(n+1)+n^2+n(n-1)]\ket{n}\]
+\[\text{which is}\qquad(6n^2+6n+3)\ket{n}\]
+
+\[\hat{H}\ket{n}=\left[\left(n+\frac{1}{2}\right)\hbar\omega+\frac{3\lambda}{4}\left(\frac{\hbar}{m\omega}\right)^2(2n^2+2n+1)\right]\ket{n}\]
+
+\[E_n=\left(n+\frac{1}{2}\right)\hbar\omega+\frac{3\lambda}{4}\left(\frac{\hbar}{m\omega}\right)^2(2n^2+2n+1)\qquad\blacksquare\]
+
+\section*{Problem 2.3}
+\[\text{Given}\qquad x_j=\frac{1}{\sqrt{N}}\sum_k \tilde{x}_k e^{ikja}\qq{and} \hat{x}_k=\sqrt{\frac{\hbar}{2m\omega_k}}\left(\hat{a}_k+\hat{a}^\dagger_{-k}\right)\]
+\[x_j=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\left(\hat{a}_k+\hat{a}^\dagger_{-k}\right) e^{ikja}\]
+\[x_j=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}_k e^{ikja}+\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}^\dagger_{-k} e^{ikja}\]
+Reindex the second term
+\[x_j=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}_k e^{ikja}+\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_{k}}}\hat{a}^\dagger_{k} e^{-ikja}\]
+\[x_j=\frac{1}{\sqrt{N}}\sqrt{\frac{\hbar}{m}}\sum_k \frac{1}{\sqrt{2\omega_k}}\left(\hat{a}_k e^{ikja}+\hat{a}^\dagger_{k} e^{-ikja}\right)\qquad\blacksquare\]
+
+
+\section*{Problem 2.4}
+\[\text{Recall}\qquad\hat{a}  = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right) \qquad\hat{a}^\dagger  = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\]
+\[\text{Given}\qquad\hat{a}\ket{0}=0\qquad\bra{x}p\ket{\psi} = -i\hbar \dv{x}\bra{x}\ket{\psi}\]
+\[\text{Consider}\qquad\bra{x}\hat{a}\ket{0}= \bra{x}\sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\ket{0}\]
+\[0= \bra{x}\hat{x}\ket{0} + \bra{x}\frac{i}{m\omega}\hat{p}\ket{0}=x\bra{x}\ket{0}+\frac{\hbar}{m\omega}\dv{x}\bra{x}\ket{0}=\left(x+\frac{\hbar}{m\omega}\dv{x}\right)\bra{x}\ket{0}\]
+\[\text{Hence}\qquad\dv{x}\bra{x}\ket{0}=-\frac{m\omega}{\hbar}x\bra{x}\ket{0}\]
+\[\text{Might look more familiar as}\qquad\frac{\dd{y}}{y}=-\frac{m\omega}{\hbar}x\dd{x}\qq{where}y=\bra{x}\ket{0}\]
+\[\bra{x}\ket{0}=Ae^{-\frac{m\omega}{2\hbar}x^2}\]
+\[\abs{\bra{x}\ket{0}}^2=A^2\int e^{-\frac{m\omega}{2\hbar}x^2}\dd{x}=1\]
+\[1=A^2\sqrt{\frac{\pi\hbar}{m\omega}}\]
+\[A=\sqrt[\uproot{2}4]{\frac{m\omega}{\pi\hbar}}\]
+\[\bra{x}\ket{0}=\sqrt[\uproot{2}4]{\frac{m\omega}{\pi\hbar}}e^{-\frac{m\omega}{2\hbar}x^2}\qquad\blacksquare\]
+
+
+\end{document}

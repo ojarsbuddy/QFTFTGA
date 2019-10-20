@@ -1,0 +1,5 @@
+echo Process ./chapter03-fig1.
+latex -output-directory=. -interaction=batchmode ./chapter03-fig1.tex
+dvips -o ./chapter03-fig1.ps ./chapter03-fig1
+ps2pdf ./chapter03-fig1.ps ./chapter03-fig1.pdf
+del .\chapter03-fig1.aux .\chapter03-fig1.dvi .\chapter03-fig1.ps

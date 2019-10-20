@@ -1,0 +1,41 @@
+\documentclass{amsart}
+\usepackage{graphicx,float}
+\usepackage{amsmath,xfrac,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{decorations.markings}
+
+\tikzstyle arrowstyle=[scale=1]
+\tikzstyle directed=[postaction={decorate,decoration={markings,
+    mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+\tikzstyle reverse directed=[postaction={decorate,decoration={markings,
+    mark=at position .65 with {\arrowreversed[arrowstyle]{stealth};}}}]
+ 
+\title{Quantum Field Theory Problem Sets}
+\author{John Bortins}
+ 
+\begin{document}
+ 
+\maketitle{}
+ 
+
+
+\section*{Problem 1.6}
+Given \[Z_0[J]=\exp\left(-\frac{1}{2}\int d^4 x\, d^4 y\, J(x) \Delta(x-y) J(y)\right)\]
+where \[\Delta(x)=\Delta(-x)\]
+Figure the functional derivative
+\[\delta Z[J][h]=\frac{d}{d\epsilon}Z[J+\epsilon h]\]
+Look at the integrand alone
+\[(J(x)+\epsilon h) \Delta(x-y) (J(y)+\epsilon h)\]
+\[(J(x)J(y)+\epsilon h J(x)+\epsilon h J(y)+\epsilon^2 h) \Delta(x-y)\]
+Take the derivative with respect to $\epsilon$
+\[J(x) \Delta(x-y)h + J(y) \Delta(x-y)h\]
+\[\delta Z[J][h]=-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)h +\int d^4 y\,J(y) \Delta(x-y)h\right)\]
+\[\delta Z[J][h]=-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)\delta(x-y) +\int d^4 y\,J(y) \Delta(x-y)\delta(x-y)\right)\]
+Use \[\Delta(x)=\Delta(-x)\]
+\[\delta Z[J][h]=-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)\delta(y-x) +\int d^4 y\,J(y) \Delta(x-y)\delta(x-y)\right)\] change variables
+\[\delta Z[J][h]=-\left(\int d^4 y\,J(y) \Delta(y-x)\delta(x-y)\right)Z_0[J]\]
+\[\frac{\delta Z[J]}{\delta J[z_1]}=-\left[\int d^4 y\, \Delta(z_1-y)J(y)\right]Z_0[J] \qquad \blacksquare\]
+
+
+\end{document}

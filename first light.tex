@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{amsmath,xfrac}
+
+ 
+\title{Quantum Field Theory Problem Sets}
+\author{John Bortins}
+ 
+\begin{document}
+ 
+\maketitle{}
+ 
+\section*{Problem 4.1}
+ 
+Given
+
+\[[A,B]_\zeta=AB-\zeta BA\]
+\[[\psi(x),\psi^\dagger (y)]_\zeta=\delta^{(3)}(x-y)\]
+\[[\psi(x),\psi(y)]_\zeta=0\]
+Consider \[p(x)p(y)=\psi^\dagger (x)\boldsymbol{\psi(x)\psi^\dagger (y)}\psi(y)\]
+	\[\boldsymbol{\psi(x)\psi^\dagger (y)}=\delta^{(3)}(x-y)+\zeta\psi^\dagger (y)\psi(x)\]
+\[\psi^\dagger (x)\psi(x)\psi^\dagger (y)\psi(y)=\psi^\dagger (x)\delta^{(3)}(x-y)\psi(y)+\psi^\dagger (x)\zeta\psi^\dagger (y)\boldsymbol{\psi(x)\psi(y)}\]
+\[\boldsymbol{\psi(x)\psi(y)}=\zeta\psi(y)\psi(x)\]
+\[\psi^\dagger (x)\psi(x)\psi^\dagger (y)\psi(y)=\psi^\dagger (x)\delta^{(3)}(x-y)\psi(y)+\zeta^2\psi^\dagger (x)\psi^\dagger (y)\psi(y)\psi(x)\]
+\[p(x)p(y)=\psi^\dagger (x)\delta^{(3)}(x-y)\psi(y)+\psi^\dagger (x)\psi^\dagger (y)\psi(y)\psi(x)\]
+where $\zeta^2=1$
+now wave our hands as in the book
+
+\section*{Problem 4.2}
+
+Given \[\rho_1(x-y)=\langle \psi^\dagger (x)\psi(y)\rangle\]
+\[\psi^\dagger (x)=\frac{1}{\sqrt{\mathcal{V}}}\sum_q a^\dagger_q e^{-iq\cdot x}\]
+\[\psi(y)=\frac{1}{\sqrt{\mathcal{V}}}\sum_p a_p e^{ip\cdot y}\]
+\[\rho_1(x-y)=\frac{1}{\mathcal{V}} \left\langle \left( \sum_q a^\dagger_q e^{-iq\cdot x}
+\right)\left(\sum_p a_p e^{ip\cdot y}\right)\right\rangle\]
+\[\rho_1(x-y)=\frac{1}{\mathcal{V}} \left\langle \sum_{pq} a^\dagger_q a_p e^{-i(q\cdot x-p\cdot y)}\right\rangle\]
+\[\rho_1(x-y)=\frac{1}{\mathcal{V}} \sum_{pq} e^{-i(q\cdot x-p\cdot y)} \left\langle a^\dagger_q a_p \right\rangle\]
+
+\section*{Problem 4.3}
+
+Consider
+\[\begin{pmatrix}
+  U & -t & t & 0 \\
+  -t & 0 & 0 & -t \\
+  t & 0 & 0 & t \\
+  0 & -t & t & U
+ \end{pmatrix}\]
+ which has the characteristic polynomial
+\[4 t^2 U \lambda - 4 t^2 \lambda^2 + U^2 \lambda^2 - 2 U \lambda^3 + \lambda^4 =0\]
+and factors to $\lambda (U - \lambda) (4 t^2 + U \lambda - \lambda^2)=0$.
+Eigenvalues are \[\lambda \in \left\{0,U,\frac{U}{2}\left(1-\sqrt{1+16\frac{t^2}{U^2}}\right),\frac{U}{2}\left(1+\sqrt{1+16\frac{t^2}{U^2}}\right)\right\}\]
+The corresponding eigenvectors are 
+\[\begin{matrix}
+(0,1,1,0)\\
+(-1,0,0,1)\\
+\left(1,\frac{U+\sqrt{U^2+16t^2}}{4t},-\frac{U+\sqrt{U^2+16t^2}}{4t},1\right)\\
+\left(1,\frac{U-\sqrt{U^2+16t^2}}{4t},-\frac{U-\sqrt{U^2+16t^2}}{4t},1\right)
+\end{matrix}\]
+For $t=0$ eigenvalues will be $\lambda \in \left\{0,U\right\}$.
+For $\frac{t}{U}\ll 1$
+eigenvalues are approximately\[\lambda \in \left\{0,U,-\frac{4t^2}{U},U+\frac{4t^2}{U}\right\}\]
+
+
+\end{document}

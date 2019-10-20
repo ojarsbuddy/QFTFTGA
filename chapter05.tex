@@ -1,0 +1,310 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,physics,xfrac}
+\usepackage{standalone}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
+
+ 
+\title{Quantum Field Theory Problem Sets}
+\author{John Bortins}
+ 
+\begin{document}
+ 
+\maketitle{}
+ 
+\section*{Problem 5.1}
+
+
+
+\[ \text{Given the Lagrangian depends on time}\qquad \dv{L}{t}=\pdv{L}{t}+\pdv{L}{x_{i}}\dot{x_{i}}+\pdv{L}{\dot{x_{i}}}\ddot{x_{i}} \]
+\[ \text{Apply the Euler Lagrange equation}\qquad \pdv{L}{q}-\dv{t} \pdv{L}{\dot{q}}=0 \]
+\[ \dv{L}{t}=\pdv{L}{t}+\dv{t} \pdv{L}{\dot{x_{i}}}\dot{x_{i}}+\pdv{L}{\dot{x_{i}}}\ddot{x_{i}}=\pdv{L}{t}+\dv{t} \pdv{L}{\dot{x_{i}}}\dot{x_{i}}+\pdv{L}{\dot{x_{i}}}\dv{t}\dot{x_{i}} \] 
+\[ \text{Hence}\qquad \dv{L}{t}=\pdv{L}{t}+\dv{t} \qty(\pdv{L}{\dot{x_{i}}}\dot{x_{i}}) \]
+\[  \pdv{L}{t}=\dv{L}{t}-\dv{t} \qty(\pdv{L}{\dot{x_{i}}}\dot{x_{i}})=-\dv{t} \qty(\pdv{L}{\dot{x_{i}}}\dot{x_{i}}-L) \]
+\[ p_{i}=\pdv{L}{\dot{q}_{i}}\qquad\text{and}\qquad H=p_{i}\dot{q}_{i}-L \implies \pdv{L}{t}=-\dv{H}{t} \qquad\blacksquare \]
+
+\section*{Problem 5.2}
+ 
+
+\[ \text{Given}\qquad\{A,B\}_{PB} = \frac{\partial A}{\partial q_{i}} \frac{\partial B}{\partial p_{i}} - \frac{\partial A}{\partial p_{i}} \frac{\partial B}{\partial q_{i}} \qquad\blacksquare \]  
+
+\[\text{Apply commutativity:}\qquad \frac{\partial A}{\partial q_{i}} \frac{\partial B}{\partial p_{i}} - \frac{\partial A}{\partial p_{i}} \frac{\partial B}{\partial q_{i}}=-\pdv{B}{q_{i}}\pdv{A}{p_{i}}+\pdv{B}{p_{i}}\pdv{A}{q_{i}}\]
+\[ \text{Therefore}\qquad\{A,B\}_{PB} = -\{B,A\}_{PB} \qquad\blacksquare \]
+
+
+
+
+\[ \left\{ \{A,B\}_{PB},C \right\}_{PB} =  \frac{\partial \{A,B\}_{PB}}{\partial q_{i}} \frac{\partial C}{\partial p_{i}} - \frac{\partial \{A,B\}_{PB}}{\partial p_{i}} \frac{\partial C}{\partial q_{i}} \]
+
+\[  =  \frac{\partial }{\partial q_{i}}\left(\frac{\partial A}{\partial q_{i}} \frac{\partial B}{\partial p_{i}} - \frac{\partial A}{\partial p_{i}} \frac{\partial B}{\partial q_{i}}\right) \frac{\partial C}{\partial p_{i}} - \frac{\partial }{\partial p_{i}}\left( \frac{\partial A}{\partial q_{i}} \frac{\partial B}{\partial p_{i}} - \frac{\partial A}{\partial p_{i}} \frac{\partial B}{\partial q_{i}} \right) \frac{\partial C}{\partial q_{i}} \]
+
+\[  =  \left(\frac{\partial }{\partial q_{i}}\frac{\partial A}{\partial q_{i}} \frac{\partial B}{\partial p_{i}}
+						+\frac{\partial A}{\partial q_{i}} \frac{\partial }{\partial q_{i}}\frac{\partial B}{\partial p_{i}} 
+						-\frac{\partial }{\partial q_{i}}\frac{\partial A}{\partial p_{i}} \frac{\partial B}{\partial q_{i}}
+						-\frac{\partial A}{\partial p_{i}} \frac{\partial }{\partial q_{i}}\frac{\partial B}{\partial q_{i}}\right) \frac{\partial C}{\partial p_{i}}  
+		-	\left(\frac{\partial }{\partial p_{i}}\frac{\partial A}{\partial q_{i}} \frac{\partial B}{\partial p_{i}}
+						+\frac{\partial A}{\partial q_{i}} \frac{\partial }{\partial p_{i}}\frac{\partial B}{\partial p_{i}} 
+						-\frac{\partial }{\partial p_{i}}\frac{\partial A}{\partial p_{i}} \frac{\partial B}{\partial q_{i}}
+						-\frac{\partial A}{\partial p_{i}} \frac{\partial }{\partial p_{i}}\frac{\partial B}{\partial q_{i}}\right) \frac{\partial C}{\partial q_{i}} \]
+
+
+\[  =  \left(\frac{\partial^2 A}{\partial q_{i}^2}				\frac{\partial B}{\partial p_{i}}
+						+\frac{\partial A}{\partial q_{i}}						\frac{\partial^2 B}{\partial q_{i}\partial p_{i}} 
+						-\frac{\partial^2 A}{\partial q_{i}\partial p_{i}}\frac{\partial B}{\partial q_{i}}
+						-\frac{\partial A}{\partial p_{i}}						\frac{\partial^2 B}{\partial q_{i}^2}\right) \frac{\partial C}{\partial p_{i}}  
+		-	\left(\frac{\partial^2 A}{\partial p_{i}\partial q_{i}} \frac{\partial B}{\partial p_{i}}
+						+\frac{\partial A}{\partial q_{i}}						\frac{\partial^2 B}{\partial p_{i}^2} 
+						-\frac{\partial^2 A}{\partial p_{i}^2}				\frac{\partial B}{\partial q_{i}}
+						-\frac{\partial A}{\partial p_{i}} 						\frac{\partial^2 B}{\partial p_{i}\partial q_{i}}\right) \frac{\partial C}{\partial q_{i}} \] 
+						Hence
+\begin{align*} \left\{ \{A,B\}_{PB},C \right\}_{PB}    &= \boxed{\frac{\partial^2 A}{\partial q_{i}^2}				\frac{\partial B}{\partial p_{i}}\frac{\partial C}{\partial p_{i}}}
+						+\frac{\partial A}{\partial q_{i}}						\frac{\partial^2 B}{\partial q_{i}\partial p_{i}} \frac{\partial C}{\partial p_{i}}
+						-\frac{\partial^2 A}{\partial q_{i}\partial p_{i}}\frac{\partial B}{\partial q_{i}}\frac{\partial C}{\partial p_{i}}
+						-\boxed{\frac{\partial A}{\partial p_{i}}						\frac{\partial^2 B}{\partial q_{i}^2} \frac{\partial C}{\partial p_{i}}}  \\
+		&-	\frac{\partial^2 A}{\partial p_{i}\partial q_{i}} \frac{\partial B}{\partial p_{i}}\frac{\partial C}{\partial q_{i}}
+						-\boxed{\frac{\partial A}{\partial q_{i}}						\frac{\partial^2 B}{\partial p_{i}^2} \frac{\partial C}{\partial q_{i}}}
+						+\boxed{\frac{\partial^2 A}{\partial p_{i}^2}				\frac{\partial B}{\partial q_{i}}\frac{\partial C}{\partial q_{i}}}
+						+\frac{\partial A}{\partial p_{i}} 						\frac{\partial^2 B}{\partial p_{i}\partial q_{i}} \frac{\partial C}{\partial q_{i}} \end{align*}
+\begin{align*} \left\{ \{C,A\}_{PB},B \right\}_{PB}    &=  \boxed{\frac{\partial^2 C}{\partial q_{i}^2}				\frac{\partial A}{\partial p_{i}}\frac{\partial B}{\partial p_{i}}}
+						+\frac{\partial C}{\partial q_{i}}						\frac{\partial^2 A}{\partial q_{i}\partial p_{i}} \frac{\partial B}{\partial p_{i}}
+						-\frac{\partial^2 C}{\partial q_{i}\partial p_{i}}\frac{\partial A}{\partial q_{i}}\frac{\partial B}{\partial p_{i}}
+						-\boxed{\frac{\partial C}{\partial p_{i}}						\frac{\partial^2 A}{\partial q_{i}^2} \frac{\partial B}{\partial p_{i}} } \\
+		&-	\frac{\partial^2 C}{\partial p_{i}\partial q_{i}} \frac{\partial A}{\partial p_{i}}\frac{\partial B}{\partial q_{i}}
+						-\boxed{\frac{\partial C}{\partial q_{i}}						\frac{\partial^2 A}{\partial p_{i}^2} \frac{\partial B}{\partial q_{i}}}
+						+\boxed{\frac{\partial^2 C}{\partial p_{i}^2}				\frac{\partial A}{\partial q_{i}}\frac{\partial B}{\partial q_{i}}}
+						+\frac{\partial C}{\partial p_{i}} 						\frac{\partial^2 A}{\partial p_{i}\partial q_{i}} \frac{\partial B}{\partial q_{i}} \end{align*}
+\begin{align*} \left\{ \{B,C\}_{PB},A \right\}_{PB}  
+  &=  \boxed{\frac{\partial^2 B}{\partial q_{i}^2}				\frac{\partial C}{\partial p_{i}}\frac{\partial A}{\partial p_{i}}}
+						+\frac{\partial B}{\partial q_{i}}						\frac{\partial^2 C}{\partial q_{i}\partial p_{i}} \frac{\partial A}{\partial p_{i}}
+						-\frac{\partial^2 B}{\partial q_{i}\partial p_{i}}\frac{\partial C}{\partial q_{i}}\frac{\partial A}{\partial p_{i}}
+						-\boxed{\frac{\partial B}{\partial p_{i}}						\frac{\partial^2 C}{\partial q_{i}^2} \frac{\partial A}{\partial p_{i}} } \\
+		& -	\frac{\partial^2 B}{\partial p_{i}\partial q_{i}} \frac{\partial C}{\partial p_{i}}\frac{\partial A}{\partial q_{i}}
+						-\boxed{\frac{\partial B}{\partial q_{i}}						\frac{\partial^2 C}{\partial p_{i}^2} \frac{\partial A}{\partial q_{i}}}
+						+\boxed{\frac{\partial^2 B}{\partial p_{i}^2}				\frac{\partial C}{\partial q_{i}}\frac{\partial A}{\partial q_{i}}}
+						+\frac{\partial B}{\partial p_{i}} 						\frac{\partial^2 C}{\partial p_{i}\partial q_{i}} \frac{\partial A}{\partial q_{i}} \end{align*}
+
+Because the boxed terms cancel and because the unboxed terms combine mixed partials								
+
+\[ \qty{ \qty{A,B}_{PB},C }_{PB}+\qty{ \qty{B,C}_{PB},A }_{PB}+\qty{ \qty{C,A}_{PB},B }_{PB}   =0 \qquad\blacksquare \]					
+ 
+
+\section*{Problem 5.3}
+
+\[ \text{Given two Hermitian operators} \qquad\hat{A}\qand\hat{B}\]
+\[ \qty[\hat{A},\hat{B}]^{\dagger}=\qty[\hat{A}\hat{B}-\hat{B}\hat{A}]^{\dagger}=\qty[\hat{A}\hat{B}]^{\dagger}-\qty[\hat{B}\hat{A}]^{\dagger}=\hat{B}^{\dagger}\hat{A}^{\dagger}-\hat{A}^{\dagger}\hat{B}^{\dagger}  \]
+\[ \hat{A}=\hat{A}^{\dagger}\qand\hat{B}=\hat{B}^{\dagger}\implies \hat{B}^{\dagger}\hat{A}^{\dagger}-\hat{A}^{\dagger}\hat{B}^{\dagger}=\hat{B}\hat{A}-\hat{A}\hat{B}=-\qty[\hat{A},\hat{B}] \]
+\[ \text{Therefore}\qquad \qty[\hat{A},\hat{B}]^{\dagger}=-\qty[\hat{A},\hat{B}] \qquad\blacksquare \]					
+ 
+\section*{Problem 5.4}
+
+\[ \text{Given the Lagrangian for a free particle}\qquad L=-mc^{2}\frac{1}{\gamma}=-mc^{2}\qty(1-\frac{v^2}{c^2})^{\frac{1}{2}} \]
+\[ \text{Recall} \qquad \qty(1-x)^{\frac{1}{2}}\approx 1-\frac{1}{2}x \qq{for} x\ll 1 \]
+\[ \text{Hence} \qquad L\approx -mc^{2} \qty(1-\frac{1}{2}\frac{v^2}{c^2})= -mc^2 + \frac{1}{2}mv^2 \qq{for} v\ll c\]
+\[ p=\pdv{L}{v}\implies p=mv  \qq{for} v\ll c \]
+\[ H= p_{i}\dot{q}_{i}-L\implies H=mv^2 +mc^2 -\frac{1}{2}mv^2=mc^2+\frac{1}{2}mv^2 \qq{for} v\ll c \qquad\blacksquare \]
+
+
+ 
+\section*{Problem 5.5}
+
+\[\dd s = \sqrt{c^2 \dd t^2-\dd x^2-\dd y^2-\dd z^2}\]
+
+For a straight world line, $(\Delta x)^2+(\Delta y)^2+(\Delta z)^2=0$, so $\dd s = c\dd t$
+
+\[\int_a^b\dd s = c\int_a^b\dd t=c(t_b-t_a)
+\]
+
+For  $(\Delta x)^2+(\Delta y)^2+(\Delta z)^2\ne 0$ $\dd s = \frac{c\dd t}{\gamma}$ and recall $\gamma=(1-\beta)^{1/2}$, where $\beta=v/c$.
+\[\int_a^b\dd s = c\int_a^b\frac{c\dd t}{\gamma}=\frac{c(t_b-t_a)}{\gamma}\le c(t_b-t_a)
+\]
+ 
+\section*{Problem 5.6}
+
+\[
+\text{Given the Lagrangian for a chargeD particle in an electric field }\qquad L=\frac{-mc^2}{\gamma}  +Q\vb{A}\cdot \vb{v} -QV
+\]
+
+\[ \text{Apply the Euler Lagrange equation}\qquad \pdv{L}{q}-\dv{t} \pdv{L}{\dot{q}}=0 \qquad\text{to each term of the Lagrangian.}\]
+\[0-\dv{t}(\gamma m \vb{v})+Q\grad{(\vb{A}\cdot\vb{v})} -Q\dv{\vb{A}}{t}-Q\grad{V}+0=0
+\]
+
+\[\dv{t}(\gamma m \vb{v})=Q\grad{(\vb{A}\cdot\vb{v})} -Q\dv{\vb{A}}{t}-Q\grad{V}
+\]
+
+\[\text{Recall the hint}\qquad\grad{(\vb{a}\cdot\vb{b})}=(\vb{a}\cdot\grad)\vb{b}+(\vb{b}\cdot\grad)\vb{a}+\vb{b}\times(\grad\times\vb{a})+\vb{a}\times(\grad\times\vb{b})
+\]
+
+\[\dv{t}(\gamma m \vb{v})=Q\qty((\vb{A}\cdot\grad)\vb{v}+(\vb{v}\cdot\grad)\vb{A}+\vb{v}\times(\grad\times\vb{A})+\vb{A}\times(\grad\times\vb{v}) -\dv{\vb{A}}{t}-\grad{V})
+\]
+
+
+
+\begin{align*}
+\vb{B}=\grad\times\vb{A}\qquad\vb{E}=-\pdv{A}{t}-\grad{V}&\implies \dv{t}(\gamma m \vb{v})=Q\qty(\vb{E}+\vb{v}\times\vb{B}) +Q\qty((\vb{A}\cdot\grad)\vb{v}+(\vb{v}\cdot\grad)\vb{A}+\vb{A}\times(\grad\times\vb{v})) \\
+&\implies \dv{t}(\gamma m \vb{v})=Q\qty(\vb{E}+\vb{v}\times\vb{B}) \qquad\blacksquare
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+\section*{Problem 5.7}
+
+\[
+\text{Let}\qquad L=\frac{-mc^2}{\gamma}  +q\vb{A}\cdot \vb{v} -qV
+\]
+\[
+\text{From 5.4}\qquad L=-mc^2 + \frac{1}{2}mv^2  +q\vb{A}\cdot \vb{v} -qV\qq{for} v\ll c
+\]
+\[
+\frac{v}{c}\ll1\implies \gamma=1 \implies \vb{p}=m\vb{v}+q\vb{A} \implies m^2 v^2=\qty(\vb{p}-q\vb{A})^2
+\] 
+\[
+E=H=\vb{p}\cdot\vb{v}-L=mv^2+q\vb{A}\cdot\vb{v}+mc^2 - \frac{1}{2}mv^2  -q\vb{A}\cdot \vb{v} +qV
+\]
+\[
+E=mc^2+\frac{1}{2m}\qty(\vb{p}-q\vb{A})^2+qV\qq{for} v\ll c\qquad\blacksquare
+\]
+
+\section*{Problem 5.8}
+
+
+\[ \text{To evaluate}\qquad \epsilon^{\alpha\beta\gamma\delta}F_{\alpha\beta}F_{\gamma\delta} \qq{,} \text{consider  these  two relationships:}\]
+
+
+
+\[ E^{i}=-F^{0i}=F^{i0}=F_{0i}=-F_{i0} \]
+\[ B^{i}=-\frac{1}{2} \epsilon^{ijk} F^{jk}=-\frac{1}{2} \epsilon^{ijk} F_{jk} \]
+
+There are 24 permutations of \{0,1,2,3\}. 
+For even permutations $\epsilon^{\alpha\beta\gamma\delta}=+1$.
+The twelve even permutations are those with zero swaps: (\{0,1,2,3\}); and those with two swaps: (\{0,2,3,1\}, \{0,3,1,2\}, \{1,0,3,2\}, \{1,2,0,3\}, \{1,3,2,0\}, \{2,0,1,3\}, \{2,1,3,0\}, \{2,3,0,1\}, \{3,0,2,1\}, \{3,1,0,2\}, \{3,2,1,0\}).
+For odd permutations $\epsilon^{\alpha\beta\gamma\delta}=-1$.
+The twelve odd permutations are those with one swap: (\{0,1,3,2\}, \{0,2,1,3\}, \{0,3,2,1\}, \{1,0,2,3\}, \{2,1,0,3\}, \{3,1,2,0\}) and those with three swaps: (\{1,2,3,0\}, \{1,3,0,2\}, \{2,0,3,1\}, \{2,3,1,0\}, \{3,0,1,2\}, \{3,2,0,1\}).
+
+Run 0 through all positions \{$\alpha,\beta,\gamma,\delta$\} leaving only the space coordinates in the sums. 
+
+\begin{align*}
+\alpha=0 &\implies \epsilon^{0ijk}F_{0i}F_{jk} &=& E^{i}\epsilon^{ijk}F_{jk}&=&-2E^{i}B^{i}\\
+\beta=0 &\implies \epsilon^{i0jk}F_{i0}F_{jk} &=& -E^{i}\qty( -\epsilon^{ijk}F_{jk})&=&-2E^{i}B^{i}\\
+\gamma=0 &\implies \epsilon^{ij0k}F_{ij}F_{0k} &=& \epsilon^{ijk}F_{ij}E^{k}&=&-2B^{k}E^{k}\\
+\delta=0 &\implies \epsilon^{ijk0}F_{ij}F_{k0} &=& -\epsilon^{ijk}F_{ij}\qty(-E^{k} )&=&-2B^{k}E^{k}
+\end{align*}
+
+The $\alpha=0$ case is enough, because the remaining cases follow by symmetry.
+
+\[ \epsilon^{\alpha\beta\gamma\delta}F_{\alpha\beta}F_{\gamma\delta}=-8\vb{E}\cdot \vb{B}\qquad\blacksquare\] 
+
+
+\section*{Problem 5.9}
+
+	\[ \nabla=\begin{pmatrix}  \frac{\partial}{\partial x^1} & \frac{\partial}{\partial x^2} & \frac{\partial}{\partial x^3} \end{pmatrix}\qquad J = \begin{pmatrix} J^0 & J^1 & J^2 & J^3 \end{pmatrix} \]
+
+\[F^{\mu\nu}=\begin{pmatrix}
+  0 & -E^1 & -E^2 & -E^3 \\
+  E^1 & 0 & -B^3 & B^2 \\
+  E^2 & B^3 & 0 & -B^1  \\
+  E^3 & -B^2 & B^1 & 0
+ \end{pmatrix}
+\]
+
+	 \[\text{First}\qquad \partial_\mu F^{\mu \nu} = J^\nu \qq{and} \nu=0\implies \partial_\mu F^{\mu 0} = J^0 \]
+
+ \[\text{Hence}\qquad \vb{\nabla} \cdot \vb{E} = J^0 \qquad\blacksquare\]
+
+ \[\text{For the spatial coordinates}\qquad  J^i=\partial_\mu F^{\mu i}=\partial_0 F^{0 i}+\partial_1 F^{1 i}+\partial_2 F^{2 i}+\partial_3 F^{3 i}
+ \]
+
+ \[ i=1\implies J^1=\partial_0 F^{0 1}+\partial_1 F^{1 1}+\partial_2 F^{2 1}+\partial_3 F^{3 1}=-\pdv{E^1}{t}+\partial_2 B^3-\partial_3 B^2
+ \]
+
+ \[ i=2\implies J^2=\partial_0 F^{0 2}+\partial_1 F^{1 2}+\partial_2 F^{2 2}+\partial_3 F^{3 2}=-\pdv{E^2}{t}-\partial_1 B^3+\partial_3 B^1
+ \]
+
+ \[ i=3\implies J^3=\partial_0 F^{0 3}+\partial_1 F^{1 3}+\partial_2 F^{2 3}+\partial_3 F^{3 3}=-\pdv{E^3}{t}+\partial_1 B^2-\partial_2 B^1
+ \]
+
+ Recognize from the mnemonic Xyzzy that the last two terms come from a cross product, \emph{e.g.}, $a_x=b_y c_z-b_z c_y$.
+
+ \[\text{Hence}\qquad
+J=-\frac{\partial \vb{E}}{\partial t}+ \vb{\nabla} \times \vb{B} 
+ \qquad\blacksquare\]
+
+
+	Second \[ \partial_\lambda F_{\mu \nu} + \partial_\mu F_{\nu \lambda} + \partial_\nu F_{\lambda \mu} = 0 \]
+
+\[F_{\mu\nu}=\begin{pmatrix}
+  0 & E^1 & E^2 & E^3 \\
+  -E^1 & 0 & -B^3 & B^2 \\
+  -E^2 & B^3 & 0 & -B^1  \\
+  -E^3 & -B^2 & B^1 & 0
+ \end{pmatrix}
+\]	
+
+What if $\mu=\nu$?
+\begin{align*} 
+\mu=\nu&\implies\partial_\lambda F_{\mu \mu} + \partial_\mu F_{\mu \lambda} + \partial_\mu F_{\lambda \mu} = 0 \\
+&\implies\partial_\lambda 0 + \partial_\mu F_{\mu \lambda} - \partial_\mu F_{\mu\lambda } = 0 \\
+\end{align*}
+Therefore, $\lambda\ne\mu\ne\nu$.
+Start with $\lambda=0$.
+\begin{align*} 
+\lambda=0&\implies\partial_0 F_{\mu \nu} + \partial_\mu F_{\nu 0} + \partial_\nu F_{0 \mu} = 0 \\
+&\implies\partial_0 F_{\mu \nu} = \partial_\mu E^{\nu} - \partial_\nu E^{\mu} 
+\end{align*}
+Leaving us with the spatial coordinates:
+\begin{align*} 
+i\ne j&\implies\partial_0 F_{i j} =\partial_i E^{j} - \partial_j E^{i}  \\
+&\implies\partial_0 B^{k} = \partial_i E^{j} - \partial_j E^{i} 
+\end{align*}
+\begin{align*} 
+i=1&\implies -\partial_0 B^{3} = \partial_1 E^{2} - \partial_2 E^{1} \\
+i=2&\implies -\partial_0 B^{1} = \partial_2 E^{3} - \partial_3 E^{2} \\
+i=3&\implies -\partial_0 B^{2} = \partial_3 E^{1} - \partial_1 E^{3} \\
+\end{align*}
+
+Recognize from the mnemonic Xyzzy that the last two terms come from a cross product, \emph{e.g.}, $a_x=b_y c_z-b_z c_y$.
+
+ \[\text{Hence}\qquad
+-\frac{\partial \vb{B}}{\partial t}= \vb{\nabla} \times \vb{E} 
+ \qquad\blacksquare\]
+
+Now start with $\lambda\ne 0$.
+\begin{align*} 
+\lambda=i&\implies\partial_i F_{\mu \nu} + \partial_\mu F_{\nu i} + \partial_\nu F_{i \mu} = 0 \\
+\end{align*}
+
+What remains:
+\begin{align*} 
+i\ne j\ne k&\implies\partial_i F_{j k} + \partial_j F_{k i} + \partial_k F_{i j} = 0 \\
+i=1&\implies\partial_1 F_{j k} + \partial_j F_{k 1} + \partial_k F_{1 j} = 0 \\
+j=3&\implies\partial_1 F_{3 2} + \partial_3 F_{2 1} + \partial_2 F_{1 3} = 0 \\
+&\implies\partial_1 B^1 + \partial_3 B^3 + \partial_2 B^2 = 0 \\
+\end{align*}
+
+ \[\text{Hence}\qquad
+ \vb{\nabla} \cdot \vb{B} =0
+ \qquad\blacksquare\]
+\section*{Problem 5.10}
+
+\[F^{\alpha \beta} = \begin{pmatrix}
+  0 & -E^1 & -E^2 & -E^3 \\
+  E^1 & 0 & -B^3 & B^2 \\
+  E^2 & B^3 & 0 & -B^1  \\
+  E^3 & -B^2 & B^1 & 0
+ \end{pmatrix}\]
+
+\[\partial_\beta \partial_\alpha F^{\alpha \beta} = \partial_\beta J^\beta\]
+\[\partial_\beta \partial_\alpha F^{\alpha \beta} = \partial_\beta\sum_{\alpha} \pdv{F^{\alpha \beta}}{x^\alpha}=\sum_{\beta}\sum_{\alpha} \pdv{F^{\alpha \beta}}{x_{\beta}}{x^\alpha}=0 \qq{by inspection}\]
+
+Note that mixed partials are combined.
+
+\[ \partial_\alpha F^{\alpha \beta} = J^\beta \]
+
+\[\text{Hence}\qquad \partial_\beta \partial_\alpha F^{\alpha \beta} = \partial_\beta J^\beta=0\qquad\blacksquare\]
+
+\end{document}

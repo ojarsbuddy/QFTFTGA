@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,physics,xfrac}
+\usepackage{standalone}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
+
+ 
+\title{Quantum Field Theory Problem Sets}
+\author{John Bortins}
+ 
+\begin{document}
+ 
+\maketitle{}
+ 
+\section*{Problem 7.1}
+
+
+
+\[ \qq*{Given the Lagrangian density} \mathcal{L}=\frac{1}{2}\partial^{\mu}\phi\partial_{\mu}\phi-\frac{1}{2}m^2\phi^2-\sum_{n=1}^{\infty} \lambda_n \phi^{2n+2} \]
+\[ \qq*{Apply the Euler Lagrange equation} \pdv{\mathcal{L}}{\phi}-\partial_{\mu} \qty(\pdv{\mathcal{L}}{\qty(\partial_{\mu}\phi)})=0\qq{to find the equations of motion.} \]
+
+\begin{align*}
+\pdv{\mathcal{L}}{\phi}&=-m^2 \phi-\sum_{n=1}^{\infty} (2n+2)\lambda_n \phi^{2n+1}\\
+\partial_{\mu} \qty(\pdv{\mathcal{L}}{\qty(\partial_{\mu}\phi)})&=\partial_{\mu}\partial^{\mu}\phi=\partial^2 \phi
+\end{align*}
+Put it all together.
+\begin{align*}
+-m^2 \phi-\sum_{n=1}^{\infty} (2n+2)\lambda_n \phi^{2n+1}+\partial^2 \phi &=0 \\
+(\partial^2 +m^2)\phi+\sum_{n=1}^{\infty} (2n+2)\lambda_n \phi^{2n+1}&=0\qquad\blacksquare
+\end{align*}
+
+
+\section*{Problem 7.2}
+
+
+
+\[ \qq*{Given the Lagrangian density} \mathcal{L}=\frac{1}{2}\qty|\partial_{\mu}\phi(x)|^2-\frac{1}{2}m^2\qty|\phi(x)|^2+J(x)\phi(x) \]
+
+\begin{align*}
+\pdv{\mathcal{L}}{\phi}&=-m^2 \phi(x)+J(x)\\
+\partial_{\mu} \qty(\pdv{\mathcal{L}}{\qty(\partial_{\mu}\phi)})&=\partial_{\mu}\qty|\partial_{\mu}\phi(x)|=\partial_{\mu}\partial^{\mu}\phi(x)
+\end{align*}
+
+Assemble the parts to find
+\[(\partial_{\mu}\partial^{\mu}+m^2)\phi(x)=J(x)\qquad\blacksquare
+\]
+
+\section*{Problem 7.3}
+
+
+
+\[ \qq*{Given the Lagrangian density} \mathcal{L}=\frac{1}{2}\qty(\partial_{\mu}\phi_1)^2-\frac{1}{2}m^2\phi_1^2+\frac{1}{2}\qty(\partial_{\mu}\phi_2)^2-\frac{1}{2}m^2\phi_2^2-g(\phi_1^2+\phi_2^2)^2\]
+
+
+\begin{align*}
+\qq*{Clearly}0=\pdv{\mathcal{L}}{\phi_1}-\partial_{\mu} \qty(\pdv{\mathcal{L}}{\qty(\partial_{\mu}\phi_1)})&=-m^2 \phi_1-4g\phi_1 (\phi_1^2+\phi_2^2)-\partial_{\mu}\partial^{\mu}\phi_1\\
+0=\pdv{\mathcal{L}}{\phi_2}-\partial_{\mu} \qty(\pdv{\mathcal{L}}{\qty(\partial_{\mu}\phi_2)})&=-m^2 \phi_2-4g\phi_2 (\phi_1^2+\phi_2^2)-\partial_{\mu}\partial^{\mu}\phi_2
+\end{align*}
+\begin{align*}
+\qq*{Hence}\partial_{\mu}\partial^{\mu}\phi_1+m^2 \phi_1+4g\phi_1 (\phi_1^2+\phi_2^2)&=0\\
+\partial_{\mu}\partial^{\mu}\phi_2+m^2 \phi_2+4g\phi_2 (\phi_1^2+\phi_2^2)&=0\qquad\blacksquare
+\end{align*}
+
+
+\section*{Problem 7.4}
+
+
+
+\[ \qq*{Given the Lagrangian density} \mathcal{L}=\frac{1}{2}\qty(\partial_{\mu}\phi)^2-\frac{1}{2}m^2\phi^2\]
+\begin{align*}
+\qq*{Clearly}\frac{1}{2}\qty(\partial_{\mu}\phi)^2=\frac{1}{2}\partial_{\mu}\phi\partial^{\mu}\phi&=\frac{1}{2}\qty[\qty(\partial_{0}\phi)^2-\qty(\partial_{1}\phi)^2-\qty(\partial_{2}\phi)^2-\qty(\partial_{3}\phi)^2]\\
+&=\frac{1}{2}\qty(\partial_{0}\phi)^2-\frac{1}{2}\qty[\qty(\partial_{1}\phi)^2+\qty(\partial_{2}\phi)^2+\qty(\partial_{3}\phi)^2]\\
+&=\frac{1}{2}\qty(\pdv{\phi}{t})^2-\frac{1}{2}\qty(\grad \phi)^2=\frac{1}{2}\dot{\phi}^2-\frac{1}{2}\qty(\grad \phi)^2
+\end{align*}
+\[ \qq*{Hence} \mathcal{L}=\frac{1}{2}\dot{\phi}^2-\frac{1}{2}\qty(\grad \phi)^2-\frac{1}{2}m^2\phi^2\qquad\blacksquare\]
+
+\[\qq*{From the above}\pi=\pdv{\mathcal{L}}{\dot{\phi}}=\dot{\phi}\qquad\blacksquare\]
+
+\[\mathcal{H}=\pi \dot{\phi}-\mathcal{L}\implies \mathcal{H}=\frac{1}{2}\dot{\phi}^2+\frac{1}{2}\qty(\grad \phi)^2+\frac{1}{2}m^2 \phi^2 \qquad\blacksquare\]
+\[\qq*{Let}\Pi^{\mu}=\pdv{\mathcal{L}}{(\partial_{\mu}\phi)}
+\]
+\[\qq*{Then}\Pi^{\mu}=\partial_{\mu}\phi \qquad\blacksquare\]
+
+\[\qq*{Also}\Pi^{0}=\pdv{\mathcal{L}}{(\partial_{0}\phi)}=\pdv{\mathcal{L}}{\dot{\phi}}=\pi=\dot{\phi}
+\qquad\blacksquare\]
+
+
+\end{document}

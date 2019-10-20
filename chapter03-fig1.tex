@@ -1,0 +1,24 @@
+\documentclass{scrartcl}
+\usepackage[driver=dvips]{geometry}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\usepackage{pstricks}
+\input{./chapter03-fig1-config.tex}
+\makeatletter
+\pst@dima=4\psxunit
+\pst@dimc=0\psxunit
+\advance\pst@dima by -\pst@dimc
+\ifdim\pst@dima<0pt \pst@dima=-\pst@dima\fi
+\pst@dimb=5\psyunit
+\pst@dimc=0\psyunit
+\advance\pst@dimb by -\pst@dimc
+\ifdim\pst@dimb<0pt \pst@dimb=-\pst@dimb\fi
+\geometry{paperwidth=\pst@dima, paperheight=\pst@dimb, margin=0pt}
+\makeatother
+\begin{document}
+\begin{pspicture}(0,0)(4,5)
+\psframe(0.7,2)(3.3,3)
+\rput(2,2.5){First Example}
+\end{pspicture}
+\end{document}
