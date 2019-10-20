@@ -27,14 +27,14 @@
     \coordinate (B) at (0,-4) ;
     
     % media
-    \fill[blue!5!] (-4,0) rectangle (4,4);
-    \fill[blue!15!] (-4,0) rectangle (4,-4);
+    \fill[blue!5!] (-5,0) rectangle (5,4);
+    \fill[blue!15!] (-5,0) rectangle (5,-4);
     \node[right] at (2,2) {Air};
     \node[left] at (-2,-2) {Water};
 
     % vertical axis
     \draw[dash pattern=on5pt off3pt] (A) -- (B) ;
-    \node[right] at (0,3.5) {Vertical};
+    \node[right] at (0,3.5) {Vertical through $(x,y)$};
 
     % rays
     \draw[red,ultra thick,reverse directed] (O) -- (130:4);
@@ -208,6 +208,7 @@ Take the derivative with respect to $\epsilon$
 &=-Z_0[J]\left(\int d^4 y\,J(y) \Delta(y-x)\delta(x-y)\right)\\
 \end{align*}
 \[\qq*{Using}\Delta(x)=\Delta(-x)\qq{above and changing variables to add the integrals.}\]
+
 \[\frac{\delta Z[J]}{\delta J[z_1]}=-\left[\int d^4 y\, \Delta(z_1-y)J(y)\right]Z_0[J] \qquad \blacksquare\]
 
 
