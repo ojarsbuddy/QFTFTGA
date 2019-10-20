@@ -101,9 +101,11 @@ The calculation of a functional derivative may be found from
 
 \begin{align*}
     \qq*{\S}\qq{Given}I[f] & =\int_{-1}^{1} f(x)dx\qq{find}\frac{\delta^2 I[f^3]}{\delta f(x_0)\delta f(x_1)} \\
+    \delta I[f^3][h]=\frac{d}{d\epsilon}\int_{-1}^{1} (f(x)+\epsilon h(x))^3 dx\Big\vert_{\epsilon=0}\\
+    
 \end{align*}
 
-\[\delta I[f^3][h]=\frac{d}{d\epsilon}\int_{-1}^{1} (f(x)+\epsilon h(x))^3 dx\Big\vert_{\epsilon=0}\]
+\[\]
 \[\delta I[f^3][h]=\frac{d}{d\epsilon}\int_{-1}^{1} [f(x)^3+3\epsilon f(x)^2 h(x)+3\epsilon^2 f(x)h(x)^2+\epsilon^3 h(x)^3] dx\Big\vert_{\epsilon=0}\]
 \[\delta I[f^3][h]=\int_{-1}^{1} [3f(x)^2 h(x)+6\epsilon f(x)h(x)^2+3\epsilon^2 h(x)^3] dx\Big\vert_{\epsilon=0}\]
 \[\delta I[f^3][h]=\int_{-1}^{1} 3f(x)^2 h(x) dx\]
