@@ -201,11 +201,13 @@ Look at the integrand alone
 \[(J(x)J(y)+\epsilon h J(x)+\epsilon h J(y)+\epsilon^2 h) \Delta(x-y)\]
 Take the derivative with respect to $\epsilon$
 \[J(x) \Delta(x-y)h + J(y) \Delta(x-y)h\]
-\[\delta Z[J][h]=-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)h +\int d^4 y\,J(y) \Delta(x-y)h\right)\]
-\[\delta Z[J][h]=-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)\delta(x-y) +\int d^4 y\,J(y) \Delta(x-y)\delta(x-y)\right)\]
-Use \[\Delta(x)=\Delta(-x)\]
-\[\delta Z[J][h]=-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)\delta(y-x) +\int d^4 y\,J(y) \Delta(x-y)\delta(x-y)\right)\] change variables
-\[\delta Z[J][h]=-\left(\int d^4 y\,J(y) \Delta(y-x)\delta(x-y)\right)Z_0[J]\]
+\begin{align*}
+\delta Z[J][h]&=-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)h +\int d^4 y\,J(y) \Delta(x-y)h\right)\\
+&=-\frac{Z_0[J]}{2}\left(\int d^4 x\,  J(x) \Delta(x-y)\delta(x-y) +\int d^4 y\,J(y) \Delta(x-y)\delta(x-y)\right)\\
+&=-\frac{Z_0[J]}{2}\left(\int d^4 x\,  J(x) \Delta(x-y)\delta(y-x) +\int d^4 y\,J(y) \Delta(x-y)\delta(x-y)\right)\\ 
+&=-Z_0[J]\left(\int d^4 y\,J(y) \Delta(y-x)\delta(x-y)\right)\\
+\end{align*}
+\[\qq*{Using}\Delta(x)=\Delta(-x)\qq{above and changing variables to add the integrals.}\]
 \[\frac{\delta Z[J]}{\delta J[z_1]}=-\left[\int d^4 y\, \Delta(z_1-y)J(y)\right]Z_0[J] \qquad \blacksquare\]
 
 
