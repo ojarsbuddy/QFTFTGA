@@ -1,6 +1,8 @@
-\documentclass{amsart}
+\documentclass{memoir}
 \usepackage{graphicx,float}
-\usepackage{amsmath,amssymb,physics,xfrac,nicefrac}
+\usepackage{amsmath,amssymb,xfrac,nicefrac}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
+\usepackage[italicdiff]{physics}
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes,positioning}
 \usetikzlibrary{decorations.markings}
@@ -68,7 +70,7 @@
 
 For a ray of light from inside an area to inside another area. Let the origin be at the interface. Let $(a,b)$ be the source. Let $(c,d)$ be the destination. Let $(x,y)$ be at the interface. Distance traveled is then $L_1=\sqrt {(a-x)^2+(b-y)^2}$ plus $L_2=\sqrt {(x-c)^2+(y-d)^2}$. Inside the upper area let the speed of light be $u$ and inside the lower area $v$. The total time is then \[T=\frac{\sqrt {(a-x)^2+(b-y)^2} } {u}+\frac{\sqrt {(x-c)^2+(y-d)^2} } {v}\]
 The only variable that will affect the total time $T$ is $x$.
-\[\frac {dT} {dx} = \frac{x-a}{u\sqrt {(a-x)^2+(b-y)^2}} - \frac{c-x}{v\sqrt {(x-c)^2+(y-d)^2}}=0  \]
+\[\dv {T} {x} = \frac{x-a}{u\sqrt {(a-x)^2+(b-y)^2}} - \frac{c-x}{v\sqrt {(x-c)^2+(y-d)^2}}=0  \]
 \[\frac{x-a}{uL_1} = \frac{c-x}{vL_2}  \]
 \[\qq*{Recognize the fractions as sines of angles} \frac{\sin \theta_1}{u} = \frac{\sin \theta_2}{v} \qquad \blacksquare\]
 
@@ -81,9 +83,9 @@ A functional is defined by a rule that associates a number with a set of functio
 \[f_1, f_2, \cdots\qquad\underrightarrow{rule}\qquad F[f_1, f_2] \]
 
 A functional derivative is a functional of a functional, i.e.,
-\[\delta G[f][h]=\frac{d}{d\epsilon}G[f+\epsilon h]\Big\vert_{\epsilon=0}\]
+\[\var{G[f][h]}=\dv{\epsilon}G[f+\epsilon h]\Big\vert_{\epsilon=0}\]
 For our physics purposes the test function $h$ will be $\delta(x-y)$,
-\[\frac{\delta G[f]}{\delta f[y]}=\delta G[f][\delta(x-y)]=\frac{d}{d\epsilon}G[f+\epsilon\delta(x-y)]\Big\vert_{\epsilon=0}\]
+\[\fdv{G[f]}{f[y]}=\var{ G[f][\delta(x-y)]}=\dv{\epsilon}G[f+\epsilon\delta(x-y)]\Big\vert_{\epsilon=0}\]
 
 The calculation of a functional derivative may be found from
 \[\frac{\delta F[f(x)]}{\delta f(x_1)}=\lim_{\epsilon\to 0}\frac{F[f(x)-\epsilon\delta(x-x_1)]-F[f(x)]}{\epsilon}    \]
@@ -97,41 +99,49 @@ The calculation of a functional derivative may be found from
                                     & =\int G(x,y)\delta(y-z)dy                                                   \\
     \frac{\delta H[f]}{\delta f(z)} & =G(x,z) \qquad \blacksquare
 \end{align*}
+\begin{align*}
+    \qq*{Try this approach}\fdv{H[f]}{f(z)}&=\lim_{\epsilon\to 0}\frac{H[f(x)-\epsilon\delta(x-z)]-H[f(x)]}{\epsilon} \\
+    &=\lim_{\epsilon\to 0}\frac{1}{\epsilon}\bqty{\int G(x,y)\bqty{f(y)+\epsilon\delta(y-z)}dy-\int G(x,y)f(y)dy}\\
+    &=\lim_{\epsilon\to 0}\frac{1}{\epsilon}\bqty{\int G(x,y)f(y)+\epsilon\int G(x,y)\delta(y-z)dy-\int G(x,y)f(y)dy}\\
+    &=\lim_{\epsilon\to 0}\int G(x,y)\delta(y-z)dy =G(x,z)\\
+\end{align*}
+
+\begin{align*}
+    \qq*{\S}\qq{Given}I[f] & =\int_{-1}^{1} f(x)dx\qq{find}\frac{\delta^2 I[f^3]}{\delta f(x_0)\delta f(x_1)}                                                   \\
+    \delta I[f^3][h]       & =\frac{d}{d\epsilon}\int_{-1}^{1} (f(x)+\epsilon h(x))^3 dx\Big\vert_{\epsilon=0}                                                  \\
+                           & =\frac{d}{d\epsilon}\int_{-1}^{1} [f(x)^3+3\epsilon f(x)^2 h(x)+3\epsilon^2 f(x)h(x)^2+\epsilon^3 h(x)^3] dx\Big\vert_{\epsilon=0} \\
+                           & =\int_{-1}^{1} [3f(x)^2 h(x)+6\epsilon f(x)h(x)^2+3\epsilon^2 h(x)^3] dx\Big\vert_{\epsilon=0}                                     \\
+                           & =\int_{-1}^{1} 3f(x)^2 h(x) dx                                                                                                     \\
+\end{align*}
+
+
+Now we do it again
+\begin{align*}
+    \delta \delta I[f^3][h][k]                              & =\frac{d}{d\epsilon}\int_{-1}^{1} 3(f(x)+\epsilon k(x))^2 h(x) dx\Big\vert_{\epsilon=0}                        \\
+                                                            & =\frac{d}{d\epsilon}\int_{-1}^{1} 3[f(x)^2+2\epsilon f(x)k(x)+\epsilon^2 k(x)^2] h(x) dx\Big\vert_{\epsilon=0} \\
+                                                            & =\int_{-1}^{1} 6f(x)k(x)h(x) dx                                                                                \\
+    \frac{\delta \delta I[f^3]}{\delta f(x_0)\delta f(x_1)} & =\int_{-1}^{1} 6f(x)\delta(x-x_1)\delta(x-x_0) dx                                                              \\
+                                                            & =6f(x_0)\delta(x_0-x_1)\qq{where}  -1\leq x_0, x_1\leq 1 \qquad \blacksquare                                   \\
+\end{align*}
 
 
 \begin{align*}
-    \qq*{\S}\qq{Given}I[f] & =\int_{-1}^{1} f(x)dx\qq{find}\frac{\delta^2 I[f^3]}{\delta f(x_0)\delta f(x_1)} \\
-    \delta I[f^3][h]=\frac{d}{d\epsilon}\int_{-1}^{1} (f(x)+\epsilon h(x))^3 dx\Big\vert_{\epsilon=0}\\
-    
+    \qq*{\S}\qq{Given}J[f] & =\int \left(\frac{\delta f}{\delta y}\right)^2 dy\qq{find}\frac{\delta J[f]}{\delta f(x)}               \\
+    \delta J[f][h]         & =\frac{d}{d\epsilon}J[f+\epsilon h]\Big\vert_{\epsilon=0}                                               \\
+                           & =\frac{d}{d\epsilon}\int \left(\frac{\delta (f+\epsilon h)}{\delta y}\right)^2 dy                       \\
+                           & =\frac{d}{d\epsilon}\int \left(\frac{\delta f}{\delta y}+\epsilon\frac{\delta h}{\delta y} \right)^2 dy \\
+                           & =2\int \frac{\delta f}{\delta y}\frac{\delta h}{\delta y}  dy                                           \\
+\end{align*}
+
+\begin{align*}
+    \qq*{Consider}(u'v)'            & =u''v+u'v' \qq{where} u'=\frac{\delta f}{\delta y}\qand v'=\frac{\delta h}{\delta y}                          \\
+    \delta J[f][h]                  & =2\int\frac{\delta}{\delta y}\left(\frac{\delta f}{\delta y}h\right)dy-2\int\frac{\delta^2 f}{\delta y^2}h dy \\
+                                    & =2\frac{\delta f}{\delta y}h\Big\vert_a^b-2\int\frac{\delta^2 f}{\delta y^2}h dy                              \\
+                                    & =2\frac{\delta f}{\delta y}\delta(x-y)\Big\vert_a^b-2\int\frac{\delta^2 f}{\delta y^2}\delta(x-y) dy          \\
+    \frac{\delta J[f]}{\delta f(x)} & =-2\frac{\delta^2 f}{\delta x^2}\qq*{where}  a<x<b \qquad \blacksquare                                        \\
 \end{align*}
 
 \[\]
-\[\delta I[f^3][h]=\frac{d}{d\epsilon}\int_{-1}^{1} [f(x)^3+3\epsilon f(x)^2 h(x)+3\epsilon^2 f(x)h(x)^2+\epsilon^3 h(x)^3] dx\Big\vert_{\epsilon=0}\]
-\[\delta I[f^3][h]=\int_{-1}^{1} [3f(x)^2 h(x)+6\epsilon f(x)h(x)^2+3\epsilon^2 h(x)^3] dx\Big\vert_{\epsilon=0}\]
-\[\delta I[f^3][h]=\int_{-1}^{1} 3f(x)^2 h(x) dx\]
-Now we do it again
-\[\delta \delta I[f^3][h][k]=\frac{d}{d\epsilon}\int_{-1}^{1} 3(f(x)+\epsilon k(x))^2 h(x) dx\Big\vert_{\epsilon=0}\]
-\[\delta \delta I[f^3][h][k]=\frac{d}{d\epsilon}\int_{-1}^{1} 3[f(x)^2+2\epsilon f(x)k(x)+\epsilon^2 k(x)^2] h(x) dx\Big\vert_{\epsilon=0}\]
-\[\delta \delta I[f^3][h][k]=\int_{-1}^{1} 6f(x)k(x)h(x) dx\]
-\[\frac{\delta \delta I[f^3]}{\delta f(x_0)\delta f(x_1)}=\int_{-1}^{1} 6f(x)\delta(x-x_1)\delta(x-x_0) dx\]
-\[\frac{\delta \delta I[f^3]}{\delta f(x_0)\delta f(x_1)}=6f(x_0)\delta(x_0-x_1)\] where \[-1\leq x_0, x_1\leq 1 \qquad \blacksquare\]
-
-
-
-Given
-\[J[f]=\int \left(\frac{\delta f}{\delta y}\right)^2 dy\]
-find
-\[\frac{\delta J[f]}{\delta f(x)}\]
-\[\delta J[f][h]=\frac{d}{d\epsilon}J[f+\epsilon h]\Big\vert_{\epsilon=0}\]
-\[\delta J[f][h]=\frac{d}{d\epsilon}\int \left(\frac{\delta (f+\epsilon h)}{\delta y}\right)^2 dy\]
-\[\delta J[f][h]=\frac{d}{d\epsilon}\int \left(\frac{\delta f}{\delta y}+\epsilon\frac{\delta h}{\delta y} \right)^2 dy\]
-\[\delta J[f][h]=2\int \frac{\delta f}{\delta y}\frac{\delta h}{\delta y}  dy\]
-Consider
-\[(u'v)'=u''v+u'v'\]
-\[\delta J[f][h]=2\int\frac{\delta}{\delta y}\left(\frac{\delta f}{\delta y}h\right)dy-2\int\frac{\delta^2 f}{\delta y^2}h dy\]
-\[\delta J[f][h]=2\frac{\delta f}{\delta y}h\Big\vert_a^b-2\int\frac{\delta^2 f}{\delta y^2}h dy\]
-\[\delta J[f][h]=2\frac{\delta f}{\delta y}\delta(x-y)\Big\vert_a^b-2\int\frac{\delta^2 f}{\delta y^2}\delta(x-y) dy\]
-\[\frac{\delta J[f]}{\delta f(x)}=-2\frac{\delta^2 f}{\delta x^2}\] where \[a<x<b \qquad \blacksquare\]
 
 \section*{Problem 1.3}
 Given \[G[f]=\int g(y,f)dy\]
@@ -197,24 +207,24 @@ Hence
 \[\nabla^2 \psi=\frac{\rho}{\mathcal{T}}\frac{\delta^2 \psi}{\delta t^2} \qquad \blacksquare\]
 
 \section*{Problem 1.6}
-Given \[Z_0[J]=\exp\left(-\frac{1}{2}\int d^4 x\, d^4 y\, J(x) \Delta(x-y) J(y)\right)\]
-where \[\Delta(x)=\Delta(-x)\]
-Figure the functional derivative
-\[\delta Z[J][h]=\frac{d}{d\epsilon}Z[J+\epsilon h]\]
+\[\qq*{Given}Z_0[J]=\exp\left(-\frac{1}{2}\int d^4 x\, d^4 y\, J(x) \Delta(x-y) J(y)\right)\qq{where}\Delta(x)=\Delta(-x)\]
+
+
+\[\qq*{Figure the functional derivative}\var Z[J][h]=\dv{\epsilon}Z[J+\epsilon h]\]
 Look at the integrand alone
 \[(J(x)+\epsilon h) \Delta(x-y) (J(y)+\epsilon h)\]
 \[(J(x)J(y)+\epsilon h J(x)+\epsilon h J(y)+\epsilon^2 h) \Delta(x-y)\]
 Take the derivative with respect to $\epsilon$
 \[J(x) \Delta(x-y)h + J(y) \Delta(x-y)h\]
 \begin{align*}
-    \delta Z[J][h] & =-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)h +\int d^4 y\,J(y) \Delta(x-y)h\right)                    \\
+    \var{ Z[J][h]} & =-\frac{1}{2}Z_0[J]\left(\int d^4 x\,  J(x) \Delta(x-y)h +\int d^4 y\,J(y) \Delta(x-y)h\right)                    \\
                    & =-\frac{Z_0[J]}{2}\left(\int d^4 x\,  J(x) \Delta(x-y)\delta(x-y) +\int d^4 y\,J(y) \Delta(x-y)\delta(x-y)\right) \\
                    & =-\frac{Z_0[J]}{2}\left(\int d^4 x\,  J(x) \Delta(x-y)\delta(y-x) +\int d^4 y\,J(y) \Delta(x-y)\delta(x-y)\right) \\
                    & =-Z_0[J]\left(\int d^4 y\,J(y) \Delta(y-x)\delta(x-y)\right)                                                      \\
 \end{align*}
 \[\qq*{Using}\Delta(x)=\Delta(-x)\qq{above and changing variables to add the integrals.}\]
 
-\[\frac{\delta Z[J]}{\delta J[z_1]}=-\left[\int d^4 y\, \Delta(z_1-y)J(y)\right]Z_0[J] \qquad \blacksquare\]
+\[\fdv{Z[J]}{J[z_1]}=-\left[\int d^4 y\, \Delta(z_1-y)J(y)\right]Z_0[J] \qquad \blacksquare\]
 
 
 \end{document}
