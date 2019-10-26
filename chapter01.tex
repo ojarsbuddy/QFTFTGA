@@ -20,7 +20,7 @@
 \maketitle{}
 
 \section*{Problem 1.1}
-\begin{figure}[H]
+
     \begin{tikzpicture}[>=stealth]
 
         % define coordinates
@@ -36,7 +36,7 @@
 
         % vertical axis
         \draw[dash pattern=on5pt off3pt] (A) -- (B) ;
-        \node[right] at (0,3.5) {Vertical through $(x,y)$};
+        \node[right] at (0,3.5) {Normal through $(x,y)$};
 
         % rays
         \draw[red,ultra thick,reverse directed] (O) -- (130:4);
@@ -62,17 +62,21 @@
         \draw (0,-1.4) arc (270:300:1.4) ;
         \node[] at (285:1.8)  {$\theta_{2}$};
         \node[] at (110:1.4)  {$\theta_{1}$};
+
+        \node [below right, text width=8cm,align=justify] at (5.5,4) {
+            For a ray of light from inside an area to inside another area. Let $(a,b)$ be the source. Let $(x,y)$ be at the interface. Let $(c,d)$ be the destination.\par
+            Distance traveled is then $L_1=\sqrt {(a-x)^2+(b-y)^2}$ plus $L_2=\sqrt {(c-x)^2+(d-y)^2}$.\par
+            Inside the upper area let the speed of light be $v_1$ and inside the lower area let the speed of light be $v_2$. The total time is then  \[T=\frac{\sqrt {(a-x)^2+(b-y)^2} } {v_1}+\frac{\sqrt {(c-x)^2+(d-y)^2} } {v_2}\]
+            The only variable that will affect the total time $T$ is $x$. Recall that index of refraction $n$ is related to the speed of light $c$ and the velocity of light in the medium $v$ by $nv=c$.
+            };
+
+
+
     \end{tikzpicture}
 
-    \caption{Awesome Image}
-    \label{fig:awesome_image}
-\end{figure}
-
-For a ray of light from inside an area to inside another area. Let the origin be at the interface. Let $(a,b)$ be the source. Let $(c,d)$ be the destination. Let $(x,y)$ be at the interface. Distance traveled is then $L_1=\sqrt {(a-x)^2+(b-y)^2}$ plus $L_2=\sqrt {(x-c)^2+(y-d)^2}$. Inside the upper area let the speed of light be $u$ and inside the lower area $v$. The total time is then \[T=\frac{\sqrt {(a-x)^2+(b-y)^2} } {u}+\frac{\sqrt {(x-c)^2+(y-d)^2} } {v}\]
-The only variable that will affect the total time $T$ is $x$.
-\[\dv {T} {x} = \frac{x-a}{u\sqrt {(a-x)^2+(b-y)^2}} - \frac{c-x}{v\sqrt {(x-c)^2+(y-d)^2}}=0  \]
-\[\frac{x-a}{uL_1} = \frac{c-x}{vL_2}  \]
-\[\qq*{Recognize the fractions as sines of angles} \frac{\sin \theta_1}{u} = \frac{\sin \theta_2}{v} \qquad \blacksquare\]
+\[\dv {T} {x} = \frac{x-a}{v_1\sqrt {(a-x)^2+(b-y)^2}} - \frac{c-x}{v_2\sqrt {(c-x)^2+(d-y)^2}}=0  \]
+\[\frac{x-a}{v_1 L_1} = \frac{c-x}{v_2 L_2}  \]
+\[\qq*{Recognize the fractions as sines of angles} \frac{\sin \theta_1}{v_1} = \frac{\sin \theta_2}{v_2} \qor n_1 sin \theta_1 = n_2 \sin \theta_2\qquad \blacksquare\]
 
 
 
