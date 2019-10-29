@@ -63,7 +63,7 @@
         \node[] at (285:1.8)  {$\theta_{2}$};
         \node[] at (110:1.4)  {$\theta_{1}$};
 
-        \node [below right, text width=8cm,align=justify] at (5.5,4) {
+        \node [below right, text width=8cm,align=justify] at (5.25,4) {
             For a ray of light from inside an area to inside another area. Let $(a,b)$ be the source. Let $(x,y)$ be at the interface. Let $(c,d)$ be the destination.\par
             Distance traveled is then $L_1=\sqrt {(a-x)^2+(b-y)^2}$ plus $L_2=\sqrt {(c-x)^2+(d-y)^2}$.\par
             Inside the upper area let the speed of light be $v_1$ and inside the lower area let the speed of light be $v_2$. The total time is then  \[T=\frac{\sqrt {(a-x)^2+(b-y)^2} } {v_1}+\frac{\sqrt {(c-x)^2+(d-y)^2} } {v_2}\]
@@ -84,30 +84,30 @@
 \section*{Problem 1.2}
 
 A functional is defined by a rule that associates a number with a set of functions.
-\[f_1, f_2, \cdots\qquad\underrightarrow{rule}\qquad F[f_1, f_2] \]
+\[\qq*{For the set of functions}f_1, f_2, \cdots\qq{ this}\underrightarrow{rule}\qq{produces a number represented by} F[f_1, f_2].\]
+
+The calculation of a functional derivative using test function $\delta(x)$ may be found from
+\[\frac{\delta F[f(x)]}{\delta f(x_1)}=\lim_{\epsilon\to 0}\frac{F[f(x)-\epsilon\delta(x-x_1)]-F[f(x)]}{\epsilon}.    \]
 
 A functional derivative is a functional of a functional, i.e.,
-\[\var{G[f][h]}=\dv{\epsilon}G[f+\epsilon h]\Big\vert_{\epsilon=0}\]
-For our physics purposes the test function $h$ will be $\delta(x-y)$,
-\[\fdv{G[f]}{f[y]}=\var{ G[f][\delta(x-y)]}=\dv{\epsilon}G[f+\epsilon\delta(x-y)]\Big\vert_{\epsilon=0}\]
-
-The calculation of a functional derivative may be found from
-\[\frac{\delta F[f(x)]}{\delta f(x_1)}=\lim_{\epsilon\to 0}\frac{F[f(x)-\epsilon\delta(x-x_1)]-F[f(x)]}{\epsilon}    \]
+\[\var{G[f][h]}=\dv{\epsilon}G[f+\epsilon h]\Big\vert_{\epsilon=0}.\]
 
 
 \begin{align*}
-    \qq*{\S}\qq{Given}H[f]          & =\int G(x,y)f(y)dy\qq{find}\frac{\delta H[f]}{\delta f(z)}                  \\
+    \qq*{\S}\qq{Given}H[f]          & =\int G(x,y)f(y)dy\qq{find}\frac{\delta H[f]}{\delta f(z)}.                  \\
+    \fdv{H[f]}{f(z)}&=\lim_{\epsilon\to 0}\frac{H[f(x)-\epsilon\delta(x-z)]-H[f(x)]}{\epsilon} \\
+    &=\lim_{\epsilon\to 0}\frac{1}{\epsilon}\bqty{\int G(x,y)\bqty{f(y)+\epsilon\delta(y-z)}dy-\int G(x,y)f(y)dy}\\
+    &=\lim_{\epsilon\to 0}\frac{1}{\epsilon}\bqty{\int G(x,y)f(y)+\epsilon\int G(x,y)\delta(y-z)dy-\int G(x,y)f(y)dy}\\
+    &=\lim_{\epsilon\to 0}\int G(x,y)\delta(y-z)dy =G(x,z) \qq{where $z$ is within the limits of the integration}\\
+\end{align*}
+
+
+\begin{align*}
     \delta H[f][h]                  & =\frac{d}{d\epsilon}H[f+\epsilon h]\Big\vert_{\epsilon=0}                   \\
                                     & =\frac{d}{d\epsilon}\int G(x,y)(f(y)+\epsilon h(y))dy\Big\vert_{\epsilon=0} \\
                                     & =\int G(x,y)h(y)dy                                                          \\
                                     & =\int G(x,y)\delta(y-z)dy                                                   \\
-    \frac{\delta H[f]}{\delta f(z)} & =G(x,z) \qquad \blacksquare
-\end{align*}
-\begin{align*}
-    \qq*{Try this approach}\fdv{H[f]}{f(z)}&=\lim_{\epsilon\to 0}\frac{H[f(x)-\epsilon\delta(x-z)]-H[f(x)]}{\epsilon} \\
-    &=\lim_{\epsilon\to 0}\frac{1}{\epsilon}\bqty{\int G(x,y)\bqty{f(y)+\epsilon\delta(y-z)}dy-\int G(x,y)f(y)dy}\\
-    &=\lim_{\epsilon\to 0}\frac{1}{\epsilon}\bqty{\int G(x,y)f(y)+\epsilon\int G(x,y)\delta(y-z)dy-\int G(x,y)f(y)dy}\\
-    &=\lim_{\epsilon\to 0}\int G(x,y)\delta(y-z)dy =G(x,z)\\
+    \frac{\delta H[f]}{\delta f(z)} & =G(x,z) \qq{where $z$ is within the limits of the integration} \blacksquare\\
 \end{align*}
 
 \begin{align*}
@@ -138,7 +138,7 @@ Now we do it again
 \end{align*}
 
 \begin{align*}
-    \qq*{Consider}(u'v)'            & =u''v+u'v' \qq{where} u'=\frac{\delta f}{\delta y}\qand v'=\frac{\delta h}{\delta y}                          \\
+    \qq*{Consider the product rule }(u'v)'            & =u''v+u'v' \qq{where} u'=\frac{\delta f}{\delta y}\qand v=h                    \\
     \delta J[f][h]                  & =2\int\frac{\delta}{\delta y}\left(\frac{\delta f}{\delta y}h\right)dy-2\int\frac{\delta^2 f}{\delta y^2}h dy \\
                                     & =2\frac{\delta f}{\delta y}h\Big\vert_a^b-2\int\frac{\delta^2 f}{\delta y^2}h dy                              \\
                                     & =2\frac{\delta f}{\delta y}\delta(x-y)\Big\vert_a^b-2\int\frac{\delta^2 f}{\delta y^2}\delta(x-y) dy          \\
@@ -148,7 +148,7 @@ Now we do it again
 \[\]
 
 \section*{Problem 1.3}
-Given \[G[f]=\int g(y,f)dy\]
+ \[\S\qq{Given}G[f]=\int g(y,f)dy\]
 show that \[\frac{\delta G[f]}{\delta f(x)}=\frac{\partial g(x,f)}{\partial f} \]
 \[\delta G[f][h]=\frac{d}{d\epsilon}G[f+\epsilon h]\Big\vert_{\epsilon=0}\]
 \[\delta G[f][h]=\frac{d}{d\epsilon}\int g(y,f+\epsilon h)dy\]
@@ -157,7 +157,7 @@ Say \[g(y,f+\epsilon h)=g(y,f)+\frac{1}{1!}\frac{\partial g(y,f)}{\partial f}(\e
 \[\delta G[f][h]=\int\frac{\partial g(y,f)}{\partial f}\delta(x-y)dy\]
 \[\frac{\delta G[f]}{\delta f(x)}=\frac{\partial g(x,f)}{\partial f} \qquad \blacksquare\]
 
-Given \[H[f]=\int g(y,f,f')dy\]
+\[\S\qq{Given}H[f]=\int g(y,f,f')dy\]
 show that \[\frac{\delta H[f]}{\delta f(x)}=\frac{\partial g}{\partial f} -\frac{d}{dx}\frac{\partial g}{\partial f'} \quad\text{where}\quad f'=\frac{\partial f}{\partial y}\]
 \[\delta H[f][h]=\frac{d}{d\epsilon}H[f+\epsilon h]\Big\vert_{\epsilon=0}\]
 \[\delta H[f][h]=\frac{d}{d\epsilon}\int g(y,f+\epsilon h,(f+\epsilon h)')dy\]
@@ -168,7 +168,7 @@ Same trick works \[g(y,f+\epsilon h,f'+\epsilon h')=g(y,f,f')+\frac{1}{1!}\frac{
 \[\delta H[f][h]=\frac{\partial g(x,f,f')}{\partial f}+\frac{\partial g(y,f,f')}{\partial f'}\delta(x-y)\Big \vert_a^b-\int\frac{\partial}{\partial y}\frac{\partial g(y,f,f')}{\partial f'}\delta(x-y)dy\]
 \[\delta H[f][h]=\frac{\partial g(x,f,f')}{\partial f}-\frac{d}{dx}\frac{\partial g(x,f,f')}{\partial f'} \qquad \blacksquare\]
 
-Given \[J[f]=\int g(y,f,f',f'')dy\]
+\[\S\qq{Given}J[f]=\int g(y,f,f',f'')dy\]
 show that \[\frac{\delta J[f]}{\delta f(x)}=\frac{\partial g}{\partial f} -\frac{d}{dx}\frac{\partial g}{\partial f'}+\frac{d^2}{dx^2}\frac{\partial g}{\partial f''} \quad\text{where}\quad f''=\frac{\partial^2 f}{\partial y^2}\]
 As above \[\delta J[f][h]=\frac{d}{d\epsilon}\int g\left(y,f+\epsilon h,f'+\epsilon h',f'+\epsilon h'\right)dy\]
 Focus on \[g(y,f+\epsilon h,f'+\epsilon h',f''+\epsilon h'')= \cdots +\frac{1}{1!}\frac{\partial g(y,f,f',f'')}{\partial f''}(\epsilon h'') + \cdots \]
@@ -183,9 +183,9 @@ hence
 \section*{Problem 1.4}
 Show that \[\frac{\delta\phi(x)}{\delta\phi(y)}=\delta(x-y)\]
 and \[\frac{\delta\dot{\phi}(t)}{\delta\phi(t_0)}=\frac{d}{dt}\delta(t-t_0)\]
-\[\delta[\phi][h]=\frac{d}{d\epsilon}\left[\phi+\epsilon h\right]=h\]
-\[\frac{\delta\phi(x)}{\delta\phi(y)}=\delta(x-y)\]
-\[\delta[\dot{\phi}][h]=\frac{d}{d\epsilon}\left[\dot{\phi}+\epsilon \dot{h}\right]=\dot{h}\]
+\[\S\qquad\delta[\phi][h]=\frac{d}{d\epsilon}\left[\phi+\epsilon h\right]=h\]
+\[\frac{\delta\phi(x)}{\delta\phi(y)}=\delta(x-y) \qquad \blacksquare\]
+\[\S\qquad\delta[\dot{\phi}][h]=\frac{d}{d\epsilon}\left[\dot{\phi}+\epsilon \dot{h}\right]=\dot{h}\]
 \[\frac{\delta\dot{\phi}(t)}{\delta\phi(t_0)}=\frac{d}{dt}\delta(t-t_0) \qquad \blacksquare\]
 
 
@@ -217,7 +217,7 @@ Hence
 \[\qq*{Figure the functional derivative}\var Z[J][h]=\dv{\epsilon}Z[J+\epsilon h]\]
 Look at the integrand alone
 \[(J(x)+\epsilon h) \Delta(x-y) (J(y)+\epsilon h)\]
-\[(J(x)J(y)+\epsilon h J(x)+\epsilon h J(y)+\epsilon^2 h) \Delta(x-y)\]
+\[(J(x)J(y)+\epsilon h J(x)+\epsilon h J(y)+\epsilon^2 h^2) \Delta(x-y)\]
 Take the derivative with respect to $\epsilon$
 \[J(x) \Delta(x-y)h + J(y) \Delta(x-y)h\]
 \begin{align*}
@@ -226,7 +226,7 @@ Take the derivative with respect to $\epsilon$
                    & =-\frac{Z_0[J]}{2}\left(\int d^4 x\,  J(x) \Delta(x-y)\delta(y-x) +\int d^4 y\,J(y) \Delta(x-y)\delta(x-y)\right) \\
                    & =-Z_0[J]\left(\int d^4 y\,J(y) \Delta(y-x)\delta(x-y)\right)                                                      \\
 \end{align*}
-\[\qq*{Using}\Delta(x)=\Delta(-x)\qq{above and changing variables to add the integrals.}\]
+\[\qq*{Using}\Delta(x)=\Delta(-x)\qand \delta(x-y)=\delta(y-x)\qq{above and changing variables to add the integrals.}\]
 
 \[\fdv{Z[J]}{J[z_1]}=-\left[\int d^4 y\, \Delta(z_1-y)J(y)\right]Z_0[J] \qquad \blacksquare\]
 
