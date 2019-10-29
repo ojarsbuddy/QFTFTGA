@@ -18,16 +18,20 @@
 \[\text{Recall the commutator}\qquad[\hat{x},\hat{p}]  = \hat{x}\hat{p}-\hat{p}\hat{x}=i\hbar \]
 \[\text{Clearly}\qquad [\hat{a},\hat{a}]  = \hat{a}\hat{a}-\hat{a}\hat{a}=0 \qquad \blacksquare \]
 \[\text{Clearly}\qquad [\hat{a}^\dagger,\hat{a}^\dagger]  = \hat{a}^\dagger\hat{a}^\dagger-\hat{a}^\dagger\hat{a}^\dagger=0 \qquad \blacksquare \]
-\[ [\hat{a},\hat{a}^\dagger]  = \hat{a}\hat{a}^\dagger-\hat{a}^\dagger\hat{a}\]
-\[ [\hat{a},\hat{a}^\dagger]  = \frac{m\omega}{2\hbar}\left[\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)-\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\right]\]
-\[ [\hat{a},\hat{a}^\dagger]  = \frac{m\omega}{2\hbar}\left[\left(\hat{x}^2 + \frac{i}{m\omega}(\hat{p}\hat{x}-\hat{x}\hat{p}) + \frac{1}{m^2\omega^2}\hat{p}^2\right)-\left(\hat{x}^2 + \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) + \frac{1}{m^2\omega^2}\hat{p}^2\right)\right]\]
-\[ [\hat{a},\hat{a}^\dagger]  = \frac{i}{2\hbar}\left[ (\hat{p}\hat{x}-\hat{x}\hat{p}) - (\hat{x}\hat{p}-\hat{p}\hat{x})\right]= \frac{i}{2\hbar}\left[-i\hbar-i\hbar\right]\]
-\[ [\hat{a},\hat{a}^\dagger]  = 1 \qquad\blacksquare\]
+\begin{align*}
+    [\hat{a},\hat{a}^\dagger] &= \hat{a}\hat{a}^\dagger-\hat{a}^\dagger\hat{a}\\
+    &= \frac{m\omega}{2\hbar}\left[\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)-\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\right]\\
+    &= \frac{m\omega}{2\hbar}\left[\hat{x}^2 + \frac{i}{m\omega}(\hat{p}\hat{x}-\hat{x}\hat{p}) + \frac{1}{m^2\omega^2}\hat{p}^2-\hat{x}^2 - \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) - \frac{1}{m^2\omega^2}\hat{p}^2\right]\\
+    &= \frac{i}{2\hbar}\left[ (\hat{p}\hat{x}-\hat{x}\hat{p}) - (\hat{x}\hat{p}-\hat{p}\hat{x})\right]= \frac{i}{2\hbar}\left[-i\hbar-i\hbar\right]=1 \qquad\blacksquare\\
+\end{align*}
+
 \[\hat{H}=\frac{\hat{p}^2}{2m}+\frac{1}{2}m\omega^2\hat{x}^2=\frac{1}{2}m\omega^2\left(\hat{x}^2+\frac{\hat{p}^2}{m^2\omega^2}\right) \]
-\[\text{Consider}\qquad \hat{a}^\dagger \hat{a} =\frac{m\omega}{2\hbar}\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)  \]
-\[\hat{a}^\dagger \hat{a} =\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) + \frac{1}{m^2\omega^2}\hat{p}^2\right)  \]
-\[\hat{a}^\dagger \hat{a} =\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right) + \frac{i}{2\hbar}(\hat{x}\hat{p}-\hat{p}\hat{x}) \]
-\[\hat{a}^\dagger \hat{a} =\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right) - \frac{1}{2} \]
+\begin{align*}
+    \text{Consider}\qquad \hat{a}^\dagger \hat{a} &=\frac{m\omega}{2\hbar}\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\\
+    &=\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) + \frac{1}{m^2\omega^2}\hat{p}^2\right)\\
+    &=\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right) + \frac{i}{2\hbar}(\hat{x}\hat{p}-\hat{p}\hat{x})\\
+    &=\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right) - \frac{1}{2}
+\end{align*}
 \[\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)=\frac{m\omega^2}{2}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right)   \]
 \[\hat{H}=\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)\qquad\blacksquare \]
 
@@ -41,7 +45,7 @@
 \[\text{Recall}\qquad\hat{a}\ket{n} =\sqrt{n}\ket{n-1} \qq{and} \hat{a}^\dagger\ket{n} =\sqrt{n+1}\ket{n+1}  \]
 \[\text{Hence}\qquad\hat{a}^\dagger\hat{a}\ket{n} =\hat{a}^\dagger\sqrt{n}\ket{n-1}=\sqrt{n}\sqrt{n}\ket{n}=n\ket{n} \]
 
-Expanding $(\hat{a}+\hat{a}^\dagger)^4$ yields 6 terms of interest
+Expanding $(\hat{a}+\hat{a}^\dagger)^4$ yields 6 terms of interest. Other terms do not get back $\ket{n}$.
 
 \[\hat{a}\hat{a}\hat{a}^\dagger\hat{a}^\dagger+\hat{a}\hat{a}^\dagger\hat{a}\hat{a}^\dagger+\hat{a}^\dagger\hat{a}\hat{a}\hat{a}^\dagger+\hat{a}\hat{a}^\dagger\hat{a}^\dagger\hat{a}+\hat{a}^\dagger\hat{a}\hat{a}^\dagger\hat{a}+\hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a}\]
 
@@ -71,7 +75,7 @@ Apply to $\ket{n}$
 \[\text{Given}\qquad x_j=\frac{1}{\sqrt{N}}\sum_k \tilde{x}_k e^{ikja}\qq{and} \hat{x}_k=\sqrt{\frac{\hbar}{2m\omega_k}}\left(\hat{a}_k+\hat{a}^\dagger_{-k}\right)\]
 \[x_j=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\left(\hat{a}_k+\hat{a}^\dagger_{-k}\right) e^{ikja}\]
 \[x_j=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}_k e^{ikja}+\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}^\dagger_{-k} e^{ikja}\]
-Reindex the second term
+Change index in the second term
 \[x_j=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}_k e^{ikja}+\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_{k}}}\hat{a}^\dagger_{k} e^{-ikja}\]
 \[x_j=\frac{1}{\sqrt{N}}\sqrt{\frac{\hbar}{m}}\sum_k \frac{1}{\sqrt{2\omega_k}}\left(\hat{a}_k e^{ikja}+\hat{a}^\dagger_{k} e^{-ikja}\right)\qquad\blacksquare\]
 
