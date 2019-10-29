@@ -22,7 +22,7 @@
     [\hat{a},\hat{a}^\dagger] &= \hat{a}\hat{a}^\dagger-\hat{a}^\dagger\hat{a}\\
     &= \frac{m\omega}{2\hbar}\left[\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)-\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\right]\\
     &= \frac{m\omega}{2\hbar}\left[\hat{x}^2 - \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) + \frac{1}{m^2\omega^2}\hat{p}^2-\hat{x}^2 - \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) - \frac{1}{m^2\omega^2}\hat{p}^2\right]\\
-    &= \frac{-i}{\hbar}\left[ \hat{x},\hat{p}\right]= \frac{-i}{\hbar}i\hbar\\
+    &= \frac{-i}{\hbar}\left[ \hat{x},\hat{p}\right]= \frac{-i}{\hbar} i\hbar\\
     [\hat{a},\hat{a}^\dagger] &=1 \qquad\blacksquare\\
 \end{align*}
 
@@ -73,12 +73,15 @@ Apply to $\ket{n}$
 \[E_n=\left(n+\frac{1}{2}\right)\hbar\omega+\frac{3\lambda}{4}\left(\frac{\hbar}{m\omega}\right)^2(2n^2+2n+1)\qquad\blacksquare\]
 
 \section*{Problem 2.3}
-\[\text{Given}\qquad x_j=\frac{1}{\sqrt{N}}\sum_k \tilde{x}_k e^{ikja}\qq{and} \hat{x}_k=\sqrt{\frac{\hbar}{2m\omega_k}}\left(\hat{a}_k+\hat{a}^\dagger_{-k}\right)\]
-\[x_j=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\left(\hat{a}_k+\hat{a}^\dagger_{-k}\right) e^{ikja}\]
-\[x_j=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}_k e^{ikja}+\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}^\dagger_{-k} e^{ikja}\]
-Change index in the second term
-\[x_j=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}_k e^{ikja}+\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_{k}}}\hat{a}^\dagger_{k} e^{-ikja}\]
-\[x_j=\frac{1}{\sqrt{N}}\sqrt{\frac{\hbar}{m}}\sum_k \frac{1}{\sqrt{2\omega_k}}\left(\hat{a}_k e^{ikja}+\hat{a}^\dagger_{k} e^{-ikja}\right)\qquad\blacksquare\]
+\[\]
+\begin{align*}
+    \text{Given}\qquad x_j&=\frac{1}{\sqrt{N}}\sum_k \tilde{x}_k e^{ikja}\qq{where} \hat{x}_k=\sqrt{\frac{\hbar}{2m\omega_k}}\left(\hat{a}_k+\hat{a}^\dagger_{-k}\right)\\
+    &=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\left(\hat{a}_k+\hat{a}^\dagger_{-k}\right) e^{ikja}\\
+    &=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}_k e^{ikja}+\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}^\dagger_{-k} e^{ikja}\\
+    &\qq{then change the index in the second term}\\
+    &=\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_k}}\hat{a}_k e^{ikja}+\frac{1}{\sqrt{N}}\sum_k \sqrt{\frac{\hbar}{2m\omega_{k}}}\hat{a}^\dagger_{k} e^{i(-k)ja}\\
+    &=\frac{1}{\sqrt{N}}\sqrt{\frac{\hbar}{m}}\sum_k \frac{1}{\sqrt{2\omega_k}}\left(\hat{a}_k e^{ikja}+\hat{a}^\dagger_{k} e^{-ikja}\right)\qquad\blacksquare
+\end{align*}
 
 
 \section*{Problem 2.4}
