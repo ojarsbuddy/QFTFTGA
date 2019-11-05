@@ -13,58 +13,95 @@
  
 \section*{Problem 2.1}
 
-\[\text{The lowering operator aka annihilation operator}\qquad\hat{a}  = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)  \]
-\[\text{The raising operator aka creation operator}\qquad\hat{a}^\dagger  = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)  \]
-\[\text{Recall the commutator}\qquad[\hat{x},\hat{p}]  = \hat{x}\hat{p}-\hat{p}\hat{x}=i\hbar \]
-\[\text{Clearly}\qquad [\hat{a},\hat{a}]  = \hat{a}\hat{a}-\hat{a}\hat{a}=0 \qquad \blacksquare \]
-\[\text{Clearly}\qquad [\hat{a}^\dagger,\hat{a}^\dagger]  = \hat{a}^\dagger\hat{a}^\dagger-\hat{a}^\dagger\hat{a}^\dagger=0 \qquad \blacksquare \]
 \begin{align*}
-    [\hat{a},\hat{a}^\dagger] &= \hat{a}\hat{a}^\dagger-\hat{a}^\dagger\hat{a}\\
+    \qq*{Clearly} [\hat{a},\hat{a}]  &= \hat{a}\hat{a}-\hat{a}\hat{a}=0\qq{using definition of commutator.}\blacksquare \\
+    \qq*{And} [\hat{a}^\dagger,\hat{a}^\dagger]  &= \hat{a}^\dagger\hat{a}^\dagger-\hat{a}^\dagger\hat{a}^\dagger=0\qq{using definition of commutator.}\blacksquare 
+\end{align*}
+
+\begin{align*}
+    \text{The lowering operator aka annihilation operator}\qquad\hat{a}  &= \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right) \\
+    \text{The raising operator aka creation operator}\qquad\hat{a}^\dagger  &= \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\\
+    \text{Recall the commutator}\qquad[\hat{x},\hat{p}]  &= \hat{x}\hat{p}-\hat{p}\hat{x}=i\hbar
+\end{align*}
+
+\begin{align*}
+    [\hat{a},\hat{a}^\dagger] &= \hat{a}\hat{a}^\dagger-\hat{a}^\dagger\hat{a}\qq{Start with the definition of a commutator.}\\
     &= \frac{m\omega}{2\hbar}\left[\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)-\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\right]\\
     &= \frac{m\omega}{2\hbar}\left[\hat{x}^2 - \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) + \frac{1}{m^2\omega^2}\hat{p}^2-\hat{x}^2 - \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) - \frac{1}{m^2\omega^2}\hat{p}^2\right]\\
-    &= \frac{-i}{\hbar}\left[ \hat{x},\hat{p}\right]= \frac{-i}{\hbar} i\hbar\\
-    [\hat{a},\hat{a}^\dagger] &=1 \qquad\blacksquare\\
-\end{align*}
+    &= \frac{-i}{\hbar}\left[ \hat{x},\hat{p}\right]= \frac{-i}{\hbar} (i\hbar)\\
+\end{align*}  
+
+  \[\therefore\qquad[\hat{a},\hat{a}^\dagger] =1 \qquad\blacksquare\]
+
 
 \[\hat{H}=\frac{\hat{p}^2}{2m}+\frac{1}{2}m\omega^2\hat{x}^2=\frac{1}{2}m\omega^2\left(\hat{x}^2+\frac{\hat{p}^2}{m^2\omega^2}\right) \]
 \begin{align*}
     \text{Consider}\qquad \hat{a}^\dagger \hat{a} &=\frac{m\omega}{2\hbar}\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\\
     &=\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) + \frac{1}{m^2\omega^2}\hat{p}^2\right)\\
     &=\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right) + \frac{i}{2\hbar}(\hat{x}\hat{p}-\hat{p}\hat{x})\\
-    &=\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right) - \frac{1}{2}
+    &=\frac{m\omega}{2\hbar}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right) - \frac{1}{2}\\
+    \qq{Rearrange terms}\\
+    \hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)&=\frac{m\omega^2}{2}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right)= \hat{H}\\
+    \therefore\qquad\hat{H}&=\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)\qquad\blacksquare
 \end{align*}
-\[\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)=\frac{m\omega^2}{2}\left(\hat{x}^2 + \frac{1}{m^2\omega^2}\hat{p}^2\right)   \]
-\[\hat{H}=\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)\qquad\blacksquare \]
+
 
 \section*{Problem 2.2}
-\[\text{Given}\qquad\hat{H}=\frac{\hat{p}^2}{2m}+\frac{1}{2}m\omega^2\hat{x}^2+\lambda\hat{x}^4\qquad\text{where}\qquad \lambda\ll 1 \]
-\[\text{Clearly}\qquad\hat{H}=\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)+\lambda\hat{x}^4\]
+\[\text{Given}\qquad\hat{H}=\frac{\hat{p}^2}{2m}+\frac{1}{2}m\omega^2\hat{x}^2+\lambda\hat{x}^4\qquad\text{where}\qquad \lambda\ll 1. \]
+Express $\hat{H}$ in terms of raising and lowering operators.
+\[\text{Recall}\qquad\hat{x}=\sqrt{\frac{\hbar}{2m\omega}}(\hat{a}+\hat{a}^\dagger)\qq{then}\hat{H}=\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)++\lambda\left(\frac{\hbar}{2m\omega}\right)^2(\hat{a}+\hat{a}^\dagger)^4   \]
 
-\[\text{Recall}\qquad\hat{x}=\sqrt{\frac{\hbar}{2m\omega}}(\hat{a}+\hat{a}^\dagger)   \]
-\[\hat{H}=\hbar\omega\left(\hat{a}^\dagger \hat{a} +\frac{1}{2}\right)+\lambda\left(\frac{\hbar}{2m\omega}\right)^2(\hat{a}+\hat{a}^\dagger)^4\]
+\[\text{Reminder}\qquad\hat{a}\ket{n} =\sqrt{n}\ket{n-1} \qq{and} \hat{a}^\dagger\ket{n} =\sqrt{n+1}\ket{n+1}  \]
+\[\text{For example,}\qquad\hat{a}^\dagger\hat{a}\ket{n} =\hat{a}^\dagger\sqrt{n}\ket{n-1}=\sqrt{n}\sqrt{n}\ket{n}=n\ket{n} \]
 
-\[\text{Recall}\qquad\hat{a}\ket{n} =\sqrt{n}\ket{n-1} \qq{and} \hat{a}^\dagger\ket{n} =\sqrt{n+1}\ket{n+1}  \]
-\[\text{Hence}\qquad\hat{a}^\dagger\hat{a}\ket{n} =\hat{a}^\dagger\sqrt{n}\ket{n-1}=\sqrt{n}\sqrt{n}\ket{n}=n\ket{n} \]
+Expanding $(\hat{a}+\hat{a}^\dagger)^4$ yields 6 terms of interest, which return $\ket{n}$. That is to say, each useful term has an equal number of raising and lowering operators.
 
-Expanding $(\hat{a}+\hat{a}^\dagger)^4$ yields 6 terms of interest. Other terms do not get back $\ket{n}$.
+\[(\hat{a}\hat{a}\hat{a}^\dagger\hat{a}^\dagger+\hat{a}\hat{a}^\dagger\hat{a}\hat{a}^\dagger+\hat{a}^\dagger\hat{a}\hat{a}\hat{a}^\dagger+\hat{a}\hat{a}^\dagger\hat{a}^\dagger\hat{a}+\hat{a}^\dagger\hat{a}\hat{a}^\dagger\hat{a}+\hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a})\ket{n}=E_n\ket{n}\]
 
-\[\hat{a}\hat{a}\hat{a}^\dagger\hat{a}^\dagger+\hat{a}\hat{a}^\dagger\hat{a}\hat{a}^\dagger+\hat{a}^\dagger\hat{a}\hat{a}\hat{a}^\dagger+\hat{a}\hat{a}^\dagger\hat{a}^\dagger\hat{a}+\hat{a}^\dagger\hat{a}\hat{a}^\dagger\hat{a}+\hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a}\]
-
-Apply to $\ket{n}$
-\begin{multline*}
-\hat{a}\hat{a}\hat{a}^\dagger\sqrt{n+1}\ket{n+1}+\hat{a}\hat{a}^\dagger\hat{a}\sqrt{n+1}\ket{n+1}+\hat{a}^\dagger\hat{a}\hat{a}\sqrt{n+1}\ket{n+1}\\+\hat{a}\hat{a}^\dagger\hat{a}^\dagger\sqrt{n}\ket{n-1}+\hat{a}^\dagger\hat{a}\hat{a}^\dagger\sqrt{n}\ket{n-1}+\hat{a}^\dagger\hat{a}^\dagger\hat{a}\sqrt{n}\ket{n-1}
-\end{multline*}
-\begin{multline*}
-\hat{a}\hat{a}\sqrt{n+2}\sqrt{n+1}\ket{n+2}+\hat{a}\hat{a}^\dagger\sqrt{n+1}\sqrt{n+1}\ket{n}+\hat{a}^\dagger\hat{a}\sqrt{n+1}\sqrt{n+1}\ket{n}\\+\hat{a}\hat{a}^\dagger\sqrt{n}\sqrt{n}\ket{n}+\hat{a}^\dagger\hat{a}\sqrt{n}\sqrt{n}\ket{n}+\hat{a}^\dagger\hat{a}^\dagger\sqrt{n-1}\sqrt{n}\ket{n-2}
-\end{multline*}
-\begin{multline*}
-\hat{a}\sqrt{n+2}\sqrt{n+2}\sqrt{n+1}\ket{n+1}+\hat{a}\sqrt{n+1}(n+1)\ket{n+1}+\hat{a}^\dagger\sqrt{n}(n+1)\ket{n-1}\\+\hat{a}(\sqrt{n+1})n\ket{n+1}+\hat{a}^\dagger\sqrt{n}\sqrt{n}\sqrt{n}\ket{n-1}+\hat{a}^\dagger\sqrt{n-1}\sqrt{n-1}\sqrt{n}\ket{n-1}
-\end{multline*}
-
-\begin{multline*}
-\sqrt{n+1}\sqrt{n+2}\sqrt{n+2}\sqrt{n+1}\ket{n}+\sqrt{n+1}\sqrt{n+1}(n+1)\ket{n}+\sqrt{n}\sqrt{n}(n+1)\ket{n}\\+\sqrt{n+1}\sqrt{n+1}\sqrt{n}\sqrt{n}\ket{n}+\sqrt{n}\sqrt{n}\sqrt{n}\sqrt{n}\ket{n}+\sqrt{n}\sqrt{n-1}\sqrt{n-1}\sqrt{n}\ket{n}
-\end{multline*}
-
+Apply each of the six terms to $\ket{n}$
+\begin{align*}
+    \hat{a}\hat{a}\hat{a}^\dagger\hat{a}^\dagger\ket{n}&=\hat{a}\hat{a}\hat{a}^\dagger\sqrt{n+1}\ket{n+1}\\
+    &=\hat{a}\hat{a}\sqrt{n+2}\sqrt{n+1}\ket{n+2}\\
+    &=\hat{a}\sqrt{n+2}\sqrt{n+2}\sqrt{n+1}\ket{n+1}\\
+    &=\sqrt{n+1}\sqrt{n+2}\sqrt{n+2}\sqrt{n+1}\ket{n}\\
+    &=(n+1)(n+2)\ket{n}
+\end{align*}
+\begin{align*}
+    \hat{a}\hat{a}^\dagger\hat{a}\hat{a}^\dagger\ket{n}&=\hat{a}\hat{a}^\dagger\hat{a}\sqrt{n+1}\ket{n+1}\\
+    &=\hat{a}\hat{a}^\dagger\sqrt{n+1}\sqrt{n+1}\ket{n}\\
+    &=\hat{a}\sqrt{n+1}(n+1)\ket{n+1}\\
+    &=\sqrt{n+1}\sqrt{n+1}(n+1)\ket{n}\\
+    &=(n+1)^2\ket{n}
+\end{align*}
+\begin{align*}
+    \hat{a}^\dagger\hat{a}\hat{a}\hat{a}^\dagger\ket{n}&=\hat{a}^\dagger\hat{a}\hat{a}\sqrt{n+1}\ket{n+1}\\
+    &=\hat{a}^\dagger\hat{a}\sqrt{n+1}\sqrt{n+1}\ket{n}\\
+    &=\hat{a}^\dagger\sqrt{n}(n+1)\ket{n-1}\\
+    &=\sqrt{n}\sqrt{n}(n+1)\ket{n}\\
+    &=n(n+1)\ket{n}
+\end{align*}
+\begin{align*}
+    \hat{a}\hat{a}^\dagger\hat{a}^\dagger\hat{a}\ket{n}&=\hat{a}\hat{a}^\dagger\hat{a}^\dagger\sqrt{n}\ket{n-1}\\
+    &=\hat{a}\hat{a}^\dagger\sqrt{n}\sqrt{n}\ket{n}\\
+    &=\hat{a}(\sqrt{n+1})n\ket{n+1}\\
+    &=\sqrt{n+1}\sqrt{n+1}\sqrt{n}\sqrt{n}\ket{n}\\
+    &=n(n+1)\ket{n}
+\end{align*}
+\begin{align*}
+    \hat{a}^\dagger\hat{a}\hat{a}^\dagger\hat{a}\ket{n}&=\hat{a}^\dagger\hat{a}\hat{a}^\dagger\sqrt{n}\ket{n-1}\\
+    &=\hat{a}^\dagger\hat{a}\sqrt{n}\sqrt{n}\ket{n}\\
+    &=\hat{a}^\dagger\sqrt{n}\sqrt{n}\sqrt{n}\ket{n-1}\\
+    &=\sqrt{n}\sqrt{n}\sqrt{n}\sqrt{n}\ket{n}\\
+    &=n^2\ket{n}
+\end{align*}
+\begin{align*}
+    \hat{a}^\dagger\hat{a}^\dagger\hat{a}\hat{a}\ket{n}&=\hat{a}^\dagger\hat{a}^\dagger\hat{a}\sqrt{n}\ket{n-1}\\
+    &=\hat{a}^\dagger\hat{a}^\dagger\sqrt{n-1}\sqrt{n}\ket{n-2}\\
+    &=\hat{a}^\dagger\sqrt{n-1}\sqrt{n-1}\sqrt{n}\ket{n-1}\\
+    &=\sqrt{n}\sqrt{n-1}\sqrt{n-1}\sqrt{n}\ket{n}\\
+    &=n(n-1)\ket{n}
+\end{align*}
+Combine the six terms to find:
 \[[(n+1)(n+2)+(n+1)^2+n(n+1)+n(n+1)+n^2+n(n-1)]\ket{n}\]
 \[\text{which is}\qquad(6n^2+6n+3)\ket{n}\]
 
