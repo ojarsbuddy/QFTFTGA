@@ -45,27 +45,44 @@ Evaluate the following for the simple harmonic oscillator:
 \[\qq{hence}\hat{a}\hat{a}^\dagger \hat{a}^\dagger-\hat{a}^\dagger \hat{a}\hat{a}^\dagger +\hat{a}^\dagger=(\hat{a}\hat{a}^\dagger -\hat{a}^\dagger \hat{a})\hat{a}^\dagger +\hat{a}^\dagger   =[\hat{a},\hat{a}^\dagger] \hat{a}^\dagger +\hat{a}^\dagger  = \hat{a}^\dagger +\hat{a}^\dagger \]
 \[ [\hat{a},(\hat{a}^\dagger)^2]   =2\hat{a}^\dagger \]
 
-\[\S\qq{Given the inductive step}[\hat{a},(\hat{a}^\dagger)^{n-1}] =(n-1)(\hat{a}^\dagger)^{n-2} \]
-\[\qq{Try}[\hat{a},(\hat{a}^\dagger)^n]=\hat{a}(\hat{a}^\dagger)^n-(\hat{a}^\dagger)^n \hat{a}=\hat{a}(\hat{a}^\dagger)^{n-1}\hat{a}^\dagger-(\hat{a}^\dagger)^{n-1}\hat{a}^\dagger \hat{a}\]
-\[=\hat{a}(\hat{a}^\dagger)^{n-1}\hat{a}^\dagger-(\hat{a}^\dagger)^{n-1}(\hat{a}\hat{a}^\dagger -1 )=\hat{a}(\hat{a}^\dagger)^{n-1}\hat{a}^\dagger-(\hat{a}^\dagger)^{n-1}\hat{a}\hat{a}^\dagger +(\hat{a}^\dagger)^{n-1}\]
-\[=\hat{a}(\hat{a}^\dagger)^{n-1}\hat{a}^\dagger-(\hat{a}^\dagger)^{n-1}\hat{a}\hat{a}^\dagger +(\hat{a}^\dagger)^{n-1}=(\hat{a}(\hat{a}^\dagger)^{n-1}-(\hat{a}^\dagger)^{n-1}\hat{a})\hat{a}^\dagger +(\hat{a}^\dagger)^{n-1}\]
-\[=[\hat{a},(\hat{a}^\dagger)^{n-1}]\hat{a}^\dagger +(\hat{a}^\dagger)^{n-1}=(n-1)(\hat{a}^\dagger)^{n-2}\hat{a}^\dagger+(\hat{a}^\dagger)^{n-1}=n(\hat{a}^\dagger)^{n-1}\]
-\[\qq{Therefore}[\hat{a},(\hat{a}^\dagger)^n]=n(\hat{a}^\dagger)^{n-1}\qquad\blacksquare\]
-
-\[\qq*{(b) Show that}\bra{0}\hat{a}^n(\hat{a}^\dagger)^m\ket{0} =n!\,\delta_{n,m}  \]
-\[\qq{Recall} \ket{k}=\frac{(\hat{a}^\dagger)^k}{\sqrt{k!}}\ket{0}\qq{hence} \ket{m}=\frac{(\hat{a}^\dagger)^m}{\sqrt{m!}}\ket{0} \qq{and}\ket{n}=\frac{(\hat{a}^\dagger)^n}{\sqrt{n!}}\ket{0}\]
-\[\bra{0}\hat{a}^n(\hat{a}^\dagger)^m\ket{0} =\bra{n}\sqrt{n!}\sqrt{m!}\ket{m}=\sqrt{n!}\sqrt{m!}\bra{n}\ket{m}=\sqrt{n!}\sqrt{m!}\,\delta_{nm}=n!\,\delta_{n,m}\]
-\[\qq{Therefore}\bra{0}\hat{a}^n(\hat{a}^\dagger)^m\ket{0} =n!\,\delta_{n,m}\qquad\blacksquare\]
-
-\[\qq*{(c) Show that}\bra{m}\hat{a}^\dagger\ket{n}  =\sqrt{n+1}\;\delta_{m,n+1}  \]
-\[\qq{Recall}\hat{a}^\dagger\ket{k}=\sqrt{k+1}\ket{k+1}\]
-\[\bra{m}\hat{a}^\dagger\ket{n} = \bra{m}\sqrt{n+1}\ket{n+1}  = \sqrt{n+1}\bra{m}\ket{n+1}=\sqrt{n+1}\;\delta_{m,n+1}\]
-\[\qq{Therefore}\bra{m}\hat{a}^\dagger\ket{n}  =\sqrt{n+1}\;\delta_{m,n+1}\qquad\blacksquare\]
-
-\[\qq*{(d) Show that}\bra{m}\hat{a}\ket{n} =\sqrt{n}\;\delta_{m,n-1} \]
-\[\qq{Recall}\hat{a}\ket{k}=\sqrt{k}\ket{k-1}\]
-\[\bra{m}\hat{a}\ket{n} = \bra{m}\sqrt{n}\ket{n-1}  = \sqrt{n}\bra{m}\ket{n-1}=\sqrt{n}\;\delta_{m,n-1}\]
-\[\qq{Therefore}\bra{m}\hat{a}\ket{n}  =\sqrt{n}\;\delta_{m,n-1}\qquad\blacksquare\]
+\begin{align*}
+    \qq{Try}[\hat{a},(\hat{a}^\dagger)^n]&=\hat{a}(\hat{a}^\dagger)^n-(\hat{a}^\dagger)^n \hat{a}\\
+    &=\hat{a}(\hat{a}^\dagger)^{n-1}\hat{a}^\dagger-(\hat{a}^\dagger)^{n-1}\hat{a}^\dagger \hat{a}\\
+    &=\hat{a}(\hat{a}^\dagger)^{n-1}\hat{a}^\dagger-(\hat{a}^\dagger)^{n-1}(\hat{a}\hat{a}^\dagger -1 )\\
+    &=\hat{a}(\hat{a}^\dagger)^{n-1}\hat{a}^\dagger-(\hat{a}^\dagger)^{n-1}\hat{a}\hat{a}^\dagger +(\hat{a}^\dagger)^{n-1}\\
+    &=\hat{a}(\hat{a}^\dagger)^{n-1}\hat{a}^\dagger-(\hat{a}^\dagger)^{n-1}\hat{a}\hat{a}^\dagger +(\hat{a}^\dagger)^{n-1}\\
+    &=(\hat{a}(\hat{a}^\dagger)^{n-1}-(\hat{a}^\dagger)^{n-1}\hat{a})\hat{a}^\dagger +(\hat{a}^\dagger)^{n-1}\\
+    &=[\hat{a},(\hat{a}^\dagger)^{n-1}]\hat{a}^\dagger +(\hat{a}^\dagger)^{n-1}\\
+    &=(n-1)(\hat{a}^\dagger)^{n-2}\hat{a}^\dagger+(\hat{a}^\dagger)^{n-1}\\
+    &=n(\hat{a}^\dagger)^{n-1}\\
+    \qq{Therefore}[\hat{a},(\hat{a}^\dagger)^n]&=n(\hat{a}^\dagger)^{n-1}\qquad\blacksquare
+\end{align*}
+\begin{align*}
+    \qq*{(b) Show that}\bra{0}\hat{a}^n(\hat{a}^\dagger)^m\ket{0} &=n!\,\delta_{n,m}  \\
+    \qq{Recall} \ket{k}&=\frac{(\hat{a}^\dagger)^k}{\sqrt{k!}}\ket{0}\\
+    \qq{hence} \sqrt{k!}\ket{k}&=(\hat{a}^\dagger)^k \ket{0} \\
+    \bra{0}\hat{a}^n(\hat{a}^\dagger)^m\ket{0} &=\bra{n}\sqrt{n!}\sqrt{m!}\ket{m}\\
+    &=\sqrt{n!}\sqrt{m!}\bra{n}\ket{m}\\
+    &=\sqrt{n!}\sqrt{m!}\,\delta_{nm}\\
+    &=n!\,\delta_{n,m}\\
+    \qq{Therefore}\bra{0}\hat{a}^n(\hat{a}^\dagger)^m\ket{0} &=n!\,\delta_{n,m}\qquad\blacksquare
+\end{align*}
+\begin{align*}
+    \qq*{(c) Show that}\bra{m}\hat{a}^\dagger\ket{n}  &=\sqrt{n+1}\;\delta_{m,n+1}  \\
+    \qq{Recall}\hat{a}^\dagger\ket{k}&=\sqrt{k+1}\ket{k+1}\\
+    \bra{m}\hat{a}^\dagger\ket{n} &= \bra{m}\sqrt{n+1}\ket{n+1}\\
+    &= \sqrt{n+1}\bra{m}\ket{n+1}\\
+    &=\sqrt{n+1}\;\delta_{m,n+1}\\
+    \qq{Therefore}\bra{m}\hat{a}^\dagger\ket{n}  &=\sqrt{n+1}\;\delta_{m,n+1}\qquad\blacksquare
+\end{align*}
+\begin{align*}
+    \qq*{(d) Show that}\bra{m}\hat{a}\ket{n} &=\sqrt{n}\;\delta_{m,n-1}\\
+    \qq{Recall}\hat{a}\ket{k}&=\sqrt{k}\ket{k-1}\\
+    \bra{m}\hat{a}\ket{n} &= \bra{m}\sqrt{n}\ket{n-1}\\
+    &= \sqrt{n}\bra{m}\ket{n-1}\\
+    &=\sqrt{n}\;\delta_{m,n-1}\\
+    \qq{Therefore}\bra{m}\hat{a}\ket{n}  &=\sqrt{n}\;\delta_{m,n-1}\qquad\blacksquare
+\end{align*}
 
 \section*{Problem 3.3}
 \[\qq{Let}\hat{H}=\frac{1}{2m}(\hat{p}^2_1+\hat{p}^2_2+\hat{p}^2_3) + \frac{1}{2}m\omega^2(\hat{x}^2_1+\hat{x}^2_2+\hat{x}^2_3) \]
