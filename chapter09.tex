@@ -66,7 +66,8 @@ K^2=\eval{\frac{1}{\text{i}}\pdv{\hat{D}(\phi^2)}{\phi^2}}_{\phi^2=0}&=\eval{\fr
 		1&0 & 0&0 \\ 
 		0&0&0&0
 		\end{pmatrix}\qquad\blacksquare
-\end{align*}\begin{align*}
+\end{align*}
+\begin{align*}
 \qq*{For the $z$-direction}D(\phi^3)&=\vb{\Lambda}(\phi^3)=\begin{pmatrix}
 \cosh{\phi^3}&0&0&\sinh{\phi^3}\\
 0&1 & 0&0 \\ 
@@ -92,19 +93,68 @@ K^3=\eval{\frac{1}{\text{i}}\pdv{\hat{D}(\phi^3)}{\phi^3}}_{\phi^3=0}&=\eval{\fr
 
 
 \section*{Problem 9.3}
-\[D(\vb{\phi})=e^{\text{i}\vb{K}\cdot\vb{\phi}}\approx 1+\text{i}\vb{K}\cdot\vb{\phi}
-\]
+
+Show the Lorentz transformation for an infinitesmal boost $v^j$ along $x^j$-axis, \emph{i.e.}, $x^j+v^j t$. The Roman index denotes a component of a three-vector. Consider the Lorentz transformation matrix ${\vb{\Lambda}^\mu}_\nu\equiv\pdv*{\bar{x}^\mu}{x^\nu}$. The Lorentz factor has MacLaurin series $\gamma=1+\frac{1}{2}\beta^2+\frac{3}{8}\beta^4+\frac{5}{16}\beta^6+\cdots$. For an infinitesimal boost $v^j $ we have $\beta\ll 1 \implies\gamma\to 1$. 
+\begin{align*}
+	\bar{x}^j&=\gamma(x^j+v^j t)\\
+	\pdv*{\bar{x}^j}{x^j}&=\gamma\to 1\\
+	\pdv*{\bar{x}^j}{x^{i\neq j}}&=0\\
+	\pdv*{\bar{x}^j}{x^0}&=	\gamma v^j\to v^j\\
+	\bar{x}^0&=\gamma(x^0v^j x^j)\\
+	\pdv*{\bar{x}^0}{x^0}&=\gamma\to 1\\
+	\pdv*{\bar{x}^0}{x^j}&=\gamma v^j\to v^j\\
+\end{align*}
+
+\[ \qq*{Pop in the}\pdv*{\bar{x}^\mu}{x^\nu}\qq{to find}{\vb{\Lambda}^\mu}_\nu=\begin{pmatrix}1&v^1&v^2&v^3\\v^1&1&0&0\\v^2&0&1&0\\v^3&0&0&1\\
+\end{pmatrix}\]
+
+Show the Lorentz transformation for an infinitesimal rotation $\theta^j$ about $x^j$. 
+
+\begin{align*}
+	\qq*{Consider the rotation around}x\qquad
+	\bar{y}&=y\cos\theta-z\sin\theta\\
+	\bar{z}&=y\sin\theta+z\cos\theta
+\end{align*}
+
+Recall MacLaurin series $\sin\theta=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\cdots$ and $\cos\theta=1-\frac{\theta^2}{2!}+\frac{\theta^4}{4!}-\cdots$.
+For an infinitesimal rotation we have $\theta\ll1\implies \sin\theta\to\theta, \cos\theta\to 1$.
+
+\begin{align*}
+	\qq{For an infinitesimal rotation around}x^1\qquad \bar{x}^1 &\to x^1\\
+	\bar{x}^2 &\to x^2 -x^3 \theta^1\\
+	\bar{x}^3 &\to x^2 \theta^1 +x^3\\
+	\qq{For an infinitesimal rotation around}x^2\qquad \bar{x}^2 &\to x^2\\
+	\bar{x}^3 &\to x^3 -x^1 \theta^2\\
+	\bar{x}^1 &\to x^3 \theta^2 +x^1\\
+	\qq{For an infinitesimal rotation around}x^3\qquad \bar{x}^3 &\to x^3\\
+	\bar{x}^1 &\to x^1 -x^2 \theta^3\\
+	\bar{x}^2 &\to x^1 \theta^3 +x^2\\
+	\qq{And} \bar{x}^0 &\to x^0\\
+\end{align*}
+
+\[ \qq*{Pop in the}\pdv*{\bar{x}^\mu}{x^\nu}\qq{to find}{\vb{\Lambda}^\mu}_\nu=\begin{pmatrix}1&0&0&0\\0&1&-\theta^3&\theta^2\\0&\theta^3&1&-\theta^1\\0&-\theta^2&\theta^1&1\\
+\end{pmatrix}\]
+This matches the sense of Eq. 9.2 rather than the answer in the book.
+
+Show that a generalized infinitesimal Lorentz transformation can be written as $x'^\mu={\Lambda^\mu}_\nu x^\nu$ where $\vb{\Lambda}=\vb{1}+\vb{\omega}$.
+\[ {\vb{\omega}^\mu}_\nu=\begin{pmatrix}1&v^1&v^2&v^3\\v^1&1&-\theta^3&\theta^2\\v^2&\theta^3&1&-\theta^1\\v^3&-\theta^2&\theta^1&1\\
+\end{pmatrix}\]
 
 
 
 
-\[\omega^{\mu\nu}={\omega^\mu}_\lambda g^{\lambda\nu}=\begin{pmatrix}0&v^1&v^2&v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}
+
+
+
+\[\omega^{\mu\nu}={\omega^\mu}_\lambda g^{\lambda\nu}=\begin{pmatrix}0&v^1&v^2&v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}
 \begin{pmatrix}1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix}=
-\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}\]
+\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}\]
 
 \[\omega_{\mu\nu}=g_{\mu\lambda}{\omega^\lambda}_\nu =\begin{pmatrix}1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix}
-\begin{pmatrix}0&v^1&v^2&v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}=
-\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}\]
+\begin{pmatrix}0&v^1&v^2&v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}=
+\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&\theta^3&-\theta^2\\-v^2&-\theta^3&0&\theta^1\\-v^3&\theta^2&-\theta^1&0\end{pmatrix}\]
+
+\[\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}\]
 
 Clearly the transposes of the resultant matrices are the negatives of the resultant matrices. Hence the resultant matrices are skew-symmetric, which is otherwise known as antisymmetric.
 
