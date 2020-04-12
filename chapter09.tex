@@ -156,13 +156,28 @@ Show that a generalized infinitesimal Lorentz transformation can be written as $
 
 \[\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}\]
 
+\[\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&\theta^3&-\theta^2\\-v^2&-\theta^3&0&\theta^1\\-v^3&\theta^2&-\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&\theta^3&-\theta^2\\-v^2&-\theta^3&0&\theta^1\\-v^3&\theta^2&-\theta^1&0\end{pmatrix}\]
+
 Clearly the transposes of the resultant matrices are the negatives of the resultant matrices. Hence the resultant matrices are skew-symmetric, which is otherwise known as antisymmetric.
 
 
  
 \section*{Problem 9.4}
 
-Given \[ f(x^\prime) = f(x+a+\omega x) = f(x)+a^\mu \partial_\mu f(x)+{\omega^\mu}_\nu x^\nu \partial_\mu f(x)\] we know these things \[\omega^{\mu\nu}={\omega^\mu}_\lambda g^{\lambda\nu} \] and \[\omega_{\mu\nu}= g_{\mu\lambda} {\omega^\lambda}_\nu \] and \[g^{\mu\lambda}g_{\lambda\nu} = I\] and \[A_\mu=g_{\mu\nu}A^\nu\] and \[A^\mu=g^{\mu\nu}A_\nu\] and \[{\omega^\mu}_\nu=\frac{1}{2}[{\omega^\mu}_\nu+{{\omega^\mu}_\nu}^T]+\frac{1}{2}[{\omega^\mu}_\nu-{{\omega^\mu}_\nu}^T]=\frac{1}{2}[{\omega^\mu}_\nu+{\omega_\mu}^\nu]+\frac{1}{2}[{\omega^\mu}_\nu-{\omega_\mu}^\nu]\]
+\[\qq*{Given } f(x^\prime) = f(x+a+\omega x) = f(x)+a^\mu \partial_\mu f(x)+{\omega^\mu}_\nu x^\nu \partial_\mu f(x)\]
+
+\begin{align*}
+	\qq*{We know these things}\omega^{\mu\nu}&={\omega^\mu}_\lambda g^{\lambda\nu}\\
+	\omega_{\mu\nu}&= g_{\mu\lambda} {\omega^\lambda}_\nu\\
+	g^{\mu\lambda}g_{\lambda\nu}&= I\\
+	A_\mu&=g_{\mu\nu}A^\nu\\
+	A^\mu&=g^{\mu\nu}A_\nu\\
+	{\omega^\mu}_\nu&=\frac{1}{2}[{\omega^\mu}_\nu+{{\omega^\mu}_\nu}^T]+\frac{1}{2}[{\omega^\mu}_\nu-{{\omega^\mu}_\nu}^T]\\
+	&=\frac{1}{2}[{\omega^\mu}_\nu+{\omega_\mu}^\nu]+\frac{1}{2}[{\omega^\mu}_\nu-{\omega_\mu}^\nu]
+\end{align*}
+
+
+
 
 Examine \[{\omega^\mu}_\nu x^\nu \partial_\mu=\sum^3_{\mu=0}\sum^3_{\nu=0}{\omega^\mu}_\nu x^\nu \partial_\mu\]
 \begin{multline*}
