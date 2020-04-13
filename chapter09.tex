@@ -8,20 +8,20 @@
 \author{John Bortins}
  
 \begin{document}
- 
+
 \maketitle{}
 
 \section*{Notes}
 
 Got some work to do on these problems.
- 
+
 \section*{Problem 9.1}
 
 \begin{align*}
-\qq*{Given the translation operator}\hat{U}(\vb{a})&=e^{-\text{i}\vb{\hat{p}}\cdot\vb{a}}\\
-\qq*{Construct the derivative}\pdv{\hat{U}(\vb{a})}{\vb{a}}&=-\text{i}\vb{\hat{p}}e^{-\text{i}\vb{\hat{p}}\cdot\vb{a}}\\
-\qq*{Shuffle the factors}\vb{\hat{p}}&=-\frac{1}{\text{i}}\pdv{\hat{U}(\vb{a})}{\vb{a}}e^{\text{i}\vb{\hat{p}}\cdot\vb{a}}\\
-\qq*{Hence the generators are given by}\vb{\hat{p}}&=\eval{-\frac{1}{\text{i}}\pdv{\hat{U}(\vb{a})}{\vb{a}}}_{\vb{a}=0}\qquad\blacksquare
+	\qq*{Given the translation operator}\hat{U}(\vb{a})         & =e^{-\text{i}\vb{\hat{p}}\cdot\vb{a}}                                                 \\
+	\qq*{Construct the derivative}\pdv{\hat{U}(\vb{a})}{\vb{a}} & =-\text{i}\vb{\hat{p}}e^{-\text{i}\vb{\hat{p}}\cdot\vb{a}}                            \\
+	\qq*{Shuffle the factors}\vb{\hat{p}}                       & =-\frac{1}{\text{i}}\pdv{\hat{U}(\vb{a})}{\vb{a}}e^{\text{i}\vb{\hat{p}}\cdot\vb{a}}  \\
+	\qq*{Hence the generators are given by}\vb{\hat{p}}         & =\eval{-\frac{1}{\text{i}}\pdv{\hat{U}(\vb{a})}{\vb{a}}}_{\vb{a}=0}\qquad\blacksquare
 \end{align*}
 
 
@@ -31,60 +31,60 @@ Got some work to do on these problems.
 \[\qq*{The generators of the Lorentz transformations are given by}K^j=\eval{\frac{1}{\text{i}}\pdv{\hat{D}(\phi^j)}{\phi^j}}_{\phi^j=0}.\]
 \[ \qq*{Take the} D(\phi^i) \qq{to be the Lorentz transformation matrices}\vb{\Lambda}(\phi^i).\]
 \begin{align*}
-\qq*{For the $x$-direction}D(\phi^1)&=\vb{\Lambda}(\phi^1)=\begin{pmatrix}
-\cosh{\phi^1}&\sinh{\phi^1}&0&0\\
-\sinh{\phi^1}&\cosh{\phi^1} & 0&0 \\ 
-0 & 0&1&0\\
-0&0&0&1
-\end{pmatrix}\\
-K^1=\eval{\frac{1}{\text{i}}\pdv{\hat{D}(\phi^1)}{\phi^1}}_{\phi^1=0}&=\eval{\frac{1}{\text{i}}\begin{pmatrix}
-		\sinh{\phi^1}&\cosh{\phi^1}&0&0\\
-		\cosh{\phi^1}&\sinh{\phi^1} & 0&0 \\ 
-		0 & 0&0&0\\
-		0&0&0&0
+	\qq*{For the $x$-direction}D(\phi^1)                                  & =\vb{\Lambda}(\phi^1)=\begin{pmatrix}
+		\cosh{\phi^1} & \sinh{\phi^1} & 0 & 0 \\
+		\sinh{\phi^1} & \cosh{\phi^1} & 0 & 0 \\ 
+		0             & 0             & 1 & 0 \\
+		0             & 0             & 0 & 1
+	\end{pmatrix}                                                                     \\
+	K^1=\eval{\frac{1}{\text{i}}\pdv{\hat{D}(\phi^1)}{\phi^1}}_{\phi^1=0} & =\eval{\frac{1}{\text{i}}\begin{pmatrix}
+			\sinh{\phi^1} & \cosh{\phi^1} & 0 & 0 \\
+			\cosh{\phi^1} & \sinh{\phi^1} & 0 & 0 \\ 
+			0             & 0             & 0 & 0 \\
+			0             & 0             & 0 & 0
 		\end{pmatrix}}_{\phi^1=0}=-\text{i}\begin{pmatrix}
-		0&1&0&0\\
-		1&0 & 0&0 \\ 
-		0 & 0&0&0\\
-		0&0&0&0
-		\end{pmatrix}\qquad\blacksquare
+		0 & 1 & 0 & 0 \\
+		1 & 0 & 0 & 0 \\ 
+		0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0
+	\end{pmatrix}\qquad\blacksquare
 \end{align*}\begin{align*}
-\qq*{For the $y$-direction}D(\phi^2)&=\vb{\Lambda}(\phi^2)=\begin{pmatrix}
-\cosh{\phi^2}&0&\sinh{\phi^2}&0\\
-0&1 & 0&0 \\ 
-\sinh{\phi^2} & 0&\cosh{\phi^2}&0\\
-0&0&0&1
-\end{pmatrix}\\
-K^2=\eval{\frac{1}{\text{i}}\pdv{\hat{D}(\phi^2)}{\phi^2}}_{\phi^2=0}&=\eval{\frac{1}{\text{i}}\begin{pmatrix}
-\sinh{\phi^2}&0&\cosh{\phi^2}&0\\
-0&1 & 0&0 \\ 
-\cosh{\phi^2} & 0&\sinh{\phi^2}&0\\
-0&0&0&1
+	\qq*{For the $y$-direction}D(\phi^2)                                  & =\vb{\Lambda}(\phi^2)=\begin{pmatrix}
+		\cosh{\phi^2} & 0 & \sinh{\phi^2} & 0 \\
+		0             & 1 & 0             & 0 \\ 
+		\sinh{\phi^2} & 0 & \cosh{\phi^2} & 0 \\
+		0             & 0 & 0             & 1
+	\end{pmatrix}                                                                     \\
+	K^2=\eval{\frac{1}{\text{i}}\pdv{\hat{D}(\phi^2)}{\phi^2}}_{\phi^2=0} & =\eval{\frac{1}{\text{i}}\begin{pmatrix}
+			\sinh{\phi^2} & 0 & \cosh{\phi^2} & 0 \\
+			0             & 1 & 0             & 0 \\ 
+			\cosh{\phi^2} & 0 & \sinh{\phi^2} & 0 \\
+			0             & 0 & 0             & 1
 		\end{pmatrix}}_{\phi^2=0}=-\text{i}\begin{pmatrix}
-		0&0&1&0\\
-		0 & 0&0&0\\
-		1&0 & 0&0 \\ 
-		0&0&0&0
-		\end{pmatrix}\qquad\blacksquare
+		0 & 0 & 1 & 0 \\
+		0 & 0 & 0 & 0 \\
+		1 & 0 & 0 & 0 \\ 
+		0 & 0 & 0 & 0
+	\end{pmatrix}\qquad\blacksquare
 \end{align*}
 \begin{align*}
-\qq*{For the $z$-direction}D(\phi^3)&=\vb{\Lambda}(\phi^3)=\begin{pmatrix}
-\cosh{\phi^3}&0&0&\sinh{\phi^3}\\
-0&1 & 0&0 \\ 
-0 & 0&1&0\\
-\sinh{\phi^3}&0&0&\cosh{\phi^3}
-\end{pmatrix}\\
-K^3=\eval{\frac{1}{\text{i}}\pdv{\hat{D}(\phi^3)}{\phi^3}}_{\phi^3=0}&=\eval{\frac{1}{\text{i}}\begin{pmatrix}
-		\sinh{\phi^3}&0&0&\cosh{\phi^3}\\
-0&1 & 0&0 \\ 
-0 & 0&1&0\\
-\cosh{\phi^3}&0&0&\sinh{\phi^3}
+	\qq*{For the $z$-direction}D(\phi^3)                                  & =\vb{\Lambda}(\phi^3)=\begin{pmatrix}
+		\cosh{\phi^3} & 0 & 0 & \sinh{\phi^3} \\
+		0             & 1 & 0 & 0             \\ 
+		0             & 0 & 1 & 0             \\
+		\sinh{\phi^3} & 0 & 0 & \cosh{\phi^3}
+	\end{pmatrix}                                                                      \\
+	K^3=\eval{\frac{1}{\text{i}}\pdv{\hat{D}(\phi^3)}{\phi^3}}_{\phi^3=0} & =\eval{\frac{1}{\text{i}}\begin{pmatrix}
+			\sinh{\phi^3} & 0 & 0 & \cosh{\phi^3} \\
+			0             & 1 & 0 & 0             \\ 
+			0             & 0 & 1 & 0             \\
+			\cosh{\phi^3} & 0 & 0 & \sinh{\phi^3}
 		\end{pmatrix}}_{\phi^3=0}=-\text{i}\begin{pmatrix}
-		0&0&0&1\\
-		0 & 0&0&0\\
-		0&0&0&0 \\
-		1&0 & 0&0 
-		\end{pmatrix}\qquad\blacksquare
+		0 & 0 & 0 & 1  \\
+		0 & 0 & 0 & 0  \\
+		0 & 0 & 0 & 0  \\
+		1 & 0 & 0 & 0 
+	\end{pmatrix}\qquad\blacksquare
 \end{align*}
 
 \[\qq*{Recall}\dv{x}(\sinh x)=\cosh x\qand\dv{x}(\cosh x)=\sinh x.\]
@@ -96,49 +96,56 @@ K^3=\eval{\frac{1}{\text{i}}\pdv{\hat{D}(\phi^3)}{\phi^3}}_{\phi^3=0}&=\eval{\fr
 
 Show the Lorentz transformation for an infinitesmal boost $v^j$ along $x^j$-axis, \emph{i.e.}, $x^j+v^j t$. The Roman index denotes a component of a three-vector. Consider the Lorentz transformation matrix ${\vb{\Lambda}^\mu}_\nu\equiv\pdv*{\bar{x}^\mu}{x^\nu}$. The Lorentz factor has MacLaurin series $\gamma=1+\frac{1}{2}\beta^2+\frac{3}{8}\beta^4+\frac{5}{16}\beta^6+\cdots$. For an infinitesimal boost $v^j $ we have $\beta\ll 1 \implies\gamma\to 1$. 
 \begin{align*}
-	\bar{x}^j&=\gamma(x^j+v^j t)\\
-	\pdv*{\bar{x}^j}{x^j}&=\gamma\to 1\\
-	\pdv*{\bar{x}^j}{x^{i\neq j}}&=0\\
-	\pdv*{\bar{x}^j}{x^0}&=	\gamma v^j\to v^j\\
-	\bar{x}^0&=\gamma(x^0v^j x^j)\\
-	\pdv*{\bar{x}^0}{x^0}&=\gamma\to 1\\
-	\pdv*{\bar{x}^0}{x^j}&=\gamma v^j\to v^j\\
+	\bar{x}^j                     & =\gamma(x^j+v^j t)  \\
+	\pdv*{\bar{x}^j}{x^j}         & =\gamma\to 1        \\
+	\pdv*{\bar{x}^j}{x^{i\neq j}} & =0                  \\
+	\pdv*{\bar{x}^j}{x^0}         & =	\gamma v^j\to v^j  \\
+	\bar{x}^0                     & =\gamma(x^0v^j x^j) \\
+	\pdv*{\bar{x}^0}{x^0}         & =\gamma\to 1        \\
+	\pdv*{\bar{x}^0}{x^j}         & =\gamma v^j\to v^j  \\
 \end{align*}
 
-\[ \qq*{Pop in the}\pdv*{\bar{x}^\mu}{x^\nu}\qq{to find}{\vb{\Lambda}^\mu}_\nu=\begin{pmatrix}1&v^1&v^2&v^3\\v^1&1&0&0\\v^2&0&1&0\\v^3&0&0&1\\
-\end{pmatrix}\]
+\[ \qq*{Pop in the}\pdv*{\bar{x}^\mu}{x^\nu}\qq{to find}{\vb{\Lambda}^\mu}_\nu=\begin{pmatrix}1 & v^1 & v^2 & v^3 \\v^1&1&0&0\\v^2&0&1&0\\v^3&0&0&1\\
+	\end{pmatrix}\]
 
 Show the Lorentz transformation for an infinitesimal rotation $\theta^j$ about $x^j$. 
 
 \begin{align*}
-	\qq*{Consider the rotation around}x\qquad
-	\bar{y}&=y\cos\theta-z\sin\theta\\
-	\bar{z}&=y\sin\theta+z\cos\theta
+	\qq*{Consider the rotation of a vector around}x\qquad
+	\bar{y} & =y\cos\theta-z\sin\theta \\
+	\bar{z} & =y\sin\theta+z\cos\theta
 \end{align*}
+
+\begin{align*}
+	\qq*{Note the rotation of a coordinate system around}x\qquad
+	\bar{y} & =y\cos\theta+z\sin\theta  \\
+	\bar{z} & =-y\sin\theta+z\cos\theta
+\end{align*}
+
+Which view do we take? Recall from $\S9.4$ "changing the operator will be the most useful procedure." Threfore go forward with the rotation of the coorinate system.
 
 Recall MacLaurin series $\sin\theta=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\cdots$ and $\cos\theta=1-\frac{\theta^2}{2!}+\frac{\theta^4}{4!}-\cdots$.
 For an infinitesimal rotation we have $\theta\ll1\implies \sin\theta\to\theta, \cos\theta\to 1$.
 
 \begin{align*}
-	\qq{For an infinitesimal rotation around}x^1\qquad \bar{x}^1 &\to x^1\\
-	\bar{x}^2 &\to x^2 -x^3 \theta^1\\
-	\bar{x}^3 &\to x^2 \theta^1 +x^3\\
-	\qq{For an infinitesimal rotation around}x^2\qquad \bar{x}^2 &\to x^2\\
-	\bar{x}^3 &\to x^3 -x^1 \theta^2\\
-	\bar{x}^1 &\to x^3 \theta^2 +x^1\\
-	\qq{For an infinitesimal rotation around}x^3\qquad \bar{x}^3 &\to x^3\\
-	\bar{x}^1 &\to x^1 -x^2 \theta^3\\
-	\bar{x}^2 &\to x^1 \theta^3 +x^2\\
-	\qq{And} \bar{x}^0 &\to x^0\\
+	\qq{For an infinitesimal rotation around}x^1\qquad \bar{x}^1 & \to x^1                \\
+	\bar{x}^2                                                    & \to x^2 +x^3 \theta^1  \\
+	\bar{x}^3                                                    & \to -x^2 \theta^1 +x^3 \\
+	\qq{For an infinitesimal rotation around}x^2\qquad \bar{x}^2 & \to x^2                \\
+	\bar{x}^3                                                    & \to x^3 +x^1 \theta^2  \\
+	\bar{x}^1                                                    & \to -x^3 \theta^2 +x^1 \\
+	\qq{For an infinitesimal rotation around}x^3\qquad \bar{x}^3 & \to x^3                \\
+	\bar{x}^1                                                    & \to x^1 +x^2 \theta^3  \\
+	\bar{x}^2                                                    & \to -x^1 \theta^3 +x^2 \\
+	\qq{And} \bar{x}^0                                           & \to x^0                \\
 \end{align*}
 
-\[ \qq*{Pop in the}\pdv*{\bar{x}^\mu}{x^\nu}\qq{to find}{\vb{\Lambda}^\mu}_\nu=\begin{pmatrix}1&0&0&0\\0&1&-\theta^3&\theta^2\\0&\theta^3&1&-\theta^1\\0&-\theta^2&\theta^1&1\\
-\end{pmatrix}\]
-This matches the sense of Eq. 9.2 rather than the answer in the book.
+\[ \qq*{Pop in the}\pdv*{\bar{x}^\mu}{x^\nu}\qq{to find}{\vb{\Lambda}^\mu}_\nu=\begin{pmatrix}1 & 0 & 0 & 0 \\0&1&\theta^3&-\theta^2\\0&-\theta^3&1&\theta^1\\0&\theta^2&-\theta^1&1\\
+	\end{pmatrix}\]
 
 Show that a generalized infinitesimal Lorentz transformation can be written as $x'^\mu={\Lambda^\mu}_\nu x^\nu$ where $\vb{\Lambda}=\vb{1}+\vb{\omega}$.
-\[ {\vb{\omega}^\mu}_\nu=\begin{pmatrix}1&v^1&v^2&v^3\\v^1&1&-\theta^3&\theta^2\\v^2&\theta^3&1&-\theta^1\\v^3&-\theta^2&\theta^1&1\\
-\end{pmatrix}\]
+\[ {\vb{\omega}^\mu}_\nu=\begin{pmatrix}1 & v^1 & v^2 & v^3 \\v^1&1&\theta^3&-\theta^2\\v^2&-\theta^3&1&\theta^1\\v^3&\theta^2&-\theta^1&1\\
+	\end{pmatrix}\]
 
 
 
@@ -146,40 +153,40 @@ Show that a generalized infinitesimal Lorentz transformation can be written as $
 
 
 
-\[\omega^{\mu\nu}={\omega^\mu}_\lambda g^{\lambda\nu}=\begin{pmatrix}0&v^1&v^2&v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}
-\begin{pmatrix}1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix}=
-\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}\]
+\[\omega^{\mu\nu}={\omega^\mu}_\lambda g^{\lambda\nu}=\begin{pmatrix}0&v^1&v^2&v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}
+	\begin{pmatrix}1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix}=
+	\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}\]
 
 \[\omega_{\mu\nu}=g_{\mu\lambda}{\omega^\lambda}_\nu =\begin{pmatrix}1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix}
-\begin{pmatrix}0&v^1&v^2&v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}=
-\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&\theta^3&-\theta^2\\-v^2&-\theta^3&0&\theta^1\\-v^3&\theta^2&-\theta^1&0\end{pmatrix}\]
+	\begin{pmatrix}0&v^1&v^2&v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}=
+	\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}\]
 
-\[\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}\]
+\[\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&\theta^3&-\theta^2\\-v^2&-\theta^3&0&\theta^1\\-v^3&\theta^2&-\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}\]
 
-\[\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&\theta^3&-\theta^2\\-v^2&-\theta^3&0&\theta^1\\-v^3&\theta^2&-\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&\theta^3&-\theta^2\\-v^2&-\theta^3&0&\theta^1\\-v^3&\theta^2&-\theta^1&0\end{pmatrix}\]
+\[\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}\]
 
 Clearly the transposes of the resultant matrices are the negatives of the resultant matrices. Hence the resultant matrices are skew-symmetric, which is otherwise known as antisymmetric.
 
 From $\omega^{\mu\nu}$ pick off the $\omega^{0i}=-v^i$.
 \begin{align*}
-	\theta^1=&\frac{1}{2}(\omega^{23}-\omega^{32})=\frac{1}{2}\epsilon^{1jk}\omega^{jk}\\
-	\theta^2=&\frac{1}{2}(-\omega^{13}+\omega^{31})=\frac{1}{2}\epsilon^{i2k}\omega^{ik}\\
-	\theta^3=&\frac{1}{2}(\omega^{12}-\omega^{21})=\frac{1}{2}\epsilon^{ij3}\omega^{ij}\\
+	\theta^1= & \frac{1}{2}(\omega^{23}-\omega^{32})=-\frac{1}{2}\epsilon^{1jk}\omega^{jk}  \\
+	\theta^2= & \frac{1}{2}(-\omega^{13}+\omega^{31})=-\frac{1}{2}\epsilon^{i2k}\omega^{ik} \\
+	\theta^3= & \frac{1}{2}(\omega^{12}-\omega^{21})=-\frac{1}{2}\epsilon^{ij3}\omega^{ij}  \\
 \end{align*}
-Hence $\theta^i=\epsilon^{ijk}\omega^{jk}$.
- 
+Hence $\theta^i=-\epsilon^{ijk}\omega^{jk}$.
+
 \section*{Problem 9.4}
 
 \[\qq*{Given } f(x^\prime) = f(x+a+\omega x) = f(x)+a^\mu \partial_\mu f(x)+{\omega^\mu}_\nu x^\nu \partial_\mu f(x)\]
 
 \begin{align*}
-	\qq*{We know these things}\omega^{\mu\nu}&={\omega^\mu}_\lambda g^{\lambda\nu}\\
-	\omega_{\mu\nu}&= g_{\mu\lambda} {\omega^\lambda}_\nu\\
-	g^{\mu\lambda}g_{\lambda\nu}&= I\\
-	A_\mu&=g_{\mu\nu}A^\nu\\
-	A^\mu&=g^{\mu\nu}A_\nu\\
-	{\omega^\mu}_\nu&=\frac{1}{2}[{\omega^\mu}_\nu+{{\omega^\mu}_\nu}^T]+\frac{1}{2}[{\omega^\mu}_\nu-{{\omega^\mu}_\nu}^T]\\
-	&=\frac{1}{2}[{\omega^\mu}_\nu+{\omega_\mu}^\nu]+\frac{1}{2}[{\omega^\mu}_\nu-{\omega_\mu}^\nu]
+	\qq*{We know these things}\omega^{\mu\nu} & ={\omega^\mu}_\lambda g^{\lambda\nu}                                                                   \\
+	\omega_{\mu\nu}                           & = g_{\mu\lambda} {\omega^\lambda}_\nu                                                                  \\
+	g^{\mu\lambda}g_{\lambda\nu}              & = I                                                                                                    \\
+	A_\mu                                     & =g_{\mu\nu}A^\nu                                                                                       \\
+	A^\mu                                     & =g^{\mu\nu}A_\nu                                                                                       \\
+	{\omega^\mu}_\nu                          & =\frac{1}{2}[{\omega^\mu}_\nu+{{\omega^\mu}_\nu}^T]+\frac{1}{2}[{\omega^\mu}_\nu-{{\omega^\mu}_\nu}^T] \\
+	                                          & =\frac{1}{2}[{\omega^\mu}_\nu+{\omega_\mu}^\nu]+\frac{1}{2}[{\omega^\mu}_\nu-{\omega_\mu}^\nu]
 \end{align*}
 
 
@@ -187,46 +194,46 @@ Hence $\theta^i=\epsilon^{ijk}\omega^{jk}$.
 
 Examine \[{\omega^\mu}_\nu x^\nu \partial_\mu=\sum^3_{\mu=0}\sum^3_{\nu=0}{\omega^\mu}_\nu x^\nu \partial_\mu\]
 \begin{multline*}
-{\omega^\mu}_\nu x^\nu \partial_\mu=
-v^1 x^1 \partial_0+v^2 x^2 \partial_0+v^3 x^3 \partial_0+
-v^1 x^0 \partial_1+\theta^3 x^2 \partial_1-\theta^2 x^3 \partial_1\\+ 
-v^2 x^0 \partial_2-\theta^3 x^1 \partial_2+\theta^1 x^3 \partial_2+
-v^3 x^0 \partial_3+\theta^2 x^1 \partial_3-\theta^1 x^2 \partial_3
+	{\omega^\mu}_\nu x^\nu \partial_\mu=
+	v^1 x^1 \partial_0+v^2 x^2 \partial_0+v^3 x^3 \partial_0+
+	v^1 x^0 \partial_1+\theta^3 x^2 \partial_1-\theta^2 x^3 \partial_1\\+ 
+	v^2 x^0 \partial_2-\theta^3 x^1 \partial_2+\theta^1 x^3 \partial_2+
+	v^3 x^0 \partial_3+\theta^2 x^1 \partial_3-\theta^1 x^2 \partial_3
 \end{multline*}
 
 Examine \[\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=\sum^3_{\mu=0}\sum^3_{\nu=0}\omega_{\mu\nu} x^\mu \partial^\nu-\sum^3_{\mu=0}\sum^3_{\nu=0}\omega_{\mu\nu} x^\nu \partial^\mu\]
 \begin{multline*}
-\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=
-v^1 x^0 \partial^1+v^2 x^0 \partial^2+v^3 x^0 \partial^3
--v^1 x^1 \partial^0-\theta^3 x^1 \partial^2+\theta^2 x^1 \partial^3\\ 
--v^2 x^2 \partial^0+\theta^3 x^2 \partial^1-\theta^1 x^2 \partial^3
--v^3 x^3 \partial^0-\theta^2 x^3 \partial^1+\theta^1 x^3 \partial^2\\-
-(v^1 x^1 \partial^0+v^2 x^2 \partial^0+v^3 x^3 \partial^0
--v^1 x^0 \partial^1-\theta^3 x^2 \partial^1+\theta^2 x^3 \partial^1\\ 
--v^2 x^0 \partial^2+\theta^3 x^1 \partial^2-\theta^1 x^3 \partial^2
--v^3 x^0 \partial^3-\theta^2 x^1 \partial^3+\theta^1 x^2 \partial^3)\end{multline*}
+	\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=
+	v^1 x^0 \partial^1+v^2 x^0 \partial^2+v^3 x^0 \partial^3
+	-v^1 x^1 \partial^0-\theta^3 x^1 \partial^2+\theta^2 x^1 \partial^3\\ 
+	-v^2 x^2 \partial^0+\theta^3 x^2 \partial^1-\theta^1 x^2 \partial^3
+	-v^3 x^3 \partial^0-\theta^2 x^3 \partial^1+\theta^1 x^3 \partial^2\\-
+	(v^1 x^1 \partial^0+v^2 x^2 \partial^0+v^3 x^3 \partial^0
+	-v^1 x^0 \partial^1-\theta^3 x^2 \partial^1+\theta^2 x^3 \partial^1\\ 
+	-v^2 x^0 \partial^2+\theta^3 x^1 \partial^2-\theta^1 x^3 \partial^2
+	-v^3 x^0 \partial^3-\theta^2 x^1 \partial^3+\theta^1 x^2 \partial^3)\end{multline*}
 \begin{multline*}
-\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=
-v^1 x^0 \partial^1+v^2 x^0 \partial^2+v^3 x^0 \partial^3
--v^1 x^1 \partial^0-\theta^3 x^1 \partial^2+\theta^2 x^1 \partial^3\\ 
--v^2 x^2 \partial^0+\theta^3 x^2 \partial^1-\theta^1 x^2 \partial^3
--v^3 x^3 \partial^0-\theta^2 x^3 \partial^1+\theta^1 x^3 \partial^2\\
--v^1 x^1 \partial^0-v^2 x^2 \partial^0-v^3 x^3 \partial^0
-+v^1 x^0 \partial^1+\theta^3 x^2 \partial^1-\theta^2 x^3 \partial^1\\ 
-+v^2 x^0 \partial^2-\theta^3 x^1 \partial^2+\theta^1 x^3 \partial^2
-+v^3 x^0 \partial^3+\theta^2 x^1 \partial^3-\theta^1 x^2 \partial^3\end{multline*}
+	\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=
+	v^1 x^0 \partial^1+v^2 x^0 \partial^2+v^3 x^0 \partial^3
+	-v^1 x^1 \partial^0-\theta^3 x^1 \partial^2+\theta^2 x^1 \partial^3\\ 
+	-v^2 x^2 \partial^0+\theta^3 x^2 \partial^1-\theta^1 x^2 \partial^3
+	-v^3 x^3 \partial^0-\theta^2 x^3 \partial^1+\theta^1 x^3 \partial^2\\
+	-v^1 x^1 \partial^0-v^2 x^2 \partial^0-v^3 x^3 \partial^0
+	+v^1 x^0 \partial^1+\theta^3 x^2 \partial^1-\theta^2 x^3 \partial^1\\ 
+	+v^2 x^0 \partial^2-\theta^3 x^1 \partial^2+\theta^1 x^3 \partial^2
+	+v^3 x^0 \partial^3+\theta^2 x^1 \partial^3-\theta^1 x^2 \partial^3\end{multline*}
 
 But $\partial^i=-\partial_i$ and $\partial^0=\partial_0$, therefore
 \begin{multline*}
-\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=
--v^1 x^0 \partial_1-v^2 x^0 \partial_2-v^3 x^0 \partial_3
--v^1 x^1 \partial_0+\theta^3 x^1 \partial_2-\theta^2 x^1 \partial_3\\ 
--v^2 x^2 \partial_0-\theta^3 x^2 \partial_1+\theta^1 x^2 \partial_3
--v^3 x^3 \partial_0+\theta^2 x^3 \partial_1-\theta^1 x^3 \partial_2\\
--v^1 x^1 \partial_0-v^2 x^2 \partial_0-v^3 x^3 \partial_0
--v^1 x^0 \partial_1-\theta^3 x^2 \partial_1+\theta^2 x^3 \partial_1\\ 
--v^2 x^0 \partial_2+\theta^3 x^1 \partial_2-\theta^1 x^3 \partial_2
--v^3 x^0 \partial_3-\theta^2 x^1 \partial_3+\theta^1 x^2 \partial_3\end{multline*}
+	\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=
+	-v^1 x^0 \partial_1-v^2 x^0 \partial_2-v^3 x^0 \partial_3
+	-v^1 x^1 \partial_0+\theta^3 x^1 \partial_2-\theta^2 x^1 \partial_3\\ 
+	-v^2 x^2 \partial_0-\theta^3 x^2 \partial_1+\theta^1 x^2 \partial_3
+	-v^3 x^3 \partial_0+\theta^2 x^3 \partial_1-\theta^1 x^3 \partial_2\\
+	-v^1 x^1 \partial_0-v^2 x^2 \partial_0-v^3 x^3 \partial_0
+	-v^1 x^0 \partial_1-\theta^3 x^2 \partial_1+\theta^2 x^3 \partial_1\\ 
+	-v^2 x^0 \partial_2+\theta^3 x^1 \partial_2-\theta^1 x^3 \partial_2
+	-v^3 x^0 \partial_3-\theta^2 x^1 \partial_3+\theta^1 x^2 \partial_3\end{multline*}
 
 Finally
 \[{\omega^\mu}_\nu x^\nu \partial_\mu=-\frac{1}{2}\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)\]
