@@ -122,10 +122,16 @@ Show the Lorentz transformation for an infinitesimal rotation $\theta^j$ about $
 	\bar{z} & =-y\sin\theta+z\cos\theta
 \end{align*}
 
-Which view do we take? Recall from $\S9.4$ "changing the operator will be the most useful procedure." Threfore go forward with the rotation of the coorinate system.
+Which view do we take? Recall from $\S9.4$ "changing the operator will be the most useful procedure." Therefore go forward with the rotation of the coordinate system, \textit{i.e.}, use passive rotations, where we rotate the coordinates, not the system.
 
 Recall MacLaurin series $\sin\theta=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\cdots$ and $\cos\theta=1-\frac{\theta^2}{2!}+\frac{\theta^4}{4!}-\cdots$.
-For an infinitesimal rotation we have $\theta\ll1\implies \sin\theta\to\theta, \cos\theta\to 1$.
+
+\begin{align*}
+	\qq{For infinitesimal}\theta\ll1\implies & \sin\theta\to\theta \\
+	                                         & \cos\theta\to 1     \\
+	\qq{Hence}\bar{y}                        & \to y+z\theta       \\
+	\bar{z}                                  & \to -y\theta+z      \\
+\end{align*}
 
 \begin{align*}
 	\qq{For an infinitesimal rotation around}x^1\qquad \bar{x}^1 & \to x^1                \\
@@ -144,8 +150,11 @@ For an infinitesimal rotation we have $\theta\ll1\implies \sin\theta\to\theta, \
 	\end{pmatrix}\]
 
 Show that a generalized infinitesimal Lorentz transformation can be written as $x'^\mu={\Lambda^\mu}_\nu x^\nu$ where $\vb{\Lambda}=\vb{1}+\vb{\omega}$.
-\[ {\vb{\omega}^\mu}_\nu=\begin{pmatrix}1 & v^1 & v^2 & v^3 \\v^1&1&\theta^3&-\theta^2\\v^2&-\theta^3&1&\theta^1\\v^3&\theta^2&-\theta^1&1\\
-	\end{pmatrix}\]
+\[ \vb{\Lambda}=\begin{pmatrix}1 & v^1 & v^2 & v^3 \\v^1&1&\theta^3&-\theta^2\\v^2&-\theta^3&1&\theta^1\\v^3&\theta^2&-\theta^1&1\\
+	\end{pmatrix}=\begin{pmatrix}1 & 0 & 0 & 0 \\0&1&0&0\\0&0&1&0\\0&0&0&1\\
+	\end{pmatrix}+\begin{pmatrix}0 & v^1 & v^2 & v^3 \\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\\
+	\end{pmatrix}=\vb{1}+\vb{\omega}
+\]
 
 
 
@@ -165,7 +174,7 @@ Show that a generalized infinitesimal Lorentz transformation can be written as $
 
 \[\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}\]
 
-Clearly the transposes of the resultant matrices are the negatives of the resultant matrices. Hence the resultant matrices are skew-symmetric, which is otherwise known as antisymmetric.
+Clearly the transposes of the resultant matrices are the negatives of the resultant matrices. Hence the resultant matrices are skew-symmetric, which is otherwise known as antisymmetric. 
 
 From $\omega^{\mu\nu}$ pick off the $\omega^{0i}=-v^i$.
 \begin{align*}
@@ -173,7 +182,7 @@ From $\omega^{\mu\nu}$ pick off the $\omega^{0i}=-v^i$.
 	\theta^2= & \frac{1}{2}(-\omega^{13}+\omega^{31})=-\frac{1}{2}\epsilon^{i2k}\omega^{ik} \\
 	\theta^3= & \frac{1}{2}(\omega^{12}-\omega^{21})=-\frac{1}{2}\epsilon^{ij3}\omega^{ij}  \\
 \end{align*}
-Hence $\theta^i=-\epsilon^{ijk}\omega^{jk}$.
+Hence $\theta^i=-\frac{1}{2}\epsilon^{ijk}\omega^{jk}$ and $v^i=\omega^{i0}$.
 
 \section*{Problem 9.4}
 
