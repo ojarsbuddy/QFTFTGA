@@ -11,6 +11,11 @@
 \begin{document}
  
 \maketitle{}
+
+
+\section*{Notes}
+Field operators create or annihilate particles at specific spatial locations. The second quantized single particle operator $\hat{A}=\sum_{\alpha\beta} \mathcal{A}_{\alpha\beta}\hat{a}^\dagger_\alpha \hat{a}_\beta $ is the sum over all processes which remove a single particle in state $\ket{\beta}$, multiply by $\mathcal{A}_{\alpha\beta}$, add a single particle in state $\ket{\alpha}$. Tight binding approximation. The second quantized two particle operator is $\hat{A}=\sum_{\alpha\beta\gamma\delta} \mathcal{A}_{\alpha\beta\gamma\delta}\hat{a}^\dagger_\alpha\hat{a}^\dagger_\beta \hat{a}_\gamma\hat{a}_\delta $. The Hubbard model is important to solid state physics.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{IMG_0873}
@@ -20,7 +25,7 @@
 
 \section*{Problem 4.1}
  
-\[\text{Given}\qquad [\hat{A},\hat{B}]_{\zeta} = \hat{A}\hat{B}-\zeta\hat{B}\hat{A}\]
+\[\qq*{Given} [\hat{A},\hat{B}]_{\zeta} = \hat{A}\hat{B}-\zeta\hat{B}\hat{A}\]
 
 \[\text{For bosons}\qquad \zeta=1 \qquad[\hat{A},\hat{B}]_{\zeta} = [\hat{A},\hat{B}]\]
 
@@ -85,5 +90,21 @@ Has eigenvalues $ \mqty(0,&U,&\frac{1}{2}\qty(U-\sqrt{16t^2+U^2}),&\frac{1}{2}\q
 For $0<\frac{t}{U}\ll 1$:  $ \mqty(0,&U,&\frac{U}{2}\qty(1-\frac{1}{2}\qty(\frac{4t}{U})^2-1),&\frac{U}{2}\qty(1+\frac{1}{2}\qty(\frac{4t}{U})^2+1)) $
 
 Hence: $ \mqty(0,&U,&-\frac{4t^2}{U},&U+\frac{4t^2}{U}) \qquad\blacksquare$
+
+
+\begin{align*}
+\Pmqty{U&-t&t&0 \\-t&0&0&-t \\t&0&0&t \\0&-t&t&U}\Pmqty{a\\b\\c\\d}&=\lambda\Pmqty{a\\b\\c\\d}\\
+\Pmqty{(U-\lambda)&-t&t&0 \\-t&-\lambda&0&-t \\t&0&-\lambda&t \\0&-t&t&(U-\lambda)}\Pmqty{a\\b\\c\\d}&=0\\
+\end{align*}
+Find the determinant using expansion by minors.
+\begin{align*}
+(U-\lambda)&[\lambda^2(U-\lambda)+\lambda t^2+\lambda t^2]+\\
+t&[\lambda t(U-\lambda)-t^3+t^3]+\\
+t&[t^3-t^3+\lambda t(U-\lambda)]+\\
+0&=\determinant 0 \implies\\
+\lambda^2(U-\lambda)^2+4\lambda t^2(U-\lambda)&=0\\
+\lambda(U-\lambda)[\lambda(U-\lambda)+4t^2&=0
+\end{align*}
+Solutions are $\lambda=0$, $\lambda=U$, $\lambda^2 -U\lambda -4t^2=0$
 
 \end{document}

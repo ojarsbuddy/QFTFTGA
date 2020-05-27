@@ -1,6 +1,7 @@
 \documentclass{article}
-\usepackage{amsmath,xfrac}
-\usepackage[left=2cm,top=1cm,right=3cm,bottom=1cm]{geometry}
+\usepackage{amsmath,amssymb,physics,xfrac}
+\usepackage{standalone}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
 
  
 \title{Quantum Field Theory Problem Sets}
@@ -9,12 +10,20 @@
 \begin{document}
  
 \maketitle{}
+
+\section*{Notes}
+
+Relativistic quantum mechanics and the Klein-Gordon equation. Negaive energy states associated with positive energies of antiparticles.
  
 \section*{Problem 6.1}
- 
-Given \[ \mathcal{L}=\frac{1}{2}(\partial_\mu \phi)^2 - \frac{1}{2} m^2 \phi^2 \] and Euler-LaGrange in 4-vector form 
-\[ \frac{\partial \mathcal{L}}{\partial \phi}-\partial_\mu  \left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)}\right) = 0 \] we get \[-m^2 \phi + \partial_\mu (\partial_\mu \phi)= 0\] hence \[(\partial^2_\mu-m^2) \phi=0\] as required.
 
+\begin{align*}
+\qq*{Given}\mathcal{L}&=\frac{1}{2}(\partial_\mu \phi)^2 - \frac{1}{2} m^2 \phi^2\\
+\qq*{From }\frac{\partial \mathcal{L}}{\partial \phi}-\partial_\mu  \left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)}\right) &= 0 \qq{Euler-LaGrange in 4-vector form}\\
+\qq*{We get}-m^2 \phi + \partial_\mu (\partial_\mu \phi)&= 0\\
+\qq*{Hence}(\partial^2_\mu-m^2) \phi&=0\qquad\blacksquare
+\end{align*}
+ 
 The conjugate momentum is \[\pi=\frac{\partial \mathcal{L}}{\partial (\partial_0 \phi)}\] which works out to
 \[\pi=\partial_0 \phi\]
 

@@ -170,9 +170,9 @@ Show that a generalized infinitesimal Lorentz transformation can be written as $
 	\begin{pmatrix}0&v^1&v^2&v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}=
 	\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}\]
 
-\[\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&\theta^3&-\theta^2\\-v^2&-\theta^3&0&\theta^1\\-v^3&\theta^2&-\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}\]
+\[(\omega^{\mu\nu})^T=\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&\theta^3&-\theta^2\\-v^2&-\theta^3&0&\theta^1\\-v^3&\theta^2&-\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&-\theta^3&\theta^2\\v^2&\theta^3&0&-\theta^1\\v^3&-\theta^2&\theta^1&0\end{pmatrix}=-\omega^{\mu\nu}\]
 
-\[\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}\]
+\[(\omega_{\mu\nu})^T=\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}^T=\begin{pmatrix}0&-v^1&-v^2&-v^3\\v^1&0&\theta^3&-\theta^2\\v^2&-\theta^3&0&\theta^1\\v^3&\theta^2&-\theta^1&0\end{pmatrix}=-\begin{pmatrix}0&v^1&v^2&v^3\\-v^1&0&-\theta^3&\theta^2\\-v^2&\theta^3&0&-\theta^1\\-v^3&-\theta^2&\theta^1&0\end{pmatrix}=-\omega_{\mu\nu}\]
 
 Clearly the transposes of the resultant matrices are the negatives of the resultant matrices. Hence the resultant matrices are skew-symmetric, which is otherwise known as antisymmetric. 
 
@@ -184,9 +184,16 @@ From $\omega^{\mu\nu}$ pick off the $\omega^{0i}=-v^i$.
 \end{align*}
 Hence $\theta^i=-\frac{1}{2}\epsilon^{ijk}\omega^{jk}$ and $v^i=\omega^{i0}$.
 
+
+
+
+
 \section*{Problem 9.4}
 
-\[\qq*{Given } f(x^\prime) = f(x+a+\omega x) = f(x)+a^\mu \partial_\mu f(x)+{\omega^\mu}_\nu x^\nu \partial_\mu f(x)\]
+\begin{align*}
+	\qq*{Given } f(x^\prime) & = f(x+a+\omega x)                                                       \\
+	                         & = f(x)+a^\mu \partial_\mu f(x)+{\omega^\mu}_\nu x^\nu \partial_\mu f(x)
+\end{align*}
 
 \begin{align*}
 	\qq*{We know these things}\omega^{\mu\nu} & ={\omega^\mu}_\lambda g^{\lambda\nu}                                                                   \\
@@ -199,9 +206,9 @@ Hence $\theta^i=-\frac{1}{2}\epsilon^{ijk}\omega^{jk}$ and $v^i=\omega^{i0}$.
 \end{align*}
 
 
+Brute force.
 
-
-Examine \[{\omega^\mu}_\nu x^\nu \partial_\mu=\sum^3_{\mu=0}\sum^3_{\nu=0}{\omega^\mu}_\nu x^\nu \partial_\mu\]
+\[\qq*{Examine}{\omega^\mu}_\nu x^\nu \partial_\mu=\sum^3_{\mu=0}\sum^3_{\nu=0}{\omega^\mu}_\nu x^\nu \partial_\mu\]
 \begin{multline*}
 	{\omega^\mu}_\nu x^\nu \partial_\mu=
 	v^1 x^1 \partial_0+v^2 x^2 \partial_0+v^3 x^3 \partial_0+
@@ -210,7 +217,9 @@ Examine \[{\omega^\mu}_\nu x^\nu \partial_\mu=\sum^3_{\mu=0}\sum^3_{\nu=0}{\omeg
 	v^3 x^0 \partial_3+\theta^2 x^1 \partial_3-\theta^1 x^2 \partial_3
 \end{multline*}
 
-Examine \[\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=\sum^3_{\mu=0}\sum^3_{\nu=0}\omega_{\mu\nu} x^\mu \partial^\nu-\sum^3_{\mu=0}\sum^3_{\nu=0}\omega_{\mu\nu} x^\nu \partial^\mu\]
+
+
+\[\qq*{Examine}\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=\sum^3_{\mu=0}\sum^3_{\nu=0}\omega_{\mu\nu} x^\mu \partial^\nu-\sum^3_{\mu=0}\sum^3_{\nu=0}\omega_{\mu\nu} x^\nu \partial^\mu\]
 \begin{multline*}
 	\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=
 	v^1 x^0 \partial^1+v^2 x^0 \partial^2+v^3 x^0 \partial^3
@@ -232,7 +241,7 @@ Examine \[\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=\sum^3_{\mu=0}
 	+v^2 x^0 \partial^2-\theta^3 x^1 \partial^2+\theta^1 x^3 \partial^2
 	+v^3 x^0 \partial^3+\theta^2 x^1 \partial^3-\theta^1 x^2 \partial^3\end{multline*}
 
-But $\partial^i=-\partial_i$ and $\partial^0=\partial_0$, therefore
+But $\partial^i=g^{ii}\partial_i=-\partial_i$ and $\partial^0=g^{00}\partial_0=\partial_0$, therefore
 \begin{multline*}
 	\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)=
 	-v^1 x^0 \partial_1-v^2 x^0 \partial_2-v^3 x^0 \partial_3
@@ -248,6 +257,49 @@ Finally
 \[{\omega^\mu}_\nu x^\nu \partial_\mu=-\frac{1}{2}\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)\]
 
 \[\qq*{Hence } f(x^\prime)  = [1+a^\mu \partial_\mu -\frac{1}{2}\omega_{\mu\nu} (x^\mu \partial^\nu-x^\nu \partial^\mu)] f(x)\]
+
+Is there a better way?
+
+\begin{align*}
+	\omega{}^\mu{}_\nu x^\nu \partial_\mu & =\sum_\mu \sum_\nu \omega{}^\mu{}_\nu x^\nu \partial_\mu                                                                                          \\
+	                                      & =\sum_\mu \omega{}^\mu{}_0 x^0 \partial_\mu+\omega{}^\mu{}_1 x^1 \partial_\mu+\omega{}^\mu{}_2 x^2 \partial_\mu+\omega{}^\mu{}_3 x^3 \partial_\mu \\
+	                                      & =\omega{}^0{}_0 x^0 \partial_0+\omega{}^0{}_1 x^1 \partial_0+\omega{}^0{}_2 x^2 \partial_0+\omega{}^0{}_3 x^3 \partial_0                          \\
+	                                      & +\omega{}^1{}_0 x^0 \partial_1+\omega{}^1{}_1 x^1 \partial_1+\omega{}^1{}_2 x^2 \partial_1+\omega{}^1{}_3 x^3 \partial_1                          \\
+	                                      & +\omega{}^2{}_0 x^0 \partial_2+\omega{}^2{}_1 x^1 \partial_2+\omega{}^2{}_2 x^2 \partial_2+\omega{}^2{}_3 x^3 \partial_2                          \\
+	                                      & +\omega{}^3{}_0 x^0 \partial_3+\omega{}^3{}_1 x^1 \partial_3+\omega{}^3{}_2 x^2 \partial_3+\omega{}^3{}_3 x^3 \partial_3                          \\
+\end{align*}
+
+
+
+But $\partial^i=g^{ii}\partial_i=-\partial_i$ and $\partial^0=g^{00}\partial_0=\partial_0$, therefore
+\begin{align*}
+	{\omega^\mu}_\nu x^\nu \partial_\mu & =	\omega^0{}_0 x^0 \partial^0+\omega^0{}_1 x^1 \partial^0+\omega^0{}_2 x^2 \partial^0+\omega^0{}_3 x^3 \partial^0 \\
+	                                    & -	\omega^1{}_0 x^0 \partial^1-\omega^1{}_1 x^1 \partial^1-\omega^1{}_2 x^2 \partial^1-\omega^1{}_3 x^3 \partial^1 \\
+	                                    & -	\omega^2{}_0 x^0 \partial^2-\omega^2{}_1 x^1 \partial^2-\omega^2{}_2 x^2 \partial^2-\omega^2{}_3 x^3 \partial^2 \\
+	                                    & -	\omega^3{}_0 x^0 \partial^3-\omega^3{}_1 x^1 \partial^3-\omega^3{}_2 x^2 \partial^3-\omega^3{}_3 x^3 \partial^3 \\
+\end{align*}
+
+
+
+Let's look at it a different way.
+\begin{align*}
+	\qq*{A symmetric tensor}      Q\qq{satisfies}  Q_{ij} & =Q_{ji}                                                                  \\
+	\qq*{An antisymmetric tensor} R\qq{satisfies}  R_{ij} & =-R_{ji}                                                                 \\
+	\qq*{Any tensor} T\qq{satisfies}               T_{ij} & =T_{ij}+\frac{1}{2}T_{ji}-\frac{1}{2}T_{ji}                              \\
+	                                                      & =\frac{1}{2}T_{ij}+\frac{1}{2}T_{ij}+\frac{1}{2}T_{ji}-\frac{1}{2}T_{ji} \\
+	                                                      & =\frac{1}{2}(T_{ij}+T_{ji})+\frac{1}{2}(T_{ij}-T_{ji})
+\end{align*}
+The first term $\frac{1}{2}(T_{ij}+T_{ji})$ is the symmetric part of tensor $T$ and the second term $\frac{1}{2}(T_{ij}-T_{ji})$ is the antisymmetric part of tensor $T$.
+\begin{align*}
+	\omega^\mu{}_\nu x^\nu \partial_\mu & = g^{\mu\lambda}\omega_{\lambda\nu} x^\nu  \partial_\mu                                                                                                             \\
+	                                    & = \omega_{\lambda\nu} x^\nu  \partial^\lambda                                                                                                                       \\
+	                                    & = \omega_{\mu\nu} x^\nu  \partial^\mu           \qq{change the free variable from $\lambda$ to $\mu$}                                                               \\
+	                                    & =\frac{1}{2}(\omega_{\mu\nu}+\omega_{\nu\mu}) x^\nu  \partial^\mu+\frac{1}{2}(\omega_{\mu\nu}-\omega_{\nu\mu}) x^\nu  \partial^\mu                                  \\
+	                                    & =\frac{1}{2}(\omega_{\mu\nu}-\omega_{\nu\mu}) x^\nu  \partial^\mu \qq{because}\omega_{\mu\nu}+\omega_{\nu\mu}=0                                                     \\
+	                                    & =\frac{1}{2}(\omega_{\mu\nu} x^\nu  \partial^\mu-\omega_{\nu\mu} x^\nu  \partial^\mu)                                                                               \\
+	                                    & =\frac{1}{2}(\omega_{\mu\nu} x^\nu  \partial^\mu-\omega_{\mu\nu} x^\mu  \partial^\nu)=        \frac{1}{2}\omega_{\mu\nu}( x^\nu  \partial^\mu- x^\mu  \partial^\nu) \\
+	\omega^\mu{}_\nu x^\nu \partial_\mu & =-\frac{1}{2}\omega_{\mu\nu}(x^\mu  \partial^\nu -x^\nu  \partial^\mu )      \qquad    \blacksquare                                                                 \\
+\end{align*}
 
 
 \end{document}

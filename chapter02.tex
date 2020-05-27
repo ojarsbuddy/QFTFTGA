@@ -10,8 +10,18 @@
 \begin{document}
  
 \maketitle{}
- 
+
+\section*{Notes}
+
+Mass on a spring in Euler-Lagrange style! $L=T-V=\frac{1}{2}m\dot{x}^2-\frac{1}{2}Kx^2$. Find $\fdv{L}{x}=-Kx$ and $\fdv{L}{\dot{x}}=m\dot{x}$. Then $-Kx-\dv{t}m\dot{x}=0$, \emph{i.e.}, $m\ddot{x}+Kx=0$, which we recognize. Set trial function $x=Ae^{Bt}$; hence, $mAB^2 e^{Bt}+KAe^{Bt}=0$ or $Ae^{Bt}(mB^2+K)=0$. Either $Ae^{Bt}=0$ or $mB^2+K=0$. In the first condition, $A=0$ is uninteresting. Then the exponential function is somehow zero for all times $t$, which will not happen for any finite value of $B$, hence no worries. From the second condition, $B^2=-\frac{K}{m}\implies B=\pm i\sqrt{\frac{K}{m}}=\pm i\omega$, where $\omega=\sqrt{\frac{K}{m}}$.
+
+Consider energy $E=T+V=\frac{1}{2}m\dot{x}^2+\frac{1}{2}Kx^2$. Pop in solution $x=A\sin{\omega t}$; so that we need not worry about complex conjugates. $E=\frac{1}{2}m\omega^2 A^2 \cos^2 {\omega t}+\frac{1}{2}KA^2 \sin^2 {\omega t}=\frac{1}{2}A^2 (m\omega^2 \cos^2 {\omega t}+K\sin^2 {\omega t})=\frac{1}{2}A^2 K$. Hence, $A=\sqrt{\frac{2E}{K}}=\sqrt{\frac{2E}{m\omega^2}}$.
+
+This chapter deals with aspects of second quantization: waves behave like particles.
+
 \section*{Problem 2.1}
+
+Definition of a commutator $[A,B]\equiv AB-BA$.
 
 \begin{align*}
     \qq*{Clearly} [\hat{a},\hat{a}]  &= \hat{a}\hat{a}-\hat{a}\hat{a}=0\qq{using definition of commutator.}\blacksquare \\
@@ -28,7 +38,7 @@
     [\hat{a},\hat{a}^\dagger] &= \hat{a}\hat{a}^\dagger-\hat{a}^\dagger\hat{a}\qq{Start with the definition of a commutator.}\\
     &= \frac{m\omega}{2\hbar}\left[\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)-\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right)\right]\\
     &= \frac{m\omega}{2\hbar}\left[\hat{x}^2 - \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) + \frac{1}{m^2\omega^2}\hat{p}^2-\hat{x}^2 - \frac{i}{m\omega}(\hat{x}\hat{p}-\hat{p}\hat{x}) - \frac{1}{m^2\omega^2}\hat{p}^2\right]\\
-    &= \frac{-i}{\hbar}\left[ \hat{x},\hat{p}\right]= \frac{-i}{\hbar} (i\hbar)\\
+    &= \frac{-i}{\hbar}\left[ \hat{x},\hat{p}\right]= \frac{-i}{\hbar} (i\hbar)=1\\
 \end{align*}  
 
   \[\therefore\qquad[\hat{a},\hat{a}^\dagger] =1 \qquad\blacksquare\]
