@@ -1,0 +1,357 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,physics,xfrac,nicefrac}
+\usepackage{standalone}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{graphicx,float}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{decorations.markings}
+\tikzstyle arrowstyle=[scale=1]
+\tikzstyle directed=[postaction={decorate,decoration={markings,
+    mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+\tikzstyle reverse directed=[postaction={decorate,decoration={markings,
+    mark=at position .65 with {\arrowreversed[arrowstyle]{stealth};}}}]
+ 
+ 
+\title{Noether's Theorem}
+\author{John Bortins}
+ 
+\begin{document}
+
+\maketitle{}
+
+Based on videos by NoahExplainsPhysics.
+
+\section*{Part 1: Introduction}
+Equations of motion path in some space.
+General coordinates $q_i, i=1, \cdots, N$.
+Symmetries of the equations of motion. Symmetries of the Lagrangian; really symmetries of the equations of motion.
+
+Noether's Theorem: For every continuous symmetry of our Lagrangian, we have a conserved quantity along trajectories that satisfy the equations of motion.
+\begin{align*}
+    \qq{space translation} & \implies\qq{total momentum}   \\
+    \qq{rotation}          & \implies\qq{angular momentum} \\
+    \qq{time translation}  & \implies\qq{energy}           \\
+\end{align*}
+
+Periodic potential example no momentum conservation.
+
+
+\section*{Part 2: Momentum and Space Translations}
+
+Conservation of momentum
+
+Imagine two particles: ${m_1, \va{x}_1=(x_1, y_1, z_1)}$ and ${m_2, \va{x}_2=(x_2, y_2, z_2)}$.
+
+\begin{align*}
+    \qq{kinetic energy} KE & = \frac{1}{2}m_1(\dot{x}_1{^2}+\dot{y}_1{^2}+\dot{z}_1{^2})+\frac{1}{2}m_2(\dot{x}_2{^2}+\dot{y}_2{^2}+\dot{z}_2{^2})                                                  \\
+    \qq{potential energy}V & = V(\sqrt{(x_1 -x_2)^2+(y_1 -y_2)^2+(z_1 -z_2)^2})                                                                                                                     \\
+    \qq{lagrangian} L      & = \frac{1}{2}m_1(\dot{x}_1{^2}+\dot{y}_1{^2}+\dot{z}_1{^2})+\frac{1}{2}m_2(\dot{x}_2{^2}+\dot{y}_2{^2}+\dot{z}_2{^2})-V(\sqrt{(x_1 -x_2)^2+(y_1 -y_2)^2+(z_1 -z_2)^2})
+\end{align*}
+
+Translate the points by $\va{a}=(a_x,a_y,a_z)$.
+\begin{align*}
+    \va{x'}=\va{x}+\va{a}
+\end{align*}
+
+Now go to one dimension with no loss of generality. $L=\frac{1}{2}m_1\dot{x_1}^2+\frac{1}{2}m_2\dot{x_2}^2-V(x_1-x_2)$.
+
+Paths $\bar{x}_1(t)\to\bar{x}_1(t)+\epsilon_1(t)$ and  $\bar{x}_2(t)\to\bar{x}_2(t)+\epsilon_2(t)$, but $\epsilon_1(t)=\epsilon_2(t)=\epsilon(t)$.
+\begin{align*}
+    S[x(t)]                   & =\int_{t_1}^{t_2} L(x(t),\dot{x}(t))\dd{t}            \\
+    S[\bar{x}(t)+\epsilon(t)] & =S[\bar{x}(t)]+\var{S}+\mathcal{O}(\epsilon^2)+\cdots
+\end{align*}
+If $\bar{x}(t)$ is stationary then $\var{S}=0$.
+\begin{align*}
+    S[\bar{x}(t)+\epsilon(t)]                & =S[\bar{x}(t)]+\var{S}+\mathcal{O}(\epsilon^2)+\cdots                                                                                                                                                                                                      \\
+                                             & = \int_{t_1}^{t_2}\bqty{\frac{1}{2}m_1(\dot{\bar{x}}_1+{\epsilon})^2+\frac{1}{2}m_2(\dot{\bar{x}}_2+{\epsilon})^2-V(\bar{x}_1 +\epsilon -\bar{x}_2 -\epsilon)}\dd{t}                                                                                       \\
+                                             & =\int_{t_1}^{t_2}\bqty{\frac{1}{2}m_1(\dot{\bar{x}}_1^2+2m_1\dot{\bar{x}}_1 \dot{\epsilon}+\dot{\epsilon}^2)+\frac{1}{2}m_2(\dot{\bar{x}}_2^2+2m_2 \dot{\bar{x}}_2\dot{\epsilon}+\dot{\epsilon}^2)-V(\bar{x}_1  -\bar{x}_2 )}\dd{t}                        \\
+                                             & =\int_{t_1}^{t_2}\bqty{\frac{1}{2}m_1(\dot{\bar{x}}_1^2+2m_1\dot{\bar{x}}_1 \dot{\epsilon})+\frac{1}{2}m_2(\dot{\bar{x}}_2^2+2m_2 \dot{\bar{x}}_2\dot{\epsilon})-V(\bar{x}_1  -\bar{x}_2 )}\dd{t}                                                          \\
+                                             & =\int_{t_1}^{t_2}\bqty{\frac{1}{2}m_1 \dot{\bar{x}}_1^2+\frac{1}{2}m_2 \dot{\bar{x}}_2^2-V(\bar{x}_1  -\bar{x}_2 )}\dd{t}+\int_{t_1}^{t_2}\bqty{m_1\dot{\bar{x}}_1 \dot{\epsilon}+m_2 \dot{\bar{x}}_2 \dot{\epsilon}}\dd{t}+\mathcal{O}(\epsilon^2)+\cdots \\
+    \qq*{Hence}\var{S}                       & =\int_{t_1}^{t_2}\bqty{m_1\dot{\bar{x}}_1 \dot{\epsilon}+m_2 \dot{\bar{x}}_2 \dot{\epsilon}}\dd{t} \qq{Next integrate by parts}                                                                                                                            \\
+                                             & =\bqty{m_1 \dot{\bar{x}}_1 \epsilon + m_2 \dot{\bar{x}}_2 \epsilon         }\eval_{t_1}^{t_2}    -      \int_{t_1}^{t_2}   \epsilon \bqty{m_1\ddot{\bar{x}}_1 +m_2 \ddot{\bar{x}}_2 }\dd{t}                                                                \\
+    \qq*{But}0=\var{S}                       & =\int_{t_1}^{t_2}\epsilon\bqty{m_1\ddot{\bar{x}}_1+m_2 \ddot{\bar{x}}_2}\dd{t}              \qq{requires}   \epsilon(t_1)=\epsilon(t_2)     =0                                                                                                             \\
+    0                                        & =m_1\ddot{\bar{x}}_1+m_2 \ddot{\bar{x}}_2\qq{for any}\epsilon(t)\qq{where} \epsilon(t_1)=\epsilon(t_2)=0                                                                                                                                                   \\
+    m_1\ddot{\bar{x}}_1+m_2 \ddot{\bar{x}}_2 & =\dv{t}\bqty{m_1\dot{\bar{x}}_1+m_2 \dot{\bar{x}}_2}=0 \qq{the time derivative of the total momentum is zero.}
+\end{align*}
+
+\[
+    \begin{array}{l|l}
+        \mbox{ Proof of Euler-Lagrange}                    & \mbox{Proof of} \dv{t}P=0                                    \\
+        \qq{Considered all little variations}\epsilon_i(t) & \qq{Considered all little time dependent space translations} \\
+                                                           & \epsilon(t)=\epsilon_1(t)=\epsilon_2(t)                      \\
+        \qq{Got equations of motion for a stationary path} & \qq{Got conservation law}\dv{t}P=0 \qq{on stationary path}   \\
+        \var{S}=0\implies \qq{equations of motion}         & \var{S}=0\implies   \dv{t}P=0                                \\
+    \end{array}
+\]
+
+\section*{Part 3: Angular Momentum and Rotations}
+
+Conservation of angular momentum
+
+Let's have a mass $m$ at $\va{r}=(x,y)$ orbiting the origin $(0,0)$. The Lagrangian $L=\frac{1}{2}m(\dot{x}^2+\dot{y}^2)-V(\sqrt{x^2+y^2})$.
+
+\begin{align*}
+    x'=                                 & x\cos\theta-y\sin\theta \\
+    y'=                                 & x\sin\theta+y\cos\theta \\
+    \qq*{Easy to check that}x^2+y^2=    & {x'}^2+{y'}^2           \\
+    \qq*{Similarly}\dot{x}^2+\dot{y}^2= & \dot{x'}^2+\dot{y'}^2   \\
+    \qq*{Hence}L=                       & L'
+\end{align*}
+
+Consider a tiny time dependent rotation $\theta=\epsilon(t)$.
+\begin{align*}
+    \sin\epsilon(t) & \approx \epsilon(t)                        \\
+    \cos\epsilon(t) & \approx 1-\frac{1}{2}\epsilon^2 (t)        \\
+    x'              & = x-y\epsilon                              \\
+    y'              & = x\epsilon+y                              \\
+    \dot{x}'        & = \dot{x}-\dot{y}\epsilon -y\dot{\epsilon} \\
+    \dot{y}'        & = \dot{x}\epsilon+x\dot{\epsilon}+\dot{y}  \\
+\end{align*}
+
+Let $\bar{x}(t)$ and $\bar{y}(t)$ be the path the particle takes to satisfy the equations of motion.
+
+\begin{align*}
+    x'       & = \bar{x}-\bar{y}\epsilon                                    \\
+    y'       & = \bar{x}\epsilon+\bar{y}                                    \\
+    \dot{x}' & = \dot{\bar{x}}-\dot{\bar{y}}\epsilon -\bar{y}\dot{\epsilon} \\
+    \dot{y}' & = \dot{\bar{x}}\epsilon+\bar{x}\dot{\epsilon}+\dot{\bar{y}}  \\
+\end{align*}
+
+\begin{align*}
+    S[(x'(t),y'(t))] & =S[(\bar{x}(t),\bar{y}(t))]+\var{S}+
+    \mathcal{O}(\epsilon^2)                                                                                                                                                                                                                                                                               \\
+                     & =\int_{t_1}^{t_2}\bqty{\frac{1}{2}m(\dot{x}'^2+\dot{y}'^2)-V(\sqrt{x'^2+y'^2})}\dd{t}                                                                                                                                                                                              \\
+                     & =\int_{t_1}^{t_2}\bqty{\frac{1}{2}m[(\dot{\bar{x}}-\dot{\bar{y}}\epsilon -\bar{y}\dot{\epsilon})^2+(\dot{\bar{x}}\epsilon+\bar{x}\dot{\epsilon}+\dot{\bar{y}})^2]-V(\sqrt{(\bar{x}-\bar{y}\epsilon)^2+(\bar{x}\epsilon+\bar{y})^2})}\dd{t}                                         \\
+                     & =\int_{t_1}^{t_2}\bqty{\frac{1}{2}m[(\dot{\bar{x}}-\dot{\bar{y}}\epsilon -\bar{y}\dot{\epsilon})^2+(\dot{\bar{x}}\epsilon+\bar{x}\dot{\epsilon}+\dot{\bar{y}})^2]-V(\sqrt{\bar{x}^2-2\bar{x}\bar{y}\epsilon+2\bar{x}\bar{y}\epsilon+\bar{y}^2})}\dd{t}+\mathcal{O}(\epsilon^2)     \\
+                     & =\int_{t_1}^{t_2}\bqty{\frac{1}{2}m[(\dot{\bar{x}}-\dot{\bar{y}}\epsilon -\bar{y}\dot{\epsilon})^2+(\dot{\bar{x}}\epsilon+\bar{x}\dot{\epsilon}+\dot{\bar{y}})^2]-V(\sqrt{\bar{x}^2+\bar{y}^2})}\dd{t}+\mathcal{O}(\epsilon^2)                                                     \\
+                     & =\int_{t_1}^{t_2}\bqty{\frac{1}{2}m(\dot{\bar{x}}^2-2\dot{\bar{x}}\dot{\bar{y}}\epsilon -2\dot{\bar{x}}\bar{y}\dot{\epsilon}+2\dot{\bar{x}}\dot{\bar{y}}\epsilon+2\bar{x}\dot{\bar{y}}\dot{\epsilon}+\dot{\bar{y}}^2)-V(\sqrt{\bar{x}^2+\bar{y}^2})}\dd{t}+\mathcal{O}(\epsilon^2) \\
+                     & =\int_{t_1}^{t_2}\bqty{\frac{1}{2}m(\dot{\bar{x}}^2+\dot{\bar{y}}^2 -2\dot{\bar{x}}\bar{y}\dot{\epsilon}+2\bar{x}\dot{\bar{y}}\dot{\epsilon})-V(\sqrt{\bar{x}^2+\bar{y}^2})}\dd{t}+\mathcal{O}(\epsilon^2)                                                                         \\
+                     & =\int_{t_1}^{t_2}\bqty{\frac{1}{2}m(\dot{\bar{x}}^2+\dot{\bar{y}}^2)-V(\sqrt{\bar{x}^2+\bar{y}^2})}\dd{t} +\int_{t_1}^{t_2}m(-\dot{\bar{x}}\bar{y}\dot{\epsilon}+\bar{x}\dot{\bar{y}}\dot{\epsilon})\dd{t}+\mathcal{O}(\epsilon^2)                                                 \\
+\end{align*}
+
+\begin{align*}
+    0=\var{S}                                                    & =\int_{t_1}^{t_2}m\dot{\epsilon}(\bar{x}\dot{\bar{y}}-\dot{\bar{x}}\bar{y})\dd{t}\qq{where}\epsilon(t_1)=\epsilon(t_2)=0                                \\
+                                                                 & =m\epsilon(\bar{x}\dot{\bar{y}}-\dot{\bar{x}}\bar{y})\eval_{t_1}^{t_2}+\int_{t_1}^{t_2}m\epsilon\dv{t}(\bar{x}\dot{\bar{y}}-\dot{\bar{x}}\bar{y})\dd{t} \\
+    \qq*{Hence}\dv{t}(\bar{x}\dot{\bar{y}}-\dot{\bar{x}}\bar{y}) & =0\implies \dv{t}L_z=0
+\end{align*}
+
+But what if $V(x,y)$ was any potential?
+\begin{align*}
+    \qq*{Then} V(x',y') & =V(\bar{x}-\bar{y}\epsilon  , \bar{x}\epsilon+\bar{y}   )                                                                                    \\
+                        & = V(\bar{x},\bar{y})-\epsilon\bar{y}\pdv{V}{x} +\epsilon\bar{x}\pdv{V}{y}                                                                    \\
+    \var{S}             & =\int_{t_1}^{t_2}\bqty{m\dot{\epsilon}(\bar{x}\dot{\bar{y}}-\dot{\bar{x}}\bar{y})-\epsilon\pqty{\bar{x}\pdv{V}{y}-\bar{y}\pdv{V}{x} }}\dd{t} \\
+                        & =\int_{t_1}^{t_2}\epsilon\pqty{\dv{t}L_z
+        +\bar{x}\pdv{V}{y}    -\bar{y}\pdv{V}{x}}\dd{t}                                                                                                                \\
+    \dv{t}L_z           & =
+    -\bar{x}\pdv{V}{y}    +\bar{y}\pdv{V}{x}=\bar{x}F_y-\bar{y}F_x\qq{which is torque} \va{r}\cross\va{F}
+\end{align*}
+
+
+\[
+    \begin{array}{l|l}
+        L(x,y)=\frac{1}{2}m(\dot{x}^2+\dot{y}^2)+V(\sqrt{x^2+y^2}) & L(x,y)=\frac{1}{2}m(\dot{x}^2+\dot{y}^2)+V(x,y) \\
+        \qq{rotational symmetry}                                   & \qq{no rotational symmetry}                     \\
+        \dv{t}L_z=0                                                & \dv{t}L_z = Torque
+    \end{array}
+\]
+
+\section*{Part 4: Proof}
+
+Noether Procedure
+
+\begin{itemize}
+    \item Step 1: Find a symmetry transformation $q\to q+\var q$ where $\var q$ depends on a tiny constant parameter $\epsilon$. This should send $L\to L$.
+
+          Say you have a symmetry transformation $q\to q+\var q$ where $\var q$ depends on a tiny constant $\epsilon$.
+          \begin{itemize}
+              \item Translations: $q\to q+\epsilon$ where $\var q=\epsilon$
+              \item Rotations: $q_1\to q_1-\epsilon q_2$, $q_2\to q_2+\epsilon q_1$ where $\var q=(-\epsilon q_2,\epsilon q_2) $
+              \item Lagrangian: $L\to L$ in both cases
+          \end{itemize}
+    \item Step 2 (the clever step, the crucial step): Make the tiny constant parameter $\epsilon$ into a tiny time dependent parameter $\epsilon(t)$. You should now find that instead of $L\to L$ as before, now $L\to L+\dot{\epsilon}B$.
+    \item Step 3: Recall that on solutions to the equations of motion $\var S=0$ if $\epsilon(t_1)=\epsilon(t_2)=0$ (the Principal of Least Action). Therefore on solutions to the equations of motion $0=\var S=\int_{t_1}^{t_2}\dot{\epsilon}B\dd{t}=-\int_{t_1}^{t_2}\epsilon\dot{B}\dd{t}$ using integration by parts. Therefore $\dot{B}=0$ because this should work for any $\epsilon(t)\neq 0$. Hence $B$ is your conserved quantity. $\blacksquare$
+\end{itemize}
+
+Proof that the Noether Procedure works, \emph{i.e.}, Proof of Noether's Theorem
+
+
+\[
+    \begin{array}{l|l}
+        \epsilon \qq{constant}                                 & \epsilon(t)\qq{time dependent}                                                         \\
+        L\to L+\epsilon A \qquad(\dot{\epsilon}=0)             & L\to L+\epsilon A+\dot{\epsilon}B                                                      \\
+                                                               &                                                                                        \\
+        \qif* q\to q+\var{q} \qq{is a symmetry transformation} & \qif* q\to q+\var{q} \qq{is a symmetry transformation}                                 \\
+        \qthen* L\to L \qand A=0                               & \qthen* L\to L+\dot{\epsilon}B \qand A=0                                               \\
+                                                               & \qq*{on solutions to the equations of motion}                                          \\
+                                                               & 0=\var{S}=\int_{t_1}^{t_2}\dot{\epsilon}B\dd{t}=-\int_{t_1}^{t_2}\epsilon\dot{B}\dd{t} \\
+                                                               & \implies  \dot{B}=0\qand B \qq{is conserved.}                                          \\
+    \end{array}
+\]
+So if your transforation is a symmetry, you get a conservation law.
+
+What if
+
+\[
+    \begin{array}{l|l}
+        \epsilon \qq{constant}                                       & \epsilon(t)\qq{time dependent}                                                                                   \\
+        L\to L+\epsilon A \qquad(\dot{\epsilon}=0)                   & L\to L+\epsilon A+\dot{\epsilon}B                                                                                \\
+                                                                     &                                                                                                                  \\
+        \qif* q\to q+\var{q} \qq{is a not a symmetry transformation} & \qif* q\to q+\var{q} \qq{is a symmetry transformation}                                                           \\
+        \qthen*   A\neq 0                                            & \qthen*  A\neq 0                                                                                                 \\
+                                                                     & \qq*{on solutions to the equations of motion}                                                                    \\
+                                                                     & 0=\var{S}=\int_{t_1}^{t_2}(\dot{\epsilon}B+\epsilon A)\dd{t}=-\int_{t_1}^{t_2}(\epsilon\dot{B}+\epsilon A)\dd{t} \\
+                                                                     & \implies  \dot{B}=A\qand B \qq{is not conserved.}                                                                \\
+    \end{array}
+\]
+So even if your transformation is not a symmmetry, you have still learned something.
+
+What if $A=\dot{C}$
+
+\[
+    \begin{array}{l|l}
+        \epsilon \qq{constant}                                       & \epsilon(t)\qq{time dependent}                                                                                               \\
+        L\to L+\epsilon A \qquad(\dot{\epsilon}=0)                   & L\to L+\epsilon A+\dot{\epsilon}B                                                                                            \\
+                                                                     &                                                                                                                              \\
+        \qif* q\to q+\var{q} \qq{is a not a symmetry transformation} & \qif* q\to q+\var{q} \qq{is a symmetry transformation}                                                                       \\
+        \qthen*   A=\dot{C}                                          & \qthen*  A\neq 0                                                                                                             \\
+                                                                     & \qq*{on solutions to the equations of motion}                                                                                \\
+                                                                     & 0=\var{S}=\int_{t_1}^{t_2}(\dot{\epsilon}B+\epsilon \dot{C})\dd{t}=-\int_{t_1}^{t_2}(\epsilon\dot{B}+\epsilon \dot{C})\dd{t} \\
+                                                                     & \implies  \dot{B}=\dot{C}\qand B-C \qq{is  conserved.}                                                                       \\
+    \end{array}
+\]
+
+
+\section*{Part 5: Total Derivatives}
+Symmetries of $L$ $\to$ symmetries in the equations of motion.
+
+Previously $q\to q'$ and $L(q,\dot{q})=L(q',\dot{q}')$.
+
+Now $L(q,\dot{q})=L(q',\dot{q}')+\dv{t}C(q',\dot{q}')$.
+
+
+\begin{align*}
+    L(q,\dot{q})                          & =L(q',\dot{q}')+\dv{t}C(q',\dot{q}')                                           \\
+    S=\int_{t_1}^{t_2} L(q,\dot{q})\dd{t} & =\int_{t_1}^{t_2}\bqty{L(q',\dot{q}')+\dv{t}C(q',\dot{q}')}\dd{t}              \\
+                                          & =S'+\int_{t_1}^{t_2}\bqty{\dv{t}C(q',\dot{q}')}\dd{t}                          \\
+                                          & =S'+C(q',\dot{q}')\eval_{t_1}^{t_2} \qq{the action changes by a boundary term} \\
+\end{align*}
+
+Imagine $q$ satisfies the equations of motion, that is, $\var{S}=0$ for any tiny variation $\epsilon$ where $\epsilon(t_1)=\epsilon(t_2)=0$.
+
+
+
+\begin{align*}
+    \qq*{Then for}q'\qquad S' & =S-C(q',\dot{q}')\eval_{t_1}^{t_2}                                                               \\
+    \var{S'}                  & =\var{S}-C(q'+\epsilon,\dot{q}'+\dot{\epsilon})\eval_{t_1}^{t_2}+C(q',\dot{q}')\eval_{t_1}^{t_2} \\
+    \qthen* \var{S'}          & =0\qq{if we also have}\dot{\epsilon(t_1)}=\dot{\epsilon(t_2)}=0
+\end{align*}
+This is not so far-fetched.
+
+\begin{tikzpicture}[>=stealth]
+
+    % define coordinates
+    \coordinate (O) at (0,0) ;
+    \coordinate (A) at (0,4) ;
+    \coordinate (B) at (5,0) ;
+
+    % media
+    \fill[blue!5!] (-1,-1) rectangle (5,4);
+
+    % vertical axis
+    \draw[dash pattern=on5pt off3pt] (O) -- (A) ;
+    \draw[dash pattern=on5pt off3pt] (O) -- (0,-1) ;
+    \node[left] at (-0.25,2) {$\epsilon(t)$};
+
+    % horizontal axis
+    \draw[dash pattern=on5pt off3pt] (O) -- (B) ;
+    \draw[dash pattern=on5pt off3pt] (O) -- (-1,0) ;
+    \node[below] at (2.5,-0.25) {$t$};
+
+    % points
+    \draw [red,fill] (1,0) circle [radius=0.075];
+    \draw [blue,fill] (4,0) circle [radius=0.075];
+    \draw [fill] (0,0) circle [radius=0.075];
+    \node[below] at (1,0)  {$t_1$};
+    \node[below] at (4,0)  {$t_2$};
+    \node[above right] at (0,0)  {$(x,y)$};
+
+
+
+
+\end{tikzpicture}
+
+
+Therefore $q'$ also satisfies the equations of motion and the symmetries of $L$ $\to$ symmetries in the equations of motion.
+
+
+Total Derivatives and the Noether Procedure
+
+If you consider a time dependent symmetry transformation parameterized by $\epsilon(t)$ then $L\to L+\epsilon\dot{C}+\dot{\epsilon}B$
+
+\begin{align*}
+    0=\var{S} & =\int_{t_1}^{t_2}(\epsilon\dot{C}+\dot{\epsilon}B)\dd{t} \\
+              & =\int_{t_1}^{t_2}\epsilon(\dot{C}-\dot{B})\dd{t}
+\end{align*}
+Therefore on solutions to the equations of motion $\dv{t}(B-C)=0$ and $B-C$ is the conserved quantity.
+
+
+
+
+\section*{Part 6: Energy and Time Translations}
+
+$L(q_i,\dot{q}_i)$ where $i=1,\cdots,N$
+
+\begin{align*}
+    q_i(t)\to q'_i(t)             & =q_i(t+\epsilon)                                                      \\
+                                  & \approx q_i(t)+\epsilon\dot{q}_i                                      \\
+    \dot{q}_i(t)\to \dot{q}'_i(t) & \approx \dot{q}_i(t)+\epsilon\ddot{q}_i +\dot{\epsilon}  \dot{q}_i(t) \\
+\end{align*}
+
+\begin{align*}
+    L\to L' & =L(q_i+\epsilon \dot{q}_i,\dot{q}_i+\epsilon \ddot{q}_i)                                                          \\
+            & \approx L(q_i,\dot{q}_i)+\sum_{i=1}^N \pqty{\epsilon\dot{q}_i \pdv{L}{q_i}+\epsilon\ddot{q}_i \pdv{L}{\dot{q}_i}} \\
+            & =L+\epsilon \dot{L}
+\end{align*}
+
+The Trick: $\epsilon\to\epsilon(t)$
+
+\begin{align*}
+    q_i(t)\to q'_i(t)             & =q_i(t+\epsilon(t))                                                         \\
+                                  & \approx q_i(t)+\epsilon(t)\dot{q}_i                                         \\
+    \dot{q}_i(t)\to \dot{q}'_i(t) & \approx \dot{q}_i(t)+\epsilon(t)\ddot{q}_i +\dot{\epsilon}(t)  \dot{q}_i(t) \\
+\end{align*}
+
+\begin{align*}
+    L\to L' & =L(q_i+\epsilon\dot{q}_i,\dot{q}_i+\epsilon\ddot{q}_i +\dot{\epsilon}  \dot{q}_i)                                                   \\
+            & \approx L+\sum_{i=1}^N \bqty{\epsilon\dot{q}_i \pdv{L}{q_i}+\pqty{\epsilon\ddot{q}_i+\dot{\epsilon}  \dot{q}_i }\pdv{L}{\dot{q}_i}} \\
+            & =L+\epsilon \dot{L}+\sum_{i=1}^N \dot{\epsilon}  \dot{q}_i \pdv{L}{\dot{q}_i}
+\end{align*}
+
+On to the next part of our trick: note that $\var{S}=0$ on any solution to the equations of motion when $\epsilon(t_1)=\epsilon(t_2)=0$.
+
+\begin{align*}
+    0=\var{S} & =\int_{t_1}^{t_2}(L'-L)\dd{t}                                                                                                           \\
+              & =\int_{t_1}^{t_2}\pqty{\epsilon \dot{L}+\sum_{i=1}^N \dot{\epsilon}  \dot{q}_i \pdv{L}{\dot{q}_i}}\dd{t}                                \\
+              & =\int_{t_1}^{t_2}\epsilon\bqty{ \dot{L}-\sum_{i=1}^N \dv{t}\pqty{\dot{q}_i \pdv{L}{\dot{q}_i}}  }\dd{t} \qq{after integration by parts} \\
+              & =\int_{t_1}^{t_2}\epsilon \dv{t}\bqty{ L-\sum_{i=1}^N\pqty{\dot{q}_i \pdv{L}{\dot{q}_i}}  }\dd{t}                                       \\
+\end{align*}
+
+Because $\epsilon(t)$ can be anything as long as $\epsilon(t_1)=\epsilon(t_2)=0$ the other factor under the integral must be zero.
+
+Let $-E= L-\sum_{i=1}^N\pqty{\dot{q}_i \pdv{L}{\dot{q}_i}} $, then $\dv{t}E=0$. Rewrite $E= \sum_{i=1}^N\pqty{\dot{q}_i \pdv{L}{\dot{q}_i}}-L $.
+
+\begin{align*}
+    \qq*{Consider an example }L & =\frac{1}{2}m\dot{x}^2-V(x)                   \\                                                                                                           \\
+    \pdv{L}{\dot{x}}            & =m\dot{x}                                     \\
+    \dot{x}\pdv{L}{\dot{x}}     & =m\dot{x}^2                                   \\
+    E                           & =m\dot{x}^2-L                                 \\
+    E                           & =\frac{1}{2}m\dot{x}^2+V(x)\qquad\blacksquare \\
+\end{align*}
+
+What do we really mean when we say "time symmetric"? $L(q_i,\dot{q}_i)$ and $q_i(t)$.
+
+Rather than $L(q_i,\dot{q}_i,t)$, \emph{e.g.}, $L=\frac{1}{2}m\dot{x}^2-V(x,t) $.
+In which case, $\dv{t}L=\cdots+\pdv{L}{t}$, $\pdv{L}{t}=-\pdv{V}{t}$ and $\dv{t}E\neq 0$.
+
+\end{document}
