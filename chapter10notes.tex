@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,physics,xfrac,nicefrac}
+\usepackage{standalone}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
+
+ 
+\title{Quantum Field Theory Notes}
+\author{John Bortins}
+ 
+\begin{document}
+
+\maketitle{}
+
+\section*{Chapter 10}
+"If a system possesses some kind of invariance then a particular quantity will be preserved."
+
+\section*{10.1 Invariance and conservation}
+A quantity is deemed invariant with respect to a particular transformation when that quantity remains the same after said transformation, \emph{e.g.}, after rotation of the coordinate system. A quantity is deemed conserved when that quantity remains the same after a particular event, \emph{e.g.}, the collision of two particles.
+
+Invariances give rise to conservation laws.
+
+\section*{10.2 Noether's theorem}
+The Lagangian density $\mathcal{L}$ is a function of $\phi$ and $\partial_\mu \phi$. Then $\delta\mathcal{L}=\pdv{\mathcal{L}}{\phi}\delta\phi+\pdv{\mathcal{L}}{(\partial_\mu \phi)}\delta(\partial_\mu \phi)$. Let $\Pi^\mu (x)=\pdv{\mathcal{L}}{(\partial_\mu \phi)}$. Then $\delta\mathcal{L}=\pdv{\mathcal{L}}{\phi}\delta\phi+\Pi^\mu \delta(\partial_\mu \phi)$.
+
+Now for a chain rule trick: $\partial_\mu(\Pi^\mu \delta\phi)=(\partial_\mu \Pi^\mu)\delta\phi+\Pi^\mu \partial_\mu (\delta\phi)$. Use $\delta(\partial_\mu \phi)=\partial_\mu ( \delta\phi)$ to find $\partial_\mu(\Pi^\mu \delta\phi)=(\partial_\mu \Pi^\mu)\delta\phi+\Pi^\mu \delta(\partial_\mu \phi)$ and $\Pi^\mu \delta(\partial_\mu \phi)=\partial_\mu(\Pi^\mu \delta\phi)-(\partial_\mu \Pi^\mu)\delta\phi$.
+
+Substitute to find $\delta\mathcal{L}=\pdv{\mathcal{L}}{\phi}\delta\phi+\partial_\mu(\Pi^\mu \delta\phi)-(\partial_\mu \Pi^\mu)\delta\phi$. Then $\delta\mathcal{L}=(\pdv{\mathcal{L}}{\phi}-\partial_\mu \Pi^\mu)\delta\phi+\partial_\mu(\Pi^\mu \delta\phi)$. Recall action $S=\int \dd^4 x\; \mathcal{L}(\phi,\partial_\mu \phi)$. Hence $\delta S=\int \dd^4 x\; \delta\mathcal{L}(\phi,\partial_\mu \phi)$. Then $\delta S=\int \dd^4 x\; (\pdv{\mathcal{L}}{\phi}-\partial_\mu \Pi^\mu)\delta\phi+\int \dd^4 x\; \partial_\mu(\Pi^\mu \delta\phi)$.
+
+But $\int \dd^4 x\; \partial_\mu(\Pi^\mu \delta\phi)=0$ for appropriate conditions.  Then $\delta S=\int \dd^4 x\; (\pdv{\mathcal{L}}{\phi}-\partial_\mu \Pi^\mu)\delta\phi$. For $\delta S=0$ we find $\pdv{\mathcal{L}}{\phi}-\partial_\mu \Pi^\mu=0$ or $\pdv{\mathcal{L}}{\phi}=\partial_\mu \Pi^\mu$.
+
+
+
+Now for another turn at this. Let $\pdv{\mathcal{L}}{\phi}-\partial_\mu \Pi^\mu=0$. Then $\delta\mathcal{L}=\partial_\mu(\Pi^\mu \delta\phi)$. Write $\delta \phi=\pdv{\phi}{\lambda}\delta\lambda$ and let $D\phi=\eval{\pdv{\phi}{\lambda}}_{\lambda\to 0}$, then for infinistesimal $\lambda$ find $\delta \phi=D\phi\delta\lambda$. Hence, $\delta\mathcal{L}=\partial_\mu(\Pi^\mu D \phi)\delta\lambda$.
+
+Rather than staying stuck with $\delta\mathcal{L}=0$ let there be some handy function $W^\mu (x)$ such that its divergence gives us $\delta\mathcal{L}=(\partial_\mu W^\mu) \delta\lambda$. Hence $\partial_\mu(\Pi^\mu D \phi)\delta\lambda=(\partial_\mu W^\mu) \delta\lambda$ and $\partial_\mu(\Pi^\mu D \phi)-(\partial_\mu W^\mu)=0$ or $\partial_\mu(\Pi^\mu D \phi- W^\mu)=0$.
+
+Let $J_N^\mu (x)=\Pi^\mu D \phi(x)- W^\mu (x)$. Then $\partial_\mu J_N^\mu=0$. Now put it all together.
+
+For a continuous symmetry transformation $\phi\to \phi+D\phi$ that changes $\mathcal{L}$ only by the addition of a divergence $D\mathcal{L}=\partial_\mu W^\mu$ a current $J_N^\mu =\Pi^\mu D \phi- W^\mu $ exists. If $\phi$ obeys the equations of motion then the current is conserved: $\partial_\mu J_N^\mu=0$.
+
+
+
+
+
+\section*{10.3 Spacetime translation}
+
+\section*{10.4 Other symmetries}
+
+
+\end{document}
