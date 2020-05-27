@@ -1,18 +1,62 @@
 \documentclass{article}
-\usepackage{amsmath,nicefrac}
-\usepackage[left=2cm,top=1cm,right=3cm,bottom=1cm]{geometry}
-
+\usepackage{amsmath,amssymb,physics,xfrac,nicefrac}
+\usepackage{standalone}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
+\usepackage[indentfirst=true]{quoting}
+\usepackage{xcolor, soul}
+\definecolor{HighlightGray}{cmyk}{0,0,0,0.07}
+\sethlcolor{HighlightGray}
  
 \title{Quantum Field Theory Problem Sets}
 \author{John Bortins}
  
 \begin{document}
- 
+
 \maketitle{}
- 
+
 \section*{Problem 10.1}
+\begin{quoting}
+    \hl{Show that $[\phi(x),P^\alpha]=i\partial^\alpha \phi(x)$, where $P^\alpha$ is the conserved charges from spacetime translation (10.28).}
+\end{quoting}
+
+
 If we can use equation 10.25, which is \[[\hat{Q}_{N},\hat{\phi}]=-iD\hat{\phi},\] then \[[\hat{\phi},\hat{Q}_{N}]=iD\hat{\phi}.\]
 
+Eq.10.28 defines the conserved charges that arise from the conserved current $J_N^\mu=\alpha_\nu T^{\mu\nu}$: \[P^\alpha=\int \dd[3]{x}T^{0\alpha} .\]
 
+So for the field $\phi(x)$ use the conserved charge $P^\alpha$ to generate the symmetry transformation
+\begin{align*}
+    [\phi(x),P^\alpha] & =iD\phi(x)                                         \\
+                       & =i\omega_{\alpha\nu} x^\nu \partial^\alpha \phi(x)
+\end{align*}
+
+
+
+\section*{Problem 10.2}
+\begin{quoting}
+    \hl{Consider a system characterized by $N$ fields $\phi_1,\dots,\phi_N$.}
+    
+    \hl{The Lagrangian density is then $\mathcal{L}(\phi_1,\dots,\phi_N;\partial_\mu \phi_1,\dots,\partial_\mu \phi_N;x^\mu)$.}
+    
+    \hl{Show that the Noether current is $J^\mu=\sum_\alpha \Pi_\alpha^\mu  D\phi^\alpha-W^\mu(x)$, (10.41), where $D\mathcal{L}=\partial_\mu W^\mu$.}
+\end{quoting}
+
+
+\section*{Problem 10.3}
+\begin{quoting}
+    \hl{For the Lagrangian $\mathcal{L}=\frac{1}{2}(\partial_\mu \phi)^2-\frac{1}{2}m\phi^2$, (10.42), evaluate $T^{\mu\nu}$and show that $T^{00}$ agrees with what you would expect from the Hamiltonian for this Lagrangian.}
+    
+    \hl{Show that $\partial_\mu T^{\mu\nu}=0$.}
+    
+    \hl{Derive expressions for $P^0=\int\dd[3]{x}T^{00}$ and $P^i=\int\dd[3]{x}T^{0i}$.}
+\end{quoting}
+
+
+\section*{Problem 10.4}
+\begin{quoting}
+    \hl{For the Lagrangian $\mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}=\frac{1}{2}(\vb{E}^2-\vb{B}^2)$, (10.43), show that $\Pi^{\sigma\rho}\equiv\pdv{\mathcal{L}}{(\partial_\sigma A_\rho)}=-F^{\sigma\rho}$.}
+    
+    \hl{Hence show that the energy-momentum tensor $T^\mu_\nu$.}
+\end{quoting}
 
 \end{document}
