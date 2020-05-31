@@ -19,15 +19,33 @@
     \hl{Show that $[\phi(x),P^\alpha]=i\partial^\alpha \phi(x)$, where $P^\alpha$ is the conserved charges from spacetime translation (10.28).}
 \end{quoting}
 
-
-If we can use equation 10.25, which is \[[\hat{Q}_{N},\hat{\phi}]=-iD\hat{\phi},\] then \[[\hat{\phi},\hat{Q}_{N}]=iD\hat{\phi}.\]
-
-Eq.10.28 defines the conserved charges that arise from the conserved current $J_N^\mu=\alpha_\nu T^{\mu\nu}$: \[P^\alpha=\int \dd[3]{x}T^{0\alpha} .\]
-
-So for the field $\phi(x)$ use the conserved charge $P^\alpha$ to generate the symmetry transformation
 \begin{align*}
-    [\phi(x),P^\alpha] & =iD\phi(x)                                         \\
-                       & =i\omega_{\alpha\nu} x^\nu \partial^\alpha \phi(x)
+    \qq*{The energy-momentum tensor}T^{\mu\nu} & =\Pi^\mu\partial^\nu \phi-g^{\mu\nu}\mathcal{L}                       \\
+    \qq*{The conserved charges}P^\alpha        & =\int\dd[3]{x}T^{0\alpha}                                             \\
+                                               & =\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}} \\
+    \qq*{Because}g^{00}=1\qquad P^0            & =\int\dd[3]{x}\pqty{\Pi^0\partial^0 \phi-\mathcal{L}}                 \\
+    \qq*{Because}g^{0k}=0\qquad P^k            & =\int\dd[3]{x}\pqty{\Pi^0\partial^k \phi}                             \\
+\end{align*}
+
+\begin{align*}
+    \qq*{Integration by parts} \dv{x}(uv) & =\dv{u}{x}v+u\dv{u}{x}                        \\
+    \int \dv{x}(uv) \dd{x}                & = \int \dv{u}{x}v\dd{x}+\int u\dv{v}{x}\dd{x} \\    
+    uv                                    & =\int v\dd{u}+\int u\dd{v}                    \\           
+\end{align*}
+
+
+\begin{align*}
+    [\phi(x),P^\alpha] & =\phi(x)P^\alpha-P^\alpha \phi(x)                                                                                                                                                               \\
+                       & =\phi(x)\int\dd[3]{x}T^{0\alpha}-\pqty{\int\dd[3]{x}T^{0\alpha}} \phi(x)                                                                                                                        \\
+                       & =\phi(x)\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}-\bqty{\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}} \phi(x)\qq{next integrate by parts}    \\
+                       & =\partial^\alpha \phi(x)\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}+\phi(x)\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}                                     \\
+                       & \qquad-\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}\phi(x)-\bqty{\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}} \partial^\alpha\phi(x)                        \\
+                       & =\partial^\alpha \phi(x)\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}-\bqty{\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}} \partial^\alpha\phi(x) \\
+                       & \qquad +\phi(x)\Pi^0\partial^\alpha \phi-\phi(x)g^{0\alpha}\mathcal{L}-\pqty{\Pi^0\partial^\alpha \phi}\phi(x)+g^{0\alpha}\mathcal{L}\phi(x)                                                    \\
+                       & =\phi(x)\Pi^0\partial^\alpha \phi-\pqty{\Pi^0\partial^\alpha \phi}\phi(x)-\phi(x)g^{0\alpha}\mathcal{L}+g^{0\alpha}\mathcal{L}\phi(x)                                                           \\
+                       & =\phi(x)\Pi^0\partial^\alpha \phi-\pqty{\Pi^0\partial^\alpha \phi}\phi(x)=\bqty{\phi(x)\Pi^0-\Pi^0 \phi(x)}\partial^\alpha \phi=\bqty{\phi(x),\Pi^0}\partial^\alpha \phi                        \\
+    [\phi(x),P^\alpha] & =i\partial^\alpha \phi   (x)                                                                                                                                                                    \\
+                       & \qq{where}\Pi^0(x)=\pi(x)\qand\bqty{\phi(x),\pi(x)}=i\qq{recognizing the conjugate momentum}\blacksquare
 \end{align*}
 
 
@@ -36,6 +54,12 @@ So for the field $\phi(x)$ use the conserved charge $P^\alpha$ to generate the s
 \begin{quoting}
     \hl{Consider a system characterized by $N$ fields $\phi_1,\dots,\phi_N$. The Lagrangian density is then\\ $\mathcal{L}(\phi_1,\dots,\phi_N;\partial_\mu \phi_1,\dots,\partial_\mu \phi_N;x^\mu)$. Show that the Noether current is $J^\mu=\sum_\alpha \Pi_\alpha^\mu  D\phi^\alpha-W^\mu(x)$, (10.41),\\ where $D\mathcal{L}=\partial_\mu W^\mu$.}
 \end{quoting}
+
+\[\qq*{The change in the Lagranian density is}\delta\mathcal{L}=\pdv{\mathcal{L}}{\phi^\alpha}\delta\phi^\alpha+\pdv{\mathcal{L}}{(\partial_\mu \phi^\beta)}\delta(\partial_\mu \phi^\beta).\]
+\[\qq*{Define}\Pi^\mu_\beta=\pdv{\mathcal{L}}{(\partial_\mu \phi^\beta)}\qcomma \qthen \delta\mathcal{L}=\pdv{\mathcal{L}}{\phi^\alpha}\delta\phi^\alpha+\Pi^\mu_\beta \delta(\partial_\mu \phi^\beta).\]
+\[\qq*{Use}\delta(\partial_\mu \phi^\beta)=\partial_\mu (\delta\phi^\beta)\qand\partial_\mu (\Pi^\mu_\beta \delta\phi^\beta)=(\partial_\mu \Pi^\mu_\beta) \delta\phi^\beta+\Pi^\mu_\beta \partial_\mu (\delta\phi^\beta).\]
+\[\qq*{Hence}\partial_\mu (\Pi^\mu_\beta \delta\phi^\beta)=(\partial_\mu \Pi^\mu_\beta) \delta\phi^\beta+\Pi^\mu_\beta \delta(\partial_\mu \phi^\beta)\implies\Pi^\mu_\beta \delta(\partial_\mu \phi^\beta)=\partial_\mu (\Pi^\mu_\beta \delta\phi^\beta)-(\partial_\mu \Pi^\mu_\beta) \delta\phi^\beta.\]
+\[\qq*{Then}\delta\mathcal{L}=\pqty{\pdv{\mathcal{L}}{\phi^\alpha}-\partial_\mu \Pi^\mu_\alpha}\delta\phi^\alpha+\partial_\mu (\Pi^\mu_\beta \delta\phi^\beta).\]
 
 
 \section*{Problem 10.3}
