@@ -16,43 +16,43 @@
 
 \section*{Problem 10.1}
 \begin{quoting}
-    \hl{Show that $[\phi(x),P^\alpha]=i\partial^\alpha \phi(x)$, where $P^\alpha$ is the conserved charges from spacetime translation (10.28).}
+  \hl{Show that $[\phi(x),P^\alpha]=i\partial^\alpha \phi(x)$, where $P^\alpha$ is the conserved charges from spacetime translation (10.28).}
 \end{quoting}
 
 \begin{align*}
-    \qq*{The energy-momentum tensor}T^{\mu\nu} & =\Pi^\mu\partial^\nu \phi-g^{\mu\nu}\mathcal{L}                       \\
-    \qq*{The conserved charges}P^\alpha        & =\int\dd[3]{x}T^{0\alpha}                                             \\
-                                               & =\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}} \\
-    \qq*{Because}g^{00}=1\qquad P^0            & =\int\dd[3]{x}\pqty{\Pi^0\partial^0 \phi-\mathcal{L}}                 \\
-    \qq*{Because}g^{0k}=0\qquad P^k            & =\int\dd[3]{x}\pqty{\Pi^0\partial^k \phi}                             \\
+  \qq*{The energy-momentum tensor}T^{\mu\nu} & =\Pi^\mu\partial^\nu \phi-g^{\mu\nu}\mathcal{L}                       \\
+  \qq*{The conserved charges}P^\alpha        & =\int\dd[3]{x}T^{0\alpha}                                             \\
+                                             & =\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}} \\
+  \qq*{Because}g^{00}=1\qquad P^0            & =\int\dd[3]{x}\pqty{\Pi^0\partial^0 \phi-\mathcal{L}}                 \\
+  \qq*{Because}g^{0k}=0\qquad P^k            & =\int\dd[3]{x}\pqty{\Pi^0\partial^k \phi}                             \\
 \end{align*}
 
 \begin{align*}
-    \qq*{Integration by parts} \dv{x}(uv) & =\dv{u}{x}v+u\dv{u}{x}                        \\
-    \int \dv{x}(uv) \dd{x}                & = \int \dv{u}{x}v\dd{x}+\int u\dv{v}{x}\dd{x} \\    
-    uv                                    & =\int v\dd{u}+\int u\dd{v}                    \\           
+  \qq*{Integration by parts} \dv{x}(uv) & =\dv{u}{x}v+u\dv{u}{x}                        \\
+  \int \dv{x}(uv) \dd{x}                & = \int \dv{u}{x}v\dd{x}+\int u\dv{v}{x}\dd{x} \\    
+  uv                                    & =\int v\dd{u}+\int u\dd{v}                    \\           
 \end{align*}
 
 
 \begin{align*}
-    [\phi(x),P^\alpha] & =\phi(x)P^\alpha-P^\alpha \phi(x)                                                                                                                                                               \\
-                       & =\phi(x)\int\dd[3]{x}T^{0\alpha}-\pqty{\int\dd[3]{x}T^{0\alpha}} \phi(x)                                                                                                                        \\
-                       & =\phi(x)\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}-\bqty{\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}} \phi(x)\qq{next integrate by parts}    \\
-                       & =\partial^\alpha \phi(x)\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}+\phi(x)\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}                                     \\
-                       & \qquad-\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}\phi(x)-\bqty{\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}} \partial^\alpha\phi(x)                        \\
-                       & =\partial^\alpha \phi(x)\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}-\bqty{\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}} \partial^\alpha\phi(x) \\
-                       & \qquad +\phi(x)\Pi^0\partial^\alpha \phi-\phi(x)g^{0\alpha}\mathcal{L}-\pqty{\Pi^0\partial^\alpha \phi}\phi(x)+g^{0\alpha}\mathcal{L}\phi(x)                                                    \\
-                       & =\phi(x)\Pi^0\partial^\alpha \phi-\pqty{\Pi^0\partial^\alpha \phi}\phi(x)-\phi(x)g^{0\alpha}\mathcal{L}+g^{0\alpha}\mathcal{L}\phi(x)                                                           \\
-                       & =\phi(x)\Pi^0\partial^\alpha \phi-\pqty{\Pi^0\partial^\alpha \phi}\phi(x)=\bqty{\phi(x)\Pi^0-\Pi^0 \phi(x)}\partial^\alpha \phi=\bqty{\phi(x),\Pi^0}\partial^\alpha \phi                        \\
-    [\phi(x),P^\alpha] & =i\partial^\alpha \phi   (x)                                                                                                                                                                    \\
-                       & \qq{where}\Pi^0(x)=\pi(x)\qand\bqty{\phi(x),\pi(x)}=i\qq{recognizing the conjugate momentum}\blacksquare
+  [\phi(x),P^\alpha] & =\phi(x)P^\alpha-P^\alpha \phi(x)                                                                                                                                                               \\
+                     & =\phi(x)\int\dd[3]{x}T^{0\alpha}-\pqty{\int\dd[3]{x}T^{0\alpha}} \phi(x)                                                                                                                        \\
+                     & =\phi(x)\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}-\bqty{\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}} \phi(x)\qq{next integrate by parts}    \\
+                     & =\partial^\alpha \phi(x)\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}+\phi(x)\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}                                     \\
+                     & \qquad-\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}\phi(x)-\bqty{\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}} \partial^\alpha\phi(x)                        \\
+                     & =\partial^\alpha \phi(x)\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}-\bqty{\int\dd[3]{x}\pqty{\Pi^0\partial^\alpha \phi-g^{0\alpha}\mathcal{L}}} \partial^\alpha\phi(x) \\
+                     & \qquad +\phi(x)\Pi^0\partial^\alpha \phi-\phi(x)g^{0\alpha}\mathcal{L}-\pqty{\Pi^0\partial^\alpha \phi}\phi(x)+g^{0\alpha}\mathcal{L}\phi(x)                                                    \\
+                     & =\phi(x)\Pi^0\partial^\alpha \phi-\pqty{\Pi^0\partial^\alpha \phi}\phi(x)-\phi(x)g^{0\alpha}\mathcal{L}+g^{0\alpha}\mathcal{L}\phi(x)                                                           \\
+                     & =\phi(x)\Pi^0\partial^\alpha \phi-\pqty{\Pi^0\partial^\alpha \phi}\phi(x)=\bqty{\phi(x)\Pi^0-\Pi^0 \phi(x)}\partial^\alpha \phi=\bqty{\phi(x),\Pi^0}\partial^\alpha \phi                        \\
+  [\phi(x),P^\alpha] & =i\partial^\alpha \phi   (x)                                                                                                                                                                    \\
+                     & \qq{where}\Pi^0(x)=\pi(x)\qand\bqty{\phi(x),\pi(x)}=i\qq{recognizing the conjugate momentum}\blacksquare
 \end{align*}
 
 
 
 \section*{Problem 10.2}
 \begin{quoting}
-    \hl{Consider a system characterized by $N$ fields $\phi_1,\dots,\phi_N$. The Lagrangian density is then\\ $\mathcal{L}(\phi_1,\dots,\phi_N;\partial_\mu \phi_1,\dots,\partial_\mu \phi_N;x^\mu)$. Show that the Noether current is $J^\mu=\sum_\alpha \Pi_\alpha^\mu  D\phi^\alpha-W^\mu(x)$, (10.41),\\ where $D\mathcal{L}=\partial_\mu W^\mu$.}
+  \hl{Consider a system characterized by $N$ fields $\phi_1,\dots,\phi_N$. The Lagrangian density is then\\ $\mathcal{L}(\phi_1,\dots,\phi_N;\partial_\mu \phi_1,\dots,\partial_\mu \phi_N;x^\mu)$. Show that the Noether current is $J^\mu=\sum_\alpha \Pi_\alpha^\mu  D\phi^\alpha-W^\mu(x)$, (10.41),\\ where $D\mathcal{L}=\partial_\mu W^\mu$.}
 \end{quoting}
 
 \[\qq*{The change in the Lagranian density is}\delta\mathcal{L}=\pdv{\mathcal{L}}{\phi^\alpha}\delta\phi^\alpha+\pdv{\mathcal{L}}{(\partial_\mu \phi^\beta)}\delta(\partial_\mu \phi^\beta).\]
@@ -69,13 +69,31 @@
 
 \section*{Problem 10.3}
 \begin{quoting}
-    \hl{For the Lagrangian $\mathcal{L}=\frac{1}{2}(\partial_\mu \phi)^2-\frac{1}{2}m\phi^2$, (10.42), evaluate $T^{\mu\nu}$ and show that $T^{00}$ agrees with what you would expect from the Hamiltonian for this Lagrangian. Show that $\partial_\mu T^{\mu\nu}=0$. Derive expressions for $P^0=\int\dd[3]{x}T^{00}$ and $P^i=\int\dd[3]{x}T^{0i}$.}
+  \hl{For the Lagrangian $\mathcal{L}=\frac{1}{2}(\partial_\mu \phi)^2-\frac{1}{2}m^2\phi^2$, (10.42), evaluate $T^{\mu\nu}$ and show that $T^{00}$ agrees with what you would expect from the Hamiltonian for this Lagrangian. Show that $\partial_\mu T^{\mu\nu}=0$. Derive expressions for $P^0=\int\dd[3]{x}T^{00}$ and $P^i=\int\dd[3]{x}T^{0i}$.}
 \end{quoting}
+See \S 7.2, a massive scalar field.
+\begin{align*}
+  \qq*{A few definitions}\partial_\mu\equiv\pdv{x^\mu}=\pqty{\pdv{x^0},\pdv{x^1},\pdv{x^2},\pdv{x^3}}=\pqty{\pdv{t},\grad}=\pqty{\pdv{t},\pdv{x},\pdv{y},\pdv{z}}
+\end{align*}
 
-
+\begin{align*}
+  \mathcal{L}(\phi,\partial_\mu \phi) & =\frac{1}{2}(\partial_\mu \phi)^2-\frac{1}{2}m^2\phi^2                                                                        \\
+  \delta\mathcal{L}                   & =(\partial_\mu \phi)\delta(\partial_\mu \phi)-(m^2 \phi)\delta\phi                                                            \\
+                                      & =(\partial_\mu \phi)(\partial_\mu \delta\phi)-(m^2 \phi)\delta\phi\qq{where}\delta(\partial_\mu \phi)=\partial_\mu \delta\phi \\
+                                      & =\Pi^\mu(\partial_\mu \delta\phi)-(m^2 \phi)\delta\phi\qq{where}\Pi^\mu=\partial_\mu \phi                                     \\
+                                      & =\partial_\mu (\Pi^\mu \delta\phi)-(\partial_\mu \Pi^\mu) \delta\phi-(m^2 \phi)\delta\phi                                     \\
+                                      & =\partial_\mu (\Pi^\mu \delta\phi)-(\partial_\mu \Pi^\mu+m^2 \phi)\delta\phi                                                  \\
+                                      & =    \partial_\mu (\Pi^\mu \delta\phi)-({\partial_\mu}^2 +m^2 )\phi\delta\phi                                                 \\
+\end{align*}
+\begin{align*}
+  T^{\mu\nu} & = \Pi^\mu (\partial^\nu \phi)-g^{\mu\nu}\mathcal{L}                                                           \\
+             & = (\partial^\mu \phi) (\partial^\nu \phi)-g^{\mu\nu}\frac{1}{2}(\partial \phi)^2+g^{\mu\nu}\frac{1}{2}m\phi^2 \\
+  T^{00}     & =\frac{1}{2}(\partial^0 \phi)^2+\frac{1}{2}m\phi^2=\frac{1}{2}\dot{ \phi}^2+\frac{1}{2}m\phi^2                \\
+  T^{0i}     & =\frac{1}{2}(\partial^0 \phi)(\partial^i \phi)+\frac{1}{2}m\phi^2=\frac{1}{2}\dot{ \phi}^2+\frac{1}{2}m\phi^2 \\
+\end{align*}
 \section*{Problem 10.4}
 \begin{quoting}
-    \hl{For the Lagrangian $\mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}=\frac{1}{2}(\vb{E}^2-\vb{B}^2)$, (10.43), show that $\Pi^{\sigma\rho}\equiv\pdv{\mathcal{L}}{(\partial_\sigma A_\rho)}=-F^{\sigma\rho}$, (10.44). Hence show that the energy-momentum tensor $T^\mu_\nu=\Pi^{\mu\sigma} \partial_\nu A_\sigma-\delta^\mu_\nu \mathcal{L}$, (10.45), can be written as\\ $T^{\mu\nu}=-F^{\mu\sigma}\partial^\nu A_\sigma+\frac{1}{4}g^{\mu\nu}F^{\alpha\beta}F_{\alpha\beta}$, (10.46). This tensor is not symmetric but we can symmetrize it by adding $\partial_\lambda X^{\lambda\mu\nu}$ where $X^{\lambda\mu\nu}=F^{\mu\lambda}A^\nu$. Show that $X^{\lambda\mu\nu}=-X^{\mu\lambda\nu}$. Show further that the symmetrized energy-momentum tensor $\tilde{T}^{\mu\nu}=F^{\mu\sigma}{F_\sigma}^\nu+\frac{1}{4}g^{\mu\nu}F^{\alpha\beta}F_{\alpha\beta}$, (10.47). Hence show that $\tilde{T}^{00}=\frac{1}{2}(\vb{E}^2+\vb{B}^2)$, the energy density in the electromagnetic field, and $\tilde{T}^{i0}=(\vb{E}\cross\vb{B})^i$, which is the Poynting vector and describes the energy flow.}
+  \hl{For the Lagrangian $\mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}=\frac{1}{2}(\vb{E}^2-\vb{B}^2)$, (10.43), show that $\Pi^{\sigma\rho}\equiv\pdv{\mathcal{L}}{(\partial_\sigma A_\rho)}=-F^{\sigma\rho}$, (10.44). Hence show that the energy-momentum tensor $T^\mu_\nu=\Pi^{\mu\sigma} \partial_\nu A_\sigma-\delta^\mu_\nu \mathcal{L}$, (10.45), can be written as\\ $T^{\mu\nu}=-F^{\mu\sigma}\partial^\nu A_\sigma+\frac{1}{4}g^{\mu\nu}F^{\alpha\beta}F_{\alpha\beta}$, (10.46). This tensor is not symmetric but we can symmetrize it by adding $\partial_\lambda X^{\lambda\mu\nu}$ where $X^{\lambda\mu\nu}=F^{\mu\lambda}A^\nu$. Show that $X^{\lambda\mu\nu}=-X^{\mu\lambda\nu}$. Show further that the symmetrized energy-momentum tensor $\tilde{T}^{\mu\nu}=F^{\mu\sigma}{F_\sigma}^\nu+\frac{1}{4}g^{\mu\nu}F^{\alpha\beta}F_{\alpha\beta}$, (10.47). Hence show that $\tilde{T}^{00}=\frac{1}{2}(\vb{E}^2+\vb{B}^2)$, the energy density in the electromagnetic field, and $\tilde{T}^{i0}=(\vb{E}\cross\vb{B})^i$, which is the Poynting vector and describes the energy flow.}
 \end{quoting}
 
 \end{document}
