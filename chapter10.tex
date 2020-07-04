@@ -78,22 +78,131 @@ See \S 7.2, a massive scalar field.
 
 \begin{align*}
   \mathcal{L}(\phi,\partial_\mu \phi) & =\frac{1}{2}(\partial_\mu \phi)^2-\frac{1}{2}m^2\phi^2                                                                        \\
-  \delta\mathcal{L}                   & =(\partial_\mu \phi)\delta(\partial_\mu \phi)-(m^2 \phi)\delta\phi                                                            \\
-                                      & =(\partial_\mu \phi)(\partial_\mu \delta\phi)-(m^2 \phi)\delta\phi\qq{where}\delta(\partial_\mu \phi)=\partial_\mu \delta\phi \\
+  \delta\mathcal{L}                   & =(\partial^\mu \phi)\delta(\partial_\mu \phi)-(m^2 \phi)\delta\phi                                                            \\
+                                      & =(\partial^\mu \phi)(\partial_\mu \delta\phi)-(m^2 \phi)\delta\phi\qq{where}\delta(\partial_\mu \phi)=\partial_\mu \delta\phi \\
                                       & =\Pi^\mu(\partial_\mu \delta\phi)-(m^2 \phi)\delta\phi\qq{where}\Pi^\mu=\partial_\mu \phi                                     \\
                                       & =\partial_\mu (\Pi^\mu \delta\phi)-(\partial_\mu \Pi^\mu) \delta\phi-(m^2 \phi)\delta\phi                                     \\
                                       & =\partial_\mu (\Pi^\mu \delta\phi)-(\partial_\mu \Pi^\mu+m^2 \phi)\delta\phi                                                  \\
                                       & =    \partial_\mu (\Pi^\mu \delta\phi)-({\partial_\mu}^2 +m^2 )\phi\delta\phi                                                 \\
 \end{align*}
 \begin{align*}
-  T^{\mu\nu} & = \Pi^\mu (\partial^\nu \phi)-g^{\mu\nu}\mathcal{L}                                                           \\
-             & = (\partial^\mu \phi) (\partial^\nu \phi)-g^{\mu\nu}\frac{1}{2}(\partial \phi)^2+g^{\mu\nu}\frac{1}{2}m\phi^2 \\
-  T^{00}     & =\frac{1}{2}(\partial^0 \phi)^2+\frac{1}{2}m\phi^2=\frac{1}{2}\dot{ \phi}^2+\frac{1}{2}m\phi^2                \\
-  T^{0i}     & =\frac{1}{2}(\partial^0 \phi)(\partial^i \phi)+\frac{1}{2}m\phi^2=\frac{1}{2}\dot{ \phi}^2+\frac{1}{2}m\phi^2 \\
+  \qq*{The d'Alembertian operator}\partial^2=\partial^\mu \partial_\mu=\pdv[2]{t}-\laplacian=\pdv[2]{t}-\pdv[2]{x}-\pdv[2]{y}-\pdv[2]{z}
 \end{align*}
+\begin{align*}
+  T^{\mu\nu} & = \Pi^\mu (\partial^\nu \phi)-g^{\mu\nu}\mathcal{L}                                                                                                \\
+             & = (\partial_\mu \phi) (\partial^\nu \phi)-g^{\mu\nu}\frac{1}{2}(\partial \phi)^2+g^{\mu\nu}\frac{1}{2}m^2\phi^2                                    \\
+  T^{0i}     & = (\partial_0 \phi) (\partial^i \phi)=\dot{\phi}\partial^i \phi                                                                                    \\
+  T^{00}     & =\frac{1}{2}(\partial_0 \phi)^2+\frac{1}{2}m^2\phi^2\qq{where}g^{00}=1                                                                             \\
+             & =\dot{ \phi}^2-\frac{1}{2}\dot{ \phi}^2-\frac{1}{2}\laplacian\phi+\frac{1}{2}m^2\phi^2  \qquad\blacksquare                                         \\
+             & =\frac{1}{2}\dot{ \phi}^2-\frac{1}{2}\laplacian\phi+\frac{1}{2}m^2\phi^2\qq{which looks like the expected Hamiltonian density}  \qquad\blacksquare \\
+\end{align*}
+
+\begin{align*}
+  \pdv{\mathcal{L}(\phi,\partial_\nu \phi)}{x_\nu}                                                               & =0                                                                                                                                                  \\
+  \dv{\mathcal{L}}{x_\nu}=\partial^\nu \mathcal{L}                                                               & =\pdv{\mathcal{L}}{(\partial_\mu \phi)}\pdv{(\partial_\mu \phi)}{x_\nu}+\pdv{\mathcal{L}}{\phi}\pdv{\phi}{x_\nu}                                    \\
+                                                                                                                 & =\pdv{\mathcal{L}}{(\partial_\mu \phi)}\partial^\nu (\partial_\mu \phi)+\pdv{\mathcal{L}}{\phi}\partial^\nu \phi                                    \\
+                                                                                                                 & =\pdv{\mathcal{L}}{(\partial_\mu \phi)}\partial^\nu (\partial_\mu \phi)+\partial_\mu \pqty{\pdv{\mathcal{L}}{(\partial_\mu \phi)}}\partial^\nu \phi \\
+                                                                                                                 & =\pdv{\mathcal{L}}{(\partial_\mu \phi)}\partial^\mu (\partial_\nu \phi)+\partial_\mu \pqty{\pdv{\mathcal{L}}{(\partial_\mu \phi)}}\partial^\nu \phi \\
+                                                                                                                 & =\partial_\mu \pqty{\pdv{\mathcal{L}}{(\partial_\mu \phi)}\partial^\nu \phi}                                                                        \\
+                                                                                                                 & =\partial_\mu g^{\mu\nu}\mathcal{L}                                                                                                                 \\
+  \partial_\mu \pqty{\pdv{\mathcal{L}}{(\partial_\mu \phi)}\partial^\nu \phi}-\partial_\mu g^{\mu\nu}\mathcal{L} & =0                                                                                                                                                  \\
+  \partial_\mu \pqty{\pdv{\mathcal{L}}{(\partial_\mu \phi)}\partial^\nu \phi- g^{\mu\nu}\mathcal{L}}             & =0                                                                                                                                                  \\
+  \partial_\mu T^{\mu\nu}                                                                                        & =0           \qquad\blacksquare                                                                                                                     \\
+\end{align*}
+
+\begin{align*}
+  P^0=\int\dd[3]{x}T^{00} & = \int\dd[3]{x}\pqty{\frac{1}{2}\dot{ \phi}^2-\frac{1}{2}\laplacian\phi+\frac{1}{2}m^2\phi^2}\qquad\blacksquare \\
+  P^i=\int\dd[3]{x}T^{0i} & = \int\dd[3]{x}\dot{\phi}\partial^i \phi\qquad\blacksquare                                                      \\
+\end{align*}
+
+
+
 \section*{Problem 10.4}
 \begin{quoting}
-  \hl{For the Lagrangian $\mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}=\frac{1}{2}(\vb{E}^2-\vb{B}^2)$, (10.43), show that $\Pi^{\sigma\rho}\equiv\pdv{\mathcal{L}}{(\partial_\sigma A_\rho)}=-F^{\sigma\rho}$, (10.44). Hence show that the energy-momentum tensor $T^\mu_\nu=\Pi^{\mu\sigma} \partial_\nu A_\sigma-\delta^\mu_\nu \mathcal{L}$, (10.45), can be written as\\ $T^{\mu\nu}=-F^{\mu\sigma}\partial^\nu A_\sigma+\frac{1}{4}g^{\mu\nu}F^{\alpha\beta}F_{\alpha\beta}$, (10.46). This tensor is not symmetric but we can symmetrize it by adding $\partial_\lambda X^{\lambda\mu\nu}$ where $X^{\lambda\mu\nu}=F^{\mu\lambda}A^\nu$. Show that $X^{\lambda\mu\nu}=-X^{\mu\lambda\nu}$. Show further that the symmetrized energy-momentum tensor $\tilde{T}^{\mu\nu}=F^{\mu\sigma}{F_\sigma}^\nu+\frac{1}{4}g^{\mu\nu}F^{\alpha\beta}F_{\alpha\beta}$, (10.47). Hence show that $\tilde{T}^{00}=\frac{1}{2}(\vb{E}^2+\vb{B}^2)$, the energy density in the electromagnetic field, and $\tilde{T}^{i0}=(\vb{E}\cross\vb{B})^i$, which is the Poynting vector and describes the energy flow.}
+  \hl{For the Lagrangian $\mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}=\frac{1}{2}(\vb{E}^2-\vb{B}^2)$, (10.43), show that $\Pi^{\sigma\rho}\equiv\pdv{\mathcal{L}}{(\partial_\sigma A_\rho)}=-F^{\sigma\rho}$, (10.44). Hence show that the energy-momentum tensor $T^\mu_\nu=\Pi^{\mu\sigma} \partial_\nu A_\sigma-\delta^\mu_\nu \mathcal{L}$, (10.45), can be written as\\ $T^{\mu\nu}=-F^{\mu\sigma}\partial^\nu A_\sigma+\frac{1}{4}g^{\mu\nu}F^{\alpha\beta}F_{\alpha\beta}$, (10.46). This tensor is not symmetric but we can symmetrize it by adding $\partial_\lambda X^{\lambda\mu\nu}$ where $X^{\lambda\mu\nu}=F^{\mu\lambda}A^\nu$. Show that $X^{\lambda\mu\nu}=-X^{\mu\lambda\nu}$. Show further that the symmetrized energy-momentum tensor $\tilde{T}^{\mu\nu}=T^{\mu\nu}+\partial_\lambda X^{\lambda\mu\nu}$ can be written $\tilde{T}^{\mu\nu}=F^{\mu\sigma}{F_\sigma}^\nu+\frac{1}{4}g^{\mu\nu}F^{\alpha\beta}F_{\alpha\beta}$, (10.47). Hence show that $\tilde{T}^{00}=\frac{1}{2}(\vb{E}^2+\vb{B}^2)$, the energy density in the electromagnetic field, and $\tilde{T}^{i0}=(\vb{E}\cross\vb{B})^i$, which is the Poynting vector and describes the energy flow.}
 \end{quoting}
+
+\begin{align*}
+  \partial_\mu & \equiv\pdv{x^\mu}=\pqty{\pdv{x^0},\pdv{x^1},\pdv{x^2},\pdv{x^3}}=\pqty{\pdv{t},\grad}=\pqty{\pdv{t},\pdv{x},\pdv{y},\pdv{z}} \\
+  \partial^\mu & =g^{\mu\nu}\partial_\nu=\pqty{\pdv{t},-\grad}=\pqty{\pdv{t},-\pdv{x},-\pdv{y},-\pdv{z}}                                      \\
+  A^\mu        & = \pqty{V,\vb{A}}= \pqty{A^0,A^1,A^2,A^3} = \pqty{V,A_x,A_y,A_z}                                                             \\
+  A_\mu        & = \pqty{V,-\vb{A}}= \pqty{A^0,-A^1,-A^2,-A^3}= \pqty{V,-A_x,-A_y,-A_z}                                                       \\
+\end{align*}
+
+
+
+
+\begin{align*}
+  F_{\mu\nu} & =\partial_\mu A_\nu-\partial_\nu A_\mu=-\pqty{\partial_\nu A_\mu-\partial_\mu A_\nu} =-F_{\nu\mu} \\
+  F^{\mu\nu} & =\partial^\mu A^\nu-\partial^\nu A^\mu=-\pqty{\partial^\nu A^\mu-\partial^\mu A^\nu} =-F^{\nu\mu} \\
+\end{align*}
+
+\begin{align*}
+  \mathcal{L} & =-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}                                                                                                                                              \\
+              & =-\frac{1}{4}\pqty{\partial_\mu A_\nu - \partial_\nu A_\mu}\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu}                                                                        \\
+              & =-\frac{1}{4}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu - \partial_\nu A_\mu \partial^\mu A^\nu+\partial_\nu A_\mu \partial^\nu A^\mu} \\
+              & =-\frac{1}{4}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu - \partial_\nu A_\mu \partial^\mu A^\nu+\partial_\nu A_\mu \partial^\nu A^\mu} \\
+              & =-\frac{1}{2}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu} \qq{via relabeling}                                                           \\
+\end{align*}
+
+\begin{align*}
+  \mathcal{L}                                                & =-\frac{1}{2}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu} \\
+  \Pi^{\mu\nu}= \pdv{\mathcal{L}}{\pqty{\partial_\mu A_\nu}} & =-\pqty{\partial^\mu A^\nu -\partial^\nu A^\mu}=-F^{\mu\nu}  \qquad\blacksquare                  \\
+\end{align*}
+
+\begin{align*}
+  T^\mu_\nu  & =\Pi^{\mu\sigma}\partial_\nu A_\sigma-\delta^\mu_\nu\mathcal{L}                                              \\
+             & =-F^{\mu\sigma}\partial_\nu A_\sigma-\delta^\mu_\nu\mathcal{L}                                               \\
+  T^{\mu\nu} & =T^\mu_\rho g^{\rho\nu}=\pqty{-F^{\mu\sigma}\partial_\rho A_\sigma-\delta^\mu_\rho\mathcal{L}}g^{\rho\nu}    \\
+             & =-F^{\mu\sigma}\partial_\rho A_\sigma g^{\rho\nu}-\delta^\mu_\rho\mathcal{L}g^{\rho\nu}                      \\
+             & =-F^{\mu\sigma}\partial^\nu A_\sigma -g^{\mu\nu} \mathcal{L}                                                 \\
+             & =-F^{\mu\sigma}\partial^\nu A_\sigma +\frac{1}{4}g^{\mu\nu} F_{\alpha\beta}F^{\alpha\beta}                   \\
+             & =-F^{\mu\sigma}\partial^\nu A_\sigma +\frac{1}{4}g^{\mu\nu} F^{\alpha\beta}F_{\alpha\beta}\qquad\blacksquare \\
+\end{align*}
+
+\begin{align*}
+  X^{\lambda\mu\nu} & =F^{\mu\lambda}A^\nu =-F^{\lambda\mu}A^\nu=-X^{\mu\lambda\nu}\qquad\blacksquare \\
+                    & =\pqty{\partial^\mu A^\lambda-\partial^\lambda A^\mu}A^\nu                      \\
+                    & =-\pqty{-\partial^\mu A^\lambda+\partial^\lambda A^\mu}A^\nu                    \\
+                    & =-\pqty{\partial^\lambda A^\mu-\partial^\mu A^\lambda}A^\nu                     \\
+                    & =-F^{\lambda\mu}A^\nu                                                           \\
+                    & =-X^{\mu\lambda\nu}\qquad\blacksquare
+\end{align*}
+
+\begin{align*}
+  \tilde{T}^{\mu\nu} & =T^{\mu\nu} +\partial_\lambda X^{\lambda\mu \nu}                                                                                                                                  \\
+                     & =-F^{\mu\sigma}\partial^\nu A_\sigma +\frac{1}{4}g^{\mu\nu} F^{\alpha\beta}F_{\alpha\beta} +\partial_\lambda \pqty{F^{\mu\lambda}A^\nu}                                           \\
+                     & =-F^{\mu\sigma}\partial^\nu A_\sigma +\frac{1}{4}g^{\mu\nu} F^{\alpha\beta}F_{\alpha\beta} +\pqty{\partial_\sigma F^{\mu\sigma}}A^\nu  +F^{\mu\sigma}\pqty{\partial_\sigma A^\nu} \\
+                     & =F^{\mu\sigma}\pqty{-\partial^\nu A_\sigma + {\partial_\sigma A^\nu}}+\frac{1}{4}g^{\mu\nu} F^{\alpha\beta}F_{\alpha\beta} +\pqty{\partial_\sigma F^{\mu\sigma}}A^\nu             \\
+                     & =F^{\mu\sigma}{F_\sigma}^\nu+\frac{1}{4}g^{\mu\nu} F^{\alpha\beta}F_{\alpha\beta} \qq{where}0=\pqty{\partial_\sigma F^{\mu\sigma}}A^\nu  \qquad\blacksquare                       \\
+\end{align*}
+
+\begin{align*}
+  F^{\mu\nu}                             & =\Pmqty{0 & -E^1 & -E^2 & -E^3 \\E^1 &0 & -B^3 & B^2\\E^2 & B^3 &0 & -B^1\\E^3 & -B^2 & B^1 &0\\}\\
+  {F_\mu}^\nu=g_{\mu\sigma}F^{\sigma\nu} & =\Pmqty{1 & 0    & 0    & 0    \\0&-1&0&0\\0&0&-1&0\\0&0&0&-1}\Pmqty{0 & -E^1 & -E^2 & -E^3 \\E^1 &0 & -B^3 & B^2\\E^2 & B^3 &0 & -B^1\\E^3 & -B^2 & B^1 &0\\}\\
+                                         & =\Pmqty{0 & -E^1 & -E^2 & -E^3 \\-E^1 &0&B^3&-B^2\\-E^2 & -B^3 &0 & B^1\\-E^3 & B^2 & -B^1 &0\\} \\
+\end{align*}
+
+
+
+
+\begin{align*}
+  \qq*{Lemma: for a given $\mu$,}\partial_\sigma F^{\mu\sigma} & = \partial_\sigma \pqty{\partial^\mu A^\sigma-\partial^\sigma A^\mu}        \\
+                                                               & = \partial_\sigma\partial^\mu A^\sigma-\partial_\sigma\partial^\sigma A^\mu \\
+                                                               & = \partial_\mu\partial^\mu A^\mu-\partial_\mu\partial^\mu A^\mu=0
+\end{align*}
+
+\begin{align*}
+  \tilde{T}^{00} & =F^{0\sigma}{F_\sigma}^0+\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}\qq{where}g^{00}=1                                                                                                                                \\
+                 & =\pqty{\partial^0 A^\sigma-\partial^\sigma A^0}\pqty{\partial_\sigma A^0-\partial^0 A_\sigma}+\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}                                                                             \\
+                 & =\pqty{\partial^0 A^\sigma \partial_\sigma A^0-\partial^0 A^\sigma \partial^0 A_\sigma    -\partial^\sigma A^0\partial_\sigma A^0+\partial^\sigma A^0\partial^0 A_\sigma}+\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta} \\
+\end{align*}
+
+\begin{align*}
+  \tilde{T}^{0i} & =F^{0\sigma}{F_\sigma}^i-\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}\qq{where}g^{0i}=-1 \\
+\end{align*}
+
+
+
 
 \end{document}
