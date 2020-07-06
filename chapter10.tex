@@ -178,9 +178,13 @@ See \S 7.2, a massive scalar field.
 \end{align*}
 
 \begin{align*}
-  F^{\mu\nu}                             & =\Pmqty{0 & -E^1 & -E^2 & -E^3 \\E^1 &0 & -B^3 & B^2\\E^2 & B^3 &0 & -B^1\\E^3 & -B^2 & B^1 &0\\}\\
-  {F_\mu}^\nu=g_{\mu\sigma}F^{\sigma\nu} & =\Pmqty{1 & 0    & 0    & 0    \\0&-1&0&0\\0&0&-1&0\\0&0&0&-1}\Pmqty{0 & -E^1 & -E^2 & -E^3 \\E^1 &0 & -B^3 & B^2\\E^2 & B^3 &0 & -B^1\\E^3 & -B^2 & B^1 &0\\}\\
-                                         & =\Pmqty{0 & -E^1 & -E^2 & -E^3 \\-E^1 &0&B^3&-B^2\\-E^2 & -B^3 &0 & B^1\\-E^3 & B^2 & -B^1 &0\\} \\
+  F^{\mu\nu}                                             & =\Pmqty{0                                                                                                            & -E^1 & -E^2 & -E^3 \\E^1 &0 & -B^3 & B^2\\E^2 & B^3 &0 & -B^1\\E^3 & -B^2 & B^1 &0\\}\\
+  {F_\mu}^\nu=g_{\mu\sigma}F^{\sigma\nu}                 & =g_{\mu0}F^{0\nu}+g_{\mu1}F^{1\nu}+g_{\mu2}F^{2\nu}+g_{\mu3}F^{3\nu}                                                                      \\
+  {F_\mu}^\nu=\bmqty{g_{\mu\sigma}}\bmqty{F^{\sigma\nu}} & =\Pmqty{1                                                                                                            & 0    & 0    & 0    \\0&-1&0&0\\0&0&-1&0\\0&0&0&-1}\Pmqty{0 & -E^1 & -E^2 & -E^3 \\E^1 &0 & -B^3 & B^2\\E^2 & B^3 &0 & -B^1\\E^3 & -B^2 & B^1 &0\\}\\
+                                                         & =\Pmqty{0                                                                                                            & -E^1 & -E^2 & -E^3 \\-E^1 &0&B^3&-B^2\\-E^2 & -B^3 &0 & B^1\\-E^3 & B^2 & -B^1 &0\\} \\
+  F_{\mu\nu}=g_{\sigma\nu}{F_\mu}^\sigma                 & =g_{\nu0}{F_\mu}^0+g_{\nu1}{F_\mu}^1+g_{\nu2}{F_\mu}^2+g_{\nu3}{F_\mu}^3=\bmqty{{F_\mu}^\sigma}\bmqty{g_{\sigma\nu}}                      \\
+  F_{\mu\nu}=\bmqty{{F_\mu}^\sigma}\bmqty{g_{\sigma\nu}} & =\Pmqty{0                                                                                                            & -E^1 & -E^2 & -E^3 \\-E^1 &0&B^3&-B^2\\-E^2 & -B^3 &0 & B^1\\-E^3 & B^2 & -B^1 &0\\}\Pmqty{1 & 0    & 0    & 0    \\0&-1&0&0\\0&0&-1&0\\0&0&0&-1} \\
+                                                         & =\Pmqty{0                                                                                                            & E^1  & E^2  & E^3  \\-E^1 &0&-B^3&B^2\\-E^2 & B^3 &0 &-B^1\\-E^3 &-B^2 & B^1 &0\\} \\
 \end{align*}
 
 
@@ -193,13 +197,28 @@ See \S 7.2, a massive scalar field.
 \end{align*}
 
 \begin{align*}
-  \tilde{T}^{00} & =F^{0\sigma}{F_\sigma}^0+\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}\qq{where}g^{00}=1                                                                                                                                \\
-                 & =\pqty{\partial^0 A^\sigma-\partial^\sigma A^0}\pqty{\partial_\sigma A^0-\partial^0 A_\sigma}+\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}                                                                             \\
-                 & =\pqty{\partial^0 A^\sigma \partial_\sigma A^0-\partial^0 A^\sigma \partial^0 A_\sigma    -\partial^\sigma A^0\partial_\sigma A^0+\partial^\sigma A^0\partial^0 A_\sigma}+\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta} \\
+  \tilde{T}^{00} & =F^{0\sigma}{F_\sigma}^0+\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}\qq{where}g^{00}=1                          \\
+                 & =F^{00}{F_0}^0+F^{01}{F_1}^0+F^{02}{F_2}^0+F^{03}{F_3}^0+\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}            \\
+                 & =0^2+(E^1)^2+(E^2)^2+(E^3)^2+\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}                                        \\
+                 & =\vb{E}\vdot\vb{E}+\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}                                                  \\
+                 & =\vb{E}\vdot\vb{E}+\frac{1}{4}\pqty{F^{00}F_{00}+F^{01}F_{01}+F^{02}F_{02}+F^{03}F_{03}}                      \\
+                 & +\frac{1}{4}\pqty{F^{10}F_{10}+F^{11}F_{11}+F^{12}F_{12}+F^{13}F_{13}}                                        \\
+                 & +\frac{1}{4}\pqty{F^{20}F_{20}+F^{21}F_{21}+F^{22}F_{22}+F^{23}F_{23}}                                        \\
+                 & +\frac{1}{4}\pqty{F^{30}F_{30}+F^{31}F_{31}+F^{32}F_{32}+F^{33}F_{33}}                                        \\
+                 & =\vb{E}\vdot\vb{E}+\frac{1}{4}\pqty{-\vb{E}\vdot\vb{E}-\vb{E}\vdot\vb{E}+\vb{B}\vdot\vb{B}+\vb{B}\vdot\vb{B}} \\
+                 & =\frac{1}{2}\pqty{\vb{E}\vdot\vb{E}+\vb{B}\vdot\vb{B}}=\frac{1}{2}\pqty{\vb{E}^2+\vb{B}^2}\qquad\blacksquare  \\
 \end{align*}
 
 \begin{align*}
-  \tilde{T}^{0i} & =F^{0\sigma}{F_\sigma}^i-\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}\qq{where}g^{0i}=-1 \\
+  \tilde{T}^{i0} & =F^{i\sigma}{F_\sigma}^0\qq{where}g^{i0}=0                                  \\
+  \tilde{T}^{i0} & =F^{i1}{F_1}^0+F^{i2}{F_2}^0+F^{i3}{F_3}^0\qq{where}{F_0}^0=0               \\
+  \tilde{T}^{10} & =F^{12}{F_2}^0+F^{13}{F_3}^0\qq{where}F^{11}=0                              \\
+                 & =B^3E^2-B^2E^3=-\pqty{\vb{B}\cross\vb{E}}^1\qq{recall}xyzzy                 \\
+  \tilde{T}^{20} & =F^{21}{F_1}^0+F^{23}{F_3}^0\qq{where}F^{22}=0                              \\                  
+                 & =-B^3E^1+B^1E^3=-\pqty{\vb{B}\cross\vb{E}}^2                                \\                  
+  \tilde{T}^{30} & =F^{31}{F_1}^0+F^{32}{F_2}^0\qq{where}F^{33}=0                              \\                
+                 & =B^2E^1-B^1E^2=-\pqty{\vb{B}\cross\vb{E}}^3                                 \\                
+  \tilde{T}^{i0} & =-\pqty{\vb{B}\cross\vb{E}}^i=\pqty{\vb{E}\cross\vb{B}}^i\qquad\blacksquare \\
 \end{align*}
 
 
