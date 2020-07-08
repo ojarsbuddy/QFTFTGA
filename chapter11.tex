@@ -4,6 +4,7 @@
 \usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
 \usepackage[indentfirst=true]{quoting}
 \usepackage{xcolor, soul}
+\usepackage{enumitem}
 \definecolor{HighlightGray}{cmyk}{0,0,0,0.07}
 \sethlcolor{HighlightGray}
  
@@ -14,9 +15,24 @@
 
 \maketitle{}
 
+\section*{\hl{Canonical quantization for a scalar field:}}
+\begin{enumerate}[label=\Roman*.]
+    \item \hl{Write down a Lagrangian density $\mathcal{L}$.}
+    \item \hl{Evaluate the momentum density $\Pi^\mu (x)=\pdv*{\mathcal{L}}{(\partial_\mu \phi)}$ and the Hamiltonian density}
+          \[\mathcal{H}=\Pi^0 \partial_0 \phi-\mathcal{L}.\]
+    \item \hl{Turn fields into operators and enforce the commutation relation $\bqty{\hat{\phi}(x),\hat{\Pi}^0 (y)}=i\delta^{(3)}(\vb{x}-\vb{y})$ at equal times.}
+    \item \hl{Express the field in terms of a mode expansion of the form}
+          \[\hat{\phi}(x)=\int\frac{\dd[3]{\vb{p}}}{(2\pi)^{\frac{3}{2}}}\frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}\pqty{\hat{a}_{\vb{p}}e^{-i\vb{p}\vdot\vb{x}}+\hat{a}^\dagger_{\vb{p}}e^{i\vb{p}\vdot\vb{x}}} \]
+          \hl{where $E_{\vb{p}}=+(\vb{p}^2+m^2)^{\frac{1}{2}}$.}
+    \item \hl{Evaluate $\hat{\mathcal{H}}$ and normal order the result, leading to an expression like:}
+          \[ N\bqty{\hat{\mathcal{H}}}=\int\dd[3]{\vb{p}}E_{\vb{p}}\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{p}}.\]
+\end{enumerate}
+
+
+
 \section*{Problem 11.1}
 \begin{quoting}
-    \hl{One of the criteria we had for a theory of a successful scalar field ws that the commutator for space-like separations would be zero. Let's see if our scalar field has this feature. Show that}\[\bqty{\hat{\phi}(x),\hat{\phi}(y)}=\int\pqty{e^{-ip\vdot(x-y)}+e^{-ip\vdot(y-x)}}\qquad(11.51).\]\hl{For space-like separation we are able to swap $(y-x)$ in the second term to $(x-y)$. This gives us zero, as required.}
+    \hl{One of the criteria we had for a theory of a successful scalar field ws that the commutator for space-like separations would be zero. Let's see if our scalar field has this feature. Show that}\[\bqty{\hat{\phi}(x),\hat{\phi}(y)}=\int\frac{\dd[3]{p}}{(2\pi)^3}\frac{1}{2E_{\vb{p}}}\pqty{e^{-ip\vdot(x-y)}+e^{-ip\vdot(y-x)}}\qquad(11.51).\]\hl{For space-like separation we are able to swap $(y-x)$ in the second term to $(x-y)$. This gives us zero, as required.}
 \end{quoting}
 
 \section*{Problem 11.2}
