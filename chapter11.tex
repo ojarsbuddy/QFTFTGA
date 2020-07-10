@@ -57,9 +57,21 @@
     \hl{Show that, at equal times $x^0=y^0$,}\[\bqty{\hat{\phi}(x),\hat{\Pi}^0(y)}=\frac{i}{2}\int\frac{\dd[3]{p}}{(2\pi)^3}\pqty{e^{i\vb{p\vdot(\vb{x}-\vb{y})}}+e^{-i\vb{p\vdot(\vb{x}-\vb{y})}}}\qquad(11.52).\]\hl{In this expression there's nothing stopping us swapping the sign of $\vb{p}$ in the second term, and show that this leads to}\[\bqty{\hat{\phi}(x),\hat{\Pi}^0(y)}=i\delta^{(3)}(\vb{x}-\vb{y})\qquad(11.53).\]
 \end{quoting}
 
+\[\hat{\Pi}_\mu (x)=\partial_\mu \hat{\phi}(x)\int\frac{\dd[3]{p}}{(2\pi)^{\frac{3}{2}}}\frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}(-ip_\mu)\pqty{\hat{a}_{\vb{p}}e^{-i\vb{p}\vdot\vb{x}}-\hat{a}^\dagger_{\vb{p}}e^{i\vb{p}\vdot\vb{x}}}\]
+
 \begin{align*}
-    \bqty{\hat{\phi}(x),\hat{\Pi}^0(y)} & =\hat{\phi}(x)\hat{\Pi}^0(y)-\hat{\Pi}^0(y)\hat{\phi}(x) \\
+    \bqty{\hat{\phi}(x),\hat{\Pi}^0(y)} & =\hat{\phi}(x)\hat{\Pi}^0(y)-\hat{\Pi}^0(y)\hat{\phi}(x)                                                                                                                                                                                                                                                                                                         \\
+                                        & =\int\frac{\dd[3]{p}}{(2\pi)^{\frac{3}{2}}}\frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}\pqty{\hat{a}_{\vb{p}}e^{-i\vb{p}\vdot\vb{x}}+\hat{a}^\dagger_{\vb{p}}e^{i\vb{p}\vdot\vb{x}}}\int\frac{\dd[3]{p}}{(2\pi)^{\frac{3}{2}}}\frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}(-ip_0)\pqty{\hat{a}_{\vb{p}}e^{-i\vb{p}\vdot\vb{y}}-\hat{a}^\dagger_{\vb{p}}e^{i\vb{p}\vdot\vb{y}}} \\
+                                        & -\int\frac{\dd[3]{p}}{(2\pi)^{\frac{3}{2}}}\frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}(-ip_0)\pqty{\hat{a}_{\vb{p}}e^{-i\vb{p}\vdot\vb{y}}-\hat{a}^\dagger_{\vb{p}}e^{i\vb{p}\vdot\vb{y}}}\int\frac{\dd[3]{p}}{(2\pi)^{\frac{3}{2}}}\frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}\pqty{\hat{a}_{\vb{p}}e^{-i\vb{p}\vdot\vb{x}}+\hat{a}^\dagger_{\vb{p}}e^{i\vb{p}\vdot\vb{x}}} \\
+                                        & =\int\frac{\dd[3]{p}}{(2\pi)^3}\frac{1}{(2E_{\vb{p}})}(-iE_{\vb{p}})\pqty{-\bqty{\hat{a}_{\vb{p}}\hat{a}^\dagger_{\vb{p}}-\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{p}}}e^{-i\vb{p}\vdot\pqty{\vb{y}-\vb{x}}}-\bqty{\hat{a}_{\vb{p}}\hat{a}^\dagger_{\vb{p}}-\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{p}}}e^{-i\vb{p}\vdot\pqty{\vb{x}-\vb{y}}}}                          \\
+                                        & =\frac{i}{2}\int\frac{\dd[3]{p}}{(2\pi)^3}\pqty{\bqty{\hat{a}_{\vb{p}}\hat{a}^\dagger_{\vb{p}}-\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{p}}}e^{i\vb{p}\vdot\pqty{\vb{x}-\vb{y}}}+\bqty{\hat{a}_{\vb{p}}\hat{a}^\dagger_{\vb{p}}-\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{p}}}e^{-i\vb{p}\vdot\pqty{\vb{x}-\vb{y}}}}                                                      \\
+                                        & =\frac{i}{2}\int\frac{\dd[3]{p}}{(2\pi)^3}\pqty{e^{i\vb{p}\vdot\pqty{\vb{x}-\vb{y}}}+e^{-i\vb{p}\vdot\pqty{\vb{x}-\vb{y}}}}\quad\blacksquare                                                                                                                                                                                                                     \\
 \end{align*}
+
+Swap signs in the second term to find \[\bqty{\hat{\phi}(x),\hat{\Pi}^0(y)}=i\int\frac{\dd[3]{p}}{(2\pi)^3}e^{i\vb{p}\vdot\pqty{\vb{x}-\vb{y}}}=i\delta^{(3)}\pqty{\vb{x}-\vb{y}}.\quad\blacksquare\]
+
+Expect $p_0=p^0$.
+
 
 
 
