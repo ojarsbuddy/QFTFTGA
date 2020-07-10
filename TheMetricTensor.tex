@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,physics,xfrac,nicefrac}
+\usepackage{standalone}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
+\usepackage[indentfirst=true]{quoting}
+\usepackage{xcolor, soul}
+\definecolor{HighlightGray}{cmyk}{0,0,0,0.07}
+\sethlcolor{HighlightGray}
+ 
+\title{The Metric Tensor}
+\author{John Bortins}
+ 
+\begin{document}
+
+\maketitle{}
+\section*{Metric Tensor}
+\[ds^2=d\va*{r}\vdot d\va*{r} \]
+\[d\va*{r}=\va*{e}_i dx^i\qor d\va*{r}=\va*{e}^i dx_i \]
+\[\qq*{where}\va*{e}_i\qq{is a unit vector and}\va*{e}^i\qq{is the dual unit vector} \]
+\begin{align*}
+    ds^2 & =d\va*{r}\vdot d\va*{r}                    \\
+         & =\va*{e}_i dx^i\vdot \va*{e}_j dx^j        \\
+         & =\pqty{\va*{e}_i\vdot \va*{e}_j} dx^i dx^j \\
+         & =g_{ij} dx^i dx^j                          \\
+\end{align*}
+\begin{align*}
+    ds^2 & =d\va*{r}\vdot d\va*{r}                    \\
+         & =\va*{e}^i dx_i\vdot \va*{e}^j dx_j        \\
+         & =\pqty{\va*{e}^i\vdot \va*{e}^j} dx_i dx_j \\
+         & =g^{ij} dx_i dx_j                          \\
+\end{align*}
+\begin{align*}
+    ds^2 & =d\va*{r}\vdot d\va*{r}                    \\
+         & =\va*{e}^i dx_i\vdot \va*{e}_j dx^j        \\
+         & =\pqty{\va*{e}^i\vdot \va*{e}_j} dx_i dx^j \\
+         & =dx_i dx^j                                 \\
+\end{align*}
+\begin{align*}
+    ds^2 & =d\va*{r}\vdot d\va*{r}                    \\
+         & =\va*{e}_i dx^i\vdot \va*{e}^j dx_j        \\
+         & =\pqty{\va*{e}_i\vdot \va*{e}^j} dx^i dx_j \\
+         & =dx^i dx_j                                 \\
+\end{align*}
+
+\section*{Raising and Lowering Indices of Rank 1 Tensors}
+\[\qq*{Let}g_{\mu\nu}=\pmqty{1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1\\} \]
+\[g_{\mu\nu}A^\nu=g_{\mu0}A^0+g_{\mu1}A^1+g_{\mu2}A^2+g_{\mu3}A^3=A_\mu \]
+\[g_{\mu\nu}A^\nu=\pmqty{1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1\\}\pmqty{A^0\\A^1\\A^2\\A^3\\}=\pmqty{A^0&-A^1&-A^2&-A^3\\}=A_\mu \]
+
+\section*{Raising and Lowering Indices of Rank 2 Tensors}
+
+
+\end{document}
