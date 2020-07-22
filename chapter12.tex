@@ -22,6 +22,26 @@
     \hl{Fill in the missing steps of the algebra that led to eqn.12.6.}
 \end{quoting}
 
+\begin{align*}
+    H           & =\int \dd[3]{x}\mathcal{H} \qq{(5.44)}                                                                                       \\
+    \mathcal{H} & =\sum_\sigma \Pi^0_\sigma (x)\partial_0 \sigma(x)-\mathcal{L}                                                                \\
+                & = \partial_0 \psi^\dagger (x)\partial_0 \psi(x)+\grad\psi^\dagger (x)\vdot\grad\psi(x)+m^2 \psi^\dagger(x)\psi(x)\qq{(12.3)} \\
+\end{align*}
+
+\begin{align*}
+    \hat{\psi}(x)                       & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}  \pqty{\hat{a}_{\vb{p}}e^{-ip\vdot x}+\hat{b}^\dagger_{\vb{p}}e^{ip\vdot x}} \qq{(12.5)} \\
+    \partial_\mu \hat{\psi}(x)          & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}} (-ip) \pqty{\hat{a}_{\vb{p}}e^{-ip\vdot x}-\hat{b}^\dagger_{\vb{p}}e^{ip\vdot x}}        \\
+    \hat{\psi}^\dagger (x)              & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}  \pqty{\hat{a}^\dagger_{\vb{p}}e^{-ip\vdot x}+\hat{b}_{\vb{p}}e^{ip\vdot x}} \qq{(12.5)} \\
+    \partial_\mu \hat{\psi}^\dagger (x) & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}} (-ip) \pqty{\hat{a}^\dagger_{\vb{p}}e^{-ip\vdot x}-\hat{b}_{\vb{p}}e^{ip\vdot x}}        \\
+\end{align*}
+
+Let's have a look at the last term.
+
+\begin{align*}
+    \psi^\dagger(x)\psi(x) & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}  \pqty{\hat{a}_{\vb{p}}e^{-ip\vdot x}+\hat{b}^\dagger_{\vb{p}}e^{ip\vdot x}}    \int \frac{\dd[3]{q}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{q}})^{\frac{1}{2}}}  \pqty{\hat{a}^\dagger_{\vb{q}}e^{-iq\vdot x}+\hat{b}_{\vb{q}}e^{iq\vdot x}}                                                                                             \\
+                           & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}} \int \frac{\dd[3]{q}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{q}})^{\frac{1}{2}}} \pqty{\hat{a}_{\vb{p}}e^{-ip\vdot x}+\hat{b}^\dagger_{\vb{p}}e^{ip\vdot x}}      \pqty{\hat{a}^\dagger_{\vb{q}}e^{-iq\vdot x}+\hat{b}_{\vb{q}}e^{iq\vdot x}}                                                                                             \\
+                           & =\frac{1}{(2\pi)^3}\int   \frac{\dd[3]{p}}{(2E_{\vb{p}})^{\frac{1}{2}}} \int   \frac{\dd[3]{q}}{(2E_{\vb{q}})^{\frac{1}{2}}} \pqty{\hat{a}_{\vb{p}}\hat{a}^\dagger_{\vb{q}}e^{-ip\vdot x}e^{-iq\vdot x}+\hat{a}_{\vb{p}}\hat{b}^\dagger_{\vb{q}}e^{-ip\vdot x}e^{iq\vdot x}+\hat{b}^\dagger_{\vb{p}}\hat{a}^\dagger_{\vb{q}}e^{ip\vdot x}e^{-iq\vdot x}+\hat{b}^\dagger_{\vb{p}}\hat{b}_{\vb{q}}e^{ip\vdot x}e^{iq\vdot x}} \\
+\end{align*}
 
 \section*{Problem 12.2}
 \begin{quoting}
@@ -42,7 +62,9 @@
 
 \section*{Problem 12.4}
 \begin{quoting}
-    \hl{Consider the theory described by the Lagrangian in eqn 12.32. Use Noether's theorem in the form $\bqty{\hat{Q}_N,\hat{\phi}}=-iD\hat{\phi}$ to provide an alternative derivation of eqn 12.35.}
+    \hl{Consider the theory described by the Lagrangian in eqn 12.32.
+
+        Use Noether's theorem in the form $\bqty{\hat{Q}_N,\hat{\phi}}=-iD\hat{\phi}$ to provide an alternative derivation of eqn 12.35.}
 \end{quoting}
 
 
@@ -60,7 +82,9 @@
 
 \section*{Problem 12.7}
 \begin{quoting}
-    \hl{Consider the complex scalar field again. The internal transformation operator may be written $\hat{U}(\alpha)=e^{i\hat{Q}_{Nc}\alpha}$, where $\hat{Q}_{Nc}$ is the conserved number charge operator. Show that $\hat{U}^\dagger (\alpha)\hat{\psi}(x)\hat{U}(\alpha)=e^{i\alpha}\hat{\psi}(x)$.}
+    \hl{Consider the complex scalar field again. The internal transformation operator may be written
+
+    $\hat{U}(\alpha)=e^{i\hat{Q}_{Nc}\alpha}$, where $\hat{Q}_{Nc}$ is the conserved number charge operator. Show that $\hat{U}^\dagger (\alpha)\hat{\psi}(x)\hat{U}(\alpha)=e^{i\alpha}\hat{\psi}(x)$.}
 \end{quoting}
 
 
