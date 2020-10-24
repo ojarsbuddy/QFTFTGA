@@ -16,47 +16,94 @@
 \maketitle{}
 
 
-
 \section*{Problem 12.1}
 \begin{quoting}
     \hl{Fill in the missing steps of the algebra that led to eqn.12.6.}
 \end{quoting}
-
 \begin{align*}
-    H           & =\int \dd[3]{x}\mathcal{H} \qq{(5.44)}                                                                                       \\
-    \mathcal{H} & =\sum_\sigma \Pi^0_\sigma (x)\partial_0 \sigma(x)-\mathcal{L}                                                                \\
-                & =\Pi^0_\psi (x)\partial_0 \psi(x)+\Pi^0_{\psi^\dagger} (x)\partial_0 \psi^\dagger(x)-\mathcal{L}                             \\
-                & =\partial_0 \psi^\dagger(x)\partial_0 \psi(x)+\partial_0 \psi(x)\partial_0 \psi^\dagger(x)-\mathcal{L}                       \\
-                & = \partial_0 \psi^\dagger (x)\partial_0 \psi(x)+\grad\psi^\dagger (x)\vdot\grad\psi(x)+m^2 \psi^\dagger(x)\psi(x)\qq{(12.3)} \\
-\end{align*}
-Where we use` the metric to understand the plus sign for the second term.
-
-\begin{align*}
-    \qq*{Recall}\bqty{\hat{\psi}(t,\vb{x}),\hat{\Pi}^0_{\psi}(t,\vb{y})} & =\bqty{\hat{\psi^\dagger}(t,\vb{x}),\hat{\Pi}^0_{\psi^\dagger}(t,\vb{y})}=i\delta^{(3)}(\vb{x}-\vb{y})\qq{(12.4)} \\
-\end{align*}
-
-
-
-\begin{align*}
-    \hat{\psi}(x)                       & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}  \pqty{\hat{a}_{\vb{p}}e^{-ip\vdot x}+\hat{b}^\dagger_{\vb{p}}e^{ip\vdot x}} \qq{(12.5)} \\
-    \hat{\psi}^\dagger (x)              & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}  \pqty{\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}} \qq{(12.5)} \\
-    \partial_\mu \hat{\psi}(x)          & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}} (-ip) \pqty{\hat{a}_{\vb{p}}e^{-ip\vdot x}-\hat{b}^\dagger_{\vb{p}}e^{ip\vdot x}}        \\
-    \partial_\mu \hat{\psi}^\dagger (x) & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}} (-ip) \pqty{-\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}}       \\
+    \qq*{\textbf{Step I:}}   & \qq{The Lagrangian density for complex scalar field theory}                                                                                                                                    \\
+    \mathcal{L}              & =\partial^\mu\psi^\dagger(x)\partial_\mu\psi(x)-m^2\psi^\dagger(x)\psi(x)\qq{(12.1)}                                                                                                           \\
+    \qq*{\textbf{Step II:}}  & \qq{The momentum density for the two fields}                                                                                                                                                   \\
+    \Pi^0_\psi               & =\pdv{\mathcal{L}}{(\partial_0\psi)}=
+    \partial^0\psi^\dagger\qcomma\Pi^0_{\psi^\dagger}=\pdv{\mathcal{L}}{(\partial_0\psi^\dagger)}=
+    \partial^0\psi\qq{(12.2)}                                                                                                                                                                                                 \\
+                             & \qq*{The Hamiltonian density is}                                                                                                                                                               \\
+    \mathcal{H}              & =\Pi^0_\psi(x)\partial_0\psi(x)+\Pi^0_{\psi^\dagger}(x)\partial_0\psi^\dagger(x)-\mathcal{L}=\partial^0\psi^\dagger(x)\partial_0\psi(x)+\partial^0\psi(x)\partial_0\psi^\dagger(x)-\mathcal{L} \\
+                             & =\partial^0\psi^\dagger(x)\partial_0\psi(x)+\partial^0\psi(x)\partial_0\psi^\dagger(x)-\partial^\mu\psi^\dagger(x)\partial_\mu\psi(x)+m^2\psi^\dagger(x)\psi(x)                                \\
+                             & \qq{recalling}a^0=a_0\qand a^i=-a_i                                                                                                                                                            \\
+                             & =\partial^0\psi(x)\partial_0\psi^\dagger(x)+\grad\psi^\dagger(x)\vdot\grad\psi(x)+m^2\psi^\dagger(x)\psi(x)\qq{(12.3)}                                                                         \\
+    \qq*{\textbf{Step III:}} & \qq{Make fields into operators (put hats on) and all commutators vanish but these remain}                                                                                                      \\
+                             & \bqty{\hat{\psi}(t,\vb{x}),\hat{\Pi}^0_\psi(t,\vb{y})}  = \bqty{\hat{\psi}^\dagger(t,\vb{x}),\hat{\Pi}^0_{\psi^\dagger}(t,\vb{y})}=i\delta^{(3)}(\vb{x}-\vb{y})\qq{(12.4)}                     \\
+    \qq*{\textbf{Step IV:}}  & \qq{The complex scalar field operators take the more general form}                                                                                                                             \\
+    \hat{\psi}(x)            & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}  \pqty{\hat{a}_{\vb{p}}e^{-ip\vdot x}+\hat{b}^\dagger_{\vb{p}}e^{ip\vdot x}} \qq{(12.5)}                     \\
+    \hat{\psi}^\dagger (x)   & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}  \pqty{\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}} \qq{(12.5)}                     \\
+                             & \qq{where all commutators vanish but}\bqty{\hat{a}_{\vb{p}},\hat{a}_{\vb{q}}^\dagger}=\bqty{\hat{b}_{\vb{p}},\hat{b}_{\vb{q}}^\dagger}=i\delta^{(3)}(\vb{p}-\vb{q})                            \\
 \end{align*}
 
-Let's have a look at the first term.
 
 \begin{align*}
-    \partial_0 \psi^\dagger (x)\partial_0 \psi(x) & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{p_0}{(2E_{\vb{p}})^{\frac{1}{2}}}\pqty{-\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}}\int \frac{\dd[3]{q}}{(2\pi)^\frac{3}{2}}  \frac{q_0}{(2E_{\vb{q}})^{\frac{1}{2}}}  \pqty{\hat{a}_{\vb{q}}e^{-iq\vdot x}-\hat{b}^\dagger_{\vb{q}}e^{iq\vdot x}}                                                                                              \\
-                                                  & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{p_0}{(2E_{\vb{p}})^{\frac{1}{2}}}\int \frac{\dd[3]{q}}{(2\pi)^\frac{3}{2}}  \frac{q_0}{(2E_{\vb{q}})^{\frac{1}{2}}}\pqty{-\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}}\pqty{\hat{a}_{\vb{q}}e^{-iq\vdot x}-\hat{b}^\dagger_{\vb{q}}e^{iq\vdot x}}                                                                                                \\
-                                                  & =\frac{1}{(2\pi)^3}\int   \frac{p_0 \dd[3]{p}}{(2E_{\vb{p}})^{\frac{1}{2}}}\int   \frac{q_0 \dd[3]{q}}{(2E_{\vb{q}})^{\frac{1}{2}}}  \pqty{\hat{a}^\dagger_{\vb{q}}\hat{a}_{\vb{p}}e^{iq\vdot x}e^{-ip\vdot x}+\hat{a}^\dagger_{\vb{q}}\hat{b}^\dagger_{\vb{p}}e^{iq\vdot x}e^{ip\vdot x}+\hat{b}_{\vb{q}}\hat{a}_{\vb{p}}e^{-iq\vdot x}e^{-ip\vdot x}+\hat{b}_{\vb{q}}\hat{b}^\dagger_{\vb{p}}e^{-iq\vdot x}e^{ip\vdot x}} \\
+    \qq*{Recall}\partial_\mu          & \equiv\pdv{x^\mu}=\pqty{\pdv{t},\grad}=\pqty{\pdv{t},\pdv{x},\pdv{y},\pdv{z}}                                                                                                 \\
+    \qq*{Recall}\partial^\mu          & \equiv\pdv{x_\mu}=\pqty{\pdv{t},-\grad}=\pqty{\pdv{t},-\pdv{x},-\pdv{y},-\pdv{z}}                                                                                             \\
+    \partial_0 \hat{\psi}(x)          & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}} (-iE_{\vb{p}}) \pqty{\hat{a}_{\vb{p}}e^{-ip\vdot x}-\hat{b}^\dagger_{\vb{p}}e^{ip\vdot x}}  \\
+    \partial_0 \hat{\psi}^\dagger (x) & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}} (-iE_{\vb{p}}) \pqty{-\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}} \\
+    \grad{\hat{\psi}(x)}              & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}} (i\vb{p}) \pqty{\hat{a}_{\vb{p}}e^{-ip\vdot x}-\hat{b}^\dagger_{\vb{p}}e^{ip\vdot x}}       \\
+    \grad{\hat{\psi}^\dagger (x)}     & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}} (i\vb{p}) \pqty{-\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}}      \\
 \end{align*}
 
-We actually want to see $p=q$.
+On to \textbf{Step V}. Let's have a look at the first term of the Hamiltonian density (12.3) with hats on.
 
 \begin{align*}
-    \partial_0 \psi^\dagger (x)\partial_0 \psi(x) & =\frac{1}{(2\pi)^3}\frac{{p_0}^2}{(2E_{\vb{p}})}   \int    \dd[3]{p}  \pqty{\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{p}}+\hat{a}^\dagger_{\vb{p}}\hat{b}^\dagger_{\vb{p}}e^{2ip\vdot x}+\hat{b}_{\vb{p}}\hat{a}_{\vb{p}}e^{-2ip\vdot x}+\hat{b}_{\vb{p}}\hat{b}^\dagger_{\vb{p}}} \\
+    \hat{H} & =\int\dd[3]{x}\mathcal{H}=\int\dd[3]{x}\frac{1}{2}\Bqty{\bqty{\partial_0\hat{\phi}(x)}^2+\bqty{\grad\hat{\phi}(x)}^2+m^2\bqty{\hat{\phi}(x)^2}} \\
+            & =\int\dd[3]{x}\bqty{\partial^0\psi(x)\partial_0\psi^\dagger(x)+\grad\psi^\dagger(x)\vdot\grad\psi(x)+m^2\psi^\dagger(x)\psi(x)}
 \end{align*}
+
+\begin{align*}
+                                                              & \qq*{The first integrand}                                                                                                                                                                                                                                                                                                                                             \\
+    \partial_0 \hat{\psi}^\dagger (x)\partial_0 \hat{\psi}(x) & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{-iE_{\vb{p}}}{(2E_{\vb{p}})^{\frac{1}{2}}}\pqty{-\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}}\int \frac{\dd[3]{q}}{(2\pi)^\frac{3}{2}}  \frac{-iE_{\vb{q}}}{(2E_{\vb{q}})^{\frac{1}{2}}}  \pqty{\hat{a}_{\vb{q}}e^{-iq\vdot x}-\hat{b}^\dagger_{\vb{q}}e^{iq\vdot x}}                      \\
+                                                              & =-\int \frac{\dd[3]{p}\dd[3]{q}}{(2\pi)^3(2E_{\vb{p}})^{\frac{1}{2}}(2E_{\vb{q}})^{\frac{1}{2}}}E_{\vb{p}}E_{\vb{q}}\pqty{-\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}}\pqty{\hat{a}_{\vb{q}}e^{-iq\vdot x}-\hat{b}^\dagger_{\vb{q}}e^{iq\vdot x}}                                                                                           \\
+                                                              & =-\int \frac{\dd[3]{p}\dd[3]{q}}{(2\pi)^3(2E_{\vb{p}})^{\frac{1}{2}}(2E_{\vb{q}})^{\frac{1}{2}}}E_{\vb{p}}E_{\vb{q}}\pqty{-\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{q}}e^{i(p-q)\vdot x}+\hat{b}_{\vb{p}}\hat{a}_{\vb{q}}e^{-i(p+q)\vdot x}+\hat{a}^\dagger_{\vb{p}}\hat{b}^\dagger_{\vb{q}}e^{i(p+q)\vdot x}-\hat{b}_{\vb{p}}\hat{b}^\dagger_{\vb{q}}e^{-i(p-q)\vdot x}}
+\end{align*}
+
+\begin{align*}
+                                          & \qq*{The second integrand}                                                                                                                                                                                                                                                                                                                                         \\
+    \grad\psi^\dagger(x)\vdot\grad\psi(x) & =\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}} (i\vb{p}) \pqty{-\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}}\int \frac{\dd[3]{q}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{q}})^{\frac{1}{2}}} (i\vb{q}) \pqty{\hat{a}_{\vb{q}}e^{-iq\vdot x}-\hat{b}^\dagger_{\vb{q}}e^{iq\vdot x}}                     \\
+                                          & =-\int \frac{\dd[3]{p}\dd[3]{q}}{(2\pi)^3(2E_{\vb{p}})^{\frac{1}{2}}(2E_{\vb{q}})^{\frac{1}{2}}}\vb{p}\vdot\vb{q}\pqty{-\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}}\pqty{\hat{a}_{\vb{q}}e^{-iq\vdot x}-\hat{b}^\dagger_{\vb{q}}e^{iq\vdot x}}                                                                                           \\
+                                          & =-\int \frac{\dd[3]{p}\dd[3]{q}}{(2\pi)^3(2E_{\vb{p}})^{\frac{1}{2}}(2E_{\vb{q}})^{\frac{1}{2}}}\vb{p}\vdot\vb{q}\pqty{-\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{q}}e^{i(p-q)\vdot x}+\hat{b}_{\vb{p}}\hat{a}_{\vb{q}}e^{-i(p+q)\vdot x}+\hat{a}^\dagger_{\vb{p}}\hat{b}^\dagger_{\vb{q}}e^{i(p+q)\vdot x}-\hat{b}_{\vb{p}}\hat{b}^\dagger_{\vb{q}}e^{-i(p-q)\vdot x}}
+\end{align*}
+
+\begin{align*}
+                              & \qq*{The third integrand}                                                                                                                                                                                                                                                                                                                          \\
+    m^2\psi^\dagger(x)\psi(x) & =m^2\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}} \pqty{\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}}\int \frac{\dd[3]{q}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{q}})^{\frac{1}{2}}} \pqty{\hat{a}_{\vb{q}}e^{-iq\vdot x}+\hat{b}^\dagger_{\vb{q}}e^{iq\vdot x}}                       \\
+                              & =m^2\int \frac{\dd[3]{p}\dd[3]{q}}{(2\pi)^3(2E_{\vb{p}})^{\frac{1}{2}}(2E_{\vb{q}})^{\frac{1}{2}}}\pqty{\hat{a}^\dagger_{\vb{p}}e^{ip\vdot x}+\hat{b}_{\vb{p}}e^{-ip\vdot x}}\pqty{\hat{a}_{\vb{q}}e^{-iq\vdot x}+\hat{b}^\dagger_{\vb{q}}e^{iq\vdot x}}                                                                                           \\
+                              & =m^2\int \frac{\dd[3]{p}\dd[3]{q}}{(2\pi)^3(2E_{\vb{p}})^{\frac{1}{2}}(2E_{\vb{q}})^{\frac{1}{2}}}\pqty{\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{q}}e^{i(p-q)\vdot x}+\hat{b}_{\vb{p}}\hat{a}_{\vb{q}}e^{-i(p+q)\vdot x}+\hat{a}^\dagger_{\vb{p}}\hat{b}^\dagger_{\vb{q}}e^{i(p+q)\vdot x}+\hat{b}_{\vb{p}}\hat{b}^\dagger_{\vb{q}}e^{-i(p-q)\vdot x}}
+\end{align*}
+
+\begin{align*}
+                & \qq*{Collect terms}                                                                                                                                                                                                                                                                 \\
+    \mathcal{H} & =\int \frac{\dd[3]{p}\dd[3]{q}}{(2\pi)^3(2E_{\vb{p}})^{\frac{1}{2}}(2E_{\vb{q}})^{\frac{1}{2}}}\bqty{\pqty{E_{\vb{p}}E_{\vb{q}}+\vb{p}\vdot\vb{q}+m^2}}\bqty{\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{q}}e^{i(p-q)\vdot x}+\hat{b}_{\vb{p}}\hat{b}^\dagger_{\vb{q}}e^{-i(p-q)\vdot x}}  \\
+                & +\int \frac{\dd[3]{p}\dd[3]{q}}{(2\pi)^3(2E_{\vb{p}})^{\frac{1}{2}}(2E_{\vb{q}})^{\frac{1}{2}}}\bqty{\pqty{-E_{\vb{p}}E_{\vb{q}}-\vb{p}\vdot\vb{q}+m^2}}\bqty{\hat{a}^\dagger_{\vb{p}}\hat{b}^\dagger_{\vb{q}}e^{i(p+q)\vdot x}+\hat{b}_{\vb{p}}\hat{a}_{\vb{q}}e^{-i(p+q)\vdot x}} \\
+\end{align*}
+
+\begin{align*}
+                                                     & \qq{Integrate all the terms over}\vb{x}                                                                                                                                                                                                                                                                                 \\
+    \qq*{Recall}\int \dd[3]{x}e^{i\vb{k}\vdot\vb{x}} & =(2\pi)^3 \delta^{(3)}(\vb{k})                                                                                                                                                                                                                                                                                          \\
+    \qq*{Examine}\int \dd[3]{x}e^{i(p-q)\vdot x}     & =(2\pi)^3 \delta^{(3)}(\vb{p}-\vb{q})e^{i(p_0-q_0)t}=(2\pi)^3  \delta^{(3)}(\vb{p}-\vb{q})e^{i(E_{\vb{p}}-E_{\vb{q}})t}                                                                                                                                                                                                 \\
+    \qq*{And}\int \dd[3]{x}e^{i(p+q)\vdot x}         & =(2\pi)^3 \delta^{(3)}(\vb{p}+\vb{q})e^{i(p_0+q_0)t}=(2\pi)^3  \delta^{(3)}(\vb{p}+\vb{q})e^{i(E_{\vb{p}}+E_{\vb{q}})t}                                                                                                                                                                                                 \\
+    \hat{H}=\int\dd[3]{x}\mathcal{H}                 & =\int \frac{\dd[3]{p}\dd[3]{q}}{(2E_{\vb{p}})^{\frac{1}{2}}(2E_{\vb{q}})^{\frac{1}{2}}}\delta^{(3)}(\vb{p}-\vb{q})\pqty{E_{\vb{p}}E_{\vb{q}}+\vb{p}\vdot\vb{q}+m^2}\bqty{\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{q}}e^{i(E_{\vb{p}}-E_{\vb{q}})t}+\hat{b}_{\vb{p}}\hat{b}^\dagger_{\vb{q}}e^{-i(E_{\vb{p}}-E_{\vb{q}})t}}  \\
+                                                     & +\int \frac{\dd[3]{p}\dd[3]{q}}{(2E_{\vb{p}})^{\frac{1}{2}}(2E_{\vb{q}})^{\frac{1}{2}}}\delta^{(3)}(\vb{p}+\vb{q})\pqty{-E_{\vb{p}}E_{\vb{q}}-\vb{p}\vdot\vb{q}+m^2}\bqty{\hat{a}^\dagger_{\vb{p}}\hat{b}^\dagger_{\vb{q}}e^{i(E_{\vb{p}}+E_{\vb{q}})t}+\hat{b}_{\vb{p}}\hat{a}_{\vb{q}}e^{-i(E_{\vb{p}}+E_{\vb{q}})t}} \\
+\end{align*}
+
+\begin{align*}
+                    & \qq{Integrate over}\vb{q}                                                                                                                                                                                                                                                                                                           \\
+    \hat{H}         & =\int \frac{\dd[3]{p}}{(2E_{\vb{p}})}\pqty{E_{\vb{p}}^2+\vb{p}^2+m^2}\pqty{\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{p}}+\hat{b}_{\vb{p}}\hat{b}^\dagger_{\vb{p}}}                                                                                                                                                                       \\
+                    & +\int \frac{\dd[3]{p}}{(2E_{\vb{p}})}\pqty{-E_{\vb{p}}E_{\vb{-p}}+\vb{p}^2+m^2}\pqty{\hat{a}^\dagger_{\vb{p}}\hat{b}^\dagger_{\vb{-p}}e^{i(E_{\vb{p}}+E_{\vb{-p}})t}+\hat{b}_{\vb{p}}\hat{a}_{\vb{-p}}e^{-i(E_{\vb{p}}+E_{\vb{-p}})t}}                                                                                              \\
+                    & \qq{For} E_{\vb{p}}=E_{\vb{-p}}                                                                                                                                                                                                                                                                                                     \\
+    \hat{H}         & =\int \frac{\dd[3]{p}}{(2E_{\vb{p}})}\bqty{\pqty{E_{\vb{p}}^2+\vb{p}^2+m^2}\pqty{\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{p}}+\hat{b}_{\vb{p}}\hat{b}^\dagger_{\vb{p}}}+\pqty{-E_{\vb{p}}^2+\vb{p}^2+m^2}\pqty{\hat{a}^\dagger_{\vb{p}}\hat{b}^\dagger_{\vb{-p}}e^{2iE_{\vb{p}}t}+\hat{b}_{\vb{p}}\hat{a}_{\vb{-p}}e^{-2iE_{\vb{p}}t}}} \\
+                    & \qq{Note that}E_{\vb{p}}^2=\vb{p}^2+m^2\qquad\implies                                                                                                                                                                                                                                                                               \\
+    \hat{H}         & =\int\dd[3]{p}E_{\vb{p}}\pqty{\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{p}}+\hat{b}_{\vb{p}}\hat{b}^\dagger_{\vb{p}}}\qq{then with normal ordering}                                                                                                                                                                                      \\
+    N\bqty{\hat{H}} & =\int\dd[3]{p}E_{\vb{p}}\pqty{\hat{a}^\dagger_{\vb{p}}\hat{a}_{\vb{p}}+\hat{b}^\dagger_{\vb{p}}\hat{b}_{\vb{p}}}=\int\dd[3]{p}E_{\vb{p}}\pqty{\hat{n}^{(a)}_{\vb{p}}+\hat{n}^{(b)}_{\vb{p}}}\qquad(12.6)\qquad\blacksquare
+\end{align*}
+
 
 
 
@@ -131,12 +178,23 @@ Recall $\bqty{\hat{a}_{\vb{p}},\hat{a}^\dagger_{\vb{q}}}=\delta^{(3)}(\vb{p}-\vb
         Use Noether's theorem in the form $\bqty{\hat{Q}_N,\hat{\phi}}=-iD\hat{\phi}$ to provide an alternative derivation of eqn 12.35.}
 \end{quoting}
 
+\begin{align*}
+    \bqty{\hat{Q}_N,\theta(x)}         & =-iD\theta(x)=-i\qq{where}\theta \rightarrow\theta+\alpha \\
+    J^0_N                              & =-\rho(x)                                                 \\
+    Q_N                                & =\int\dd[3]{x}J^0_N=-\int\dd[3]{x}\rho(x)=-N              \\
+    \bqty{-\hat{N},\theta(x)}          & =-i                                                       \\
+    \bqty{\hat{N}(t),\theta(\vb{x},t)} & =i\qquad\blacksquare                                      \\
+\end{align*}
 
 \section*{Problem 12.5}
 \begin{quoting}
     \hl{Apply the Euler-Lagrange equations to eqn 12.24 and show that it yields $E_{\vb{p}}=\vb{p}^2 /2m$ when $V=0$.}
 \end{quoting}
 
+\begin{align*}
+    \mathcal{L} & =i\Psi^\dagger(x)\partial_0\Psi(x)-\frac{1}{2m}\grad\Psi^\dagger(x)\vdot\grad\Psi(x)-V(x)\Psi^\dagger(x)\Psi(x) \\
+    0           & =\pdv{\mathcal{L}}{\Psi}-\partial_\mu\pqty{\pdv{\mathcal{L}}{(\partial_\mu \Psi})}
+\end{align*}
 
 \section*{Problem 12.6}
 \begin{quoting}
