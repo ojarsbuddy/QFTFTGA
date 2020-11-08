@@ -223,6 +223,29 @@ Recall $\bqty{\hat{a}_{\vb{p}},\hat{a}^\dagger_{\vb{q}}}=\delta^{(3)}(\vb{p}-\vb
     \hl{Find the Noether current for the Lagrangian in eqn 12.24. Check that it is what you expect for non-relativistic quantum mechanics}
 \end{quoting}
 
+\begin{align*}
+    \mathcal{L} & =i\Psi^\dagger(x)\partial_0\Psi(x)-\frac{1}{2m}\grad\Psi^\dagger(x)\vdot\grad\Psi(x)-V(x)\Psi^\dagger(x)\Psi(x)\qq{(Eq. 12.4)}                                               \\
+    \Pi^0_\Psi  & =\pdv{\mathcal{L}}{(\partial_0 \Psi)}=i\Psi^\dagger\qquad\Pi^0_{\Psi^\dagger}=\pdv{\mathcal{L}}{(\partial_0 \Psi^\dagger)}=0                                                 \\
+    \Pi^i_\Psi  & =\pdv{\mathcal{L}}{(\partial_i \Psi)}=-\frac{1}{2m}\partial_i\Psi^\dagger\qquad\Pi^i_{\Psi^\dagger}=\pdv{\mathcal{L}}{(\partial_i \Psi^\dagger)}=-\frac{1}{2m}\partial_i\Psi \\
+\end{align*}
+
+\begin{align*}
+    \qq*{Recall}\hat{\Psi}(x)                  & =\sqrt{\rho(x)}e^{i\theta(x)}\qq{(Eq. 12.3)}                                                                                      \\
+    \qq*{For}\theta                            & \rightarrow\theta+\alpha                                                                                                          \\
+    \hat{\Psi}=\sqrt{\rho}e^{i\theta}          & \rightarrow\sqrt{\rho}e^{i(\theta+\alpha)}=e^{i\alpha}\hat{\Psi}\rightarrow\hat{\Psi}+i\alpha\hat{\Psi}                           \\
+    \hat{\Psi}^\dagger=\sqrt{\rho}e^{-i\theta} & \rightarrow\sqrt{\rho}e^{-i(\theta+\alpha)}=e^{-i\alpha}\hat{\Psi}^\dagger\rightarrow\hat{\Psi}^\dagger-i\alpha\hat{\Psi}^\dagger \\
+    D\hat{\Psi}=i\hat{\Psi}\qquad              & \qquad D\hat{\Psi}^\dagger=-i\hat{\Psi}^\dagger
+\end{align*}
+
+\begin{align*}
+    J^\mu_N  & = \sum_a \Pi^\mu_a D\phi^a-W^\mu(x)                                                              \\
+             & =\Pi^\mu_\Psi D\Psi+\Pi^\mu_{\Psi^\dagger} D\Psi^\dagger                                         \\
+             & =i\Pi^\mu_\Psi \Psi-i\Pi^\mu_{\Psi^\dagger} \Psi^\dagger                                         \\
+    J^0_N    & =i\pqty{i\Psi^\dagger}\Psi-0=-\Psi^\dagger \Psi=-\rho(x)\qquad\blacksquare                       \\
+    J^a_N    & =i\pqty{-\frac{1}{2m}\partial^a\Psi^\dagger}\Psi-i\pqty{-\frac{1}{2m}\partial^a\Psi}\Psi^\dagger \\
+             & =-\frac{i}{2m}\pqty{\Psi\partial^a\Psi^\dagger-\Psi^\dagger\partial^a\Psi}                       \\
+    \vb{J}_N & =\frac{i}{2m}\pqty{\Psi^\dagger\grad\Psi-\Psi\grad\Psi^\dagger}\qquad\blacksquare                \\
+\end{align*}
 
 \section*{Problem 12.7}
 \begin{quoting}
