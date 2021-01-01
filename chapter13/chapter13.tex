@@ -25,10 +25,9 @@
   \hl{(b) Use the transformations from Exercise 3.3 to find the form of the angular momentum matrices appropriate to express the charge as  $\vb{\hat{Q}}_{Nc}=\int\dd[3]{p}\vb{\hat{B}}^\dagger_{\vb{p}}\vb{J}\vb{\hat{B}}_{\vb{p}}$ where $\vb{\hat{B}}_{\vb{p}}=(\hat{b}_{1\vb{p}},\hat{b}_{0\vb{p}},\hat{b}_{-1\vb{p}})$.}
 \end{quoting}
 
-
+\[\qq*{Part (a)}\hat{Q}^a_{Nc}                                                           =-i\int\dd[3]{p}\epsilon^{abc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}\qquad\qq{(13.16)}                         \]
 
 \begin{align*}
-  \hat{Q}^a_{Nc}                                                                        & =-i\int\dd[3]{p}\epsilon^{abc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}\qquad\qq{(13.16)}                         \\
   \qq*{Consider each component}\epsilon^{1bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}} & =\epsilon^{123}\hat{a}^\dagger_{2\vb{p}}\hat{a}_{3\vb{p}}+\epsilon^{132}\hat{a}^\dagger_{3\vb{p}}\hat{a}_{2\vb{p}} \\
                                                                                         & =\hat{a}^\dagger_{2\vb{p}}\hat{a}_{3\vb{p}}-\hat{a}^\dagger_{3\vb{p}}\hat{a}_{2\vb{p}}                             \\
   \epsilon^{2bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}                              & =\hat{a}^\dagger_{3\vb{p}}\hat{a}_{1\vb{p}}-\hat{a}^\dagger_{1\vb{p}}\hat{a}_{3\vb{p}}                             \\
@@ -97,6 +96,144 @@
 
 Which are the spin-1 matrices found in Chapter 9 but without the time components. $\qquad\blacksquare$
 
+\[\qq{Part (b) Construct}\hat{b}^\dagger_1=-\frac{1}{\sqrt{2}}\left(\hat{a}^\dagger_1+i\hat{a}^\dagger_2\right)\qq{,}\hat{b}^\dagger_0=\hat{a}^\dagger_3\qq{and}\hat{b}_{-1}=\frac{1}{\sqrt{2}}\left(\hat{a}^\dagger_1-i\hat{a}^\dagger_2\right)\]
+
+
+\[\begin{pmatrix}
+    \hat{a}^\dagger_{1\vb{p}} &
+    \hat{a}^\dagger_{2\vb{p}} &
+    \hat{a}^\dagger_{3\vb{p}}
+  \end{pmatrix}\begin{pmatrix}
+    T_{11} & T_{12} & T_{13} \\
+    T_{21} & T_{22} & T_{23} \\
+    T_{31} & T_{32} & T_{33} \\
+  \end{pmatrix}=\begin{pmatrix}
+    \hat{b}^\dagger_{1\vb{p}} &
+    \hat{b}^\dagger_{0\vb{p}} &
+    \hat{b}^\dagger_{-1\vb{p}}
+  \end{pmatrix}\implies\vb{T}=\begin{pmatrix}
+    \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
+    \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
+    0                   & 1 & 0                   \\
+  \end{pmatrix}\]
+
+\[\qq*{Therefore}\vb{T}^{-1}=\begin{pmatrix}
+    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+    0                   & 0                  & 1 \\
+    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+  \end{pmatrix}\]
+
+\[\qq{Check}\vb{T}^{-1}\vb{T}=\begin{pmatrix}
+    \frac{1}{2}+\frac{1}{2}  & 0 & -\frac{1}{2}+\frac{1}{2} \\
+    0                        & 1 & 0                        \\
+    -\frac{1}{2}+\frac{1}{2} & 0 & \frac{1}{2}+\frac{1}{2}  \\
+  \end{pmatrix}=\vb{I}\qand\vb{T}\vb{T}^{-1}=\begin{pmatrix}
+    \frac{1}{2}+\frac{1}{2} & -\frac{i}{2}+\frac{i}{2} & 0 \\
+    \frac{i}{2}-\frac{i}{2} & \frac{1}{2}+\frac{1}{2}  & 0 \\
+    0                       & 0                        & 1 \\
+  \end{pmatrix}=\vb{I}\]
+
+
+\[\vb{\hat{A}}^\dagger_{\vb{p}}\vb{J}\vb{\hat{A}}_{\vb{p}}=\vb{\hat{A}}^\dagger_{\vb{p}}\vb{T}\vb{T}^{-1}\vb{J}\vb{T}\vb{T}^{-1}\vb{\hat{A}}_{\vb{p}}=\vb{\hat{B}}^\dagger_{\vb{p}}(\vb{T}^{-1}\vb{J}\vb{T})\vb{\hat{B}}_{\vb{p}}\]
+
+\begin{align*}
+  J_1 & =i\begin{pmatrix}
+    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+    0                   & 0                  & 1 \\
+    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+  \end{pmatrix}\begin{pmatrix}
+    0 & 0 & 0  \\
+    0 & 0 & -1 \\
+    0 & 1 & 0  \\
+  \end{pmatrix}\begin{pmatrix}
+    \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
+    \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
+    0                   & 1 & 0                   \\
+  \end{pmatrix}=i\begin{pmatrix}
+    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+    0                   & 0                  & 1 \\
+    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+  \end{pmatrix}\begin{pmatrix}
+    0                   & 0  & 0                   \\
+    0                   & -1 & 0                   \\
+    \frac{-i}{\sqrt{2}} & 0  & \frac{-i}{\sqrt{2}} \\
+  \end{pmatrix} \\
+      & =i\begin{pmatrix}
+    0                   & \frac{-i}{\sqrt{2}} & 0                   \\
+    \frac{-i}{\sqrt{2}} & 0                   & \frac{-i}{\sqrt{2}} \\
+    0                   & \frac{-i}{\sqrt{2}} & 0                   \\
+  \end{pmatrix}=\frac{1}{\sqrt{2}}\begin{pmatrix}
+    0 & 1 & 0 \\
+    1 & 0 & 1 \\
+    0 & 1 & 0 \\
+  \end{pmatrix}\qquad\blacksquare
+\end{align*}
+
+\begin{align*}
+  J_0 & =i\begin{pmatrix}
+    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+    0                   & 0                  & 1 \\
+    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+  \end{pmatrix}\begin{pmatrix}
+    0  & 0 & 1 \\
+    0  & 0 & 0 \\
+    -1 & 0 & 0 \\
+  \end{pmatrix}\begin{pmatrix}
+    \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
+    \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
+    0                   & 1 & 0                   \\
+  \end{pmatrix}=i\begin{pmatrix}
+    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+    0                   & 0                  & 1 \\
+    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+  \end{pmatrix}\begin{pmatrix}
+    0                  & 1 & 0                   \\
+    0                  & 0 & 0                   \\
+    \frac{1}{\sqrt{2}} & 0 & \frac{-1}{\sqrt{2}} \\
+  \end{pmatrix} \\
+      & =i\begin{pmatrix}
+    0                  & \frac{-1}{\sqrt{2}} & 0                   \\
+    \frac{1}{\sqrt{2}} & 0                   & \frac{-1}{\sqrt{2}} \\
+    0                  & \frac{1}{\sqrt{2}}  & 0                   \\
+  \end{pmatrix}=\frac{i}{\sqrt{2}}\begin{pmatrix}
+    0 & -1 & 0  \\
+    1 & 0  & -1 \\
+    0 & 1  & 0  \\
+  \end{pmatrix}\qquad\blacksquare
+\end{align*}
+
+\begin{align*}
+  J_{-1} & =i\begin{pmatrix}
+    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+    0                   & 0                  & 1 \\
+    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+  \end{pmatrix}\begin{pmatrix}
+    0 & -1 & 0 \\
+    1 & 0  & 0 \\
+    0 & 0  & 0 \\
+  \end{pmatrix}\begin{pmatrix}
+    \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
+    \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
+    0                   & 1 & 0                   \\
+  \end{pmatrix}=i\begin{pmatrix}
+    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+    0                   & 0                  & 1 \\
+    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+  \end{pmatrix}\begin{pmatrix}
+    \frac{i}{\sqrt{2}}  & 0 & \frac{i}{\sqrt{2}} \\
+    \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\
+    0                   & 0 & 0                  \\
+  \end{pmatrix} \\
+         & =i\begin{pmatrix}
+    -\frac{i}{2}-\frac{i}{2} & 0 & -\frac{i}{2}+\frac{i}{2} \\
+    0                        & 0 & 0                        \\
+    \frac{i}{2}-\frac{i}{2}  & 0 & \frac{i}{2}+\frac{i}{2}  \\
+  \end{pmatrix}=\begin{pmatrix}
+    1 & 0 & 0  \\
+    0 & 0 & 0  \\
+    0 & 0 & -1 \\
+  \end{pmatrix}\qquad\blacksquare
+\end{align*}
 
 
 
