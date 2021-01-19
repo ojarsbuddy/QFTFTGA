@@ -244,8 +244,60 @@ Which are the spin-1 matrices found in Chapter 9 but without the time components
 
   \hl{(b)  Show that the boosted vectors in eqn 13.30 are still correctly normalized.}
 
-  \hl{(c)  Consider the circular polarization vectors $\epsilon^{\mu*}_{\lambda=R}=-\frac{1}{\sqrt{2}}(0,1,i,0)$, $\epsilon^{\mu*}_{\lambda=L}=\frac{1}{\sqrt{2}}(0,1,-i,0)$, $\epsilon^{\mu*}_{\lambda=3}=-\frac{1}{\sqrt{2}}(0,0,0,1)$. Show that these are correctly normalized according to $g_{\mu\nu}\epsilon^{\mu*}_\lambda \epsilon^\nu_{\lambda'}=-\delta_{\lambda\lambda'}$.}
+  \hl{(c)  Consider the circular polarization vectors $\epsilon^{\mu*}_{\lambda=R}=-\frac{1}{\sqrt{2}}(0,1,i,0)$, $\epsilon^{\mu*}_{\lambda=L}=\frac{1}{\sqrt{2}}(0,1,-i,0)$,\\$\epsilon^{\mu*}_{\lambda=3}=-\frac{1}{\sqrt{2}}(0,0,0,1)$. Show that these are correctly normalized according to $g_{\mu\nu}\epsilon^{\mu*}_\lambda \epsilon^\nu_{\lambda'}=-\delta_{\lambda\lambda'}$.}
 \end{quoting}
+
+
+\begin{align*}
+  \qq*{(Part a)  Lorentz boost in the $z$-direction}t' & =\gamma\left(t-\frac{vz}{c^2}\right) \\
+  x'                                                   & =x                                   \\
+  y'                                                   & =y                                   \\
+  z'                                                   & =\gamma(z-vt)                        \\
+\end{align*}
+
+\begin{align*}
+  { \Lambda^\mu}_\nu(p)                                           & =\frac{1}{m}\begin{pmatrix}
+    E_{\vb{p}}    & 0 & 0 & \abs*{\vb{p}} \\
+    0             & m & 0 & 0             \\
+    0             & 0 & m & 0             \\
+    \abs*{\vb{p}} & 0 & 0 & E_{\vb{p}}    \\
+  \end{pmatrix}\qq{(Eqn. 13.29)}              \\
+  \qq*{Particle in its rest frame has momentum}p^\mu              & =\begin{pmatrix}
+    m & 0 & 0 & 0 \\
+  \end{pmatrix}\qq{(recall $c^2=1$)}                     \\
+  \frac{1}{m}\begin{pmatrix}
+    E_{\vb{p}}    & 0 & 0 & \abs*{\vb{p}} \\
+    0             & m & 0 & 0             \\
+    0             & 0 & m & 0             \\
+    \abs*{\vb{p}} & 0 & 0 & E_{\vb{p}}    \\
+  \end{pmatrix}\begin{pmatrix}
+    m \\ 0 \\ 0 \\ 0 \\
+  \end{pmatrix} & =\frac{1}{m}\begin{pmatrix}
+    mE_{\vb{p}} \\ 0 \\ 0 \\ m\abs*{\vb{p}} \\
+  \end{pmatrix}   =\begin{pmatrix}
+    E_{\vb{p}} \\ 0 \\ 0 \\ \abs*{\vb{p}} \\
+  \end{pmatrix} \\
+  \qq*{All of the momentum $\vb{p}$ is in the $z$-direction}      & \qquad\blacksquare                                                   \\
+\end{align*}
+
+\begin{align*}
+  \qq*{(Part b)} \epsilon_{\lambda=1}^*(p)=(0,1,0,0)\implies\epsilon_{\lambda=1}^*\cdot\epsilon_{\lambda=1}                             & =g_{11}\epsilon_{\lambda=1}^{1*}\epsilon_{\lambda=1}^1=(-1)(1)(1)
+  =-1                                                                                                                                                                                                                                                                                          \\
+  \epsilon_{\lambda=2}^*(p)=(0,0,1,0)\implies\epsilon_{\lambda=2}^*\cdot\epsilon_{\lambda=2}                                            & =g_{22}\epsilon_{\lambda=2}^{2*}\epsilon_{\lambda=2}^2=(-1)(1)(1)
+  =-1                                                                                                                                                                                                                                                                                          \\
+  \epsilon_{\lambda=3}^*(p)=(\sfrac{\abs*{\vb{p}}}{m},0,0,\sfrac{E_{\vb{p}}}{m})\implies\epsilon_{\lambda=3}^*\cdot\epsilon_{\lambda=3} & =g_{00}\epsilon_{\lambda=3}^{0*}\epsilon_{\lambda=3}^0+g_{33}\epsilon_{\lambda=3}^{3*}\epsilon_{\lambda=3}^3                                         \\
+                                                                                                                                        & =(1)\frac{{\abs*{\vb{p}}}^2}{m^2}+(-1)\frac{{E_{\vb{p}}}^2}{m^2}=\frac{{\abs*{\vb{p}}}^2-{E_{\vb{p}}}^2}{m^2}=\frac{-m^2}{m^2}=-1 \qquad\blacksquare \\
+\end{align*}
+\begin{align*}
+  \qq*{(Part c)} \epsilon_{\lambda=R}^*(p)=-\frac{1}{\sqrt{2}}(0,1,i,0)\implies \epsilon_{\lambda=R}^*\cdot\epsilon_{\lambda=R} & =g_{11}\epsilon_{\lambda=R}^{1*}\epsilon_{\lambda=R}^1+g_{22}\epsilon_{\lambda=R}^{2*}\epsilon_{\lambda=R}^2 \\
+                                                                                                                                & =(-1)\frac{-1}{\sqrt{2}}(1)\frac{-1}{\sqrt{2}}(1)+(-1)\frac{-1}{\sqrt{2}}(-i)\frac{-1}{\sqrt{2}}(i)=-1
+  \\
+  \epsilon_{\lambda=L}^*(p)=\frac{1}{\sqrt{2}}(0,1,-i,0)\implies \epsilon_{\lambda=L}^*\cdot\epsilon_{\lambda=L}                & =g_{11}\epsilon_{\lambda=L}^{1*}\epsilon_{\lambda=L}^1+g_{22}\epsilon_{\lambda=L}^{2*}\epsilon_{\lambda=L}^2 \\
+                                                                                                                                & =(-1)\frac{1}{\sqrt{2}}(1)\frac{1}{\sqrt{2}}(1)+(-1)\frac{1}{\sqrt{2}}(i)\frac{1}{\sqrt{2}}(-i)
+  =-1                                                                                                                                                                                                                                          \\
+  \epsilon_{\lambda=3}^*(p)=(0,0,0,1)\implies \epsilon_{\lambda=3}^*\cdot\epsilon_{\lambda=3}                                   & =g_{33}\epsilon_{\lambda=3}^{3*}\epsilon_{\lambda=3}^3=(-1)(1)(1)
+  =-1\qquad\blacksquare                                                                                                                                                                                                                        \\
+\end{align*}
 
 \section*{Problem 13.3}
 \begin{quoting}
