@@ -317,9 +317,33 @@ Which are the spin-1 matrices found in Chapter 9 but without the time components
 
 \section*{Problem 13.4}
 \begin{quoting}
-  \hl{The Lagrangian for electromagnetism in vacuo is $\mathcal{L}=-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}$. Show that this can be rewritten as}\[\mathcal{L}=\frac{1}{2}A^\mu P^T_{\mu\nu}\partial^2A^\nu.\]
+  \hl{The Lagrangian for electromagnetism in vacuo is $\mathcal{L}=-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}$. Show that this can be rewritten as}
+  \[\mathcal{L}=-\frac{1}{2}\left(\partial_\mu A_\nu\partial^\mu A^\nu-\partial_\mu A_\nu\partial^\nu A^\mu\right)\qcomma\]
+  \hl{and hence show that using the transverse projection operator, it may be expressed as}
+
+  \[\mathcal{L}=\frac{1}{2}A^\mu P^T_{\mu\nu}\partial^2A^\nu.\]
   \hl{This shows that $\mathcal{L}$ only includes the transverse components of the field, squaring with the idea of electromagnetic waves only representing vibrations transverse to the direction of propagation.}
 \end{quoting}
 
+
+\begin{align*}
+  \qq*{From Problem 10.4}\mathcal{L} & =-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}                                                                                                                                              \\
+                                     & =-\frac{1}{4}\pqty{\partial_\mu A_\nu - \partial_\nu A_\mu}\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu}                                                                        \\
+                                     & =-\frac{1}{4}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu - \partial_\nu A_\mu \partial^\mu A^\nu+\partial_\nu A_\mu \partial^\nu A^\mu} \\
+  \qq*{Relabel sums}                 & =-\frac{1}{4}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu - \partial_\mu A_\nu \partial^\nu A^\mu+\partial_\mu A_\nu \partial^\mu A^\nu} \\
+                                     & =-\frac{1}{2}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu} \qq{via relabeling summations above}\qquad\blacksquare                        \\
+\end{align*}
+
+\begin{align*}
+  \qq*{Recall} S & =\int\dd[4]{x}\mathcal {L}                                                                                    \\
+                 & =-\frac{1}{2}\int\dd[4]{x}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu} \\
+\end{align*}
+
+\begin{align*}
+  \qq*{Remember}\partial_\mu\equiv\pdv{x^\mu} & =\pqty{\pdv{x^0},\pdv{x^1},\pdv{x^2},\pdv{x^3}}=\pqty{\pdv{t},\grad}=\pqty{\pdv{t},\pdv{x},\pdv{y},\pdv{z}}     \\
+  \qq*{Remember}\partial^\mu\equiv\pdv{x^\mu} & =\pqty{\pdv{x^0},\pdv{x^1},\pdv{x^2},\pdv{x^3}}=\pqty{\pdv{t},-\grad}=\pqty{\pdv{t},-\pdv{x},-\pdv{y},-\pdv{z}} \\
+  a_\mu                                       & =g_{\mu\nu}a^\nu                                                                                                \\
+  g_{\mu\nu}                                  & =g^{\mu\nu}                                                                                                     \\
+\end{align*}
 
 \end{document}
