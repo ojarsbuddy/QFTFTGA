@@ -1,14 +1,17 @@
-\documentclass{article}
-\usepackage{amsmath,amssymb,physics,xfrac,nicefrac}
+\documentclass[letterpaper]{article}
+
+\usepackage{amsmath,amsthm,amssymb,physics,xfrac,nicefrac}
 \usepackage{standalone}
 \usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
-\usepackage[indentfirst=true]{quoting}
 \usepackage{xcolor, soul}
 \usepackage{enumitem}
-\definecolor{HighlightGray}{cmyk}{0,0,0,0.07}
-\sethlcolor{HighlightGray}
+
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}[section]
+\renewcommand{\qedsymbol}{\(\blacksquare\)}
  
-\title{Quantum Field Theory Problem Sets}
+\setcounter{section}{13}
+\title{Quantum Field Theory Problem Set}
 \author{John Bortins}
  
 \begin{document}
@@ -16,334 +19,377 @@
 \maketitle{}
 
 
-\section*{Problem 13.1}
-\begin{quoting}
-  \hl{(a) Show that the conserved charge in eqn. 13.16 may be written}
+\begin{prob}
+  (a) Show that the conserved charge in eqn. 13.16 may be written
   \[\vb{\hat{Q}}_{Nc}=\int\dd[3]{p}\vb{\hat{A}}^\dagger_{\vb{p}}\vb{J}\vb{\hat{A}}_{\vb{p}} \]
-  \hl{where  $\vb{\hat{A}}_{\vb{p}}=(\hat{a}_{1\vb{p}},\hat{a}_{2\vb{p}},\hat{a}_{3\vb{p}})$ and  $\vb{J}=(J_x,J_y,J_z)$ are the spin-1 angular momentum matrices from chapter 9.}
+  where  $\vb{\hat{A}}_{\vb{p}}=(\hat{a}_{1\vb{p}},\hat{a}_{2\vb{p}},\hat{a}_{3\vb{p}})$ and  $\vb{J}=(J_x,J_y,J_z)$ are the spin-1 angular momentum matrices from chapter 9.
 
-  \hl{(b) Use the transformations from Exercise 3.3 to find the form of the angular momentum matrices appropriate to express the charge as  $\vb{\hat{Q}}_{Nc}=\int\dd[3]{p}\vb{\hat{B}}^\dagger_{\vb{p}}\vb{J}\vb{\hat{B}}_{\vb{p}}$ where $\vb{\hat{B}}_{\vb{p}}=(\hat{b}_{1\vb{p}},\hat{b}_{0\vb{p}},\hat{b}_{-1\vb{p}})$.}
-\end{quoting}
+  \noindent(b) Use the transformations from Exercise 3.3 to find the form of the angular momentum matrices appropriate to express the charge as  $\vb{\hat{Q}}_{Nc}=\int\dd[3]{p}\vb{\hat{B}}^\dagger_{\vb{p}}\vb{J}\vb{\hat{B}}_{\vb{p}}$ where $\vb{\hat{B}}_{\vb{p}}=(\hat{b}_{1\vb{p}},\hat{b}_{0\vb{p}},\hat{b}_{-1\vb{p}})$.
+\end{prob}
 
-\[\qq*{Part (a)}\hat{Q}^a_{Nc}                                                           =-i\int\dd[3]{p}\epsilon^{abc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}\qquad\qq{(13.16)}                         \]
+\begin{proof}Part (a)
+  \[\hat{Q}^a_{Nc}                                                           =-i\int\dd[3]{p}\epsilon^{abc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}\qquad\qq{(13.16)}                         \]
 
-\begin{align*}
-  \qq*{Consider each component}\epsilon^{1bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}} & =\epsilon^{123}\hat{a}^\dagger_{2\vb{p}}\hat{a}_{3\vb{p}}+\epsilon^{132}\hat{a}^\dagger_{3\vb{p}}\hat{a}_{2\vb{p}} \\
-                                                                                        & =\hat{a}^\dagger_{2\vb{p}}\hat{a}_{3\vb{p}}-\hat{a}^\dagger_{3\vb{p}}\hat{a}_{2\vb{p}}                             \\
-  \epsilon^{2bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}                              & =\hat{a}^\dagger_{3\vb{p}}\hat{a}_{1\vb{p}}-\hat{a}^\dagger_{1\vb{p}}\hat{a}_{3\vb{p}}                             \\
-                                                                                        & =-\hat{a}^\dagger_{1\vb{p}}\hat{a}_{3\vb{p}}+\hat{a}^\dagger_{3\vb{p}}\hat{a}_{1\vb{p}}                            \\
-  \epsilon^{3bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}                              & =\hat{a}^\dagger_{1\vb{p}}\hat{a}_{2\vb{p}}-\hat{a}^\dagger_{2\vb{p}}\hat{a}_{1\vb{p}}                             \\
-\end{align*}
+  \begin{align*}
+    \qq*{Consider each component}\epsilon^{1bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}} & =\epsilon^{123}\hat{a}^\dagger_{2\vb{p}}\hat{a}_{3\vb{p}}+\epsilon^{132}\hat{a}^\dagger_{3\vb{p}}\hat{a}_{2\vb{p}} \\
+                                                                                          & =\hat{a}^\dagger_{2\vb{p}}\hat{a}_{3\vb{p}}-\hat{a}^\dagger_{3\vb{p}}\hat{a}_{2\vb{p}}                             \\
+    \epsilon^{2bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}                              & =\hat{a}^\dagger_{3\vb{p}}\hat{a}_{1\vb{p}}-\hat{a}^\dagger_{1\vb{p}}\hat{a}_{3\vb{p}}                             \\
+                                                                                          & =-\hat{a}^\dagger_{1\vb{p}}\hat{a}_{3\vb{p}}+\hat{a}^\dagger_{3\vb{p}}\hat{a}_{1\vb{p}}                            \\
+    \epsilon^{3bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}                              & =\hat{a}^\dagger_{1\vb{p}}\hat{a}_{2\vb{p}}-\hat{a}^\dagger_{2\vb{p}}\hat{a}_{1\vb{p}}                             \\
+  \end{align*}
 
-\[\vb{\hat{A}}^\dagger_{\vb{p}}J_a\vb{\hat{A}}_{\vb{p}}=\vb{\hat{A}}^\dagger_{\vb{p}}\begin{pmatrix}
-    J_{11} & J_{12} & J_{13} \\
-    J_{21} & J_{22} & J_{23} \\
-    J_{31} & J_{32} & J_{33} \\
-  \end{pmatrix}\begin{pmatrix}
-    \hat{a}_{1\vb{p}} \\
-    \hat{a}_{2\vb{p}} \\
-    \hat{a}_{3\vb{p}} \\
-  \end{pmatrix}=\vb{\hat{A}}^\dagger_{\vb{p}}\begin{pmatrix}
-    J_{11}\hat{a}_{1\vb{p}} + J_{12}\hat{a}_{2\vb{p}} + J_{13}\hat{a}_{3\vb{p}} \\
-    J_{21}\hat{a}_{1\vb{p}} + J_{22}\hat{a}_{2\vb{p}} + J_{23}\hat{a}_{3\vb{p}} \\
-    J_{31}\hat{a}_{1\vb{p}} + J_{32}\hat{a}_{2\vb{p}} + J_{33}\hat{a}_{3\vb{p}} \\
-  \end{pmatrix}\qq{where} J_{ii}=0\]
+  \[\vb{\hat{A}}^\dagger_{\vb{p}}J_a\vb{\hat{A}}_{\vb{p}}=\vb{\hat{A}}^\dagger_{\vb{p}}\begin{pmatrix}
+      J_{11} & J_{12} & J_{13} \\
+      J_{21} & J_{22} & J_{23} \\
+      J_{31} & J_{32} & J_{33} \\
+    \end{pmatrix}\begin{pmatrix}
+      \hat{a}_{1\vb{p}} \\
+      \hat{a}_{2\vb{p}} \\
+      \hat{a}_{3\vb{p}} \\
+    \end{pmatrix}=\vb{\hat{A}}^\dagger_{\vb{p}}\begin{pmatrix}
+      J_{11}\hat{a}_{1\vb{p}} + J_{12}\hat{a}_{2\vb{p}} + J_{13}\hat{a}_{3\vb{p}} \\
+      J_{21}\hat{a}_{1\vb{p}} + J_{22}\hat{a}_{2\vb{p}} + J_{23}\hat{a}_{3\vb{p}} \\
+      J_{31}\hat{a}_{1\vb{p}} + J_{32}\hat{a}_{2\vb{p}} + J_{33}\hat{a}_{3\vb{p}} \\
+    \end{pmatrix}\qq{where} J_{ii}=0\]
 
-\[\vb{\hat{A}}^\dagger_{\vb{p}}J_a\vb{\hat{A}}_{\vb{p}}=\vb{\hat{A}}^\dagger_{\vb{p}}\begin{pmatrix}
-    0      & J_{12} & J_{13} \\
-    J_{21} & 0      & J_{23} \\
-    J_{31} & J_{32} & 0      \\
-  \end{pmatrix}\begin{pmatrix}
-    \hat{a}_{1\vb{p}} \\
-    \hat{a}_{2\vb{p}} \\
-    \hat{a}_{3\vb{p}} \\
-  \end{pmatrix}=\begin{pmatrix}
-    \hat{a}^\dagger_{1\vb{p}} &
-    \hat{a}^\dagger_{2\vb{p}} &
-    \hat{a}^\dagger_{3\vb{p}}
-  \end{pmatrix}\begin{pmatrix}
-    J_{12}\hat{a}_{2\vb{p}} + J_{13}\hat{a}_{3\vb{p}} \\
-    J_{21}\hat{a}_{1\vb{p}} + J_{23}\hat{a}_{3\vb{p}} \\
-    J_{31}\hat{a}_{1\vb{p}} + J_{32}\hat{a}_{2\vb{p}} \\
-  \end{pmatrix}\]
+  \[\vb{\hat{A}}^\dagger_{\vb{p}}J_a\vb{\hat{A}}_{\vb{p}}=\vb{\hat{A}}^\dagger_{\vb{p}}\begin{pmatrix}
+      0      & J_{12} & J_{13} \\
+      J_{21} & 0      & J_{23} \\
+      J_{31} & J_{32} & 0      \\
+    \end{pmatrix}\begin{pmatrix}
+      \hat{a}_{1\vb{p}} \\
+      \hat{a}_{2\vb{p}} \\
+      \hat{a}_{3\vb{p}} \\
+    \end{pmatrix}=\begin{pmatrix}
+      \hat{a}^\dagger_{1\vb{p}} &
+      \hat{a}^\dagger_{2\vb{p}} &
+      \hat{a}^\dagger_{3\vb{p}}
+    \end{pmatrix}\begin{pmatrix}
+      J_{12}\hat{a}_{2\vb{p}} + J_{13}\hat{a}_{3\vb{p}} \\
+      J_{21}\hat{a}_{1\vb{p}} + J_{23}\hat{a}_{3\vb{p}} \\
+      J_{31}\hat{a}_{1\vb{p}} + J_{32}\hat{a}_{2\vb{p}} \\
+    \end{pmatrix}\]
 
-\begin{align*}
-  \vb{\hat{A}}^\dagger_{\vb{p}}J_a\vb{\hat{A}}_{\vb{p}} & =
-  \hat{a}^\dagger_{1\vb{p}}J_{12}\hat{a}_{2\vb{p}} + \hat{a}^\dagger_{1\vb{p}}J_{13}\hat{a}_{3\vb{p}}
-  +\hat{a}^\dagger_{2\vb{p}}J_{21}\hat{a}_{1\vb{p}} + \hat{a}^\dagger_{2\vb{p}}J_{23}\hat{a}_{3\vb{p}}
-  +\hat{a}^\dagger_{3\vb{p}}J_{31}\hat{a}_{1\vb{p}} + \hat{a}^\dagger_{3\vb{p}}J_{32}\hat{a}_{2\vb{p}} \\
-\end{align*}
+  \begin{align*}
+    \vb{\hat{A}}^\dagger_{\vb{p}}J_a\vb{\hat{A}}_{\vb{p}} & =
+    \hat{a}^\dagger_{1\vb{p}}J_{12}\hat{a}_{2\vb{p}} + \hat{a}^\dagger_{1\vb{p}}J_{13}\hat{a}_{3\vb{p}}
+    +\hat{a}^\dagger_{2\vb{p}}J_{21}\hat{a}_{1\vb{p}} + \hat{a}^\dagger_{2\vb{p}}J_{23}\hat{a}_{3\vb{p}}
+    +\hat{a}^\dagger_{3\vb{p}}J_{31}\hat{a}_{1\vb{p}} + \hat{a}^\dagger_{3\vb{p}}J_{32}\hat{a}_{2\vb{p}} \\
+  \end{align*}
 
+  \begin{align*}
+    -\epsilon^{1bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}  =-\hat{a}^\dagger_{2\vb{p}}\hat{a}_{3\vb{p}}+\hat{a}^\dagger_{3\vb{p}}\hat{a}_{2\vb{p}} & \implies J_x=i\begin{pmatrix}
+      0 & 0 & 0  \\
+      0 & 0 & -1 \\
+      0 & 1 & 0  \\
+    \end{pmatrix} \\
+    -\epsilon^{2bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}  =\hat{a}^\dagger_{1\vb{p}}\hat{a}_{3\vb{p}}-\hat{a}^\dagger_{3\vb{p}}\hat{a}_{1\vb{p}}  & \implies J_y=i\begin{pmatrix}
+      0  & 0 & 1 \\
+      0  & 0 & 0 \\
+      -1 & 0 & 0 \\
+    \end{pmatrix} \\
+    -\epsilon^{3bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}  =-\hat{a}^\dagger_{1\vb{p}}\hat{a}_{2\vb{p}}+\hat{a}^\dagger_{2\vb{p}}\hat{a}_{1\vb{p}} & \implies J_z=i\begin{pmatrix}
+      0 & -1 & 0 \\
+      1 & 0  & 0 \\
+      0 & 0  & 0 \\
+    \end{pmatrix} \\
+  \end{align*}
 
+  Which are the spin-1 matrices found in Chapter 9 but without the time components.
+\end{proof}
 
-\begin{align*}
-  -\epsilon^{1bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}  =-\hat{a}^\dagger_{2\vb{p}}\hat{a}_{3\vb{p}}+\hat{a}^\dagger_{3\vb{p}}\hat{a}_{2\vb{p}} & \implies J_x=i\begin{pmatrix}
-    0 & 0 & 0  \\
-    0 & 0 & -1 \\
-    0 & 1 & 0  \\
-  \end{pmatrix} \\
-  -\epsilon^{2bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}  =\hat{a}^\dagger_{1\vb{p}}\hat{a}_{3\vb{p}}-\hat{a}^\dagger_{3\vb{p}}\hat{a}_{1\vb{p}}  & \implies J_y=i\begin{pmatrix}
-    0  & 0 & 1 \\
-    0  & 0 & 0 \\
-    -1 & 0 & 0 \\
-  \end{pmatrix} \\
-  -\epsilon^{3bc}\hat{a}^\dagger_{b\vb{p}}\hat{a}_{c\vb{p}}  =-\hat{a}^\dagger_{1\vb{p}}\hat{a}_{2\vb{p}}+\hat{a}^\dagger_{2\vb{p}}\hat{a}_{1\vb{p}} & \implies J_z=i\begin{pmatrix}
-    0 & -1 & 0 \\
-    1 & 0  & 0 \\
-    0 & 0  & 0 \\
-  \end{pmatrix} \\
-\end{align*}
-
-Which are the spin-1 matrices found in Chapter 9 but without the time components. $\qquad\blacksquare$
-
-\[\qq{Part (b) Construct}\hat{b}^\dagger_1=-\frac{1}{\sqrt{2}}\left(\hat{a}^\dagger_1+i\hat{a}^\dagger_2\right)\qq{,}\hat{b}^\dagger_0=\hat{a}^\dagger_3\qq{and}\hat{b}_{-1}=\frac{1}{\sqrt{2}}\left(\hat{a}^\dagger_1-i\hat{a}^\dagger_2\right)\]
-
-
-\[\begin{pmatrix}
-    \hat{a}^\dagger_{1\vb{p}} &
-    \hat{a}^\dagger_{2\vb{p}} &
-    \hat{a}^\dagger_{3\vb{p}}
-  \end{pmatrix}\begin{pmatrix}
-    T_{11} & T_{12} & T_{13} \\
-    T_{21} & T_{22} & T_{23} \\
-    T_{31} & T_{32} & T_{33} \\
-  \end{pmatrix}=\begin{pmatrix}
-    \hat{b}^\dagger_{1\vb{p}} &
-    \hat{b}^\dagger_{0\vb{p}} &
-    \hat{b}^\dagger_{-1\vb{p}}
-  \end{pmatrix}\implies\vb{T}=\begin{pmatrix}
-    \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
-    \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
-    0                   & 1 & 0                   \\
-  \end{pmatrix}\]
-
-\[\qq*{Therefore}\vb{T}^{-1}=\begin{pmatrix}
-    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
-    0                   & 0                  & 1 \\
-    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
-  \end{pmatrix}\]
-
-\[\qq{Check}\vb{T}^{-1}\vb{T}=\begin{pmatrix}
-    \frac{1}{2}+\frac{1}{2}  & 0 & -\frac{1}{2}+\frac{1}{2} \\
-    0                        & 1 & 0                        \\
-    -\frac{1}{2}+\frac{1}{2} & 0 & \frac{1}{2}+\frac{1}{2}  \\
-  \end{pmatrix}=\vb{I}\qand\vb{T}\vb{T}^{-1}=\begin{pmatrix}
-    \frac{1}{2}+\frac{1}{2} & -\frac{i}{2}+\frac{i}{2} & 0 \\
-    \frac{i}{2}-\frac{i}{2} & \frac{1}{2}+\frac{1}{2}  & 0 \\
-    0                       & 0                        & 1 \\
-  \end{pmatrix}=\vb{I}\]
+\begin{proof}Part (b)
+  \[\qq{Construct}\hat{b}^\dagger_1=-\frac{1}{\sqrt{2}}\left(\hat{a}^\dagger_1+i\hat{a}^\dagger_2\right)\qq{,}\hat{b}^\dagger_0=\hat{a}^\dagger_3\qq{and}\hat{b}_{-1}=\frac{1}{\sqrt{2}}\left(\hat{a}^\dagger_1-i\hat{a}^\dagger_2\right)\]
 
 
-\[\vb{\hat{A}}^\dagger_{\vb{p}}\vb{J}\vb{\hat{A}}_{\vb{p}}=\vb{\hat{A}}^\dagger_{\vb{p}}\vb{T}\vb{T}^{-1}\vb{J}\vb{T}\vb{T}^{-1}\vb{\hat{A}}_{\vb{p}}=\vb{\hat{B}}^\dagger_{\vb{p}}(\vb{T}^{-1}\vb{J}\vb{T})\vb{\hat{B}}_{\vb{p}}\]
+  \[\begin{pmatrix}
+      \hat{a}^\dagger_{1\vb{p}} &
+      \hat{a}^\dagger_{2\vb{p}} &
+      \hat{a}^\dagger_{3\vb{p}}
+    \end{pmatrix}\begin{pmatrix}
+      T_{11} & T_{12} & T_{13} \\
+      T_{21} & T_{22} & T_{23} \\
+      T_{31} & T_{32} & T_{33} \\
+    \end{pmatrix}=\begin{pmatrix}
+      \hat{b}^\dagger_{1\vb{p}} &
+      \hat{b}^\dagger_{0\vb{p}} &
+      \hat{b}^\dagger_{-1\vb{p}}
+    \end{pmatrix}\implies\vb{T}=\begin{pmatrix}
+      \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
+      \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
+      0                   & 1 & 0                   \\
+    \end{pmatrix}\]
 
-\begin{align*}
-  J_1 & =i\begin{pmatrix}
-    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
-    0                   & 0                  & 1 \\
-    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
-  \end{pmatrix}\begin{pmatrix}
-    0 & 0 & 0  \\
-    0 & 0 & -1 \\
-    0 & 1 & 0  \\
-  \end{pmatrix}\begin{pmatrix}
-    \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
-    \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
-    0                   & 1 & 0                   \\
-  \end{pmatrix}=i\begin{pmatrix}
-    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
-    0                   & 0                  & 1 \\
-    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
-  \end{pmatrix}\begin{pmatrix}
-    0                   & 0  & 0                   \\
-    0                   & -1 & 0                   \\
-    \frac{-i}{\sqrt{2}} & 0  & \frac{-i}{\sqrt{2}} \\
-  \end{pmatrix} \\
-      & =i\begin{pmatrix}
-    0                   & \frac{-i}{\sqrt{2}} & 0                   \\
-    \frac{-i}{\sqrt{2}} & 0                   & \frac{-i}{\sqrt{2}} \\
-    0                   & \frac{-i}{\sqrt{2}} & 0                   \\
-  \end{pmatrix}=\frac{1}{\sqrt{2}}\begin{pmatrix}
-    0 & 1 & 0 \\
-    1 & 0 & 1 \\
-    0 & 1 & 0 \\
-  \end{pmatrix}\qquad\blacksquare
-\end{align*}
+  \[\qq*{Therefore}\vb{T}^{-1}=\begin{pmatrix}
+      \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+      0                   & 0                  & 1 \\
+      \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+    \end{pmatrix}\]
 
-\begin{align*}
-  J_0 & =i\begin{pmatrix}
-    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
-    0                   & 0                  & 1 \\
-    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
-  \end{pmatrix}\begin{pmatrix}
-    0  & 0 & 1 \\
-    0  & 0 & 0 \\
-    -1 & 0 & 0 \\
-  \end{pmatrix}\begin{pmatrix}
-    \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
-    \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
-    0                   & 1 & 0                   \\
-  \end{pmatrix}=i\begin{pmatrix}
-    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
-    0                   & 0                  & 1 \\
-    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
-  \end{pmatrix}\begin{pmatrix}
-    0                  & 1 & 0                   \\
-    0                  & 0 & 0                   \\
-    \frac{1}{\sqrt{2}} & 0 & \frac{-1}{\sqrt{2}} \\
-  \end{pmatrix} \\
-      & =i\begin{pmatrix}
-    0                  & \frac{-1}{\sqrt{2}} & 0                   \\
-    \frac{1}{\sqrt{2}} & 0                   & \frac{-1}{\sqrt{2}} \\
-    0                  & \frac{1}{\sqrt{2}}  & 0                   \\
-  \end{pmatrix}=\frac{i}{\sqrt{2}}\begin{pmatrix}
-    0 & -1 & 0  \\
-    1 & 0  & -1 \\
-    0 & 1  & 0  \\
-  \end{pmatrix}\qquad\blacksquare
-\end{align*}
-
-\begin{align*}
-  J_{-1} & =i\begin{pmatrix}
-    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
-    0                   & 0                  & 1 \\
-    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
-  \end{pmatrix}\begin{pmatrix}
-    0 & -1 & 0 \\
-    1 & 0  & 0 \\
-    0 & 0  & 0 \\
-  \end{pmatrix}\begin{pmatrix}
-    \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
-    \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
-    0                   & 1 & 0                   \\
-  \end{pmatrix}=i\begin{pmatrix}
-    \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
-    0                   & 0                  & 1 \\
-    \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
-  \end{pmatrix}\begin{pmatrix}
-    \frac{i}{\sqrt{2}}  & 0 & \frac{i}{\sqrt{2}} \\
-    \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\
-    0                   & 0 & 0                  \\
-  \end{pmatrix} \\
-         & =i\begin{pmatrix}
-    -\frac{i}{2}-\frac{i}{2} & 0 & -\frac{i}{2}+\frac{i}{2} \\
-    0                        & 0 & 0                        \\
-    \frac{i}{2}-\frac{i}{2}  & 0 & \frac{i}{2}+\frac{i}{2}  \\
-  \end{pmatrix}=\begin{pmatrix}
-    1 & 0 & 0  \\
-    0 & 0 & 0  \\
-    0 & 0 & -1 \\
-  \end{pmatrix}\qquad\blacksquare
-\end{align*}
+  \[\qq{Check}\vb{T}^{-1}\vb{T}=\begin{pmatrix}
+      \frac{1}{2}+\frac{1}{2}  & 0 & -\frac{1}{2}+\frac{1}{2} \\
+      0                        & 1 & 0                        \\
+      -\frac{1}{2}+\frac{1}{2} & 0 & \frac{1}{2}+\frac{1}{2}  \\
+    \end{pmatrix}=\vb{I}\qand\vb{T}\vb{T}^{-1}=\begin{pmatrix}
+      \frac{1}{2}+\frac{1}{2} & -\frac{i}{2}+\frac{i}{2} & 0 \\
+      \frac{i}{2}-\frac{i}{2} & \frac{1}{2}+\frac{1}{2}  & 0 \\
+      0                       & 0                        & 1 \\
+    \end{pmatrix}=\vb{I}\]
 
 
+  \[\vb{\hat{A}}^\dagger_{\vb{p}}\vb{J}\vb{\hat{A}}_{\vb{p}}=\vb{\hat{A}}^\dagger_{\vb{p}}\vb{T}\vb{T}^{-1}\vb{J}\vb{T}\vb{T}^{-1}\vb{\hat{A}}_{\vb{p}}=\vb{\hat{B}}^\dagger_{\vb{p}}(\vb{T}^{-1}\vb{J}\vb{T})\vb{\hat{B}}_{\vb{p}}\]
 
+  \begin{align*}
+    J_1 & =i\begin{pmatrix}
+      \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+      0                   & 0                  & 1 \\
+      \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+    \end{pmatrix}\begin{pmatrix}
+      0 & 0 & 0  \\
+      0 & 0 & -1 \\
+      0 & 1 & 0  \\
+    \end{pmatrix}\begin{pmatrix}
+      \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
+      \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
+      0                   & 1 & 0                   \\
+    \end{pmatrix}=i\begin{pmatrix}
+      \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+      0                   & 0                  & 1 \\
+      \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+    \end{pmatrix}\begin{pmatrix}
+      0                   & 0  & 0                   \\
+      0                   & -1 & 0                   \\
+      \frac{-i}{\sqrt{2}} & 0  & \frac{-i}{\sqrt{2}} \\
+    \end{pmatrix} \\
+        & =i\begin{pmatrix}
+      0                   & \frac{-i}{\sqrt{2}} & 0                   \\
+      \frac{-i}{\sqrt{2}} & 0                   & \frac{-i}{\sqrt{2}} \\
+      0                   & \frac{-i}{\sqrt{2}} & 0                   \\
+    \end{pmatrix}=\frac{1}{\sqrt{2}}\begin{pmatrix}
+      0 & 1 & 0 \\
+      1 & 0 & 1 \\
+      0 & 1 & 0 \\
+    \end{pmatrix}
+  \end{align*}
 
-\section*{Problem 13.2}
-\begin{quoting}
-  \hl{(a)  Confirm that eqn 13.29 is the appropriate matrix to boost a particle along the $z$-direction.}
+  \begin{align*}
+    J_0 & =i\begin{pmatrix}
+      \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+      0                   & 0                  & 1 \\
+      \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+    \end{pmatrix}\begin{pmatrix}
+      0  & 0 & 1 \\
+      0  & 0 & 0 \\
+      -1 & 0 & 0 \\
+    \end{pmatrix}\begin{pmatrix}
+      \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
+      \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
+      0                   & 1 & 0                   \\
+    \end{pmatrix}=i\begin{pmatrix}
+      \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+      0                   & 0                  & 1 \\
+      \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+    \end{pmatrix}\begin{pmatrix}
+      0                  & 1 & 0                   \\
+      0                  & 0 & 0                   \\
+      \frac{1}{\sqrt{2}} & 0 & \frac{-1}{\sqrt{2}} \\
+    \end{pmatrix} \\
+        & =i\begin{pmatrix}
+      0                  & \frac{-1}{\sqrt{2}} & 0                   \\
+      \frac{1}{\sqrt{2}} & 0                   & \frac{-1}{\sqrt{2}} \\
+      0                  & \frac{1}{\sqrt{2}}  & 0                   \\
+    \end{pmatrix}=\frac{i}{\sqrt{2}}\begin{pmatrix}
+      0 & -1 & 0  \\
+      1 & 0  & -1 \\
+      0 & 1  & 0  \\
+    \end{pmatrix}
+  \end{align*}
 
-  \hl{(b)  Show that the boosted vectors in eqn 13.30 are still correctly normalized.}
-
-  \hl{(c)  Consider the circular polarization vectors $\epsilon^{\mu*}_{\lambda=R}=-\frac{1}{\sqrt{2}}(0,1,i,0)$, $\epsilon^{\mu*}_{\lambda=L}=\frac{1}{\sqrt{2}}(0,1,-i,0)$,\\$\epsilon^{\mu*}_{\lambda=3}=-\frac{1}{\sqrt{2}}(0,0,0,1)$. Show that these are correctly normalized according to $g_{\mu\nu}\epsilon^{\mu*}_\lambda \epsilon^\nu_{\lambda'}=-\delta_{\lambda\lambda'}$.}
-\end{quoting}
-
-
-\begin{align*}
-  \qq*{(Part a)  Lorentz boost in the $z$-direction}t' & =\gamma\left(t-\frac{vz}{c^2}\right) \\
-  x'                                                   & =x                                   \\
-  y'                                                   & =y                                   \\
-  z'                                                   & =\gamma(z-vt)                        \\
-\end{align*}
-
-\begin{align*}
-  { \Lambda^\mu}_\nu(p)                                           & =\frac{1}{m}\begin{pmatrix}
-    E_{\vb{p}}    & 0 & 0 & \abs*{\vb{p}} \\
-    0             & m & 0 & 0             \\
-    0             & 0 & m & 0             \\
-    \abs*{\vb{p}} & 0 & 0 & E_{\vb{p}}    \\
-  \end{pmatrix}\qq{(Eqn. 13.29)}              \\
-  \qq*{Particle in its rest frame has momentum}p^\mu              & =\begin{pmatrix}
-    m & 0 & 0 & 0 \\
-  \end{pmatrix}\qq{(recall $c^2=1$)}                     \\
-  \frac{1}{m}\begin{pmatrix}
-    E_{\vb{p}}    & 0 & 0 & \abs*{\vb{p}} \\
-    0             & m & 0 & 0             \\
-    0             & 0 & m & 0             \\
-    \abs*{\vb{p}} & 0 & 0 & E_{\vb{p}}    \\
-  \end{pmatrix}\begin{pmatrix}
-    m \\ 0 \\ 0 \\ 0 \\
-  \end{pmatrix} & =\frac{1}{m}\begin{pmatrix}
-    mE_{\vb{p}} \\ 0 \\ 0 \\ m\abs*{\vb{p}} \\
-  \end{pmatrix}   =\begin{pmatrix}
-    E_{\vb{p}} \\ 0 \\ 0 \\ \abs*{\vb{p}} \\
-  \end{pmatrix} \\
-  \qq*{All of the momentum $\vb{p}$ is in the $z$-direction}      & \qquad\blacksquare                                                   \\
-\end{align*}
-
-\begin{align*}
-  \qq*{(Part b)} \epsilon_{\lambda=1}^*(p)=(0,1,0,0)\implies\epsilon_{\lambda=1}^*\cdot\epsilon_{\lambda=1}                             & =g_{11}\epsilon_{\lambda=1}^{1*}\epsilon_{\lambda=1}^1=(-1)(1)(1)
-  =-1                                                                                                                                                                                                                                                                                          \\
-  \epsilon_{\lambda=2}^*(p)=(0,0,1,0)\implies\epsilon_{\lambda=2}^*\cdot\epsilon_{\lambda=2}                                            & =g_{22}\epsilon_{\lambda=2}^{2*}\epsilon_{\lambda=2}^2=(-1)(1)(1)
-  =-1                                                                                                                                                                                                                                                                                          \\
-  \epsilon_{\lambda=3}^*(p)=(\sfrac{\abs*{\vb{p}}}{m},0,0,\sfrac{E_{\vb{p}}}{m})\implies\epsilon_{\lambda=3}^*\cdot\epsilon_{\lambda=3} & =g_{00}\epsilon_{\lambda=3}^{0*}\epsilon_{\lambda=3}^0+g_{33}\epsilon_{\lambda=3}^{3*}\epsilon_{\lambda=3}^3                                         \\
-                                                                                                                                        & =(1)\frac{{\abs*{\vb{p}}}^2}{m^2}+(-1)\frac{{E_{\vb{p}}}^2}{m^2}=\frac{{\abs*{\vb{p}}}^2-{E_{\vb{p}}}^2}{m^2}=\frac{-m^2}{m^2}=-1 \qquad\blacksquare \\
-\end{align*}
-\begin{align*}
-  \qq*{(Part c)} \epsilon_{\lambda=R}^*(p)=-\frac{1}{\sqrt{2}}(0,1,i,0)\implies \epsilon_{\lambda=R}^*\cdot\epsilon_{\lambda=R} & =g_{11}\epsilon_{\lambda=R}^{1*}\epsilon_{\lambda=R}^1+g_{22}\epsilon_{\lambda=R}^{2*}\epsilon_{\lambda=R}^2 \\
-                                                                                                                                & =(-1)\frac{-1}{\sqrt{2}}(1)\frac{-1}{\sqrt{2}}(1)+(-1)\frac{-1}{\sqrt{2}}(-i)\frac{-1}{\sqrt{2}}(i)=-1
-  \\
-  \epsilon_{\lambda=L}^*(p)=\frac{1}{\sqrt{2}}(0,1,-i,0)\implies \epsilon_{\lambda=L}^*\cdot\epsilon_{\lambda=L}                & =g_{11}\epsilon_{\lambda=L}^{1*}\epsilon_{\lambda=L}^1+g_{22}\epsilon_{\lambda=L}^{2*}\epsilon_{\lambda=L}^2 \\
-                                                                                                                                & =(-1)\frac{1}{\sqrt{2}}(1)\frac{1}{\sqrt{2}}(1)+(-1)\frac{1}{\sqrt{2}}(i)\frac{1}{\sqrt{2}}(-i)
-  =-1                                                                                                                                                                                                                                          \\
-  \epsilon_{\lambda=3}^*(p)=(0,0,0,1)\implies \epsilon_{\lambda=3}^*\cdot\epsilon_{\lambda=3}                                   & =g_{33}\epsilon_{\lambda=3}^{3*}\epsilon_{\lambda=3}^3=(-1)(1)(1)
-  =-1\qquad\blacksquare                                                                                                                                                                                                                        \\
-\end{align*}
-
-\section*{Problem 13.3}
-\begin{quoting}
-  \hl{Show that $P_L$ and $P_T$ are indeed projection operators by showing that $P^2=P$.}
-\end{quoting}
-\begin{align*}
-  \vb{X}           & =\vb{X}_L+\vb{X}_T             \\
-  X^i              & =X^i_L+X^i_T                   \\
-  X^i              & =P^{ij}_LX^j+P^{ij}_TX^j       \\
-  P^{ij}X^j        & =P^{ij}_LX^j+P^{ij}_TX^j       \\
-  P^{ij}X^j        & =(P^{ij}_L+P^{ij}_T)X^j        \\
-  P^{ij}           & =P^{ij}_L+P^{ij}_T=\delta_{ij} \\
-  \qq*{Clearly}P^2 & =P\qquad\blacksquare
-\end{align*}
+  \begin{align*}
+    J_{-1} & =i\begin{pmatrix}
+      \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+      0                   & 0                  & 1 \\
+      \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+    \end{pmatrix}\begin{pmatrix}
+      0 & -1 & 0 \\
+      1 & 0  & 0 \\
+      0 & 0  & 0 \\
+    \end{pmatrix}\begin{pmatrix}
+      \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}  \\
+      \frac{-i}{\sqrt{2}} & 0 & \frac{-i}{\sqrt{2}} \\
+      0                   & 1 & 0                   \\
+    \end{pmatrix}=i\begin{pmatrix}
+      \frac{-1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+      0                   & 0                  & 1 \\
+      \frac{1}{\sqrt{2}}  & \frac{i}{\sqrt{2}} & 0 \\
+    \end{pmatrix}\begin{pmatrix}
+      \frac{i}{\sqrt{2}}  & 0 & \frac{i}{\sqrt{2}} \\
+      \frac{-1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\
+      0                   & 0 & 0                  \\
+    \end{pmatrix} \\
+           & =i\begin{pmatrix}
+      -\frac{i}{2}-\frac{i}{2} & 0 & -\frac{i}{2}+\frac{i}{2} \\
+      0                        & 0 & 0                        \\
+      \frac{i}{2}-\frac{i}{2}  & 0 & \frac{i}{2}+\frac{i}{2}  \\
+    \end{pmatrix}=\begin{pmatrix}
+      1 & 0 & 0  \\
+      0 & 0 & 0  \\
+      0 & 0 & -1 \\
+    \end{pmatrix}
+  \end{align*}
+\end{proof}
 
 
 
-\section*{Problem 13.4}
-\begin{quoting}
-  \hl{The Lagrangian for electromagnetism in vacuo is $\mathcal{L}=-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}$. Show that this can be rewritten as}
+\begin{prob}
+  (a)  Confirm that eqn 13.29 is the appropriate matrix to boost a particle along the $z$-direction.
+
+  (b)  Show that the boosted vectors in eqn 13.30 are still correctly normalized.
+
+  (c)  Consider the circular polarization vectors $\epsilon^{\mu*}_{\lambda=R}=-\frac{1}{\sqrt{2}}(0,1,i,0)$, $\epsilon^{\mu*}_{\lambda=L}=\frac{1}{\sqrt{2}}(0,1,-i,0)$,\\$\epsilon^{\mu*}_{\lambda=3}=-\frac{1}{\sqrt{2}}(0,0,0,1)$. Show that these are correctly normalized according to $g_{\mu\nu}\epsilon^{\mu*}_\lambda \epsilon^\nu_{\lambda'}=-\delta_{\lambda\lambda'}$.
+\end{prob}
+\begin{proof}Part (a)
+  \begin{align*}
+    \qq*{Lorentz boost in the $z$-direction}t' & =\gamma\left(t-\frac{vz}{c^2}\right) \\
+    x'                                         & =x                                   \\
+    y'                                         & =y                                   \\
+    z'                                         & =\gamma(z-vt)                        \\
+  \end{align*}
+
+  \begin{align*}
+    { \Lambda^\mu}_\nu(p)                                           & =\frac{1}{m}\begin{pmatrix}
+      E_{\vb{p}}    & 0 & 0 & \abs*{\vb{p}} \\
+      0             & m & 0 & 0             \\
+      0             & 0 & m & 0             \\
+      \abs*{\vb{p}} & 0 & 0 & E_{\vb{p}}    \\
+    \end{pmatrix}\qq{(Eqn. 13.29)}              \\
+    \qq*{Particle in its rest frame has momentum}p^\mu              & =\begin{pmatrix}
+      m & 0 & 0 & 0 \\
+    \end{pmatrix}\qq{(recall $c^2=1$)}                     \\
+    \frac{1}{m}\begin{pmatrix}
+      E_{\vb{p}}    & 0 & 0 & \abs*{\vb{p}} \\
+      0             & m & 0 & 0             \\
+      0             & 0 & m & 0             \\
+      \abs*{\vb{p}} & 0 & 0 & E_{\vb{p}}    \\
+    \end{pmatrix}\begin{pmatrix}
+      m \\ 0 \\ 0 \\ 0 \\
+    \end{pmatrix} & =\frac{1}{m}\begin{pmatrix}
+      mE_{\vb{p}} \\ 0 \\ 0 \\ m\abs*{\vb{p}} \\
+    \end{pmatrix}   =\begin{pmatrix}
+      E_{\vb{p}} \\ 0 \\ 0 \\ \abs*{\vb{p}} \\
+    \end{pmatrix} \\
+    \qq*{All of the momentum $\vb{p}$ is in the $z$-direction}                                                                             \\
+  \end{align*}
+\end{proof}
+
+\begin{proof}Part (b)
+
+
+
+  \begin{align*}
+    \qq*{} \epsilon_{\lambda=1}^*(p)=(0,1,0,0)\implies\epsilon_{\lambda=1}^*\cdot\epsilon_{\lambda=1}                                     & =g_{11}\epsilon_{\lambda=1}^{1*}\epsilon_{\lambda=1}^1=(-1)(1)(1)
+    =-1                                                                                                                                                                                                                                                                       \\
+    \epsilon_{\lambda=2}^*(p)=(0,0,1,0)\implies\epsilon_{\lambda=2}^*\cdot\epsilon_{\lambda=2}                                            & =g_{22}\epsilon_{\lambda=2}^{2*}\epsilon_{\lambda=2}^2=(-1)(1)(1)
+    =-1                                                                                                                                                                                                                                                                       \\
+    \epsilon_{\lambda=3}^*(p)=(\sfrac{\abs*{\vb{p}}}{m},0,0,\sfrac{E_{\vb{p}}}{m})\implies\epsilon_{\lambda=3}^*\cdot\epsilon_{\lambda=3} & =g_{00}\epsilon_{\lambda=3}^{0*}\epsilon_{\lambda=3}^0+g_{33}\epsilon_{\lambda=3}^{3*}\epsilon_{\lambda=3}^3                      \\
+                                                                                                                                          & =(1)\frac{{\abs*{\vb{p}}}^2}{m^2}+(-1)\frac{{E_{\vb{p}}}^2}{m^2}=\frac{{\abs*{\vb{p}}}^2-{E_{\vb{p}}}^2}{m^2}=\frac{-m^2}{m^2}=-1 \\
+  \end{align*}
+\end{proof}
+
+\begin{proof}Part (c)
+
+
+
+  \begin{align*}
+    \epsilon_{\lambda=R}^*(p)=-\frac{1}{\sqrt{2}}(0,1,i,0)\implies \epsilon_{\lambda=R}^*\cdot\epsilon_{\lambda=R} & =g_{11}\epsilon_{\lambda=R}^{1*}\epsilon_{\lambda=R}^1+g_{22}\epsilon_{\lambda=R}^{2*}\epsilon_{\lambda=R}^2 \\
+                                                                                                                   & =(-1)\frac{-1}{\sqrt{2}}(1)\frac{-1}{\sqrt{2}}(1)+(-1)\frac{-1}{\sqrt{2}}(-i)\frac{-1}{\sqrt{2}}(i)=-1
+    \\
+    \epsilon_{\lambda=L}^*(p)=\frac{1}{\sqrt{2}}(0,1,-i,0)\implies \epsilon_{\lambda=L}^*\cdot\epsilon_{\lambda=L} & =g_{11}\epsilon_{\lambda=L}^{1*}\epsilon_{\lambda=L}^1+g_{22}\epsilon_{\lambda=L}^{2*}\epsilon_{\lambda=L}^2 \\
+                                                                                                                   & =(-1)\frac{1}{\sqrt{2}}(1)\frac{1}{\sqrt{2}}(1)+(-1)\frac{1}{\sqrt{2}}(i)\frac{1}{\sqrt{2}}(-i)
+    =-1                                                                                                                                                                                                                           \\
+    \epsilon_{\lambda=3}^*(p)=(0,0,0,1)\implies \epsilon_{\lambda=3}^*\cdot\epsilon_{\lambda=3}                    & =g_{33}\epsilon_{\lambda=3}^{3*}\epsilon_{\lambda=3}^3=(-1)(1)(1)
+    =-1                                                                                                                                                                                                                           \\
+  \end{align*}
+\end{proof}
+
+\begin{prob}
+  Show that $P_L$ and $P_T$ are indeed projection operators by showing that $P^2=P$.
+\end{prob}
+\begin{proof}
+  \begin{align*}
+    \vb{X}           & =\vb{X}_L+\vb{X}_T             \\
+    X^i              & =X^i_L+X^i_T                   \\
+    X^i              & =P^{ij}_LX^j+P^{ij}_TX^j       \\
+    P^{ij}X^j        & =P^{ij}_LX^j+P^{ij}_TX^j       \\
+    P^{ij}X^j        & =(P^{ij}_L+P^{ij}_T)X^j        \\
+    P^{ij}           & =P^{ij}_L+P^{ij}_T=\delta_{ij} \\
+    \qq*{Clearly}P^2 & =P
+  \end{align*}
+\end{proof}
+
+\begin{prob}
+  The Lagrangian for electromagnetism in vacuo is $\mathcal{L}=-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}$. Show that this can be rewritten as
   \[\mathcal{L}=-\frac{1}{2}\left(\partial_\mu A_\nu\partial^\mu A^\nu-\partial_\mu A_\nu\partial^\nu A^\mu\right)\qcomma\]
-  \hl{and hence show that using the transverse projection operator, it may be expressed as}
+  and hence show that using the transverse projection operator, it may be expressed as
 
   \[\mathcal{L}=\frac{1}{2}A^\mu P^T_{\mu\nu}\partial^2A^\nu.\]
-  \hl{This shows that $\mathcal{L}$ only includes the transverse components of the field, squaring with the idea of electromagnetic waves only representing vibrations transverse to the direction of propagation.}
-\end{quoting}
+  This shows that $\mathcal{L}$ only includes the transverse components of the field, squaring with the idea of electromagnetic waves only representing vibrations transverse to the direction of propagation.
+\end{prob}
 
-
+\begin{proof}First part.
+  \begin{align*}
+    \qq*{From Problem 10.4}\mathcal{L} & =-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}                                                                                                                                              \\
+                                       & =-\frac{1}{4}\pqty{\partial_\mu A_\nu - \partial_\nu A_\mu}\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu}                                                                        \\
+                                       & =-\frac{1}{4}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu - \partial_\nu A_\mu \partial^\mu A^\nu+\partial_\nu A_\mu \partial^\nu A^\mu} \\
+    \qq*{Relabel sums}                 & =-\frac{1}{4}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu - \partial_\mu A_\nu \partial^\nu A^\mu+\partial_\mu A_\nu \partial^\mu A^\nu} \\
+                                       & =-\frac{1}{2}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu} \qq{via relabeling summations above}                                          \\
+  \end{align*}
+\end{proof}
 \begin{align*}
-  \qq*{From Problem 10.4}\mathcal{L} & =-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}                                                                                                                                              \\
-                                     & =-\frac{1}{4}\pqty{\partial_\mu A_\nu - \partial_\nu A_\mu}\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu}                                                                        \\
-                                     & =-\frac{1}{4}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu - \partial_\nu A_\mu \partial^\mu A^\nu+\partial_\nu A_\mu \partial^\nu A^\mu} \\
-  \qq*{Relabel sums}                 & =-\frac{1}{4}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu - \partial_\mu A_\nu \partial^\nu A^\mu+\partial_\mu A_\nu \partial^\mu A^\nu} \\
-                                     & =-\frac{1}{2}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu} \qq{via relabeling summations above}\qquad\blacksquare                        \\
+  \qq*{Remember}\partial_\mu\equiv\pdv{x^\mu} & =\pqty{\pdv{x^0},\pdv{x^1},\pdv{x^2},\pdv{x^3}}=\pqty{\pdv{t},\grad}=\pqty{\pdv{t},\pdv{x},\pdv{y},\pdv{z}}        \\
+  \qq*{Remember}\partial^\mu\equiv\pdv{x^\mu} & =\pqty{\pdv{x^0},-\pdv{x^1},-\pdv{x^2},-\pdv{x^3}}=\pqty{\pdv{t},-\grad}=\pqty{\pdv{t},-\pdv{x},-\pdv{y},-\pdv{z}} \\
+  a_\mu                                       & =g_{\mu\nu}a^\nu                                                                                                   \\
+  g_{\mu\nu}                                  & =g^{\mu\nu}                                                                                                        \\
+  A^\mu                                       & =\pqty{V,\vb{A}}=\pqty{V,A^1,A^2,A^3}                                                                              \\
+  A_\mu                                       & =\pqty{V,-\vb{A}}=\pqty{V,-A^1,-A^2,-A^3}                                                                          \\
+  \qq*{Recall} d (uv)                         & =  (du)v +  u (dv)                                                                                                 \\
+  \qq*{Integration by parts} uv\eval          & =\int  v du + \int u dv                                                                                            \\
+  \qq*{Integration by parts} udv\eval         & =\int dv (du) + \int u d(dv)                                                                                       \\
 \end{align*}
 
 \begin{align*}
-  \qq*{Recall} S & =\int\dd[4]{x}\mathcal {L}                                                                                    \\
-                 & =-\frac{1}{2}\int\dd[4]{x}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu} \\
+  \mathcal{L} & =-\frac{1}{2}\pqty{\pdv{A_\nu}{x_\mu}\pdv{A^\nu}{x^\mu}+\pdv{A_\nu}{x_\mu}\pdv{A^\mu}{x^\nu}  } \\
 \end{align*}
 
 \begin{align*}
-  \qq*{Remember}\partial_\mu\equiv\pdv{x^\mu} & =\pqty{\pdv{x^0},\pdv{x^1},\pdv{x^2},\pdv{x^3}}=\pqty{\pdv{t},\grad}=\pqty{\pdv{t},\pdv{x},\pdv{y},\pdv{z}}     \\
-  \qq*{Remember}\partial^\mu\equiv\pdv{x^\mu} & =\pqty{\pdv{x^0},\pdv{x^1},\pdv{x^2},\pdv{x^3}}=\pqty{\pdv{t},-\grad}=\pqty{\pdv{t},-\pdv{x},-\pdv{y},-\pdv{z}} \\
-  a_\mu                                       & =g_{\mu\nu}a^\nu                                                                                                \\
-  g_{\mu\nu}                                  & =g^{\mu\nu}                                                                                                     \\
+  \partial_\mu (A_\nu \partial^\mu A^\nu)          & =\partial_\mu A_\nu \partial^\mu A^\nu + A_\nu \partial_\mu\partial^\mu A^\nu         \\
+  \qq*{Hence}\partial_\mu A_\nu \partial^\mu A^\nu & = \partial_\mu (A_\nu \partial^\mu A^\nu) - A_\nu \partial_\mu\partial^\mu A^\nu      \\
+  \partial_\mu (A_\nu \partial^\nu A^\mu)          & =\partial_\mu A_\nu \partial^\nu A^\mu + A_\nu \partial_\mu\partial^\nu A^\mu         \\
+  \qq*{Hence}\partial_\mu A_\nu \partial^\nu A^\mu & =\partial_\mu (A_\nu \partial^\nu A^\mu) - A_\nu \partial_\mu\partial^\nu A^\mu       \\
+  \partial^\nu ((\partial_\mu A_\nu)  A^\mu)       & =(\partial^\nu\partial_\mu A_\nu ) A^\mu + \partial_\mu A_\nu \partial^\nu A^\mu      \\
+  \qq*{Hence}\partial_\mu A_\nu \partial^\nu A^\mu & =\partial^\nu ((\partial_\mu A_\nu)  A^\mu) - (\partial^\nu\partial_\mu A_\nu ) A^\mu \\
 \end{align*}
+
+
+\begin{proof}Second part.
+
+  \begin{align*}
+    \qq*{Recall} S & =\int\dd[4]{x}\mathcal {L}                                                                                                                                                                                                                       \\
+                   & =-\frac{1}{2}\int\dd[4]{x}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu}                                                                                                                                    \\
+                   & =-\frac{1}{2}\int\dd[4]{x}\bqty{\partial_\mu (A_\nu \partial^\mu A^\nu) - A_\nu \partial_\mu\partial^\mu A^\nu -\partial_\mu (A_\nu \partial^\nu A^\mu) + A_\nu \partial_\mu\partial^\nu A^\mu}                                                  \\
+                   & =\frac{1}{2}\int\dd[4]{x}\bqty{A_\nu \partial_\mu\partial^\mu A^\nu - A_\nu \partial_\mu\partial^\nu A^\mu}                                                                                                                                      \\
+                   & =\frac{1}{2}\int\dd[4]{x}\bqty{A_\nu \partial^2 A^\nu - A_\nu \frac{\partial_\mu\partial^\nu}{\partial^2} \partial^2 A^\mu}=\frac{1}{2}\int\dd[4]{x}A_\nu\bqty{\partial^2 A^\nu  - \frac{\partial_\mu\partial^\nu}{\partial^2}\partial^2 A^\mu } \\
+  \end{align*}
+
+  \begin{align*}
+    \qq*{Recall} S & =\int\dd[4]{x}\mathcal {L}                                                                                                                                                                            \\
+                   & =-\frac{1}{2}\int\dd[4]{x}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu}                                                                                         \\
+                   & =-\frac{1}{2}\int\dd[4]{x}\bqty{\partial_\mu (A_\nu \partial^\mu A^\nu) - A_\nu \partial_\mu\partial^\mu A^\nu -\partial^\nu ((\partial_\mu A_\nu)  A^\mu) + (\partial^\nu\partial_\mu A_\nu ) A^\mu} \\
+                   & =\frac{1}{2}\int\dd[4]{x}\bqty{A_\nu \partial_\mu\partial^\mu A^\nu - (\partial^\nu\partial_\mu A_\nu ) A^\mu }                                                                                       \\
+                   & =\frac{1}{2}\int\dd[4]{x}\bqty{A_\nu \partial^2 A^\nu -  A^\mu (\partial^\nu\partial_\mu A_\nu )}                                                                                                     \\
+                   & =\frac{1}{2}\int\dd[4]{x}\bqty{g_{\nu\mu}A^\mu \partial^2 A^\nu -  A^\mu (\partial^\nu\partial_\mu A_\nu )}\qq{where}A_\nu=g_{\nu\mu}A^\mu                                                            \\
+  \end{align*}
+
+\end{proof}
 
 \end{document}
