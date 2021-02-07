@@ -348,48 +348,51 @@
 \begin{align*}
   \qq*{Remember}\partial_\mu\equiv\pdv{x^\mu} & =\pqty{\pdv{x^0},\pdv{x^1},\pdv{x^2},\pdv{x^3}}=\pqty{\pdv{t},\grad}=\pqty{\pdv{t},\pdv{x},\pdv{y},\pdv{z}}        \\
   \qq*{Remember}\partial^\mu\equiv\pdv{x^\mu} & =\pqty{\pdv{x^0},-\pdv{x^1},-\pdv{x^2},-\pdv{x^3}}=\pqty{\pdv{t},-\grad}=\pqty{\pdv{t},-\pdv{x},-\pdv{y},-\pdv{z}} \\
-  a_\mu                                       & =g_{\mu\nu}a^\nu                                                                                                   \\
-  g_{\mu\nu}                                  & =g^{\mu\nu}                                                                                                        \\
-  A^\mu                                       & =\pqty{V,\vb{A}}=\pqty{V,A^1,A^2,A^3}                                                                              \\
-  A_\mu                                       & =\pqty{V,-\vb{A}}=\pqty{V,-A^1,-A^2,-A^3}                                                                          \\
-  \qq*{Recall} d (uv)                         & =  (du)v +  u (dv)                                                                                                 \\
-  \qq*{Integration by parts} uv\eval          & =\int  v du + \int u dv                                                                                            \\
-  \qq*{Integration by parts} udv\eval         & =\int dv (du) + \int u d(dv)                                                                                       \\
 \end{align*}
 
 \begin{align*}
-  \mathcal{L} & =-\frac{1}{2}\pqty{\pdv{A_\nu}{x_\mu}\pdv{A^\nu}{x^\mu}+\pdv{A_\nu}{x_\mu}\pdv{A^\mu}{x^\nu}  } \\
+  a_\mu                               & =g_{\mu\nu}a^\nu                          \\
+  g_{\mu\nu}                          & =g^{\mu\nu}                               \\
+  A^\mu                               & =\pqty{V,\vb{A}}=\pqty{V,A^1,A^2,A^3}     \\
+  A_\mu                               & =\pqty{V,-\vb{A}}=\pqty{V,-A^1,-A^2,-A^3} \\
+  \partial^2                          & =\partial_\mu \partial^\mu                \\
+  \qq*{Recall} d (uv)                 & =  (du)v +  u (dv)                        \\
+  \qq*{Integration by parts} uv\eval  & =\int  v du + \int u dv                   \\
+  \qq*{Integration by parts} udv\eval & =\int dv (du) + \int u d(dv)              \\
 \end{align*}
 
 \begin{align*}
-  \partial_\mu (A_\nu \partial^\mu A^\nu)          & =\partial_\mu A_\nu \partial^\mu A^\nu + A_\nu \partial_\mu\partial^\mu A^\nu         \\
-  \qq*{Hence}\partial_\mu A_\nu \partial^\mu A^\nu & = \partial_\mu (A_\nu \partial^\mu A^\nu) - A_\nu \partial_\mu\partial^\mu A^\nu      \\
-  \partial_\mu (A_\nu \partial^\nu A^\mu)          & =\partial_\mu A_\nu \partial^\nu A^\mu + A_\nu \partial_\mu\partial^\nu A^\mu         \\
-  \qq*{Hence}\partial_\mu A_\nu \partial^\nu A^\mu & =\partial_\mu (A_\nu \partial^\nu A^\mu) - A_\nu \partial_\mu\partial^\nu A^\mu       \\
-  \partial^\nu ((\partial_\mu A_\nu)  A^\mu)       & =(\partial^\nu\partial_\mu A_\nu ) A^\mu + \partial_\mu A_\nu \partial^\nu A^\mu      \\
-  \qq*{Hence}\partial_\mu A_\nu \partial^\nu A^\mu & =\partial^\nu ((\partial_\mu A_\nu)  A^\mu) - (\partial^\nu\partial_\mu A_\nu ) A^\mu \\
+  \mathcal{L} & =-\frac{1}{2}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu} \\
+              & =-\frac{1}{2}\pqty{\pdv{A_\nu}{x_\mu}\pdv{A^\nu}{x^\mu}+\pdv{A_\nu}{x_\mu}\pdv{A^\mu}{x^\nu}  }  \\
+\end{align*}
+
+\begin{align*}
+  \qq*{Take}A_\nu \partial^\mu A^\nu               &                                                                                  \\
+  \partial_\mu (A_\nu \partial^\mu A^\nu)          & =\partial_\mu A_\nu \partial^\mu A^\nu + A_\nu \partial_\mu\partial^\mu A^\nu    \\
+  \qq*{Hence}\partial_\mu A_\nu \partial^\mu A^\nu & = \partial_\mu (A_\nu \partial^\mu A^\nu) - A_\nu \partial_\mu\partial^\mu A^\nu \\
+  \qq*{Take}A_\nu \partial^\nu A^\mu               &                                                                                  \\
+  \partial_\mu (A_\nu \partial^\nu A^\mu)          & =\partial_\mu A_\nu \partial^\nu A^\mu + A_\nu \partial_\mu\partial^\nu A^\mu    \\
+  \qq*{Hence}\partial_\mu A_\nu \partial^\nu A^\mu & =\partial_\mu (A_\nu \partial^\nu A^\mu) - A_\nu \partial_\mu\partial^\nu A^\mu  \\
 \end{align*}
 
 
 \begin{proof}Second part.
 
   \begin{align*}
-    \qq*{Recall} S & =\int\dd[4]{x}\mathcal {L}                                                                                                                                                                                                                       \\
-                   & =-\frac{1}{2}\int\dd[4]{x}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu}                                                                                                                                    \\
-                   & =-\frac{1}{2}\int\dd[4]{x}\bqty{\partial_\mu (A_\nu \partial^\mu A^\nu) - A_\nu \partial_\mu\partial^\mu A^\nu -\partial_\mu (A_\nu \partial^\nu A^\mu) + A_\nu \partial_\mu\partial^\nu A^\mu}                                                  \\
-                   & =\frac{1}{2}\int\dd[4]{x}\bqty{A_\nu \partial_\mu\partial^\mu A^\nu - A_\nu \partial_\mu\partial^\nu A^\mu}                                                                                                                                      \\
-                   & =\frac{1}{2}\int\dd[4]{x}\bqty{A_\nu \partial^2 A^\nu - A_\nu \frac{\partial_\mu\partial^\nu}{\partial^2} \partial^2 A^\mu}=\frac{1}{2}\int\dd[4]{x}A_\nu\bqty{\partial^2 A^\nu  - \frac{\partial_\mu\partial^\nu}{\partial^2}\partial^2 A^\mu } \\
+    \qq*{Recall} S & =\int\dd[4]{x}\mathcal {L}                                                                                                                                                                       \\
+                   & =-\frac{1}{2}\int\dd[4]{x}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu}                                                                                    \\
+                   & =-\frac{1}{2}\int\dd[4]{x}\bqty{\partial_\mu (A_\nu \partial^\mu A^\nu) - A_\nu \partial_\mu\partial^\mu A^\nu - \partial_\mu (A_\nu \partial^\nu A^\mu) + A_\nu \partial_\mu\partial^\nu A^\mu} \\
+                   & =\frac{1}{2}\int\dd[4]{x}\bqty{A_\nu \partial_\mu\partial^\mu A^\nu - A_\nu \partial_\mu\partial^\nu A^\mu}                                                                                      \\
+                   & =\frac{1}{2}\int\dd[4]{x}\bqty{A_\nu \partial^2 A^\nu - A_\sigma \partial^\sigma\partial_\nu A^\nu}\qq{relabeling}\nu\rightarrow\sigma \qand  \mu\rightarrow\nu                                  \\
+                   & =\frac{1}{2}\int\dd[4]{x}\bqty{g_{\mu\nu} A^\mu \partial^2 A^\nu - g_{\mu\sigma}A^\mu g^{\mu\sigma}\partial_\mu\partial_\nu A^\nu}                                                               \\
+                   & =\frac{1}{2}\int\dd[4]{x}A^\mu\bqty{g_{\mu\nu}  \partial^2 A^\nu - g_{\mu\sigma} g^{\mu\sigma}\partial_\mu\partial_\nu A^\nu}                                                                    \\
+                   & =\frac{1}{2}\int\dd[4]{x}A^\mu\bqty{g_{\mu\nu}  - \frac{\partial_\mu\partial_\nu}{\partial^2} } \partial^2 A^\nu                                                                                 \\
   \end{align*}
 
   \begin{align*}
-    \qq*{Recall} S & =\int\dd[4]{x}\mathcal {L}                                                                                                                                                                            \\
-                   & =-\frac{1}{2}\int\dd[4]{x}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu}                                                                                         \\
-                   & =-\frac{1}{2}\int\dd[4]{x}\bqty{\partial_\mu (A_\nu \partial^\mu A^\nu) - A_\nu \partial_\mu\partial^\mu A^\nu -\partial^\nu ((\partial_\mu A_\nu)  A^\mu) + (\partial^\nu\partial_\mu A_\nu ) A^\mu} \\
-                   & =\frac{1}{2}\int\dd[4]{x}\bqty{A_\nu \partial_\mu\partial^\mu A^\nu - (\partial^\nu\partial_\mu A_\nu ) A^\mu }                                                                                       \\
-                   & =\frac{1}{2}\int\dd[4]{x}\bqty{A_\nu \partial^2 A^\nu -  A^\mu (\partial^\nu\partial_\mu A_\nu )}                                                                                                     \\
-                   & =\frac{1}{2}\int\dd[4]{x}\bqty{g_{\nu\mu}A^\mu \partial^2 A^\nu -  A^\mu (\partial^\nu\partial_\mu A_\nu )}\qq{where}A_\nu=g_{\nu\mu}A^\mu                                                            \\
+    \mathcal{L} & =\frac{1}{2}A^\tau P^T_{\mu\nu}\partial^2 A^\nu\qq{where}P^T_{\mu\nu}=g_{\mu\nu}  - \frac{\partial_\mu\partial_\nu}{\partial^2} \qq{is the projection operator.}
   \end{align*}
-
+  Lots of index gymnastics here!
 \end{proof}
 
 \end{document}
