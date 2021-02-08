@@ -1,0 +1,55 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{amsmath,amsthm,amssymb,physics,xfrac,nicefrac}
+\usepackage{standalone}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{xcolor, soul}
+\usepackage{enumitem}
+
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}[section]
+\renewcommand{\qedsymbol}{\(\blacksquare\)}
+ 
+\setcounter{section}{14}
+\title{Quantum Field Theory Problem Set}
+\author{John Bortins}
+ 
+\begin{document}
+
+\maketitle{}
+
+
+\begin{prob}
+  Fill in the algebra leading to eqn 14.32.
+\end{prob}
+
+\begin{proof}
+\end{proof}
+
+
+
+\begin{prob}
+  \emph{A demonstration that the photon has spin-1, with only two spin polarizations.}
+
+  A photon \(\gamma\) propagates with momentum \(q^\mu=(|\vb*{q}|,0,0,|\vb*{q}|)\). Working with a basis where the two transverse photon polarizations are \(\epsilon^\mu_{\lambda=1}(q)=(0,1,0,0)\) and \(\epsilon^\mu_{\lambda=2}(q)=(0,0,1,0)\), it may be shown, using Noether's theorem, that the operator \(\hat{S}^z\), whose eigenvalue is the \(z-\)component spin angular momentum of the photon, obeys the commutator relation \[\bqty{\hat{S}^z,\hat{a}^\dagger_{\vb*{q}\lambda}}=\text{i}\epsilon^{\mu=1*}_\lambda(q)\hat{a}^\dagger_{\vb*{q}\lambda=2}-\text{i}\epsilon^{\mu=2*}_\lambda(q)\hat{a}^\dagger_{\vb*{q}\lambda=1}.\qq{(14.36)}\]
+
+  (i) Define creation operatorsfor the circularpolatizations via
+  \begin{align*}\hat{b^\dagger_{\vb*{q}\text{R}}}&=-\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}+\text{i}\hat{a}^\dagger_{\vb*{q}2}},\\\hat{b^\dagger_{\vb*{q}\text{L}}}&=\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}-\text{i}\hat{a}^\dagger_{\vb*{q}2}}.\qquad(14.37) \end{align*}
+
+
+  Show that\begin{align*}\bqty{\hat{S}^z,\hat{b}^\dagger_{\vb*{q}\text{R}}}&=\hat{b}^\dagger_{\vb*{q}\text{R}},\\\bqty{\hat{S}^z,\hat{b}^\dagger_{\vb*{q}\text{L}}}&=-\hat{b}^\dagger_{\vb*{q}\text{L}}.\qquad(14.38)\end{align*}
+
+  (ii) Consider the opertion of \(\hat{S}^z\) on a state \(\ket*{\gamma_{\vb*{q}\lambda}}=\hat{b}^\dagger_{\vb*{q}\lambda}\ket*{0}\) containing a single photon propagating along \(z\):\[\hat{S}^z\ket*{\gamma\lambda}=\hat{S}^z\hat{b}^\dagger_{\vb*{q}\lambda}\ket*{0}\qcomma\lambda=\text{R, L.}\qquad(14.39)\]
+
+  Use the results of (i) to argue that the projection of the photon spin along its direction of propagation must be \(\hat{S}^z=\pm 1.\)
+
+  \emph{See Bjorken and Drell Chapter 14 for the full version of this argument.}
+\end{prob}
+
+\begin{proof}
+\end{proof}
+
+Errata fixed
+\[\mathcal{L}=-\frac{1}{4}\pqty{\partial_\mu A_\nu-\partial_\nu A_\mu}\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu}-J^\mu_{\text{em}}A_\mu \qquad(14.12)\]
+
+\end{document}
