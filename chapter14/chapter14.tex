@@ -22,8 +22,35 @@
 \begin{prob}
   Fill in the algebra leading to eqn 14.32.
 \end{prob}
+The canonical quantization machinery
+
+Step I: Write down a classical Lagrangian density in terms of fields.\[\mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}=-\frac{1}{4}\pqty{\partial_\mu A_\nu-\partial_\nu A_\mu}\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu}\]
+
+Step II: Calculate the momentum density and Hamiltonian density in terms of fields.
+
+We chose the Lorenz gauge \(\partial_\mu A^\mu=0.\) With \(A^0=0\) we see \(\partial_i A^i=\div \vb*{A}=0.\)
+\begin{align*}
+  \Pi^{\mu\nu} & =\pdv{\mathcal{L}}{(\partial_\mu A_\nu)}=-F^{\mu\nu}=-\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu} \\
+  \Pi^{00}     & =-\pqty{\partial^0 A^0-\partial^0 A^0}=0                                                           \\
+  \Pi^{0j}     & =-\pqty{\partial^0 A^j-\partial^j A^0}=-\partial^0 A^j=-\pdv{A^j}{x_0}=-\pdv{A^j}{t}=-E^j          \\
+  \Pi^{i0}     & =-\pqty{\partial^i A^0-\partial^0 A^i}= \partial^0 A^i=\pdv{A^i}{x_0}=\pdv{A^i}{t}=E^i             \\
+\end{align*}
+\begin{align*}
+  \mathcal{H} & ={\pdv{\mathcal{L}}{(\partial_0 A_\nu)}}   (\partial_0 A_\nu)-\mathcal{L} \\
+  \mathcal{H} & =\frac{1}{2}\pqty{\vb{E}^2+\vb{B}^2}                                      \\
+\end{align*}
 
 \begin{proof}
+
+  Step III: Treat the fields and momentum density as operators. Impose commutation relations to make all quantum mechanical.
+
+  Step IV: Expand the fields as creation and annihilation operators.
+
+  Step V: Apply the \emph{normal ordering} interpretation.
+
+  \begin{align*}
+  \end{align*}
+
 \end{proof}
 
 
@@ -33,7 +60,7 @@
 
   A photon \(\gamma\) propagates with momentum \(q^\mu=(|\vb*{q}|,0,0,|\vb*{q}|)\). Working with a basis where the two transverse photon polarizations are \(\epsilon^\mu_{\lambda=1}(q)=(0,1,0,0)\) and \(\epsilon^\mu_{\lambda=2}(q)=(0,0,1,0)\), it may be shown, using Noether's theorem, that the operator \(\hat{S}^z\), whose eigenvalue is the \(z-\)component spin angular momentum of the photon, obeys the commutator relation \[\bqty{\hat{S}^z,\hat{a}^\dagger_{\vb*{q}\lambda}}=\text{i}\epsilon^{\mu=1*}_\lambda(q)\hat{a}^\dagger_{\vb*{q}\lambda=2}-\text{i}\epsilon^{\mu=2*}_\lambda(q)\hat{a}^\dagger_{\vb*{q}\lambda=1}.\qq{(14.36)}\]
 
-  (i) Define creation operatorsfor the circularpolatizations via
+  (i) Define creation operators for the circular polatizations via
   \begin{align*}\hat{b^\dagger_{\vb*{q}\text{R}}}&=-\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}+\text{i}\hat{a}^\dagger_{\vb*{q}2}},\\\hat{b^\dagger_{\vb*{q}\text{L}}}&=\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}-\text{i}\hat{a}^\dagger_{\vb*{q}2}}.\qquad(14.37) \end{align*}
 
 
@@ -46,7 +73,22 @@
   \emph{See Bjorken and Drell Chapter 14 for the full version of this argument.}
 \end{prob}
 
-\begin{proof}
+\begin{proof}Part (i)
+  \begin{align*}
+    \bqty{\hat{S}^z,\hat{b}^\dagger_{\vb*{q}R}} & =\bqty{\hat{S}^z,-\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}+\text{i}\hat{a}^\dagger_{\vb*{q}2}}}=-\frac{1}{\sqrt{2}}\bqty{\hat{S}^z,\hat{a}^\dagger_{\vb*{q}1}}-\frac{\text{i}}{\sqrt{2}}\bqty{\hat{S}^z,\hat{a}^\dagger_{\vb*{q}2}}                                                                                  \\
+                                                & =-\frac{1}{\sqrt{2}}\bqty{\text{i}\epsilon^{\mu=1*}_1(q)\hat{a}^\dagger_{\vb*{q}\lambda=2}-\text{i}\epsilon^{\mu=2*}_1(q)\hat{a}^\dagger_{\vb*{q}\lambda=1}}-\frac{\text{i}}{\sqrt{2}}\bqty{\text{i}\epsilon^{\mu=1*}_2(q)\hat{a}^\dagger_{\vb*{q}\lambda=2}-\text{i}\epsilon^{\mu=2*}_2(q)\hat{a}^\dagger_{\vb*{q}\lambda=1}} \\
+                                                & =-\frac{1}{\sqrt{2}}\bqty{\text{i}\hat{a}^\dagger_{\vb*{q}2}+\hat{a}^\dagger_{\vb*{q}1}}=-\frac{1}{\sqrt{2}}\bqty{\hat{a}^\dagger_{\vb*{q}1}+\text{i}\hat{a}^\dagger_{\vb*{q}2}}                                                                                                                                               \\
+                                                & =\hat{b^\dagger_{\vb*{q}\text{R}}}
+  \end{align*}
+  \begin{align*}
+    \bqty{\hat{S}^z,\hat{b}^\dagger_{\vb*{q}L}} & =\bqty{\hat{S}^z,\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}-\text{i}\hat{a}^\dagger_{\vb*{q}2}}}=\frac{1}{\sqrt{2}}\bqty{\hat{S}^z,\hat{a}^\dagger_{\vb*{q}1}}-\frac{\text{i}}{\sqrt{2}}\bqty{\hat{S}^z,\hat{a}^\dagger_{\vb*{q}2}}                                                                                   \\
+                                                & =\frac{1}{\sqrt{2}}\bqty{\text{i}\epsilon^{\mu=1*}_1(q)\hat{a}^\dagger_{\vb*{q}\lambda=2}-\text{i}\epsilon^{\mu=2*}_1(q)\hat{a}^\dagger_{\vb*{q}\lambda=1}}-\frac{\text{i}}{\sqrt{2}}\bqty{\text{i}\epsilon^{\mu=1*}_2(q)\hat{a}^\dagger_{\vb*{q}\lambda=2}-\text{i}\epsilon^{\mu=2*}_2(q)\hat{a}^\dagger_{\vb*{q}\lambda=1}} \\
+                                                & =\frac{1}{\sqrt{2}}\bqty{\text{i}\hat{a}^\dagger_{\vb*{q}2}-\hat{a}^\dagger_{\vb*{q}1}}=-\frac{1}{\sqrt{2}}\bqty{\hat{a}^\dagger_{\vb*{q}1}-\text{i}\hat{a}^\dagger_{\vb*{q}2}}                                                                                                                                               \\
+                                                & =-\hat{b^\dagger_{\vb*{q}\text{L}}}
+  \end{align*}
+\end{proof}
+
+\begin{proof}Part (ii)
 \end{proof}
 
 Errata fixed
