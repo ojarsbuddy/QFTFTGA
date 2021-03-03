@@ -40,15 +40,15 @@ We chose the Lorenz gauge \(\partial_\mu A^\mu=0.\) With \(A^0=0\) we see \(\par
   \mathcal{H} & =\frac{1}{2}\pqty{\vb{E}^2+\vb{B}^2}                                      \\
 \end{align*}
 
+Step III: Treat the fields and momentum density as operators. Impose commutation relations to make all quantum mechanical.
+
+Put hats on the fields \(\hat{A}^\mu\) and momentum density \(\hat{\Pi}^{\mu\nu}\).\[\comm{\hat{A}^i(\vb{x})}{\hat{E}^j(\vb{y})}=\text{i}\int\frac{\dd[3]{p}}{(2\pi)^3}\text{e}^{\text{i}\vb*{p}\cdot(\vb*{x}-\vb*{y})}\pqty{\delta^{ij}-\frac{p^i p^j}{p^2}}=\text{i}\delta^{(3)}_{\text{tr}}(\vb*{x}-\vb*{y}).\qquad(14.30)\]
+
+Step IV: Expand the fields as creation and annihilation operators.\[\hat{A}^\mu(x)=\int\frac{\dd[3]{p}}{(2\pi)^{\frac{3}{2}}}\frac{1}{(2E_{\vb*{p}})^\frac{1}{2}}\sum^2_{\lambda=1}\pqty{\epsilon^\mu_\lambda(p)\hat{a}_{\vb*{p}\lambda}e^{-\text{i}p\vdot x}+\epsilon^{\mu*}_\lambda(p)\hat{a}^\dagger_{\vb*{p}\lambda}e^{\text{i}p\vdot x}}.\qquad(14.31)\]
+
 \begin{proof}
-
-  Step III: Treat the fields and momentum density as operators. Impose commutation relations to make all quantum mechanical.
-
-  Step IV: Expand the fields as creation and annihilation operators.
-
-  Step V: Apply the \emph{normal ordering} interpretation.
-
   \begin{align*}
+    \qq*{Step V: Apply the \emph{normal ordering} interpretation.} \\
   \end{align*}
 
 \end{proof}
@@ -61,7 +61,9 @@ We chose the Lorenz gauge \(\partial_\mu A^\mu=0.\) With \(A^0=0\) we see \(\par
   A photon \(\gamma\) propagates with momentum \(q^\mu=(|\vb*{q}|,0,0,|\vb*{q}|)\). Working with a basis where the two transverse photon polarizations are \(\epsilon^\mu_{\lambda=1}(q)=(0,1,0,0)\) and \(\epsilon^\mu_{\lambda=2}(q)=(0,0,1,0)\), it may be shown, using Noether's theorem, that the operator \(\hat{S}^z\), whose eigenvalue is the \(z-\)component spin angular momentum of the photon, obeys the commutator relation \[\bqty{\hat{S}^z,\hat{a}^\dagger_{\vb*{q}\lambda}}=\text{i}\epsilon^{\mu=1*}_\lambda(q)\hat{a}^\dagger_{\vb*{q}\lambda=2}-\text{i}\epsilon^{\mu=2*}_\lambda(q)\hat{a}^\dagger_{\vb*{q}\lambda=1}.\qq{(14.36)}\]
 
   (i) Define creation operators for the circular polatizations via
-  \begin{align*}\hat{b^\dagger_{\vb*{q}\text{R}}}&=-\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}+\text{i}\hat{a}^\dagger_{\vb*{q}2}},\\\hat{b^\dagger_{\vb*{q}\text{L}}}&=\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}-\text{i}\hat{a}^\dagger_{\vb*{q}2}}.\qquad(14.37) \end{align*}
+  \begin{align*}\hat{b^\dagger_{\vb*{q}\text{R}}} & =-\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}+\text{i}\hat{a}^\dagger_{\vb*{q}2}},             \\
+    \hat{b^\dagger_{\vb*{q}\text{L}}} & =\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}-\text{i}\hat{a}^\dagger_{\vb*{q}2}}.\qquad(14.37)
+  \end{align*}
 
 
   Show that\begin{align*}\bqty{\hat{S}^z,\hat{b}^\dagger_{\vb*{q}\text{R}}}&=\hat{b}^\dagger_{\vb*{q}\text{R}},\\\bqty{\hat{S}^z,\hat{b}^\dagger_{\vb*{q}\text{L}}}&=-\hat{b}^\dagger_{\vb*{q}\text{L}}.\qquad(14.38)\end{align*}
@@ -78,20 +80,38 @@ We chose the Lorenz gauge \(\partial_\mu A^\mu=0.\) With \(A^0=0\) we see \(\par
     \bqty{\hat{S}^z,\hat{b}^\dagger_{\vb*{q}R}} & =\bqty{\hat{S}^z,-\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}+\text{i}\hat{a}^\dagger_{\vb*{q}2}}}=-\frac{1}{\sqrt{2}}\bqty{\hat{S}^z,\hat{a}^\dagger_{\vb*{q}1}}-\frac{\text{i}}{\sqrt{2}}\bqty{\hat{S}^z,\hat{a}^\dagger_{\vb*{q}2}}                                                                                  \\
                                                 & =-\frac{1}{\sqrt{2}}\bqty{\text{i}\epsilon^{\mu=1*}_1(q)\hat{a}^\dagger_{\vb*{q}\lambda=2}-\text{i}\epsilon^{\mu=2*}_1(q)\hat{a}^\dagger_{\vb*{q}\lambda=1}}-\frac{\text{i}}{\sqrt{2}}\bqty{\text{i}\epsilon^{\mu=1*}_2(q)\hat{a}^\dagger_{\vb*{q}\lambda=2}-\text{i}\epsilon^{\mu=2*}_2(q)\hat{a}^\dagger_{\vb*{q}\lambda=1}} \\
                                                 & =-\frac{1}{\sqrt{2}}\bqty{\text{i}\hat{a}^\dagger_{\vb*{q}2}+\hat{a}^\dagger_{\vb*{q}1}}=-\frac{1}{\sqrt{2}}\bqty{\hat{a}^\dagger_{\vb*{q}1}+\text{i}\hat{a}^\dagger_{\vb*{q}2}}                                                                                                                                               \\
-                                                & =\hat{b^\dagger_{\vb*{q}\text{R}}}
+                                                & =\hat{b}^\dagger_{\vb*{q}\text{R}}
   \end{align*}
   \begin{align*}
     \bqty{\hat{S}^z,\hat{b}^\dagger_{\vb*{q}L}} & =\bqty{\hat{S}^z,\frac{1}{\sqrt{2}}\pqty{\hat{a}^\dagger_{\vb*{q}1}-\text{i}\hat{a}^\dagger_{\vb*{q}2}}}=\frac{1}{\sqrt{2}}\bqty{\hat{S}^z,\hat{a}^\dagger_{\vb*{q}1}}-\frac{\text{i}}{\sqrt{2}}\bqty{\hat{S}^z,\hat{a}^\dagger_{\vb*{q}2}}                                                                                   \\
                                                 & =\frac{1}{\sqrt{2}}\bqty{\text{i}\epsilon^{\mu=1*}_1(q)\hat{a}^\dagger_{\vb*{q}\lambda=2}-\text{i}\epsilon^{\mu=2*}_1(q)\hat{a}^\dagger_{\vb*{q}\lambda=1}}-\frac{\text{i}}{\sqrt{2}}\bqty{\text{i}\epsilon^{\mu=1*}_2(q)\hat{a}^\dagger_{\vb*{q}\lambda=2}-\text{i}\epsilon^{\mu=2*}_2(q)\hat{a}^\dagger_{\vb*{q}\lambda=1}} \\
                                                 & =\frac{1}{\sqrt{2}}\bqty{\text{i}\hat{a}^\dagger_{\vb*{q}2}-\hat{a}^\dagger_{\vb*{q}1}}=-\frac{1}{\sqrt{2}}\bqty{\hat{a}^\dagger_{\vb*{q}1}-\text{i}\hat{a}^\dagger_{\vb*{q}2}}                                                                                                                                               \\
-                                                & =-\hat{b^\dagger_{\vb*{q}\text{L}}}
+                                                & =-\hat{b}^\dagger_{\vb*{q}\text{L}}
   \end{align*}
 \end{proof}
 
 \begin{proof}Part (ii)
+  \begin{align*}
+    \bqty{\hat{S}^z,\hat{b}^\dagger_{\vb*{q}R}}                                             & =\hat{b}^\dagger_{\vb*{q}\text{R}}              \\
+    \hat{S}^z\hat{b}^\dagger_{\vb*{q}R}-\hat{b}^\dagger_{\vb*{q}R}\hat{S}^z                 & =\hat{b}^\dagger_{\vb*{q}\text{R}}              \\
+    \hat{S}^z\hat{b}^\dagger_{\vb*{q}R}\ket*{0}-\hat{b}^\dagger_{\vb*{q}R}\hat{S}^z\ket*{0} & =\hat{b}^\dagger_{\vb*{q}\text{R}}\ket*{0}      \\
+    \hat{S}^z\ket*{\gamma R}                                                                & =\ket*{\gamma R}\qq{because}\hat{S}^z\ket*{0}=0 \\
+  \end{align*}
+
+  \begin{align*}
+    \bqty{\hat{S}^z,\hat{b}^\dagger_{\vb*{q}L}}                                             & =-\hat{b}^\dagger_{\vb*{q}\text{L}}              \\
+    \hat{S}^z\hat{b}^\dagger_{\vb*{q}L}-\hat{b}^\dagger_{\vb*{q}L}\hat{S}^z                 & =-\hat{b}^\dagger_{\vb*{q}\text{L}}              \\
+    \hat{S}^z\hat{b}^\dagger_{\vb*{q}L}\ket*{0}-\hat{b}^\dagger_{\vb*{q}L}\hat{S}^z\ket*{0} & =-\hat{b}^\dagger_{\vb*{q}\text{L}}\ket*{0}      \\
+    \hat{S}^z\ket*{\gamma L}                                                                & =-\ket*{\gamma L}\qq{because}\hat{S}^z\ket*{0}=0 \\
+  \end{align*}
+
+  \begin{align*}
+    \hat{S}^z\ket*{\gamma \lambda} & =\pm\ket*{\gamma \lambda} \\
+    \hat{S}^z                      & =\pm 1                    \\
+  \end{align*}
 \end{proof}
 
 Errata fixed
 \[\mathcal{L}=-\frac{1}{4}\pqty{\partial_\mu A_\nu-\partial_\nu A_\mu}\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu}-J^\mu_{\text{em}}A_\mu \qquad(14.12)\]
-
+\[\text{i}\partial^j\delta^{(3)}(\vb*{x}-\vb*{y}) \qquad(14.29)\]
 \end{document}
