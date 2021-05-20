@@ -9,6 +9,8 @@
 \theoremstyle{definition}
 \newtheorem{prob}{Problem}[section]
 \renewcommand{\qedsymbol}{\(\blacksquare\)}
+
+\newcommand{\intp}{\int \frac{\dd[3]{p}}{(2\pi)^\frac{3}{2}}  \frac{1}{(2E_{\vb{p}})^{\frac{1}{2}}}}
  
 \setcounter{section}{14}
 \title{Quantum Field Theory Problem Set}
@@ -22,9 +24,9 @@
 \begin{prob}
   Fill in the algebra leading to eqn 14.32.
 \end{prob}
-The canonical quantization machinery
+The canonical quantization scalar field
 
-Step I: Write down a classical Lagrangian density in terms of fields.\[\mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}=-\frac{1}{4}\pqty{\partial_\mu A_\nu-\partial_\nu A_\mu}\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu}\]
+Step I: Write down a classical Lagrangian density $\mathcal{L}$ in terms of fields.
 
 Step II: Calculate the momentum density and Hamiltonian density in terms of fields.
 
@@ -44,13 +46,52 @@ Step III: Treat the fields and momentum density as operators. Impose commutation
 
 Put hats on the fields \(\hat{A}^\mu\) and momentum density \(\hat{\Pi}^{\mu\nu}\).\[\comm{\hat{A}^i(\vb{x})}{\hat{E}^j(\vb{y})}=\text{i}\int\frac{\dd[3]{p}}{(2\pi)^3}\text{e}^{\text{i}\vb*{p}\cdot(\vb*{x}-\vb*{y})}\pqty{\delta^{ij}-\frac{p^i p^j}{p^2}}=\text{i}\delta^{(3)}_{\text{tr}}(\vb*{x}-\vb*{y}).\qquad(14.30)\]
 
-Step IV: Expand the fields as creation and annihilation operators.\[\hat{A}^\mu(x)=\int\frac{\dd[3]{p}}{(2\pi)^{\frac{3}{2}}}\frac{1}{(2E_{\vb*{p}})^\frac{1}{2}}\sum^2_{\lambda=1}\pqty{\epsilon^\mu_\lambda(p)\hat{a}_{\vb*{p}\lambda}e^{-\text{i}p\vdot x}+\epsilon^{\mu*}_\lambda(p)\hat{a}^\dagger_{\vb*{p}\lambda}e^{\text{i}p\vdot x}}.\qquad(14.31)\]
+Step IV: Expand the fields as creation and annihilation operators.\[\hat{A}^\mu(x)=\intp\sum^2_{\lambda=1}\pqty{\epsilon^\mu_\lambda(p)\hat{a}_{\vb*{p}\lambda}e^{-\text{i}p\vdot x}+\epsilon^{\mu*}_\lambda(p)\hat{a}^\dagger_{\vb*{p}\lambda}e^{\text{i}p\vdot x}}.\qquad(14.31)\]
+
+In the spirit of Problem 12.1 then --
 
 \begin{proof}
+
+
+  \begin{align*}
+    \qq*{Step I:}\mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu} & =-\frac{1}{4}\pqty{\partial_\mu A_\nu-\partial_\nu A_\mu}\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu}                                                                         \\
+                                                              & =-\frac{1}{4}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu-\partial_\nu A_\mu \partial^\mu A^\nu +\partial_\nu A_\mu \partial^\nu A^\mu} \\
+                                                              & =-\frac{1}{2}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu}\qq{by changing labels in sums}
+  \end{align*}
+
+
+
+  \begin{align*}
+    \qq*{Step II:}\pdv{\mathcal{L}}{(\partial_\mu A_\nu)} & =-\frac{1}{2}\pdv{(\partial_\mu A_\nu)}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu}                                                                                                                                    \\
+                                                          & =-\frac{1}{2}\pdv{(\partial_\mu A_\nu)}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu}+\frac{1}{2}\pdv{(\partial_\mu A_\nu)}\pqty{\partial_\mu A_\nu \partial^\nu A^\mu}                                                                                         \\
+                                                          & =-\frac{1}{2}\pdv{\pqty{\partial_\mu A_\nu \partial^\mu A^\nu}}{(\partial_\mu A_\nu)}+\frac{1}{2}\pdv{\pqty{\partial_\mu A_\nu \partial^\nu A^\mu}}{(\partial_\mu A_\nu)}                                                                                     \\
+                                                          & =-\frac{1}{2}\pdv{\pqty{\partial_\mu A_\nu }}{(\partial_\mu A_\nu)}\partial^\mu A^\nu-\frac{1}{2}\partial_\mu A_\nu\pdv{\pqty{ \partial^\mu A^\nu}}{(\partial_\mu A_\nu)}+\frac{1}{2}\pdv{\pqty{\partial_\mu A_\nu \partial^\nu A^\mu}}{(\partial_\mu A_\nu)} \\
+                                                          & =-\frac{1}{2}\partial^\mu A^\nu-\frac{1}{2}\partial_\mu A_\nu\pdv{\pqty{ \partial^\mu A^\nu}}{(\partial_\mu A_\nu)}+\frac{1}{2}\pdv{\pqty{\partial_\mu A_\nu \partial^\nu A^\mu}}{(\partial_\mu A_\nu)}                                                       \\
+  \end{align*}
+
+  \begin{align*}
+    \pdv{\mathcal{L}}{(\partial_0 A_\nu)}                        & =-\pqty{\partial^0 A^\nu-\partial^\nu A^0}=\partial^0 A^\nu\qq{Recall}A^0=0 \\
+    \pdv{\mathcal{L}}{(\partial_0 A_\nu)}\cdot(\partial_0 A_\nu) & =-(\partial^0 A^\nu)(\partial_0 A_\nu)                                      \\
+  \end{align*}
+
+  \begin{align*}
+    \mathcal{H} & =-(\partial^0 A^\nu)(\partial_0 A_\nu)+\frac{1}{4}\pqty{\partial_\mu A_\nu-\partial_\nu A_\mu}\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu}
+    \\
+                & =-(\partial^0 A^\nu)(\partial_0 A_\nu)+\frac{1}{4}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu-\partial_\nu A_\mu \partial^\mu A^\nu +\partial_\nu A_\mu \partial^\nu A^\mu} \\
+                & =-(\partial^0 A^\nu)(\partial_0 A_\nu)+\frac{1}{2}\pqty{\partial_\mu A_\nu \partial^\mu A^\nu -\partial_\mu A_\nu \partial^\nu A^\mu}\qq{by changing labels in sums}                                               \\
+                & =-(\partial^0 A^j)(\partial_0 A_j)+\frac{1}{2}\pqty{\partial_\mu A_j \partial^\mu A^j -\partial_\mu A_j \partial^\nu A^i}\qq{to justify Roman indices recall}A^0=0                                                 \\
+  \end{align*}
+
+  \begin{align*}
+    \hat{A}^j(x)                     & =\intp\sum^2_{\lambda=1}\pqty{\epsilon^j_\lambda(p)\hat{a}_{\vb*{p}\lambda}e^{-\text{i}p\vdot x}+\epsilon^{j*}_\lambda(p)\hat{a}^\dagger_{\vb*{p}\lambda}e^{\text{i}p\vdot x}}                \\
+    \partial^0\hat{A}^j(x)           & =\intp(\text{i}p_0)\sum^2_{\lambda=1}\pqty{-\epsilon^j_\lambda(p)\hat{a}_{\vb*{p}\lambda}e^{-\text{i}p\vdot x}+\epsilon^{j*}_\lambda(p)\hat{a}^\dagger_{\vb*{p}\lambda}e^{\text{i}p\vdot x}}  \\
+    \hat{A}^{\dagger j}(x)           & =\intp\sum^2_{\lambda=1}\pqty{\epsilon^{j*}_\lambda(p)\hat{a}^\dagger_{\vb*{p}\lambda}e^{\text{i}p\vdot x}+\epsilon^{j}_\lambda(p)\hat{a}_{\vb*{p}\lambda}e^{-\text{i}p\vdot x}}              \\
+    \partial_0\hat{A}^{\dagger j}(x) & =\intp(\text{i}p_0)\sum^2_{\lambda=1}\pqty{\epsilon^{j*}_\lambda(p)\hat{a}^\dagger_{\vb*{p}\lambda}e^{\text{i}p\vdot x}-\epsilon^{j}_\lambda(p)\hat{a}_{\vb*{p}\lambda}e^{-\text{i}p\vdot x}} \\
+  \end{align*}
+
   \begin{align*}
     \qq*{Step V: Apply the \emph{normal ordering} interpretation.} \\
   \end{align*}
-
 \end{proof}
 
 
@@ -111,7 +152,28 @@ Step IV: Expand the fields as creation and annihilation operators.\[\hat{A}^\mu(
   \end{align*}
 \end{proof}
 
-Errata fixed
+\section*{Practicum}
+
+\begin{align*}
+  \qq*{Recall}A^\mu & =\pqty{A^0,A^1,A^2,A^3}=\pqty{A_t,A_x,A_y,A_z}                                               \\
+  A_\mu             & =\pqty{A^0,-A^1,-A^2,-A^3}=\pqty{A_t,-A_x,-A_y,-A_z}                                         \\
+  \partial^\mu=     & =\pqty{\pdv{x^0},-\pdv{x^1},-\pdv{x^2},-\pdv{x^3}}=\pqty{\pdv{t},-\pdv{x},-\pdv{y},-\pdv{z}} \\
+  \partial_\mu=     & =\pqty{\pdv{x^0},\pdv{x^1},\pdv{x^2},\pdv{x^3}}=\pqty{\pdv{t},\pdv{x},\pdv{y},\pdv{z}}       \\
+\end{align*}
+
+\begin{align*}
+  \partial^\mu A^\nu                               & =\pqty{\pdv{t},-\pdv{x},-\pdv{y},-\pdv{z}}\qq{acting on}\pqty{A_t,A_x,A_y,A_z} \\
+                                                   & =\begin{pmatrix}\pdv{A_t}{t} & \pdv{A_x}{t} & \pdv{A_y}{t} & \pdv{A_z}{t} \\-\pdv{A_t}{x} & -\pdv{A_x}{x} & -\pdv{A_y}{x} & -\pdv{A_z}{x} \\-\pdv{A_t}{y} & -\pdv{A_x}{y} & -\pdv{A_y}{y} & -\pdv{A_z}{y} \\-\pdv{A_t}{z} & -\pdv{A_x}{z} &- \pdv{A_y}{z} & -\pdv{A_z}{z}\end{pmatrix}                                                    \\
+  \partial^\nu A^\mu                               & =\begin{pmatrix}\pdv{A_t}{t} & -\pdv{A_t}{x} & -\pdv{A_t}{y} & -\pdv{A_t}{z} \\\pdv{A_x}{t} & -\pdv{A_x}{x} & -\pdv{A_x}{y} & -\pdv{A_x}{z} \\\pdv{A_y}{t} & -\pdv{A_y}{x} & -\pdv{A_y}{y} & -\pdv{A_y}{z} \\\pdv{A_z}{t} & -\pdv{A_z}{x} &-\pdv{A_z}{y} & -\pdv{A_z}{z}\end{pmatrix}                                                    \\
+  \partial^\mu A^\nu-\partial^\nu A^\mu            & =  \begin{pmatrix}0 & \pdv{A_x}{t}+\pdv{A_t}{x} & \pdv{A_y}{t}+\pdv{A_t}{y} & \pdv{A_z}{t}+\pdv{A_t}{z} \\-\pdv{A_t}{x}-\pdv{A_x}{t} & 0 & -\pdv{A_y}{x}+\pdv{A_x}{y} & -\pdv{A_z}{x}+\pdv{A_x}{z} \\-\pdv{A_t}{y}-\pdv{A_y}{t} & -\pdv{A_x}{y}+\pdv{A_y}{x} & 0 & -\pdv{A_z}{y}+\pdv{A_y}{z} \\-\pdv{A_t}{z}-\pdv{A_z}{t} & -\pdv{A_x}{z}+\pdv{A_z}{x} &- \pdv{A_y}{z}+\pdv{A_z}{y} & 0\end{pmatrix}                                                  \\
+  F^{\mu\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu & =\begin{pmatrix}0 & -E^1 & -E^2 & -E^3 \\E^1 & 0 & -B^3 & B^2 \\E^2 & B^3 & 0 & -B^1 \\E^3 & -B^2 &B^1 & 0  \end{pmatrix}                                                    \\
+\end{align*}
+
+
+
+\section*{Errata fixed}
+
+
 \[\mathcal{L}=-\frac{1}{4}\pqty{\partial_\mu A_\nu-\partial_\nu A_\mu}\pqty{\partial^\mu A^\nu-\partial^\nu A^\mu}-J^\mu_{\text{em}}A_\mu \qquad(14.12)\]
 \[\text{i}\partial^j\delta^{(3)}(\vb*{x}-\vb*{y}) \qquad(14.29)\]
 \end{document}
